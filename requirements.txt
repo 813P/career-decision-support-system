@@ -1,0 +1,5 @@
+numpy>=1.26
+pandas>=2.0
+
+# Optional semantic ranker (large download):
+# sentence-transformers==5.0.0

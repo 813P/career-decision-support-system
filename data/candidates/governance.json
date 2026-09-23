@@ -1,0 +1,422 @@
+[
+  {
+    "candidate_id": "C001",
+    "split": "dev",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C002",
+    "split": "dev",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C003",
+    "split": "dev",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C004",
+    "split": "dev",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C005",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C006",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": "business_performance_goal_management",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C007",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C008",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C009",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C010",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": "business_performance_goal_management",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C011",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C012",
+    "split": "test",
+    "intended_role_profile": "strategic_analysis",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C013",
+    "split": "dev",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C014",
+    "split": "dev",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C015",
+    "split": "dev",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C016",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C017",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C018",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C019",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C020",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C021",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C022",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C023",
+    "split": "dev",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C024",
+    "split": "test",
+    "intended_role_profile": "business_performance_goal_management",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C025",
+    "split": "dev",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C026",
+    "split": "dev",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": "business_performance_goal_management",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C027",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": "strategic_analysis",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C028",
+    "split": "dev",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C029",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C030",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": "business_performance_goal_management",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C031",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": "strategic_analysis",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C032",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C033",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C034",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C035",
+    "split": "dev",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": "strategic_analysis",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C036",
+    "split": "test",
+    "intended_role_profile": "business_strategy_focused_analysis",
+    "secondary_sampling_profile": "strategic_analysis",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C037",
+    "split": "dev",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C038",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": "business_performance_goal_management",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C039",
+    "split": "dev",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C040",
+    "split": "dev",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C041",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C042",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": "business_strategy_focused_analysis",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C043",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": "business_performance_goal_management",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C044",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C045",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C046",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": "data_science",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C047",
+    "split": "dev",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": "data_science",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C048",
+    "split": "test",
+    "intended_role_profile": "data_analytics",
+    "secondary_sampling_profile": "data_science",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C049",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C050",
+    "split": "dev",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C051",
+    "split": "dev",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C052",
+    "split": "dev",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C053",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C054",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Adjacent Transfer"
+  },
+  {
+    "candidate_id": "C055",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C056",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Weak / Low Evidence"
+  },
+  {
+    "candidate_id": "C057",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": null,
+    "scenario_category": "Direct Match"
+  },
+  {
+    "candidate_id": "C058",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Career Transition"
+  },
+  {
+    "candidate_id": "C059",
+    "split": "dev",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Ambiguous Case"
+  },
+  {
+    "candidate_id": "C060",
+    "split": "test",
+    "intended_role_profile": "data_science",
+    "secondary_sampling_profile": "data_analytics",
+    "scenario_category": "Ambiguous Case"
+  }
+]

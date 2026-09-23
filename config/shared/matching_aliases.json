@@ -1,0 +1,56 @@
+{
+  "config_name": "Matching Aliases",
+  "status": "frozen",
+  "frozen_date": "2026-08-10",
+  "source": "Researcher-defined abbreviations and spelling variants; not imported from ESCO or derived from candidate data.",
+  "aliases": [
+    {
+      "canonical_term": "key performance indicator",
+      "aliases": ["KPI", "KPIs"],
+      "scope": ["structured_direction", "missing_evidence_check"],
+      "role_profile_scope": ["business_performance_goal_management", "data_analytics"]
+    },
+    {
+      "canonical_term": "objectives and key results",
+      "aliases": ["OKR", "OKRs"],
+      "scope": ["structured_direction", "missing_evidence_check"],
+      "role_profile_scope": ["business_performance_goal_management"]
+    },
+    {
+      "canonical_term": "A/B testing",
+      "aliases": ["A/B test", "AB test", "AB testing"],
+      "scope": ["structured_direction", "missing_evidence_check"],
+      "role_profile_scope": ["data_science"]
+    },
+    {
+      "canonical_term": "financial planning and analysis",
+      "aliases": ["FP&A"],
+      "scope": ["structured_direction", "missing_evidence_check"],
+      "role_profile_scope": ["business_performance_goal_management"]
+    },
+    {
+      "canonical_term": "return on investment",
+      "aliases": ["ROI"],
+      "scope": ["structured_direction", "missing_evidence_check"],
+      "role_profile_scope": ["business_performance_goal_management", "business_strategy_focused_analysis"]
+    },
+    {
+      "canonical_term": "business intelligence",
+      "aliases": ["BI"],
+      "scope": ["structured_direction"],
+      "role_profile_scope": ["data_analytics"]
+    },
+    {
+      "canonical_term": "machine learning",
+      "aliases": ["ML"],
+      "scope": ["structured_direction", "missing_evidence_check"],
+      "role_profile_scope": ["data_science"]
+    },
+    {
+      "canonical_term": "structured query language",
+      "aliases": ["SQL"],
+      "scope": ["missing_evidence_check"],
+      "role_profile_scope": ["data_analytics", "data_science"]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "manifest_name": "Selected matching final test run",
+  "status": "final_one_time_test_completed_no_retuning",
+  "specification_sha256": "8eaa5f79ce119d65b80c0fbd0be935041735499f5fc8c4c8c108690fadf26170",
+  "test_candidate_ids": [
+    "C010",
+    "C011",
+    "C019",
+    "C024",
+    "C027",
+    "C029",
+    "C041",
+    "C044",
+    "C054",
+    "C056"
+  ],
+  "test_candidate_count": 10,
+  "judgement_count": 180,
+  "outputs": {
+    "results/matching_selected_test_scores.csv": "787f86f1e5da508c621081058ed4c5d6915914336dfe48773e176bcaf1ee0e66",
+    "reports/matching/matching_selected_test_rankings.json": "7165cc55407681d63ff0186122d118f018d5626690fef6f076a9e2d4191cdb3c",
+    "reports/evaluation/matching_selected_test_evaluation.json": "ef0158a45d483c38a5481a668a7c2b835cfa940d0cf2400ad1946c0864f22834",
+    "reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md": "b7ef31daf8993fc404e9f54ce74d3928aafab839218a1f997e5d6ab300e8e406"
+  },
+  "rerun_policy": "The runner refuses to overwrite these outputs. Any rerun would require explicit versioning and must not be used for retuning."
+}
