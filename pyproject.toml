@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "career-decision-support-system"
+version = "0.1.0"
+description = "An explainable, offline career decision-support system using five Analytical Role Profiles"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "pandas>=2.0"]
+
+[project.optional-dependencies]
+semantic = ["sentence-transformers==5.0.0"]
+mcp = ["mcp>=1.27,<2"]
+dev = ["pytest==8.4.1"]
+
+[project.scripts]
+career-match = "career_matcher.cli:main"
+career-web = "career_matcher.webapp:main"
+career-mcp = "career_matcher.mcp_server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

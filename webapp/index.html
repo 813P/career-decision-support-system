@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MAIR 可解释职业方向探索与岗位准备助手" data-i18n-content="page_description">
+  <title data-i18n="page_title">MAIR · 职业方向探索助手</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="返回首页" data-i18n-aria-label="home_aria">
+      <span class="brand-mark">M</span>
+      <span><strong>MAIR</strong><small data-i18n="brand_subtitle">职业探索</small></span>
+    </a>
+    <div class="topbar-actions">
+      <nav aria-label="主要导航" data-i18n-aria-label="nav_aria">
+        <a href="#directions" data-i18n="nav_directions">岗位方向</a>
+        <a href="#method" data-i18n="nav_method">数据与方法</a>
+        <a href="#boundaries" data-i18n="nav_boundaries">使用边界</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="语言" data-i18n-aria-label="language_label">
+        <button type="button" data-language="zh" aria-pressed="true">中文</button>
+        <button type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero_eyebrow">可解释职业探索</p>
+        <h1 data-i18n-html="hero_title">把“我适合什么”拆成<br><span>可以验证的证据</span></h1>
+        <p class="hero-lead" data-i18n="hero_lead">
+          通过岗位任务、技能证据和 ESCO 职业数据，探索五个 Analytical Role Profiles。
+          结果用于职业探索，不代表录用概率。
+        </p>
+        <div class="hero-actions">
+          <button class="button primary" data-open-path="a" data-i18n="start_profile">从个人经历开始</button>
+          <button class="button secondary" data-open-path="b" data-i18n="start_jd">从一份职位描述开始</button>
+        </div>
+        <div class="trust-row">
+          <span data-i18n="trust_score">✓ 解释来自实际得分组件</span>
+          <span data-i18n="trust_attributes">✓ 不使用受保护属性</span>
+          <span data-i18n="trust_version">✓ 结果保留模型与数据版本</span>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="探索流程概览" data-i18n-aria-label="flow_aria">
+        <p class="panel-kicker" data-i18n="flow_intro">一次探索会经过</p>
+        <ol class="flow-list">
+          <li><span>01</span><div><strong data-i18n="flow_1_title">理解现状</strong><small data-i18n="flow_1_note">经历、技能与目标</small></div></li>
+          <li><span>02</span><div><strong data-i18n="flow_2_title">体验任务</strong><small data-i18n="flow_2_note">兴趣信号独立记录</small></div></li>
+          <li><span>03</span><div><strong data-i18n="flow_3_title">查看证据</strong><small data-i18n="flow_3_note">匹配与缺失技能</small></div></li>
+          <li><span>04</span><div><strong data-i18n="flow_4_title">比较方向</strong><small data-i18n="flow_4_note">不把相邻岗位混为一谈</small></div></li>
+          <li><span>05</span><div><strong data-i18n="flow_5_title">形成计划</strong><small data-i18n="flow_5_note">验证 → 实践 → 证据</small></div></li>
+        </ol>
+      </aside>
+    </section>
+
+    <section id="directions" class="section shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="taxonomy_eyebrow">MVP 职业分类</p>
+          <h2 data-i18n="directions_title">五个可比较的职业角色方向</h2>
+        </div>
+        <p data-i18n="directions_intro">每个 Role Profile 都有明确的任务、候选证据和边界，避免把相邻工作混成同一种方向。</p>
+      </div>
+      <div id="direction-grid" class="direction-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="path-a" class="workspace shell hidden" aria-labelledby="path-a-title">
+      <div class="workspace-header">
+        <div>
+          <p class="eyebrow" data-i18n="path_a_eyebrow">路径 A</p>
+          <h2 id="path-a-title" data-i18n="path_a_title">从个人经历探索方向</h2>
+          <p data-i18n="path_a_intro">模型证据和兴趣反馈分开显示，避免用“喜欢”替代能力证据。</p>
+        </div>
+        <button id="load-demo-a" class="button text" data-i18n="load_demo_a">载入演示案例</button>
+      </div>
+
+      <form id="candidate-form" class="form-card">
+        <div class="form-grid">
+          <label><span data-i18n="current_job_title">当前职位名称</span>
+            <input name="current_job_title" required placeholder="例如：Reporting Analyst" data-i18n-placeholder="current_job_title_placeholder">
+          </label>
+          <label><span data-i18n="years_experience">工作年限</span>
+            <input name="years_experience" required type="number" min="0" step="0.5" value="2">
+          </label>
+          <label class="span-2"><span data-i18n="desired_work_directions">希望发展的工作方向</span>
+            <input name="desired_work_directions" required placeholder="用逗号分隔，例如：建立可复用业务指标、负责规划与绩效循环" data-i18n-placeholder="desired_work_directions_placeholder">
+          </label>
+          <label class="span-2"><span data-i18n="skills">已有技能</span>
+            <input name="skills" required placeholder="用逗号分隔，例如：SQL, Excel, Data Visualization" data-i18n-placeholder="skills_placeholder">
+          </label>
+          <label class="span-2"><span data-i18n="experience">经历摘要</span>
+            <textarea name="experience_narrative" required rows="4" placeholder="描述你处理过的问题、使用的方法和形成的结果" data-i18n-placeholder="experience_placeholder"></textarea>
+          </label>
+        </div>
+
+        <fieldset class="task-fieldset">
+          <legend><span data-i18n="interest_legend">岗位任务兴趣信号</span> <small data-i18n="interest_note">不进入模型得分</small></legend>
+          <div id="interest-grid" class="interest-grid"></div>
+        </fieldset>
+
+        <div class="form-actions">
+          <label class="model-select"><span data-i18n="model_label">排序方法</span>
+            <select name="model">
+              <option value="tfidf" data-i18n="model_option">已冻结的 TF-IDF 配置</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit" data-i18n="generate_results">生成可解释结果</button>
+        </div>
+        <p class="form-note" data-i18n="input_language_note">为了与已冻结的英文 ESCO 证据保持一致，个人经历匹配建议使用英文填写。界面语言不会改变评分。</p>
+        <p id="candidate-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="path-b" class="workspace shell hidden" aria-labelledby="path-b-title">
+      <div class="workspace-header">
+        <div>
+          <p class="eyebrow" data-i18n="path_b_eyebrow">路径 B</p>
+          <h2 id="path-b-title" data-i18n="path_b_title">从职位描述理解工作构成</h2>
+          <p data-i18n="path_b_intro">实验性多标签分析按岗位职责证据分组，区分主要构成、支持性构成和证据不足；它与已冻结的候选人排序模型相互独立。</p>
+        </div>
+        <button id="load-demo-b" class="button text" data-i18n="load_demo_b">载入演示 JD</button>
+      </div>
+      <form id="jd-form" class="form-card">
+        <label><span data-i18n="jd_label">职位描述</span>
+          <textarea name="job_description" required rows="11" placeholder="粘贴完整职位描述，至少 20 个字符" data-i18n-placeholder="jd_placeholder"></textarea>
+        </label>
+        <div class="form-actions right">
+          <button class="button primary" type="submit" data-i18n="analyze_jd">分析 Role Profile 证据</button>
+        </div>
+        <p id="jd-error" class="error" role="alert"></p>
+      </form>
+      <div id="jd-results" class="results-block hidden"></div>
+    </section>
+
+    <section id="results" class="section shell hidden" aria-labelledby="results-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="results_eyebrow">证据结果</p>
+        <h2 id="results-title" data-i18n="results_title">Role Profile 匹配证据</h2>
+        </div>
+        <p id="result-method"></p>
+      </div>
+      <div class="notice" data-i18n="score_notice">
+        分数仅用于本次候选人与同一数据版本下的相对排序，不是概率，也不能用于招聘筛选。
+      </div>
+      <div id="prototype-results" class="result-grid"></div>
+      <div class="compare-toolbar">
+        <span id="compare-count" data-i18n="compare_empty">选择 2–3 个 Role Profiles 进行比较</span>
+        <button id="compare-button" class="button secondary" disabled data-i18n="compare_button">并排比较</button>
+      </div>
+      <div id="comparison" class="comparison hidden"></div>
+      <div id="plan" class="plan hidden"></div>
+    </section>
+
+    <section id="method" class="section shell two-column">
+      <div>
+        <p class="eyebrow" data-i18n="method_eyebrow">数据与方法</p>
+        <h2 data-i18n="method_title">展示层背后是可检查的计算链路</h2>
+      </div>
+      <div class="method-list">
+        <article><span>01</span><div><h3 data-i18n="method_1_title">ESCO 职业与技能</h3><p data-i18n="method_1_text">15 个聚焦职业形成 18 个职业—Role Profile 成员关系，允许职业支持相邻方向。</p></div></article>
+        <article><span>02</span><div><h3 data-i18n="method_2_title">已冻结排序方法</h3><p data-i18n="method_2_text">应用使用 development-only 选择的 TF-IDF 方法，背景与方向证据各占 0.5。</p></div></article>
+        <article><span>03</span><div><h3 data-i18n="method_3_title">统一聚合</h3><p data-i18n="method_3_text">每个 Role Profile 使用 mean_all 聚合其全部成员关系，与最终研究配置一致。</p></div></article>
+        <article><span>04</span><div><h3 data-i18n="method_4_title">可追溯解释</h3><p data-i18n="method_4_text">仅为前三名显示至多三项核心证据缺口，并保留贡献成员关系。</p></div></article>
+      </div>
+    </section>
+
+    <section id="boundaries" class="section shell boundary">
+      <p class="eyebrow" data-i18n="boundaries_eyebrow">负责任使用</p>
+      <h2 data-i18n="boundaries_title">使用边界</h2>
+      <div class="boundary-grid">
+        <div><strong data-i18n="can_title">可以</strong><p data-i18n="can_text">职业探索、学习规划、作品集演示、低风险方向比较。</p></div>
+        <div><strong data-i18n="cannot_title">不可以</strong><p data-i18n="cannot_text">筛选、淘汰、录用、薪酬决策或对真实求职者进行自动排名。</p></div>
+        <div><strong data-i18n="disclose_title">必须说明</strong><p data-i18n="disclose_text">缺失技能可能只是简历未写；岗位现实会随企业、行业、团队与职级变化。</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <strong>MAIR</strong>
+      <span data-i18n="footer_product">可解释职业决策支持系统</span>
+      <span data-i18n="footer_note">Decision-support prototype · Not an automated hiring system</span>
+    </div>
+  </footer>
+
+  <script src="/i18n.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>

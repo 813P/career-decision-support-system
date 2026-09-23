@@ -1,0 +1,61 @@
+candidate_id,split,intended_role_profile,scenario_category,count
+C001,dev,strategic_analysis,Direct Match,1
+C002,dev,strategic_analysis,Adjacent Transfer,1
+C003,dev,strategic_analysis,Career Transition,1
+C004,dev,strategic_analysis,Weak / Low Evidence,1
+C005,test,strategic_analysis,Direct Match,1
+C006,test,strategic_analysis,Adjacent Transfer,1
+C007,test,strategic_analysis,Career Transition,1
+C008,test,strategic_analysis,Weak / Low Evidence,1
+C009,test,strategic_analysis,Direct Match,1
+C010,test,strategic_analysis,Adjacent Transfer,1
+C011,test,strategic_analysis,Ambiguous Case,1
+C012,test,strategic_analysis,Ambiguous Case,1
+C013,dev,business_performance_goal_management,Direct Match,1
+C014,dev,business_performance_goal_management,Adjacent Transfer,1
+C015,dev,business_performance_goal_management,Career Transition,1
+C016,test,business_performance_goal_management,Weak / Low Evidence,1
+C017,test,business_performance_goal_management,Direct Match,1
+C018,test,business_performance_goal_management,Adjacent Transfer,1
+C019,test,business_performance_goal_management,Career Transition,1
+C020,test,business_performance_goal_management,Weak / Low Evidence,1
+C021,test,business_performance_goal_management,Direct Match,1
+C022,test,business_performance_goal_management,Adjacent Transfer,1
+C023,dev,business_performance_goal_management,Ambiguous Case,1
+C024,test,business_performance_goal_management,Ambiguous Case,1
+C025,dev,business_strategy_focused_analysis,Direct Match,1
+C026,dev,business_strategy_focused_analysis,Adjacent Transfer,1
+C027,test,business_strategy_focused_analysis,Career Transition,1
+C028,dev,business_strategy_focused_analysis,Weak / Low Evidence,1
+C029,test,business_strategy_focused_analysis,Direct Match,1
+C030,test,business_strategy_focused_analysis,Adjacent Transfer,1
+C031,test,business_strategy_focused_analysis,Career Transition,1
+C032,test,business_strategy_focused_analysis,Weak / Low Evidence,1
+C033,test,business_strategy_focused_analysis,Direct Match,1
+C034,test,business_strategy_focused_analysis,Adjacent Transfer,1
+C035,dev,business_strategy_focused_analysis,Ambiguous Case,1
+C036,test,business_strategy_focused_analysis,Ambiguous Case,1
+C037,dev,data_analytics,Direct Match,1
+C038,test,data_analytics,Adjacent Transfer,1
+C039,dev,data_analytics,Career Transition,1
+C040,dev,data_analytics,Weak / Low Evidence,1
+C041,test,data_analytics,Direct Match,1
+C042,test,data_analytics,Adjacent Transfer,1
+C043,test,data_analytics,Career Transition,1
+C044,test,data_analytics,Weak / Low Evidence,1
+C045,test,data_analytics,Direct Match,1
+C046,test,data_analytics,Career Transition,1
+C047,dev,data_analytics,Ambiguous Case,1
+C048,test,data_analytics,Ambiguous Case,1
+C049,test,data_science,Direct Match,1
+C050,dev,data_science,Adjacent Transfer,1
+C051,dev,data_science,Career Transition,1
+C052,dev,data_science,Weak / Low Evidence,1
+C053,test,data_science,Direct Match,1
+C054,test,data_science,Adjacent Transfer,1
+C055,test,data_science,Career Transition,1
+C056,test,data_science,Weak / Low Evidence,1
+C057,test,data_science,Direct Match,1
+C058,test,data_science,Career Transition,1
+C059,dev,data_science,Ambiguous Case,1
+C060,test,data_science,Ambiguous Case,1

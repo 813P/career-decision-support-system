@@ -1,0 +1,322 @@
+[
+  {
+    "candidate_id": "C001",
+    "current_job_title": "Industry Research Associate",
+    "desired_work_directions": [
+      "long-range market and portfolio choices"
+    ],
+    "skills": [
+      "industry research",
+      "scenario planning",
+      "market sizing",
+      "competitive analysis",
+      "financial modelling"
+    ],
+    "experience_narrative": "Tracked regulatory, technology and competitor shifts in online retail, digital payments, and subscription content markets, built alternative demand cases, and briefed leadership on where to place the next investment.",
+    "years_experience": 2
+  },
+  {
+    "candidate_id": "C002",
+    "current_job_title": "Corporate Planning Analyst",
+    "desired_work_directions": [
+      "evaluate new growth spaces",
+      "turn findings into business initiatives"
+    ],
+    "skills": [
+      "market research",
+      "business case development",
+      "scenario analysis",
+      "stakeholder interviews",
+      "executive communication"
+    ],
+    "experience_narrative": "Compared expansion options using customer economics and capability gaps, then translated the preferred option into a first-year action agenda for one business unit.",
+    "years_experience": 3.5
+  },
+  {
+    "candidate_id": "C003",
+    "current_job_title": "Commercial Analyst",
+    "desired_work_directions": [
+      "assess multi-year opportunities and investment choices"
+    ],
+    "skills": [
+      "commercial analysis",
+      "market sizing",
+      "competitive research",
+      "business cases",
+      "presentation"
+    ],
+    "experience_narrative": "Led a pricing and channel review for one product line and added an external scan showing how regulation and substitutes could change the opportunity over the next several planning cycles.",
+    "years_experience": 4
+  },
+  {
+    "candidate_id": "C004",
+    "current_job_title": "Research Coordinator",
+    "desired_work_directions": [
+      "explore how industries may change over time"
+    ],
+    "skills": [
+      "desk research",
+      "Excel",
+      "interview coordination",
+      "documentation"
+    ],
+    "experience_narrative": "Collected news, interview notes and public statistics for senior colleagues; contributions were mainly source summaries and meeting preparation rather than option evaluation.",
+    "years_experience": 1
+  },
+  {
+    "candidate_id": "C013",
+    "current_job_title": "Performance Planning Analyst",
+    "desired_work_directions": [
+      "link goals, forecasts and operating reviews"
+    ],
+    "skills": [
+      "KPI design",
+      "forecasting",
+      "variance analysis",
+      "business reviews",
+      "Excel"
+    ],
+    "experience_narrative": "Redesigned the monthly scorecard, clarified metric owners, and used forecast-to-actual gaps to trigger corrective discussions with regional teams.",
+    "years_experience": 3.5
+  },
+  {
+    "candidate_id": "C014",
+    "current_job_title": "Revenue Operations Analyst",
+    "desired_work_directions": [
+      "improve commercial performance routines",
+      "diagnose business questions"
+    ],
+    "skills": [
+      "funnel analysis",
+      "target tracking",
+      "SQL",
+      "stakeholder management",
+      "commercial analysis"
+    ],
+    "experience_narrative": "Built a weekly funnel review and traced missed targets to conversion changes in two customer cohorts, leading sales and marketing to test different follow-up actions.",
+    "years_experience": 4
+  },
+  {
+    "candidate_id": "C015",
+    "current_job_title": "Reporting Analyst",
+    "desired_work_directions": [
+      "own planning and performance cycles"
+    ],
+    "skills": [
+      "management reporting",
+      "dashboarding",
+      "metric definitions",
+      "SQL",
+      "facilitation"
+    ],
+    "experience_narrative": "Automated recurring revenue reports and began facilitating metric-definition workshops, but has only assisted with target setting and forecast assumptions.",
+    "years_experience": 1
+  },
+  {
+    "candidate_id": "C023",
+    "current_job_title": "Regional Planning Analyst",
+    "desired_work_directions": [
+      "alternate between operating reviews and one-off commercial investigations"
+    ],
+    "skills": [
+      "forecasting",
+      "variance analysis",
+      "commercial diagnosis",
+      "action tracking",
+      "facilitation"
+    ],
+    "experience_narrative": "Aligned regional demand and capacity assumptions for quarterly reviews, while separately tracing a channel shortfall to contract mix and proposing a limited pricing test. The examples support both recurring review ownership and project-based diagnosis.",
+    "years_experience": 3
+  },
+  {
+    "candidate_id": "C025",
+    "current_job_title": "Business Analyst",
+    "desired_work_directions": [
+      "solve high-priority business problems from diagnosis to action"
+    ],
+    "skills": [
+      "problem framing",
+      "SQL",
+      "stakeholder interviews",
+      "commercial analysis",
+      "business cases"
+    ],
+    "experience_narrative": "Framed a merchant retention problem, interviewed frontline teams, analysed behavioural segments, and compared three interventions before recommending a pilot.",
+    "years_experience": 4
+  },
+  {
+    "candidate_id": "C026",
+    "current_job_title": "Growth Operations Analyst",
+    "desired_work_directions": [
+      "work on focused growth questions",
+      "build stronger performance routines"
+    ],
+    "skills": [
+      "growth analysis",
+      "cohort analysis",
+      "metric design",
+      "experimentation",
+      "presentation"
+    ],
+    "experience_narrative": "Investigated a referral decline across markets, separated product and channel effects, and helped owners add the leading indicators to their weekly review.",
+    "years_experience": 1
+  },
+  {
+    "candidate_id": "C028",
+    "current_job_title": "Project Support Specialist",
+    "desired_work_directions": [
+      "contribute to business improvement studies"
+    ],
+    "skills": [
+      "workshop coordination",
+      "documentation",
+      "Excel",
+      "presentation support"
+    ],
+    "experience_narrative": "Arranged workshops, kept decision logs and formatted project updates; independent diagnosis, analysis and recommendation ownership are not yet demonstrated.",
+    "years_experience": 5
+  },
+  {
+    "candidate_id": "C035",
+    "current_job_title": "Strategy Operations Analyst",
+    "desired_work_directions": [
+      "compare growth options and resolve defined operating questions"
+    ],
+    "skills": [
+      "option comparison",
+      "commercial analysis",
+      "problem framing",
+      "implementation planning",
+      "stakeholder interviews"
+    ],
+    "experience_narrative": "Compared two partner-led growth paths using market and capability evidence, then investigated an onboarding bottleneck and set milestones for a controlled process change. Both broader option work and a bounded operating case shaped the recommendation.",
+    "years_experience": 2
+  },
+  {
+    "candidate_id": "C037",
+    "current_job_title": "Product Data Analyst",
+    "desired_work_directions": [
+      "build reusable evidence for product decisions"
+    ],
+    "skills": [
+      "SQL",
+      "metric design",
+      "data modelling",
+      "cohort analysis",
+      "data visualisation"
+    ],
+    "experience_narrative": "Defined activation and retention measures, created a governed analysis table, and used cohort patterns to explain where new-user behaviour changed.",
+    "years_experience": 1
+  },
+  {
+    "candidate_id": "C039",
+    "current_job_title": "Commercial Analyst",
+    "desired_work_directions": [
+      "move from spreadsheet analysis to reusable data products"
+    ],
+    "skills": [
+      "SQL",
+      "Excel",
+      "data validation",
+      "commercial analysis",
+      "requirements gathering"
+    ],
+    "experience_narrative": "Analysed campaign returns in spreadsheets and SQL, documented the calculation logic, and partnered with an engineer to make the dataset refreshable.",
+    "years_experience": 5
+  },
+  {
+    "candidate_id": "C040",
+    "current_job_title": "Reporting Assistant",
+    "desired_work_directions": [
+      "develop stronger analytical reporting skills"
+    ],
+    "skills": [
+      "Excel",
+      "report preparation",
+      "quality checks",
+      "documentation"
+    ],
+    "experience_narrative": "Downloaded standard reports, corrected formatting issues and circulated weekly files; there is little evidence of metric design or independent diagnosis.",
+    "years_experience": 7
+  },
+  {
+    "candidate_id": "C047",
+    "current_job_title": "Analytics Consultant",
+    "desired_work_directions": [
+      "combine governed reporting with experimental evaluation"
+    ],
+    "skills": [
+      "metric governance",
+      "SQL",
+      "dashboard design",
+      "experiment analysis",
+      "model diagnostics"
+    ],
+    "experience_narrative": "Standardised metric logic and built reusable views for several teams, then evaluated a controlled rollout and compared its observed lift with a simple propensity baseline. The portfolio spans dependable reporting and more inferential work without a settled emphasis.",
+    "years_experience": 3.5
+  },
+  {
+    "candidate_id": "C050",
+    "current_job_title": "Experimentation Analyst",
+    "desired_work_directions": [
+      "use experiments and causal methods",
+      "improve product measurement"
+    ],
+    "skills": [
+      "A/B testing",
+      "statistics",
+      "causal inference",
+      "SQL",
+      "product analytics"
+    ],
+    "experience_narrative": "Designed an A/B test for a recommendation change, diagnosed sample-ratio mismatch, and translated heterogeneous effects into follow-up product questions.",
+    "years_experience": 5
+  },
+  {
+    "candidate_id": "C051",
+    "current_job_title": "Product Data Analyst",
+    "desired_work_directions": [
+      "move from descriptive analysis into modelling"
+    ],
+    "skills": [
+      "Python",
+      "SQL",
+      "feature engineering",
+      "predictive modelling",
+      "experiment planning"
+    ],
+    "experience_narrative": "Built behavioural features for an adoption problem, trained a regularised baseline, and evaluated whether lift was stable enough to justify a prospective test.",
+    "years_experience": 7
+  },
+  {
+    "candidate_id": "C052",
+    "current_job_title": "Quantitative Research Assistant",
+    "desired_work_directions": [
+      "gain experience with applied modelling"
+    ],
+    "skills": [
+      "Python",
+      "data cleaning",
+      "descriptive statistics",
+      "documentation"
+    ],
+    "experience_narrative": "Cleaned research files and reproduced summary tables from an existing protocol; examples do not yet show model selection or independent experimental decisions.",
+    "years_experience": 2.5
+  },
+  {
+    "candidate_id": "C059",
+    "current_job_title": "Machine Learning Analyst",
+    "desired_work_directions": [
+      "balance production measurement with predictive decision tools"
+    ],
+    "skills": [
+      "feature engineering",
+      "model evaluation",
+      "metric design",
+      "dashboarding",
+      "decision thresholds"
+    ],
+    "experience_narrative": "Built monitoring views and reconciled outcome definitions before comparing two classification baselines for an operations queue. Most recurring work concerns measurement quality, while the project work extends into model and threshold choices.",
+    "years_experience": 4
+  }
+]

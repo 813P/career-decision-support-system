@@ -1,0 +1,27 @@
+{
+  "dataset_name": "matching-membership-evidence",
+  "status": "frozen",
+  "frozen_at": "2026-08-16",
+  "specification": "matching-experiment-specification",
+  "unique_occupations": 15,
+  "memberships": 18,
+  "role_profiles": 5,
+  "source_files": {
+    "taxonomy/role_profiles.json": "e6c28291d16f5aecb12de6f8389bbdad6b7e7af5efd23bc916de2ca7db48d83e",
+    "taxonomy/role_skill_evidence.json": "b66ec4e997d60c6a7a55e13057d55a3bae1de9107696672345bd88bc5ae7b2d7",
+    "taxonomy/esco_occupations.json": "2e09771ab0c8b364568c92ad30332076369ff6ab59ca007ece8382298f3ec9e6",
+    "config/shared/matching_direction_phrases.json": "6c4d009f594d27d5cce5bafbe5d72ad06352193d4d9644415a1f994ebe1254e7",
+    "config/shared/matching_aliases.json": "0161119015d6f57ef83b67e2c345f939487cc12673124a0e41662bd0a5aec0dc"
+  },
+  "derived_files": {
+    "taxonomy/role_occupation_memberships.json": "ab942b647f6dfef05e024038c30ab2d918b99240df945157732068b274d76bd5"
+  },
+  "prohibited_sources": [
+    "ESCO-optional skills",
+    "excluded skill decisions",
+    "candidate governance metadata"
+  ],
+  "direction_target_status": "frozen",
+  "alias_status": "frozen",
+  "freeze_record": "reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md"
+}

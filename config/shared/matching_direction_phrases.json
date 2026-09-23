@@ -1,0 +1,89 @@
+{
+  "status": "frozen",
+  "frozen_date": "2026-08-10",
+  "source_basis": [
+    "taxonomy/role_profiles.json"
+  ],
+  "role_profiles": [
+    {
+      "role_profile_id": "strategic_analysis",
+      "typical_work_directions": [
+        "group strategy",
+        "business unit strategy",
+        "long-term growth strategy",
+        "market entry strategy",
+        "portfolio and capability strategy",
+        "new business opportunity assessment"
+      ],
+      "natural_career_direction_descriptions": [
+        "work on longer-term business direction and growth choices",
+        "analyse major external changes and compare strategic options",
+        "help a business decide where to invest or build capabilities"
+      ]
+    },
+    {
+      "role_profile_id": "business_performance_goal_management",
+      "typical_work_directions": [
+        "business performance management",
+        "goal setting and performance tracking",
+        "business planning and rolling forecasting",
+        "management reporting and performance diagnosis",
+        "finance business partnering"
+      ],
+      "natural_career_direction_descriptions": [
+        "connect goals, forecasts, performance evidence and corrective action",
+        "support leaders with ongoing business planning and performance reviews",
+        "turn operating results into management decisions and follow-up actions"
+      ]
+    },
+    {
+      "role_profile_id": "business_strategy_focused_analysis",
+      "typical_work_directions": [
+        "business analysis",
+        "focused topic analysis",
+        "commercial analysis",
+        "business case development",
+        "pricing and market analysis",
+        "structured business problem solving"
+      ],
+      "natural_career_direction_descriptions": [
+        "solve a clearly defined business question with structured analysis",
+        "compare commercial options and recommend a practical course of action",
+        "diagnose a focused business problem and build an evidence-based case"
+      ]
+    },
+    {
+      "role_profile_id": "data_analytics",
+      "typical_work_directions": [
+        "business data analysis",
+        "product and operations analytics",
+        "metrics and dashboard analysis",
+        "metric governance",
+        "data validation",
+        "reusable analytical dataset design"
+      ],
+      "natural_career_direction_descriptions": [
+        "use trustworthy business data to measure and diagnose performance",
+        "build reusable metrics and analysis for business decision support",
+        "improve how a business defines, validates and uses analytical evidence"
+      ]
+    },
+    {
+      "role_profile_id": "data_science",
+      "typical_work_directions": [
+        "data science",
+        "machine learning modelling",
+        "experimentation and A/B testing",
+        "causal and quasi-experimental analysis",
+        "prediction and recommendation",
+        "uplift modelling and optimisation",
+        "model monitoring"
+      ],
+      "natural_career_direction_descriptions": [
+        "build and evaluate models that support prediction or decision making",
+        "design experiments and causal analyses to understand intervention effects",
+        "develop recommendation, uplift or optimisation approaches and monitor their performance"
+      ]
+    }
+  ]
+}

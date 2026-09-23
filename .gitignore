@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.cache/
+.codex-tmp/
+dist/
+build/
+*.egg-info/
+node_modules/
+reports/*.log
+reports/*.png
+reports/*.inspect.ndjson
+output/
+outputs/
+work/
+docs/personal materials/
+
+# Extended annotation and v2 inputs are intentionally excluded from the v1 baseline.
+remaining_30_test_candidates_annotation.xlsx
+data/annotation/annotation_remaining_30_test_v1.xlsx
+data/annotation/annotation_test_full_v1.csv
+data/annotation/annotation_all_60_v1.csv
+data/annotation/annotation_extended_v1_manifest.json
+data/annotation/EXTENDED_ANNOTATION_V1.md

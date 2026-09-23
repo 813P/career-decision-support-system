@@ -1,0 +1,120 @@
+{
+  "manifest_name": "Portfolio Human Annotation Sample",
+  "status": "researcher_only_do_not_share_with_annotators",
+  "annotation_unit": "candidate × membership",
+  "selection_seed": "mair-portfolio-annotation-v1",
+  "primary_sample": {
+    "development_candidate_ids": [
+      "C001",
+      "C002",
+      "C003",
+      "C004",
+      "C013",
+      "C014",
+      "C015",
+      "C023",
+      "C025",
+      "C026",
+      "C028",
+      "C035",
+      "C037",
+      "C039",
+      "C040",
+      "C047",
+      "C050",
+      "C051",
+      "C052",
+      "C059"
+    ],
+    "selected_test_candidate_ids": [
+      "C010",
+      "C011",
+      "C019",
+      "C024",
+      "C027",
+      "C029",
+      "C041",
+      "C044",
+      "C054",
+      "C056"
+    ],
+    "candidate_count": 30,
+    "membership_count": 18,
+    "judgement_count": 540,
+    "test_role_balance": {
+      "business_performance_goal_management": 2,
+      "business_strategy_focused_analysis": 2,
+      "data_analytics": 2,
+      "data_science": 2,
+      "strategic_analysis": 2
+    },
+    "test_scenario_balance": {
+      "Adjacent Transfer": 2,
+      "Ambiguous Case": 2,
+      "Career Transition": 2,
+      "Direct Match": 2,
+      "Weak / Low Evidence": 2
+    }
+  },
+  "reliability_sample": {
+    "candidate_ids": [
+      "C003",
+      "C024",
+      "C026",
+      "C041",
+      "C056",
+      "C059"
+    ],
+    "development_candidate_ids": [
+      "C003",
+      "C026",
+      "C059"
+    ],
+    "test_candidate_ids": [
+      "C024",
+      "C041",
+      "C056"
+    ],
+    "candidate_count": 6,
+    "membership_count": 18,
+    "judgement_count": 108,
+    "role_balance": {
+      "business_performance_goal_management": 1,
+      "business_strategy_focused_analysis": 1,
+      "data_analytics": 1,
+      "data_science": 2,
+      "strategic_analysis": 1
+    },
+    "scenario_balance": {
+      "Adjacent Transfer": 1,
+      "Ambiguous Case": 2,
+      "Career Transition": 1,
+      "Direct Match": 1,
+      "Weak / Low Evidence": 1
+    }
+  },
+  "annotator_blinding": "CSV outputs exclude split and all governance fields; model_rank and model_score remain blank.",
+  "manual_input_policy": {
+    "always_required": [
+      "human_relevance"
+    ],
+    "conditionally_required": {
+      "evidence_strength": "Required only for label 1 or when the annotator is uncertain.",
+      "annotation_reason": "Required only for ambiguous or boundary cases; otherwise leave blank."
+    },
+    "prefilled": {
+      "annotation_primary.csv": "annotator_A",
+      "annotation_reliability_sample.csv": "annotator_B"
+    },
+    "annotation_timestamp": "Fill the complete column once after finishing the file, or record one completion timestamp during consolidation."
+  },
+  "source_hashes": {
+    "data/candidates/profiles.json": "6f66cb7d7ff3cf00bd3e9a755018eb17158acde675656362dbb7e742ec595a60",
+    "taxonomy/role_occupation_memberships.json": "ab942b647f6dfef05e024038c30ab2d918b99240df945157732068b274d76bd5",
+    "data/candidates/governance.json": "5d9a6e7d159e1c8f4655d781862e888a25c8b25609fa5910cf3e906dcdc36415"
+  },
+  "output_hashes": {
+    "data/annotation/annotation_primary.csv": "1dd1cca21725d9984201ebd4cb3e9169c7d1229363d3f0121ffb353ce5256139",
+    "data/annotation/annotation_reliability_sample.csv": "9a6d979904d552585f8398a71e778b664cf6ed43c43f669086d01f42312e2468"
+  }
+}

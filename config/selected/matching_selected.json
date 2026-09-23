@@ -1,0 +1,79 @@
+{
+  "version": "matching_selected",
+  "status": "frozen",
+  "frozen_at": "2026-08-22",
+  "selection_provenance": {
+    "split": "development",
+    "candidate_count": 20,
+    "membership_judgement_count": 360,
+    "primary_metric": "candidate-level membership nDCG@3",
+    "metric_leader": "semantic",
+    "selected_under_practical_tie_rule": "tfidf",
+    "practical_tie_rule": "If the nDCG@3 gap is no more than 0.01 and the paired candidate-bootstrap interval includes zero, prefer the simpler predeclared configuration.",
+    "development_report": "reports/matching/development_parameter_selection.json"
+  },
+  "method": "tfidf",
+  "runtime_method": "tfidf",
+  "aggregation": "mean_all",
+  "component_weights": {
+    "background": 0.5,
+    "direction": 0.5
+  },
+  "intermediate_scoring_unit": "candidate_x_membership",
+  "membership_count_per_candidate": 18,
+  "role_profile_label_derivation": "maximum human_relevance among memberships assigned to each Role Profile",
+  "test_scope": {
+    "type": "preselected_stratified_subset",
+    "selection_fixed_before_model_output_inspection": true,
+    "selected_candidate_ids": [
+      "C010",
+      "C011",
+      "C019",
+      "C024",
+      "C027",
+      "C029",
+      "C041",
+      "C044",
+      "C054",
+      "C056"
+    ],
+    "candidate_count": 10,
+    "membership_judgement_count": 180,
+    "full_frozen_test_candidate_count": 40,
+    "scope_statement": "Final reporting must describe this as the preselected stratified 10-candidate test subset, not the complete test split."
+  },
+  "evaluation": {
+    "primary_metric": "candidate-level membership nDCG@3",
+    "supporting_metrics": [
+      "membership nDCG@5",
+      "Top-1 agreement",
+      "MRR for label 2",
+      "coverage",
+      "candidate-level bootstrap confidence intervals",
+      "secondary Role Profile ranking metrics"
+    ],
+    "bootstrap_iterations": 2000,
+    "bootstrap_confidence": 0.95,
+    "single_final_test_run": true,
+    "retuning_after_test": false
+  },
+  "frozen_input_hashes": {
+    "taxonomy/role_profiles.json": "e6c28291d16f5aecb12de6f8389bbdad6b7e7af5efd23bc916de2ca7db48d83e",
+    "taxonomy/role_skill_evidence.json": "b66ec4e997d60c6a7a55e13057d55a3bae1de9107696672345bd88bc5ae7b2d7",
+    "taxonomy/esco_occupations.json": "2e09771ab0c8b364568c92ad30332076369ff6ab59ca007ece8382298f3ec9e6",
+    "config/shared/matching_direction_phrases.json": "6c4d009f594d27d5cce5bafbe5d72ad06352193d4d9644415a1f994ebe1254e7",
+    "config/shared/matching_aliases.json": "0161119015d6f57ef83b67e2c345f939487cc12673124a0e41662bd0a5aec0dc",
+    "taxonomy/role_occupation_memberships.json": "ab942b647f6dfef05e024038c30ab2d918b99240df945157732068b274d76bd5",
+    "taxonomy/manifest.json": "aeeab6de60b63ac9521cbd15a2a08b8719084d408430db3eee0e86e394555c20",
+    "data/candidates/test.json": "a8e117cb661d09f6b9377105774039658f14389f06d8348f073f4df084200a54",
+    "data/annotation/annotation_primary.csv": "eb5e8140038d909a8d96f5b16d488a4667cf63d87d926f3fc71c3493fe7b4d76",
+    "data/annotation/annotation_primary_freeze_manifest.json": "42fb1eec48dfb5b3be312d8a09403b43a5fe34ba85fc324ecf126320b09523a6",
+    "data/annotation/portfolio_annotation_selection_manifest.json": "7d50d2da2a378c5e92de60875fdf536b1b5f87d2d4fcd64b4b3c1505945a4cbd",
+    "reports/matching/development_parameter_selection.json": "65964a1fe64f1a735b79d84c529a6bdf6d797623057e097bebe80eb9e5f47583",
+    "experiments/development_selection/select_parameters.mjs": "29415cf48d68250fc3c80b9d5b1903eb8d694b9ca5ee4e5ef2235df9b72c971d",
+    "experiments/shared/role_profile_experiment.mjs": "a93a3b7bedba4171bcb33cd6d00a6b30155b396a64f71c4a9e86ce17cf9821a6",
+    "experiments/evaluation/run_selected_test_evaluation.mjs": "8bb97bc72ed0e389e347bd679f038c600e6eb702eff828f9c9dc1f640f7c4246"
+  },
+  "metadata_schema_migration": "2026-08-30 candidate metadata normalization only; 2026-09-06 candidate field-name clarification only. Candidate values, matching parameters and evaluation labels are unchanged.",
+  "change_control": "Any matching-input or parameter change requires a new matching version. The frozen test result must not be used to retune this or a replacement configuration."
+}
