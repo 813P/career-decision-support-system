@@ -28,5 +28,13 @@ This log records issues discovered while packaging and replaying v1. Entries rem
 - Stage: publication setup
 - Result: `gh` is not installed or available on `PATH`.
 - Impact: repository creation cannot use GitHub CLI.
-- Planned handling: initialize and commit locally, then create/connect the GitHub repository through an authenticated browser or an explicit remote URL.
-- Status: open until the remote repository is created and pushed.
+- Resolution: initialized and committed locally, created the private repository through the authenticated GitHub web interface, added `origin`, and pushed `main` plus `v1.0-selected-test-10`.
+- Status: resolved; retained for traceability.
+
+## V1-004 — GitHub create page did not redirect after submission
+
+- Stage: publication setup
+- Result: the repository form remained disabled at `Creating repository…` and the expected redirect timed out.
+- Impact: the browser initially gave a false impression that repository creation had failed.
+- Resolution: reloaded the form, confirmed that the repository name already existed in the account, then opened the repository URL directly and verified that it was private and empty before pushing.
+- Status: resolved; retained for traceability.
