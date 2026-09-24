@@ -4,7 +4,9 @@ An explainable prototype for comparing analytical career directions using a pers
 
 This project connects a **working local application** with a completed ranking study. Its inspectable workflow compares a candidate's background and aspirations with occupational evidence, then ranks five analytical career directions with scores, contributors, and evidence prompts.
 
-**Study at a glance:** four ranking approaches; 60 synthetic candidate profiles; 540 researcher relevance judgements; one final evaluation on 10 held-out candidates. **Selected configuration:** TF-IDF, equal background/direction weights, and `mean_all` profile aggregation.
+**Current study at a glance:** four ranking approaches; 60 synthetic candidate profiles; 1,080 researcher relevance judgements; development-only method selection on 20 candidates; full evaluation on 40 held-out candidates. **Selected configuration:** TF-IDF, equal background/direction weights, and `mean_all` profile aggregation.
+
+Versioned studies are kept separate: [`studies/v1`](studies/v1) preserves the original 10-candidate evaluation, while [`studies/v2`](studies/v2) contains the complete from-scratch development selection and 40-candidate test evaluation.
 
 ## The problem and research question
 
@@ -55,9 +57,9 @@ Outputs distinguish **score decomposition**, **membership / aggregation provenan
 
 ## How the study was conducted
 
-The 60 synthetic profiles were AI-drafted and researcher-reviewed: **20 development candidates** and a **40-candidate frozen test pool**. Before model-output inspection, 10 test candidates were preselected for annotation and evaluation; 30 remain an unlabelled reserve.
+The 60 synthetic profiles were AI-drafted and researcher-reviewed: **20 development candidates** and a **40-candidate frozen test pool**. v1 evaluated a preselected 10-candidate test subset. v2 completed annotation for the remaining 30 candidates and reran the versioned workflow without modifying v1.
 
-One annotator assessed all 20 development candidates and the 10 preselected test candidates against all 18 memberships, producing **540 relevance judgements** on a 0–2 scale: **360 development + 180 held-out test labels**. Model outputs and construction metadata were hidden; construction labels never serve as ranking inputs or relevance answers. The same researcher reviewed candidates, defined targets, and supplied labels, so this is not independent external validation.
+One annotator assessed all 60 candidates against all 18 memberships, producing **1,080 relevance judgements** on a 0–2 scale: **360 development + 720 held-out test labels**. Model outputs and construction metadata were hidden; construction labels never serve as ranking inputs or relevance answers. The same researcher reviewed candidates, defined targets, and supplied labels, so this is not independent external validation.
 
 **Figure 2 — How was the ranking system developed and evaluated?**
 
@@ -71,22 +73,21 @@ flowchart TB
     subgraph CANDIDATE[Candidate side]
         S[60 reviewed synthetic candidate profiles] --> D[20 development candidates]
         S --> T[40-candidate frozen test pool]
-        T --> H[10 preselected labelled test candidates]
-        T --> U[30 unlabelled reserve]
+        T --> H[40 labelled test candidates]
     end
     FT --> Q[Candidate x membership ranking / relevance task]
     D --> Q
     H --> Q
-    Q --> L[Researcher annotation: 540 judgements]
+    Q --> L[Researcher annotation: 1,080 judgements]
     L --> DL[360 frozen development labels]
-    L --> TL[180 frozen held-out test labels]
+    L --> TL[720 frozen held-out test labels]
     Q -->|development only| DR[Model rankings: four approaches]
     DR --> MS[Development method selection]
     DL --> MS
     MS --> AS[Development aggregation selection]
     DL --> AS
     AS --> F[Freeze selected configuration]
-    F --> P[Held-out ranking: 10 candidates]
+    F --> P[Held-out ranking: 40 candidates]
     H --> P
     FT --> P
     P --> V[Evaluate membership and profile rankings]
@@ -117,12 +118,12 @@ Protocol, comparisons, and bootstrap details: [Research Design](RESEARCH_DESIGN.
 
 ## Results and what they mean
 
-The frozen configuration was evaluated once on the 10 preselected held-out candidates.
+The v2 configuration was selected using development data only, frozen, and then evaluated on all 40 held-out test candidates. The original 10-candidate v1 result remains separately archived.
 
 | Evaluation level | nDCG@3 | 95% candidate-bootstrap interval | Top-1 agreement |
 |---|---:|---|---:|
-| 18 occupation–profile memberships — primary | 0.6243 | [0.4198, 0.8128] | 0.60 |
-| 5 Role Profiles — secondary | 0.8944 | [0.8141, 0.9593] | 0.80 |
+| 18 occupation–profile memberships — primary | 0.6606 | [0.5655, 0.7533] | 0.725 |
+| 5 Role Profiles — secondary | 0.8981 | [0.8480, 0.9408] | 0.900 |
 
 Top-1 agreement counts a result as correct when its human label equals the highest label for that candidate, including ties.
 
@@ -180,9 +181,10 @@ Optional Semantic and MCP dependencies: `python -m pip install -e ".[semantic,mc
 | Quick project overview | This README |
 | Research design and methodology | [Research Design](RESEARCH_DESIGN.md) |
 | Formulas, runtime, and metric details | [Technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) |
-| Held-out results | [Evaluation report](reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md) |
+| Full 40-candidate held-out results | [v2 evaluation report](studies/v2/reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
+| Original 10-candidate held-out results | [v1 evaluation report](studies/v1/reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md) |
 | Failure cases | [Error analysis](docs/ERROR_ANALYSIS.md) |
 
 The [documentation index](docs/README.md) links to the data card, annotation protocol, repository map, and application materials.
 
-**`matching_selected` is frozen.** Further evaluation, including the 30-candidate reserve, requires a separately versioned protocol; test errors must not be used to retune the completed study.
+**Both study versions are frozen.** `matching_selected` belongs to the immutable v1 archive; `matching_v2_full_test` belongs to the complete v2 run. Test errors must not be used to retune either completed study.

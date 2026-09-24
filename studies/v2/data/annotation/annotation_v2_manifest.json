@@ -1,0 +1,57 @@
+{
+  "manifest_name": "Human Annotation v2 Full Evaluation Freeze",
+  "status": "frozen_for_v2_full_test_evaluation",
+  "frozen_at": "2026-09-24",
+  "annotation_unit": "candidate × membership",
+  "split_policy": "20 development candidates for selection; 40 test candidates for evaluation only; no test-label retuning",
+  "provenance": {
+    "source_manifest": "data/annotation/source_extended_annotation_manifest.json",
+    "source_manifest_status": "derived_ready_for_evaluation",
+    "first_phase": "20 development + 10 preselected test candidates",
+    "second_phase": "remaining 30 test candidates",
+    "original_sources_preserved_outside_v2_snapshot": true
+  },
+  "development": {
+    "candidate_count": 20,
+    "judgement_count": 360
+  },
+  "test": {
+    "candidate_count": 40,
+    "membership_count": 18,
+    "judgement_count": 720,
+    "unique_pairs": 720,
+    "label_distribution": {
+      "0": 428,
+      "1": 169,
+      "2": 123
+    },
+    "missing_label_1_evidence_strength": 0,
+    "invalid_evidence_strength": 0,
+    "model_fields_exposed": 0,
+    "invalid_timestamps": 0
+  },
+  "complete": {
+    "candidate_count": 60,
+    "membership_count": 18,
+    "judgement_count": 1080,
+    "unique_pairs": 1080,
+    "label_distribution": {
+      "0": 614,
+      "1": 279,
+      "2": 187
+    },
+    "missing_label_1_evidence_strength": 0,
+    "invalid_evidence_strength": 0,
+    "model_fields_exposed": 0,
+    "invalid_timestamps": 0
+  },
+  "sha256": {
+    "data/annotation/annotation_all_60.csv": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56",
+    "data/annotation/annotation_test_full.csv": "52b43a28aa156f7bbc2346aa68aa2610bac359808c68567fd86485fd6e45ce84",
+    "data/annotation/source_extended_annotation_manifest.json": "f0cbab758a8c556f29d1c86bd807a1d6a63db4d483c16d45472d8f03cfa6ba3b",
+    "data/candidates/development.json": "a7a7ae15b4754a471d62e07eedaf37b65fd62000b127a4133cfe60924f55cd73",
+    "data/candidates/test.json": "a8e117cb661d09f6b9377105774039658f14389f06d8348f073f4df084200a54",
+    "docs/HUMAN_ANNOTATION_GUIDELINE.md": "733ab1b874879242ec0baafc7b7b116cb69d228243e0412c098a25324a487a91"
+  },
+  "change_control": "Any candidate evidence, label, rationale, evidence strength, membership, matching target, method, parameter, or split change requires a new study version and freeze."
+}

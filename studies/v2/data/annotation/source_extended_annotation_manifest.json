@@ -1,0 +1,84 @@
+{
+  "manifest_name": "Extended Human Annotation v1",
+  "status": "derived_ready_for_evaluation",
+  "created_at": "2026-09-24",
+  "annotation_unit": "candidate × membership",
+  "provenance": {
+    "frozen_primary": "data/annotation/annotation_primary.csv",
+    "remaining_test_source_original": "remaining_30_test_candidates_annotation.xlsx",
+    "remaining_test_source_completed_v1": "data/annotation/annotation_remaining_30_test_v1.xlsx",
+    "frozen_primary_preserved": true,
+    "original_remaining_test_workbook_preserved": true,
+    "completed_remaining_test_source_created_as_new_version": true
+  },
+  "outputs": {
+    "data/annotation/annotation_test_full_v1.csv": {
+      "candidate_count": 40,
+      "membership_count": 18,
+      "judgement_count": 720,
+      "unique_pairs": 720,
+      "label_distribution": {
+        "0": 428,
+        "1": 169,
+        "2": 123
+      },
+      "missing_label_1_evidence_strength": 0,
+      "invalid_evidence_strength": 0,
+      "model_fields_exposed": 0,
+      "metadata_mismatches": 0,
+      "non_english_reasons": 0,
+      "invalid_timestamps": 0
+    },
+    "data/annotation/annotation_all_60_v1.csv": {
+      "candidate_count": 60,
+      "membership_count": 18,
+      "judgement_count": 1080,
+      "unique_pairs": 1080,
+      "label_distribution": {
+        "0": 614,
+        "1": 279,
+        "2": 187
+      },
+      "missing_label_1_evidence_strength": 0,
+      "invalid_evidence_strength": 0,
+      "model_fields_exposed": 0,
+      "metadata_mismatches": 0,
+      "non_english_reasons": 0,
+      "invalid_timestamps": 0
+    }
+  },
+  "evidence_strength_completions": [
+    {
+      "candidate_id": "C006",
+      "role_profile_id": "business_strategy_focused_analysis",
+      "occupation_title": "business valuer",
+      "evidence_strength": "moderate"
+    },
+    {
+      "candidate_id": "C006",
+      "role_profile_id": "business_strategy_focused_analysis",
+      "occupation_title": "business analyst",
+      "evidence_strength": "moderate"
+    },
+    {
+      "candidate_id": "C006",
+      "role_profile_id": "strategic_analysis",
+      "occupation_title": "economic adviser",
+      "evidence_strength": "moderate"
+    },
+    {
+      "candidate_id": "C034",
+      "role_profile_id": "business_performance_goal_management",
+      "occupation_title": "budget analyst",
+      "evidence_strength": "weak"
+    }
+  ],
+  "timestamp_normalization": "Derived CSV files use YYYY-MM-DD; source values are unchanged.",
+  "runner_note": "The existing run_selected_test_evaluation.mjs remains pinned to annotation_primary.csv and the original 10-candidate test scope. Use annotation_test_full_v1.csv only with a separately versioned full-test runner; do not overwrite the frozen one-time test outputs.",
+  "sha256": {
+    "data/annotation/annotation_primary.csv": "eb5e8140038d909a8d96f5b16d488a4667cf63d87d926f3fc71c3493fe7b4d76",
+    "data/annotation/annotation_remaining_30_test_v1.xlsx": "106ed5636f36308338caf4d127e8d12ade08922eea4968d05ec3150f0f582fd1",
+    "data/annotation/annotation_test_full_v1.csv": "52b43a28aa156f7bbc2346aa68aa2610bac359808c68567fd86485fd6e45ce84",
+    "data/annotation/annotation_all_60_v1.csv": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56"
+  }
+}
