@@ -1,0 +1,261 @@
+{
+  "version": "jd_evidence_v1",
+  "status": "experimental",
+  "method": "ordered_phrase_group_coverage",
+  "thresholds": {
+    "primary": 0.65,
+    "supporting": 0.25,
+    "anchor_cap": 0.19
+  },
+  "role_profiles": [
+    {
+      "role_profile_id": "strategic_analysis",
+      "anchor_groups": ["long_horizon", "strategic_options"],
+      "positive_groups": [
+        {
+          "group_id": "long_horizon",
+          "label_en": "Long-horizon direction setting",
+          "label_zh": "长期方向判断",
+          "weight": 2,
+          "phrases": ["long-term strategy", "long term strategy", "long-range planning", "long range planning", "multi-year strategy", "three-to-five-year", "3-5 year", "长期战略", "长期规划", "中长期规划"]
+        },
+        {
+          "group_id": "external_landscape",
+          "label_en": "External and competitive landscape",
+          "label_zh": "外部环境与竞争格局",
+          "weight": 2,
+          "phrases": ["industry trends", "macroeconomic trends", "regulatory trends", "competitive landscape", "technology trends", "external environment", "行业趋势", "宏观趋势", "监管趋势", "竞争格局", "外部环境"]
+        },
+        {
+          "group_id": "strategic_options",
+          "label_en": "Strategic alternatives",
+          "label_zh": "战略选项比较",
+          "weight": 2,
+          "phrases": ["strategic options", "strategic alternatives", "market entry strategy", "portfolio strategy", "capability strategy", "战略选项", "战略方案", "市场进入策略", "业务组合战略"]
+        },
+        {
+          "group_id": "resource_allocation",
+          "label_en": "Resource-allocation implications",
+          "label_zh": "资源配置影响",
+          "weight": 1.5,
+          "phrases": ["resource allocation", "investment priorities", "capital allocation", "资源配置", "投资优先级", "资本配置"]
+        },
+        {
+          "group_id": "market_opportunity",
+          "label_en": "Market and opportunity assessment",
+          "label_zh": "市场与机会评估",
+          "weight": 0.5,
+          "phrases": ["market sizing", "scenario analysis", "new business opportunities", "new market opportunities", "市场规模测算", "情景分析", "新业务机会", "新市场机会"]
+        }
+      ],
+      "counter_groups": [
+        {
+          "group_id": "short_cycle_only",
+          "label_en": "Short-cycle reporting rather than long-horizon strategy",
+          "label_zh": "偏短周期经营监控而非长期战略",
+          "weight": 0.5,
+          "phrases": ["daily reporting", "weekly reporting", "monthly reporting", "日常报表", "周报", "月度报表"]
+        }
+      ]
+    },
+    {
+      "role_profile_id": "business_performance_goal_management",
+      "anchor_groups": ["goal_kpi", "review_cadence", "performance_diagnosis"],
+      "positive_groups": [
+        {
+          "group_id": "goal_kpi",
+          "label_en": "Goals and KPI framework",
+          "label_zh": "目标与 KPI 体系",
+          "weight": 2,
+          "phrases": ["target setting", "goal setting", "goal tracking", "kpi framework", "kpi frameworks", "kpi system", "key metrics", "performance measures", "目标设定", "目标管理", "目标跟踪", "KPI 体系", "KPI 指标", "关键指标"]
+        },
+        {
+          "group_id": "performance_diagnosis",
+          "label_en": "Performance and driver diagnosis",
+          "label_zh": "绩效与驱动因素诊断",
+          "weight": 2,
+          "phrases": ["performance analysis", "performance variance", "variance analysis", "key drivers", "business drivers", "revenue and cost", "revenue, cost", "经营分析", "绩效分析", "偏差分析", "业务驱动因素", "收入成本分析"]
+        },
+        {
+          "group_id": "planning_forecasting",
+          "label_en": "Planning, budgeting, and forecasting",
+          "label_zh": "规划、预算与预测",
+          "weight": 1.5,
+          "phrases": ["business planning", "operating plan", "operating plans", "budgeting", "rolling forecast", "rolling forecasts", "forecasting", "经营计划", "业务规划", "预算", "滚动预测", "经营预测"]
+        },
+        {
+          "group_id": "review_cadence",
+          "label_en": "Recurring performance review",
+          "label_zh": "周期性经营复盘",
+          "weight": 1.5,
+          "phrases": ["business performance review", "business performance reviews", "performance review", "performance reviews", "business review", "business reviews", "management reporting", "recurring reporting", "经营复盘", "经营回顾", "绩效复盘", "周期性报告", "管理报告"]
+        },
+        {
+          "group_id": "action_followup",
+          "label_en": "Corrective-action follow-up",
+          "label_zh": "改善行动跟进",
+          "weight": 1,
+          "phrases": ["corrective action", "corrective actions", "follow up actions", "follow-up actions", "track the impact", "track impact", "改善行动", "纠偏行动", "跟进行动", "追踪效果"]
+        }
+      ],
+      "counter_groups": [
+        {
+          "group_id": "supply_forecast_only",
+          "label_en": "Supply or inventory forecasting",
+          "label_zh": "供应链或库存预测",
+          "weight": 1,
+          "phrases": ["demand forecasting", "inventory forecasting", "production scheduling", "supply planning", "需求预测", "库存预测", "生产排程", "供应计划"]
+        }
+      ]
+    },
+    {
+      "role_profile_id": "business_strategy_focused_analysis",
+      "anchor_groups": ["ad_hoc", "problem_framing", "recommendations"],
+      "positive_groups": [
+        {
+          "group_id": "ad_hoc",
+          "label_en": "Ad hoc or focused analysis",
+          "label_zh": "专项或临时分析",
+          "weight": 2,
+          "phrases": ["ad hoc analysis", "ad-hoc analysis", "thematic analysis", "thematic analyses", "focused analysis", "special analysis", "专项分析", "专题分析", "临时分析"]
+        },
+        {
+          "group_id": "problem_framing",
+          "label_en": "Structured business problem solving",
+          "label_zh": "结构化业务问题拆解",
+          "weight": 2,
+          "phrases": ["structured problem solving", "structured problem-solving", "break down complex business questions", "business problem framing", "analytical hypotheses", "issue framework", "结构化问题解决", "业务问题拆解", "分析假设", "问题框架"]
+        },
+        {
+          "group_id": "growth_ops_diagnosis",
+          "label_en": "Growth or operating diagnosis",
+          "label_zh": "增长或运营诊断",
+          "weight": 1.5,
+          "phrases": ["growth opportunities", "operational issues", "business issues", "improvement opportunities", "customer segmentation", "merchant segmentation", "增长机会", "运营问题", "业务问题", "改善机会", "客户分层", "商家分层"]
+        },
+        {
+          "group_id": "options_business_case",
+          "label_en": "Options and business cases",
+          "label_zh": "方案比较与商业案例",
+          "weight": 1,
+          "phrases": ["business case", "business cases", "compare alternatives", "option comparison", "cost benefit", "cost-benefit", "商业案例", "方案比较", "备选方案", "成本收益"]
+        },
+        {
+          "group_id": "recommendations",
+          "label_en": "Actionable recommendations",
+          "label_zh": "可执行建议",
+          "weight": 1,
+          "phrases": ["actionable recommendations", "business recommendations", "recommend a practical", "data-driven recommendations", "可执行建议", "业务建议", "改善建议", "数据驱动建议"]
+        },
+        {
+          "group_id": "cross_functional",
+          "label_en": "Cross-functional decision support",
+          "label_zh": "跨部门决策支持",
+          "weight": 0.5,
+          "phrases": ["cross-functional collaboration", "cross functional collaboration", "cross-functional teams", "partner with operations", "partner with commercial", "跨部门协作", "跨职能协作", "协同业务团队"]
+        }
+      ],
+      "counter_groups": []
+    },
+    {
+      "role_profile_id": "data_analytics",
+      "anchor_groups": ["data_query_prep", "metric_system", "descriptive_diagnosis"],
+      "primary_anchor_groups": ["role_identity", "reusable_data_assets"],
+      "positive_groups": [
+        {
+          "group_id": "role_identity",
+          "label_en": "Analytics role identity",
+          "label_zh": "数据分析岗位定位",
+          "weight": 0.5,
+          "phrases": ["data analyst", "analytics analyst", "product analyst", "operations analyst", "analytics role", "analytics team", "数据分析师", "数据分析岗位", "产品分析师", "运营分析师", "分析团队"]
+        },
+        {
+          "group_id": "data_query_prep",
+          "label_en": "Data querying and preparation",
+          "label_zh": "数据查询与准备",
+          "weight": 2,
+          "phrases": ["sql", "query data", "extract data", "clean data", "data cleaning", "data cleansing", "data validation", "reconcile data", "数据查询", "数据提取", "数据清洗", "数据验证", "数据核对"]
+        },
+        {
+          "group_id": "metric_system",
+          "label_en": "Metric definitions and systems",
+          "label_zh": "指标口径与体系",
+          "weight": 1.5,
+          "phrases": ["metric system", "metric systems", "metric definition", "metric definitions", "calculation standards", "kpi framework", "kpi frameworks", "指标体系", "指标口径", "计算标准", "KPI 体系"]
+        },
+        {
+          "group_id": "dashboard_reporting",
+          "label_en": "Dashboards and visualisation",
+          "label_zh": "仪表盘与可视化",
+          "weight": 1.5,
+          "phrases": ["dashboard", "dashboards", "data visualization", "data visualisation", "tableau", "power bi", "business intelligence", "仪表盘", "数据可视化", "商业智能"]
+        },
+        {
+          "group_id": "descriptive_diagnosis",
+          "label_en": "Descriptive and diagnostic analysis",
+          "label_zh": "描述性与诊断性分析",
+          "weight": 2,
+          "phrases": ["descriptive analysis", "diagnostic analysis", "multi-dimensional data", "multidimensional data", "data quality analysis", "root cause analysis", "描述性分析", "诊断性分析", "多维数据", "数据质量分析", "根因分析"]
+        },
+        {
+          "group_id": "reusable_data_assets",
+          "label_en": "Reusable analytical data assets",
+          "label_zh": "可复用分析数据资产",
+          "weight": 1,
+          "phrases": ["analytical dataset", "analytical datasets", "data mart", "data marts", "semantic layer", "data dictionary", "reusable dataset", "分析数据集", "数据集市", "语义层", "数据字典", "可复用数据集"]
+        }
+      ],
+      "counter_groups": []
+    },
+    {
+      "role_profile_id": "data_science",
+      "anchor_groups": ["model_building", "experimentation"],
+      "positive_groups": [
+        {
+          "group_id": "model_building",
+          "label_en": "Model construction",
+          "label_zh": "模型构建",
+          "weight": 3,
+          "phrases": ["data science", "machine learning", "predictive model", "predictive models", "statistical model", "statistical models", "feature engineering", "model selection", "classification model", "机器学习", "预测模型", "统计模型", "特征工程", "模型选择", "分类模型"]
+        },
+        {
+          "group_id": "experimentation",
+          "label_en": "Experiment design and analysis",
+          "label_zh": "实验设计与分析",
+          "weight": 2,
+          "phrases": ["a/b test", "a/b tests", "a/b testing", "experiment design", "randomized experiment", "randomised experiment", "multivariate experiment", "实验设计", "随机实验", "多变量实验", "A/B 测试"]
+        },
+        {
+          "group_id": "causal_methods",
+          "label_en": "Causal methods",
+          "label_zh": "因果方法",
+          "weight": 1,
+          "phrases": ["causal inference", "causal analysis", "quasi-experimental", "quasi experimental", "uplift modeling", "uplift modelling", "因果推断", "因果分析", "准实验", "增益建模"]
+        },
+        {
+          "group_id": "optimisation_recommendation",
+          "label_en": "Recommendation or optimisation",
+          "label_zh": "推荐或优化建模",
+          "weight": 1,
+          "phrases": ["recommendation model", "recommendation models", "recommender system", "optimization model", "optimisation model", "operations research model", "推荐模型", "推荐系统", "优化模型", "运筹优化模型"]
+        },
+        {
+          "group_id": "model_evaluation",
+          "label_en": "Model evaluation and monitoring",
+          "label_zh": "模型评估与监控",
+          "weight": 1,
+          "phrases": ["model evaluation", "model validation", "model monitoring", "baseline comparison", "model calibration", "模型评估", "模型验证", "模型监控", "基线比较", "模型校准"]
+        }
+      ],
+      "counter_groups": [
+        {
+          "group_id": "reporting_only",
+          "label_en": "Reporting or dashboards without model evidence",
+          "label_zh": "仅有报表或仪表盘，缺少模型证据",
+          "weight": 0.5,
+          "phrases": ["recurring reporting", "management reporting", "dashboard", "dashboards", "周期性报告", "管理报告", "仪表盘"]
+        }
+      ]
+    }
+  ]
+}
