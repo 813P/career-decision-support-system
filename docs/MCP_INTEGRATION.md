@@ -1,6 +1,6 @@
-# MAIR MCP Integration
+# Model Context Protocol Integration
 
-MAIR now exposes the same tested taxonomy and matching logic through a real Model Context Protocol server. The web app and MCP tools call the same Python application functions, so their results do not drift.
+The project exposes the same tested taxonomy and matching logic through a Model Context Protocol server. The web app and MCP tools call the same Python application functions, so their results do not drift.
 
 ## Install and run
 
