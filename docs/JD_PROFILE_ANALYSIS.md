@@ -52,7 +52,7 @@ both channels
 ```
 
 The candidate path uses `src/career_matcher/role_profiles.py`, the frozen matching contract
-in `config/selected/matching_v2.json`, and the evidence in
+in `config/selected/tfidf.json`, and the evidence in
 `taxonomy/role_occupation_memberships.json`. Its reported evaluation applies only to this
 path.
 

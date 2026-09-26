@@ -4,7 +4,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
-const configPath = join(ROOT, "config", "selected", "matching_v2.json");
+const configPath = join(ROOT, "config", "selected", "tfidf.json");
 const freezePath = join(ROOT, "reports", "freezes", "MATCHING_V2_FREEZE.md");
 const selectionPath = join(ROOT, "reports", "matching", "development_parameter_selection.json");
 const rel = (path) => relative(ROOT, path).replaceAll("\\", "/");
@@ -92,7 +92,7 @@ const config = {
 await mkdir(dirname(configPath), { recursive: true });
 await writeFile(configPath, `${JSON.stringify(config, null, 2)}\n`, "utf8");
 const configHash = await sha256(configPath);
-const freeze = `# Matching v2 Freeze\n\n**Status:** Frozen  \n**Date:** 2026-09-24  \n**Configuration:** \`tfidf + mean_all\` with 0.5 background / 0.5 direction weights  \n**Development scope:** 20 candidates × 18 memberships = 360 judgements  \n**Test scope:** 40 candidates × 18 memberships = 720 judgements  \n\n## Configuration checksum\n\n- \`config/selected/matching_v2.json\`: \`${configHash}\`\n\n## Guardrails\n\n- Development labels determine the method and aggregation.\n- All 40 test labels are evaluation-only.\n- No method, target, weight, aggregation, or candidate evidence is changed after the freeze.\n- v1 files and results remain unchanged.\n`;
+const freeze = `# Matching v2 Freeze\n\n**Status:** Frozen  \n**Date:** 2026-09-24  \n**Configuration:** \`tfidf + mean_all\` with 0.5 background / 0.5 direction weights  \n**Development scope:** 20 candidates × 18 memberships = 360 judgements  \n**Test scope:** 40 candidates × 18 memberships = 720 judgements  \n\n## Configuration checksum\n\n- \`config/selected/tfidf.json\`: \`${configHash}\`\n\n## Guardrails\n\n- Development labels determine the method and aggregation.\n- All 40 test labels are evaluation-only.\n- No method, target, weight, aggregation, or candidate evidence is changed after the freeze.\n- v1 files and results remain unchanged.\n`;
 await mkdir(dirname(freezePath), { recursive: true });
 await writeFile(freezePath, freeze, "utf8");
 process.stdout.write(`MATCHING_V2_FROZEN config_sha256=${configHash} method=tfidf aggregation=mean_all test_candidates=40\n`);
