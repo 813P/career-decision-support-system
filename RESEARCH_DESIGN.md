@@ -202,7 +202,7 @@ The configuration was evaluated on all forty held-out candidates with 720 member
 | Pairwise ordering agreement | 0.7814 [0.7317, 0.8269] | 0.8534 [0.7994, 0.9018] |
 | Coverage@3 | 0.9444 | 1.0000 |
 
-Membership Coverage@5 was 1.0000. The [test report](reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) contains the complete results and candidate identifiers.
+Membership Coverage@5 was 1.0000. The [test report](reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) contains the complete results and candidate identifiers.
 
 Profile ordering aligned more closely with reference labels on these measures, but target counts and label construction differ between levels. The nDCG difference therefore does not isolate a causal benefit of aggregation.
 
@@ -271,5 +271,5 @@ Extensions require a separate study version and preserve the selected TF-IDF ful
 
 - [Technical appendix: equations, runtime, and evaluation definitions](docs/RESEARCH_TECHNICAL_APPENDIX.md)
 - [Candidate freeze](reports/freezes/CANDIDATE_DATASET_FREEZE.md), [membership evidence freeze](reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md), and [annotation freeze](reports/freezes/HUMAN_ANNOTATION_FREEZE.md)
-- [Selected configuration freeze](reports/freezes/SELECTED_TFIDF_CONFIGURATION_FREEZE.md) and [machine-readable evaluation](reports/evaluation/matching_v2_full_test_evaluation.json)
+- [Selected configuration freeze](reports/freezes/TFIDF_CONFIGURATION_FREEZE.md) and [machine-readable evaluation](reports/evaluation/tfidf_full_test_evaluation.json)
 - [Documentation guide](docs/README.md)

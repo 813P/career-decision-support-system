@@ -10,7 +10,7 @@ data/annotation/*.csv text eol=crlf
 *.yaml text eol=lf
 *.yml text eol=lf
 
-# Frozen v2 inputs are byte-hashed; preserve their recorded bytes exactly.
+# Frozen study inputs are byte-hashed; preserve their recorded bytes exactly.
 config/experiments/semantic_runtime.json -text
 config/selected/tfidf.json -text
 config/shared/*.json -text
@@ -23,7 +23,7 @@ experiments/development_selection/*.py -text
 experiments/evaluation/run_full_test_evaluation.mjs -text
 experiments/shared/role_profile_experiment.mjs -text
 reports/matching/*.json -text
-reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md -text
-reports/evaluation/matching_v2_full_test_evaluation.json -text
-results/matching_v2_full_test_scores.csv -text
+reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md -text
+reports/evaluation/tfidf_full_test_evaluation.json -text
+results/tfidf_full_test_scores.csv -text
 taxonomy/*.json -text

@@ -1,7 +1,7 @@
 {
   "manifest_name": "Selected TF-IDF complete test run",
   "status": "full_test_completed_no_retuning",
-  "specification_sha256": "bfd11edb5208b8c3bfa80028af9fd9cf6f1c7f3d23f34a6e513219a81347df4f",
+  "specification_sha256": "35d3b89dbe4724a88d2b3f89ee83faee293f7e69a96f59843afa2f32126c3d33",
   "test_candidate_ids": [
     "C005",
     "C006",
@@ -47,10 +47,10 @@
   "test_candidate_count": 40,
   "judgement_count": 720,
   "outputs": {
-    "results/matching_v2_full_test_scores.csv": "2a521549bd22340aee3b6a5fc1109a0116acf38a4acf9810835aa9b5d9764321",
-    "reports/matching/matching_v2_full_test_rankings.json": "223582800fe502303a194a84f03fcfb01ab0c2f854c700f5041871cea9d31531",
-    "reports/evaluation/matching_v2_full_test_evaluation.json": "ac07107a3b6df7a974ebd1c6031998f3707aaeec7212c926a22bd48dddb31364",
-    "reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md": "4ef12e6acd5931093797f88973ee70731d11f26c722396dc19790323dc49bedc"
+    "results/tfidf_full_test_scores.csv": "2a521549bd22340aee3b6a5fc1109a0116acf38a4acf9810835aa9b5d9764321",
+    "reports/matching/tfidf_full_test_rankings.json": "223582800fe502303a194a84f03fcfb01ab0c2f854c700f5041871cea9d31531",
+    "reports/evaluation/tfidf_full_test_evaluation.json": "ac07107a3b6df7a974ebd1c6031998f3707aaeec7212c926a22bd48dddb31364",
+    "reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md": "4ef12e6acd5931093797f88973ee70731d11f26c722396dc19790323dc49bedc"
   },
   "rerun_policy": "The runner refuses to overwrite these outputs. Any changed input, code, or result requires a new study version."
 }

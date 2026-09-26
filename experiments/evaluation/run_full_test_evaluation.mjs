@@ -6,13 +6,13 @@ import { RoleProfileExperimentMatcher, buildMembershipEvidence, evaluateRankings
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const configPath = join(ROOT, "config", "selected", "tfidf.json");
-const freezePath = join(ROOT, "reports", "freezes", "SELECTED_TFIDF_CONFIGURATION_FREEZE.md");
+const freezePath = join(ROOT, "reports", "freezes", "TFIDF_CONFIGURATION_FREEZE.md");
 const outputPaths = {
-  scores: join(ROOT, "results", "matching_v2_full_test_scores.csv"),
-  rankings: join(ROOT, "reports", "matching", "matching_v2_full_test_rankings.json"),
-  evaluation: join(ROOT, "reports", "evaluation", "matching_v2_full_test_evaluation.json"),
-  summary: join(ROOT, "reports", "evaluation", "MATCHING_V2_FULL_TEST_EVALUATION.md"),
-  manifest: join(ROOT, "reports", "evaluation", "matching_v2_full_test_run_manifest.json"),
+  scores: join(ROOT, "results", "tfidf_full_test_scores.csv"),
+  rankings: join(ROOT, "reports", "matching", "tfidf_full_test_rankings.json"),
+  evaluation: join(ROOT, "reports", "evaluation", "tfidf_full_test_evaluation.json"),
+  summary: join(ROOT, "reports", "evaluation", "TFIDF_FULL_TEST_EVALUATION.md"),
+  manifest: join(ROOT, "reports", "evaluation", "tfidf_full_test_run_manifest.json"),
 };
 const json = async (path) => JSON.parse(await readFile(path, "utf8"));
 const sha256 = async (path) => createHash("sha256").update(await readFile(path)).digest("hex");
