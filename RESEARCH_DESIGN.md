@@ -148,7 +148,7 @@ For secondary evaluation, a profile's human label is the maximum among its membe
 
 ## 6. Experimental protocol and evaluation
 
-All method and aggregation selection uses the twenty development candidates. Candidate content, occupational evidence, labels, and configuration were frozen before evaluating on all forty held-out candidates. Test results were not used to revise `matching_v2`. The [protocol](docs/EXPERIMENT_PROTOCOL.md) and [configuration](config/selected/matching_v2.json) preserve the procedure and provenance.
+All method and aggregation selection uses the twenty development candidates. Candidate content, occupational evidence, labels, and configuration were frozen before evaluating on all forty held-out candidates. Test results were not used to revise `matching_v2`. The [protocol](docs/EXPERIMENT_PROTOCOL.md) and [selected TF-IDF configuration](config/selected/tfidf.json) preserve the procedure and provenance.
 
 The primary metric is membership nDCG@3, calculated per candidate and then averaged. It rewards placing higher relevance labels near the top, with gains of 0, 1, and 3 for labels 0, 1, and 2. It is a ranking-quality measure, not a percentage of correct recommendations. The five-profile ranking is evaluated separately.
 

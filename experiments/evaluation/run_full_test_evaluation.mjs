@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { RoleProfileExperimentMatcher, buildMembershipEvidence, evaluateRankings } from "../shared/role_profile_experiment.mjs";
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
-const configPath = join(ROOT, "config", "selected", "matching_v2.json");
+const configPath = join(ROOT, "config", "selected", "tfidf.json");
 const freezePath = join(ROOT, "reports", "freezes", "MATCHING_V2_FREEZE.md");
 const outputPaths = {
   scores: join(ROOT, "results", "matching_v2_full_test_scores.csv"),

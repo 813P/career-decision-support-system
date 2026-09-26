@@ -12,7 +12,7 @@ data/annotation/*.csv text eol=crlf
 
 # Frozen v2 inputs are byte-hashed; preserve their recorded bytes exactly.
 config/experiments/semantic_runtime.json -text
-config/selected/matching_v2.json -text
+config/selected/tfidf.json -text
 config/shared/*.json -text
 data/annotation/*.csv -text
 data/annotation/*.json -text

@@ -10,7 +10,7 @@ const sha256 = async (path) => createHash("sha256").update(await readFile(path))
 const annotationManifest = await json(join(ROOT, "data", "annotation", "annotation_v2_manifest.json"));
 if (annotationManifest.status !== "frozen_for_v2_full_test_evaluation" || annotationManifest.complete?.judgement_count !== 1080 || annotationManifest.test?.judgement_count !== 720) throw new Error("V2_VALIDATION_FAILED: annotation manifest scope");
 for (const [path, expected] of Object.entries(annotationManifest.sha256)) if (await sha256(join(ROOT, path)) !== expected) throw new Error(`V2_VALIDATION_FAILED: annotation input hash ${path}`);
-const configPath = join(ROOT, "config", "selected", "matching_v2.json");
+const configPath = join(ROOT, "config", "selected", "tfidf.json");
 const config = await json(configPath);
 if (config.status !== "frozen" || config.test_scope?.candidate_count !== 40 || config.method !== "tfidf" || config.aggregation !== "mean_all") throw new Error("V2_VALIDATION_FAILED: frozen configuration");
 for (const [path, expected] of Object.entries(config.frozen_input_hashes)) if (await sha256(join(ROOT, path)) !== expected) throw new Error(`V2_VALIDATION_FAILED: frozen matching input ${path}`);

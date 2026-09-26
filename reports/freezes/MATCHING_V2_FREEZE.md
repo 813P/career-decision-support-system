@@ -8,7 +8,9 @@
 
 ## Configuration checksum
 
-- `config/selected/matching_v2.json`: `3b4ecc949f88fcc164d9033b19765756ce72192aef6f3c89dce90fe47865c067`
+- `config/selected/tfidf.json`: `2eb1cd051ee9fff2a7ffd20b872d8fc82e644f7007e73357a38402a8ceb95fb1`
+
+**Submission-path amendment, 2026-09-26:** The selected configuration was renamed from `matching_v2.json` to `tfidf.json`, and runtime references plus the evaluation-code checksum were updated accordingly. The selected method, aggregation, weights, inputs, rankings, metrics, and test outputs did not change.
 
 ## Guardrails
 

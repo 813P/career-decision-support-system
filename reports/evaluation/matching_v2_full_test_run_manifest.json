@@ -1,7 +1,7 @@
 {
   "manifest_name": "Matching v2 complete test run",
   "status": "v2_full_test_completed_no_retuning",
-  "specification_sha256": "3b4ecc949f88fcc164d9033b19765756ce72192aef6f3c89dce90fe47865c067",
+  "specification_sha256": "2eb1cd051ee9fff2a7ffd20b872d8fc82e644f7007e73357a38402a8ceb95fb1",
   "test_candidate_ids": [
     "C005",
     "C006",

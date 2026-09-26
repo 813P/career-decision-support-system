@@ -157,7 +157,7 @@ The frozen configuration and manifests retain exact versions, hashes, bootstrap 
 
 | Purpose | Record |
 |---|---|
-| Selected configuration and hashes | [matching_v2.json](../config/selected/matching_v2.json) |
+| Selected configuration and hashes | [tfidf.json](../config/selected/tfidf.json) |
 | Development comparison | [Selection report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) |
 | Final evaluation | [Full-test report](../reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
 | Membership evidence | [Evidence freeze](../reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md) |
