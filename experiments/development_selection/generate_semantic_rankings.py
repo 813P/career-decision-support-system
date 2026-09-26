@@ -1,4 +1,4 @@
-"""Development-only Semantic dry run over 18 occupation–Role Profile memberships."""
+"""Generate development-only Semantic rankings over 18 occupation–Role Profile memberships."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ from sentence_transformers import SentenceTransformer
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_OUTPUT = ROOT / "reports" / "development_semantic_dry_run.json"
+DEFAULT_OUTPUT = ROOT / "reports" / "development_semantic_rankings.json"
 ALLOWED_AGGREGATIONS = {"max", "mean_top_2", "mean_all"}
 
 
@@ -202,7 +202,7 @@ def main() -> None:
         })
 
     output = {
-        "report_name": "Development Semantic Membership Dry Run",
+        "report_name": "Development Semantic Membership Rankings",
         "report_version": "0.1-draft",
         "status": "engineering_only_unlabelled",
         "split": "dev",
@@ -244,7 +244,7 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
-        "ROLE_PROFILE_SEMANTIC_DRY_RUN_OK "
+        "DEVELOPMENT_SEMANTIC_RANKINGS_GENERATED "
         f"candidates={len(results)} memberships={len(memberships)} aggregation={args.aggregation} "
         f"offline={str(args.offline).lower()} labels_used=false test_rankings=false"
     )

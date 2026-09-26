@@ -36,14 +36,14 @@ function parseCsv(text) {
       record = []; field = "";
     } else field += character;
   }
-  if (quoted) throw new Error("V2_TEST_BLOCKED: unterminated quoted CSV field");
+  if (quoted) throw new Error("FULL_TEST_BLOCKED: unterminated quoted CSV field");
   if (field || record.length) {
     record.push(field.replace(/\r$/, ""));
     if (record.some((value) => value !== "")) records.push(record);
   }
   const headers = records[0] ?? [];
   return records.slice(1).map((values, index) => {
-    if (values.length !== headers.length) throw new Error(`V2_TEST_BLOCKED: malformed annotation row ${index + 2}`);
+    if (values.length !== headers.length) throw new Error(`FULL_TEST_BLOCKED: malformed annotation row ${index + 2}`);
     return Object.fromEntries(headers.map((header, column) => [header, values[column]]));
   });
 }
@@ -58,16 +58,16 @@ function labelsForCandidates(rows, candidateIds) {
   for (const row of rows) {
     if (!expected.has(row.candidate_id)) continue;
     const label = Number(row.human_relevance);
-    if (![0, 1, 2].includes(label)) throw new Error(`V2_TEST_BLOCKED: invalid label ${row.candidate_id}/${row.membership_id}`);
+    if (![0, 1, 2].includes(label)) throw new Error(`FULL_TEST_BLOCKED: invalid label ${row.candidate_id}/${row.membership_id}`);
     labels[row.candidate_id] ??= {};
-    if (row.membership_id in labels[row.candidate_id]) throw new Error(`V2_TEST_BLOCKED: duplicate label ${row.candidate_id}/${row.membership_id}`);
+    if (row.membership_id in labels[row.candidate_id]) throw new Error(`FULL_TEST_BLOCKED: duplicate label ${row.candidate_id}/${row.membership_id}`);
     labels[row.candidate_id][row.membership_id] = label;
     const previous = roleByMembership.get(row.membership_id);
-    if (previous && previous !== row.role_profile_id) throw new Error(`V2_TEST_BLOCKED: inconsistent role for ${row.membership_id}`);
+    if (previous && previous !== row.role_profile_id) throw new Error(`FULL_TEST_BLOCKED: inconsistent role for ${row.membership_id}`);
     roleByMembership.set(row.membership_id, row.role_profile_id);
   }
-  if (Object.keys(labels).length !== candidateIds.length || roleByMembership.size !== 18) throw new Error("V2_TEST_BLOCKED: annotation matrix mismatch");
-  for (const candidateId of candidateIds) if (Object.keys(labels[candidateId] ?? {}).length !== 18) throw new Error(`V2_TEST_BLOCKED: ${candidateId} does not have 18 labels`);
+  if (Object.keys(labels).length !== candidateIds.length || roleByMembership.size !== 18) throw new Error("FULL_TEST_BLOCKED: annotation matrix mismatch");
+  for (const candidateId of candidateIds) if (Object.keys(labels[candidateId] ?? {}).length !== 18) throw new Error(`FULL_TEST_BLOCKED: ${candidateId} does not have 18 labels`);
   return { labels, roleByMembership };
 }
 
@@ -78,7 +78,7 @@ function roleLabels(labels, roleByMembership) {
       const roleId = roleByMembership.get(membershipId);
       grouped.set(roleId, Math.max(grouped.get(roleId) ?? 0, label));
     }
-    if (grouped.size !== 5) throw new Error(`V2_TEST_BLOCKED: ${candidateId} does not map to five Role Profiles`);
+    if (grouped.size !== 5) throw new Error(`FULL_TEST_BLOCKED: ${candidateId} does not map to five Role Profiles`);
     return [candidateId, Object.fromEntries(grouped)];
   }));
 }
@@ -108,7 +108,7 @@ function format(value) {
 }
 
 for (const path of Object.values(outputPaths)) {
-  try { await access(path); throw new Error(`V2_TEST_ALREADY_EXISTS: refusing to overwrite ${rel(path)}`); }
+  try { await access(path); throw new Error(`FULL_TEST_ALREADY_EXISTS: refusing to overwrite ${rel(path)}`); }
   catch (error) { if (error?.code !== "ENOENT") throw error; }
 }
 const config = await json(configPath);
@@ -116,13 +116,13 @@ if (config.status !== "frozen" || config.study_id !== "tfidf_full_test_evaluatio
 if (config.method !== "tfidf" || config.aggregation !== "mean_all" || config.component_weights?.background !== 0.5 || config.component_weights?.direction !== 0.5) throw new Error("FULL_TEST_BLOCKED: approved parameters changed");
 const configHash = await sha256(configPath);
 const freezeText = await readFile(freezePath, "utf8");
-if (!/Status:\*\* Frozen/i.test(freezeText) || !freezeText.includes(configHash)) throw new Error("V2_TEST_BLOCKED: freeze record does not pin the configuration");
+if (!/Status:\*\* Frozen/i.test(freezeText) || !freezeText.includes(configHash)) throw new Error("FULL_TEST_BLOCKED: freeze record does not pin the configuration");
 for (const [path, expected] of Object.entries(config.frozen_input_hashes)) {
-  if (await sha256(join(ROOT, path)) !== expected) throw new Error(`V2_TEST_BLOCKED: frozen input changed ${path}`);
+  if (await sha256(join(ROOT, path)) !== expected) throw new Error(`FULL_TEST_BLOCKED: frozen input changed ${path}`);
 }
 const candidates = (await json(join(ROOT, "data", "candidates", "test.json"))).sort((a, b) => a.candidate_id.localeCompare(b.candidate_id));
 const candidateIds = candidates.map((row) => row.candidate_id);
-if (JSON.stringify(candidateIds) !== JSON.stringify(config.test_scope.candidate_ids) || candidateIds.length !== 40) throw new Error("V2_TEST_BLOCKED: full test candidate scope changed");
+if (JSON.stringify(candidateIds) !== JSON.stringify(config.test_scope.candidate_ids) || candidateIds.length !== 40) throw new Error("FULL_TEST_BLOCKED: full test candidate scope changed");
 const memberships = buildMembershipEvidence(
   await json(join(ROOT, "taxonomy", "role_profiles.json")),
   await json(join(ROOT, "taxonomy", "role_skill_evidence.json")),
@@ -143,7 +143,7 @@ for (const run of runs) {
     direction_score: membership.direction_score,
     final_score: membership.score,
   }))).sort((left, right) => right.final_score - left.final_score || left.membership_id.localeCompare(right.membership_id));
-  if (flattened.length !== 18 || new Set(flattened.map((row) => row.membership_id)).size !== 18) throw new Error(`V2_TEST_BLOCKED: incomplete ranking ${run.candidate_id}`);
+  if (flattened.length !== 18 || new Set(flattened.map((row) => row.membership_id)).size !== 18) throw new Error(`FULL_TEST_BLOCKED: incomplete ranking ${run.candidate_id}`);
   flattened.forEach((row, index) => scoreRows.push({ ...row, rank: index + 1 }));
   membershipRankings[run.candidate_id] = flattened.map((row) => row.membership_id);
   roleRankings[run.candidate_id] = run.rankings.map((role) => role.role_profile_id);

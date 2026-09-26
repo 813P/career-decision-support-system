@@ -7,8 +7,8 @@ const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const args = Object.fromEntries(process.argv.slice(2).map((item) => item.split("=", 2)));
 const method = args["--method"] ?? "structured";
 const aggregation = args["--aggregation"] ?? "mean_top_2";
-const output = args["--output"] ?? join(ROOT, "reports", `development_${method}_dry_run.json`);
-if (!["structured", "tfidf"].includes(method)) throw new Error("This Node runner supports structured/tfidf; use experiments/development_selection/run_semantic_dry_run.py for the pinned Semantic pipeline");
+const output = args["--output"] ?? join(ROOT, "reports", `development_${method}_rankings.json`);
+if (!["structured", "tfidf"].includes(method)) throw new Error("This Node runner supports structured/tfidf; use experiments/development_selection/generate_semantic_rankings.py for the pinned Semantic pipeline");
 const json = async (path) => JSON.parse(await readFile(path, "utf8"));
 const memberships = buildMembershipEvidence(
   await json(join(ROOT, "taxonomy", "role_profiles.json")),
@@ -25,4 +25,4 @@ const rows = candidates.map((candidate) => ({
 }));
 await mkdir(dirname(output), { recursive: true });
 await writeFile(output, `${JSON.stringify(rows, null, 2)}\n`, "utf8");
-process.stdout.write(`ROLE_PROFILE_DRY_RUN_OK candidates=${rows.length} method=${method} split=development labels_used=false\n`);
+process.stdout.write(`DEVELOPMENT_RANKINGS_GENERATED candidates=${rows.length} method=${method} split=development labels_used=false\n`);

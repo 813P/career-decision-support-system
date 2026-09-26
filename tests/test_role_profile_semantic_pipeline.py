@@ -1,4 +1,4 @@
-from experiments.development_selection.run_semantic_dry_run import (
+from experiments.development_selection.generate_semantic_rankings import (
     candidate_background,
     public_score,
     select_contributors,
