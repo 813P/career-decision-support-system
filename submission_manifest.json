@@ -2,7 +2,7 @@
   "manifest_name": "Submission-ready repository",
   "status": "complete",
   "created_at": "2026-09-26",
-  "file_count": 104,
+  "file_count": 103,
   "files": [
     {
       "path": ".gitattributes",
@@ -31,8 +31,8 @@
     },
     {
       "path": "config/selected/tfidf.json",
-      "bytes": 5417,
-      "sha256": "50e29bb37bc619f5293c6b8f2e891010e2af013b51df1a0de02b50c997d0231f"
+      "bytes": 5437,
+      "sha256": "bfd11edb5208b8c3bfa80028af9fd9cf6f1c7f3d23f34a6e513219a81347df4f"
     },
     {
       "path": "config/shared/matching_aliases.json",
@@ -175,24 +175,19 @@
       "sha256": "65f9b2e98e3112b1b3b673c25f37fed00fb7ef93a5e7ff5edfc4919c16f85595"
     },
     {
-      "path": "experiments/development_selection/compare_aggregations.mjs",
-      "bytes": 2918,
-      "sha256": "9ce8fd8681a765beefb7945461b53b61632947829a76cb51cb2805f7b3c7e272"
-    },
-    {
       "path": "experiments/development_selection/generate_hybrid_candidates.mjs",
       "bytes": 3955,
       "sha256": "09a4d113e52df8830b1c4ec892914798f98fc351120d9caa468258fd2ac7e952"
     },
     {
-      "path": "experiments/development_selection/run_dry_run.mjs",
-      "bytes": 1932,
-      "sha256": "a41e701d8ec846e37c2626c286e5c86442d398f26d2d2280170d63aff7caa803"
+      "path": "experiments/development_selection/generate_lexical_rankings.mjs",
+      "bytes": 1946,
+      "sha256": "40c9ed20c73befbcae81ac06830dd546eb8edbf5a2b4ba50b426c4bf10a5f5f4"
     },
     {
-      "path": "experiments/development_selection/run_semantic_dry_run.py",
-      "bytes": 11309,
-      "sha256": "5b6a6669320385997d9e317c1a635a9b5969f28fdc957075b8fe1ee703461655"
+      "path": "experiments/development_selection/generate_semantic_rankings.py",
+      "bytes": 11328,
+      "sha256": "4131aaa0b5db83d7fea5a79a087d74d442ca2a10178b2e8fa365efa48db511eb"
     },
     {
       "path": "experiments/development_selection/select_parameters.mjs",
@@ -201,8 +196,8 @@
     },
     {
       "path": "experiments/evaluation/run_full_test_evaluation.mjs",
-      "bytes": 13437,
-      "sha256": "25307ce7d183da643ca7e02a3b6ae61ea1722d5646c65865948c71f96db1a2ce"
+      "bytes": 13463,
+      "sha256": "ee14205667e9f1e7445a11a9507dcc4eda97a4acf8ed9d09c28fb56d388af5e8"
     },
     {
       "path": "experiments/shared/build_inputs.mjs",
@@ -226,8 +221,8 @@
     },
     {
       "path": "experiments/validation/freeze_selected_config.mjs",
-      "bytes": 5937,
-      "sha256": "262970cb607499c37fd695b63960609b7132a78f4ba1ccfade644153d678eb28"
+      "bytes": 5957,
+      "sha256": "6aa00cbf572863ff5236fce230c76ffacdfac4a8681d031b3a62d4e7d1707deb"
     },
     {
       "path": "experiments/validation/prepare_annotation_manifest.mjs",
@@ -292,7 +287,7 @@
     {
       "path": "reports/evaluation/matching_v2_full_test_run_manifest.json",
       "bytes": 1424,
-      "sha256": "28bf086af02d5c3960e974f988ba6448afa3df49dcb6f3599d0f74272dc78e8c"
+      "sha256": "336e78f353a77eb085ef4bff1fb6cb7372df4a13dede2810c62c3897d10bed2b"
     },
     {
       "path": "reports/freezes/CANDIDATE_DATASET_FREEZE.md",
@@ -312,7 +307,7 @@
     {
       "path": "reports/freezes/SELECTED_TFIDF_CONFIGURATION_FREEZE.md",
       "bytes": 996,
-      "sha256": "8bf2fce757c00e6330dbf9b46f8fc2ddf2d180299053002a21cf1c065f997f8c"
+      "sha256": "68d22eb08bd785ed422d37cd778a54a3f06d78d19ca8478b7b3f340627d65a08"
     },
     {
       "path": "reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md",
@@ -491,8 +486,8 @@
     },
     {
       "path": "tests/test_role_profile_semantic_pipeline.py",
-      "bytes": 1419,
-      "sha256": "1731c0d2305a0b33fc151dd35890cb1d6c3aa8d6282bc4ce68523c4a4406bce9"
+      "bytes": 1425,
+      "sha256": "bcb0af307f5a107bb0e2d03844b16bebb3f09434dbfbd7f3937fb9e33f6e8d30"
     },
     {
       "path": "tests/test_webapp.py",

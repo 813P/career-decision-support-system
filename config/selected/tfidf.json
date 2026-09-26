@@ -105,12 +105,12 @@
     "reports/matching/development_semantic_entry.json": "15a146f735154ce04b301fe59525af842ec4f9c8265bda7a1601259e6b2deaf8",
     "reports/matching/development_hybrid_candidate_grid.json": "b2486e87cc5d26478691b43eec7d7b59d0a89b6b36298bcdca53ee06e57b7a97",
     "reports/matching/development_parameter_selection.json": "238953f1c9f00f354aa9a01ed7bec5e0bfc62143f91deca1b06f9e206f91a331",
-    "experiments/development_selection/run_dry_run.mjs": "a41e701d8ec846e37c2626c286e5c86442d398f26d2d2280170d63aff7caa803",
-    "experiments/development_selection/run_semantic_dry_run.py": "5b6a6669320385997d9e317c1a635a9b5969f28fdc957075b8fe1ee703461655",
+    "experiments/development_selection/generate_lexical_rankings.mjs": "40c9ed20c73befbcae81ac06830dd546eb8edbf5a2b4ba50b426c4bf10a5f5f4",
+    "experiments/development_selection/generate_semantic_rankings.py": "4131aaa0b5db83d7fea5a79a087d74d442ca2a10178b2e8fa365efa48db511eb",
     "experiments/development_selection/generate_hybrid_candidates.mjs": "09a4d113e52df8830b1c4ec892914798f98fc351120d9caa468258fd2ac7e952",
     "experiments/development_selection/select_parameters.mjs": "37522e5d3f608ded441b52214e7cce33a567849568985d274ef00649e3df9afd",
     "experiments/shared/role_profile_experiment.mjs": "a93a3b7bedba4171bcb33cd6d00a6b30155b396a64f71c4a9e86ce17cf9821a6",
-    "experiments/evaluation/run_full_test_evaluation.mjs": "25307ce7d183da643ca7e02a3b6ae61ea1722d5646c65865948c71f96db1a2ce"
+    "experiments/evaluation/run_full_test_evaluation.mjs": "ee14205667e9f1e7445a11a9507dcc4eda97a4acf8ed9d09c28fb56d388af5e8"
   },
   "change_control": "Any matching input, annotation, method, parameter, target, split, or evaluation-code change requires a new matching version."
 }
