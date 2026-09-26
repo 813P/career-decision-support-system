@@ -9,7 +9,7 @@ const args = Object.fromEntries(process.argv.slice(2).map((item) => item.split("
 const outputPath = args["--output"] ?? join(ROOT, "reports", "matching", "development_parameter_selection.json");
 const labelsPath = args["--labels"] ?? join(ROOT, "data", "annotation", "annotation_all_60.csv");
 const paths = {
-  manifest: join(ROOT, "data", "annotation", "annotation_v2_manifest.json"),
+  manifest: join(ROOT, "data", "annotation", "annotation_manifest.json"),
   development: join(ROOT, "data", "candidates", "development.json"),
   structured: join(ROOT, "reports", "matching", "development_structured_entry.json"),
   tfidf: join(ROOT, "reports", "matching", "development_tfidf_entry.json"),

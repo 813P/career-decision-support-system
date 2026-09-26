@@ -65,7 +65,7 @@ The two layers deliberately have different units. Governance describes one candi
 | Candidate freeze | `data/candidates/manifest.json`, `reports/freezes/CANDIDATE_DATASET_FREEZE.md` | Integrity and change control |
 | Complete labels | `data/annotation/annotation_all_60.csv` | Frozen development and test ground truth |
 | Test labels | `data/annotation/annotation_test_full.csv` | Frozen 40-candidate test ground truth |
-| Annotation freeze | `data/annotation/annotation_v2_manifest.json` | Scope, quality control, and hashes |
+| Annotation freeze | `data/annotation/annotation_manifest.json` | Scope, quality control, and hashes |
 
 ## 4. Construction, review, and privacy
 

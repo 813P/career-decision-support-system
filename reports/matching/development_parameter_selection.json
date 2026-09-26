@@ -2828,7 +2828,7 @@
   },
   "input_hashes": {
     "data/annotation/annotation_all_60.csv": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56",
-    "data/annotation/annotation_v2_manifest.json": "efb92c50d999c5d57a60df7c4b412e540b783c060ad5f0256e136aae9e4d9325",
+    "data/annotation/annotation_manifest.json": "df7f3246b80bae7c73e70ef5d80a97504f3a9c84704b26c64de813b296382245",
     "data/candidates/development.json": "a7a7ae15b4754a471d62e07eedaf37b65fd62000b127a4133cfe60924f55cd73",
     "reports/matching/development_structured_entry.json": "47c21cb5a211460f8ba955be6b0f70a98abb31338ce4adc7843bbd34b6f202ad",
     "reports/matching/development_tfidf_entry.json": "2e910b71e70805a789c7c58595eb11ccd1a67ffcebf9425f19fc07d2b570fbf8",

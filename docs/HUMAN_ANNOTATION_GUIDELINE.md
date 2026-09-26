@@ -22,7 +22,7 @@ The completed evaluation uses the full 60-candidate annotation frame:
 
 - `data/annotation/annotation_all_60.csv`: all 60 candidates × 18 memberships = 1,080 completed judgements;
 - `data/annotation/annotation_test_full.csv`: all 40 test candidates × 18 memberships = 720 completed test judgements;
-- `data/annotation/annotation_v2_manifest.json`: versioned provenance artifact containing quality-control results and frozen hashes.
+- `data/annotation/annotation_manifest.json`: current provenance artifact containing quality-control results and frozen hashes.
 
 The active workflow treats the data as one development/test design: the same 20 development candidates support method selection, and all 40 test candidates support the final evaluation. Annotation happened in two collection phases—first 540 rows, then the remaining 540—but those collection batches are provenance details, not analytical subgroups. Test labels must not be used to change the method, parameters, targets, weights, or aggregation rule.
 
@@ -102,4 +102,4 @@ A candidate has market research, KPI ownership, and financial modelling and want
 
 ## Frozen annotation status
 
-The first 540-row annotation batch was completed on 2026-08-22. The remaining 540 test judgements were completed in a separately preserved workbook, and four missing conditional `evidence_strength` values were completed before consolidation. The derived datasets contain 1,080 unique `candidate_id × membership_id` judgements: 360 development and 720 test. Frozen checksums and collection provenance are stored in the historically named `data/annotation/annotation_v2_manifest.json`.
+The first 540-row annotation batch was completed on 2026-08-22. The remaining 540 test judgements were completed in a separately preserved workbook, and four missing conditional `evidence_strength` values were completed before consolidation. The derived datasets contain 1,080 unique `candidate_id × membership_id` judgements: 360 development and 720 test. Frozen checksums and collection provenance are stored in `data/annotation/annotation_manifest.json`.

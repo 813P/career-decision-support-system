@@ -35,7 +35,7 @@ const frozenPaths = [
   "data/candidates/manifest.json",
   "data/annotation/annotation_all_60.csv",
   "data/annotation/annotation_test_full.csv",
-  "data/annotation/annotation_v2_manifest.json",
+  "data/annotation/annotation_manifest.json",
   "docs/HUMAN_ANNOTATION_GUIDELINE.md",
   "reports/matching/development_structured_entry.json",
   "reports/matching/development_tfidf_entry.json",

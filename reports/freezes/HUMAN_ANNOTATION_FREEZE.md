@@ -38,7 +38,7 @@ The test-only distribution is 428 label-0, 169 label-1, and 123 label-2 judgemen
 - `annotation_all_60.csv`: `e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56`
 - `annotation_test_full.csv`: `52b43a28aa156f7bbc2346aa68aa2610bac359808c68567fd86485fd6e45ce84`
 
-The complete source and documentation hash set is stored in `data/annotation/annotation_v2_manifest.json`.
+The complete source and documentation hash set is stored in `data/annotation/annotation_manifest.json`.
 
 ## Change control
 
