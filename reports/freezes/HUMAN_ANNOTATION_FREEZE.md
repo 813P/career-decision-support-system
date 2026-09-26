@@ -1,6 +1,6 @@
-# Human Annotation v2 Freeze
+# Human Annotation Freeze
 
-**Status:** Frozen for the full v2 evaluation  
+**Status:** Frozen for the full evaluation
 **Freeze date:** 2026-09-24  
 **Annotation unit:** `candidate_id × membership_id`
 

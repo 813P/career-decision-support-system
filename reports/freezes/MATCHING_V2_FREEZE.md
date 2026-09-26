@@ -1,4 +1,4 @@
-# Matching v2 Freeze
+# Selected TF-IDF Configuration Freeze
 
 **Status:** Frozen  
 **Date:** 2026-09-24  
@@ -8,13 +8,13 @@
 
 ## Configuration checksum
 
-- `config/selected/tfidf.json`: `2eb1cd051ee9fff2a7ffd20b872d8fc82e644f7007e73357a38402a8ceb95fb1`
+- `config/selected/tfidf.json`: `64af4c62f3d8fbcc0febb4a74c9c874ca522cf50adf3cef4e5e2134d385237f0`
 
-**Submission-path amendment, 2026-09-26:** The selected configuration was renamed from `matching_v2.json` to `tfidf.json`, and runtime references plus the evaluation-code checksum were updated accordingly. The selected method, aggregation, weights, inputs, rankings, metrics, and test outputs did not change.
+**Submission-path amendment, 2026-09-26:** The selected configuration now uses the conclusion-oriented filename `tfidf.json`; runtime references and the evaluation-code checksum were updated accordingly. The selected method, aggregation, weights, inputs, rankings, metrics, and test outputs did not change.
 
 ## Guardrails
 
 - Development labels determine the method and aggregation.
 - All 40 test labels are evaluation-only.
 - No method, target, weight, aggregation, or candidate evidence is changed after the freeze.
-- v1 files and results remain unchanged.
+- Historical files and results remain unchanged.

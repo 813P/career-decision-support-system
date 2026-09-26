@@ -1,6 +1,6 @@
-# v2 full-run issues
+# Full-run issue log
 
-This log records issues discovered while preparing and running the 20-development / 40-test v2 study. Resolved entries remain visible for traceability.
+This log records issues discovered while preparing and running the 20-development / 40-test study. Resolved entries remain visible for traceability.
 
 ## V2-001 — Candidate files are schema-updated, not content-regenerated
 

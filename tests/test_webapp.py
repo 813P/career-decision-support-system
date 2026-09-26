@@ -28,7 +28,8 @@ class WebAppTests(unittest.TestCase):
     def test_runtime_uses_five_role_profiles_and_eighteen_memberships(self):
         self.assertEqual(len(self.runtime.role_profiles), 5)
         self.assertEqual(len(self.runtime.matcher.memberships), 18)
-        self.assertEqual(self.runtime.matcher.method, self.runtime.matching_config["runtime_method"])
+        self.assertEqual(self.runtime.matching_config["study_id"], "tfidf_full_test_evaluation")
+        self.assertEqual(self.runtime.matcher.method, self.runtime.matching_config["method"])
         self.assertEqual(self.runtime.matcher.aggregation, self.runtime.matching_config["aggregation"])
 
     def test_candidate_path_returns_all_role_profiles_with_evidence(self):
@@ -63,7 +64,7 @@ class WebAppTests(unittest.TestCase):
         config = dict(self.runtime.matching_config)
         config["component_weights"] = {"background": 1.0, "direction": 0.0}
         with tempfile.TemporaryDirectory() as directory:
-            config_path = Path(directory) / "matching_selected.json"
+            config_path = Path(directory) / "tfidf.json"
             config_path.write_text(json.dumps(config), encoding="utf-8")
             runtime = load_runtime(matching_config_path=config_path)
 

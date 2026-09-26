@@ -34,6 +34,6 @@ for (const path of paths) {
   const bytes = await readFile(path);
   files.push({ path: relative(ROOT, path).replaceAll("\\", "/"), bytes: (await stat(path)).size, sha256: createHash("sha256").update(bytes).digest("hex") });
 }
-const manifest = { manifest_name: "Submission-ready v2 repository", status: "complete", created_at: "2026-09-26", file_count: files.length, files };
+const manifest = { manifest_name: "Submission-ready repository", status: "complete", created_at: "2026-09-26", file_count: files.length, files };
 await writeFile(outputPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 process.stdout.write(`SUBMISSION_MANIFEST_CREATED files=${files.length}\n`);

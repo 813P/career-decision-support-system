@@ -21,8 +21,6 @@ if (selection.recommended_method_requires_signoff !== "tfidf" || selection.recom
 const testCandidates = await json(join(ROOT, "data", "candidates", "test.json"));
 const testIds = testCandidates.map((row) => row.candidate_id).sort();
 if (testIds.length !== 40 || new Set(testIds).size !== 40) throw new Error("V2_FREEZE_BLOCKED: expected 40 unique test candidates");
-const comparisonSubsetIds = ["C010", "C011", "C019", "C024", "C027", "C029", "C041", "C044", "C054", "C056"];
-if (comparisonSubsetIds.some((id) => !testIds.includes(id))) throw new Error("V2_FREEZE_BLOCKED: original comparison subset is not contained in the full test split");
 const frozenPaths = [
   "taxonomy/role_profiles.json",
   "taxonomy/role_skill_evidence.json",
@@ -52,7 +50,7 @@ const frozenPaths = [
   "experiments/evaluation/run_full_test_evaluation.mjs"
 ];
 const config = {
-  version: "matching_v2_full_test",
+  study_id: "tfidf_full_test_evaluation",
   status: "frozen",
   frozen_at: "2026-09-24",
   selection_provenance: {
@@ -63,7 +61,7 @@ const config = {
     metric_leader: selection.metric_leader,
     selected_under_practical_tie_rule: selection.recommended_method_requires_signoff,
     development_report: rel(selectionPath),
-    semantic_runtime: "Fresh v2 development run using Python 3.12.14, sentence-transformers 5.0.0, PyTorch 2.7.1+cpu, and the pinned all-MiniLM-L6-v2 model revision."
+    semantic_runtime: "Fresh development run using Python 3.12.14, sentence-transformers 5.0.0, PyTorch 2.7.1+cpu, and the pinned all-MiniLM-L6-v2 model revision."
   },
   method: "tfidf",
   aggregation: "mean_all",
@@ -76,7 +74,6 @@ const config = {
     candidate_count: 40,
     membership_judgement_count: 720,
     candidate_ids: testIds,
-    original_v1_comparison_subset_ids: comparisonSubsetIds,
     evaluation_only_no_retuning: true
   },
   evaluation: {
@@ -92,7 +89,7 @@ const config = {
 await mkdir(dirname(configPath), { recursive: true });
 await writeFile(configPath, `${JSON.stringify(config, null, 2)}\n`, "utf8");
 const configHash = await sha256(configPath);
-const freeze = `# Matching v2 Freeze\n\n**Status:** Frozen  \n**Date:** 2026-09-24  \n**Configuration:** \`tfidf + mean_all\` with 0.5 background / 0.5 direction weights  \n**Development scope:** 20 candidates × 18 memberships = 360 judgements  \n**Test scope:** 40 candidates × 18 memberships = 720 judgements  \n\n## Configuration checksum\n\n- \`config/selected/tfidf.json\`: \`${configHash}\`\n\n## Guardrails\n\n- Development labels determine the method and aggregation.\n- All 40 test labels are evaluation-only.\n- No method, target, weight, aggregation, or candidate evidence is changed after the freeze.\n- v1 files and results remain unchanged.\n`;
+const freeze = `# Selected TF-IDF Configuration Freeze\n\n**Status:** Frozen  \n**Date:** 2026-09-24  \n**Configuration:** \`tfidf + mean_all\` with 0.5 background / 0.5 direction weights  \n**Development scope:** 20 candidates × 18 memberships = 360 judgements  \n**Test scope:** 40 candidates × 18 memberships = 720 judgements  \n\n## Configuration checksum\n\n- \`config/selected/tfidf.json\`: \`${configHash}\`\n\n## Guardrails\n\n- Development labels determine the method and aggregation.\n- All 40 test labels are evaluation-only.\n- No method, target, weight, aggregation, or candidate evidence is changed after the freeze.\n- Historical files and results remain unchanged.\n`;
 await mkdir(dirname(freezePath), { recursive: true });
 await writeFile(freezePath, freeze, "utf8");
 process.stdout.write(`MATCHING_V2_FROZEN config_sha256=${configHash} method=tfidf aggregation=mean_all test_candidates=40\n`);

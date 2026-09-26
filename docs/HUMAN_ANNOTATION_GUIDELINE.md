@@ -1,4 +1,4 @@
-# Human Annotation Guideline — v2 full evaluation
+# Human Annotation Guideline — Full Evaluation
 
 ## Researcher-role clarification — 2026-09-06
 
@@ -16,15 +16,15 @@ One row is one `candidate_id × membership_id` judgement. A membership identifie
 
 The complete annotation frame contains 60 candidates × 18 memberships = 1,080 unique judgements. Each candidate therefore appears in 18 rows and each membership appears in 60 rows; a specific `candidate_id × membership_id` pair must appear exactly once. Candidate identifiers remain `C001` through `C060`, while development/test membership is intentionally hidden from annotators.
 
-## v2 annotation scope and split control
+## Annotation scope and split control
 
-The v2 evaluation uses the complete 60-candidate annotation frame:
+The completed evaluation uses the full 60-candidate annotation frame:
 
 - `data/annotation/annotation_all_60.csv`: all 60 candidates × 18 memberships = 1,080 completed judgements;
 - `data/annotation/annotation_test_full.csv`: all 40 test candidates × 18 memberships = 720 completed test judgements;
-- `data/annotation/annotation_v2_manifest.json`: v2 provenance, quality-control results, and frozen hashes.
+- `data/annotation/annotation_v2_manifest.json`: versioned provenance artifact containing quality-control results and frozen hashes.
 
-The first annotation phase contained all 20 development candidates and a preselected 10-candidate test subset. The second phase completed the remaining 30 test candidates. v2 uses the same 20-candidate development split for method selection and all 40 test candidates for evaluation. Test labels must not be used to change the method, parameters, targets, weights, or aggregation rule.
+The active workflow treats the data as one development/test design: the same 20 development candidates support method selection, and all 40 test candidates support the final evaluation. Annotation happened in two collection phases—first 540 rows, then the remaining 540—but those collection batches are provenance details, not analytical subgroups. Test labels must not be used to change the method, parameters, targets, weights, or aggregation rule.
 
 The completed dataset is a single-annotator exploratory evaluation set. Inter-annotator agreement, adjudication, and reliability statistics must not be reported. This limitation should be stated in portfolio and evaluation reports.
 
@@ -100,6 +100,6 @@ A candidate has market research, KPI ownership, and financial modelling and want
 - Blank model fields remain blank during primary blind annotation.
 - No construction metadata, model inference, or other annotator judgement appears in the rationale.
 
-## v2 frozen annotation status
+## Frozen annotation status
 
-The original 540-row primary annotation was completed on 2026-08-22. The remaining 540 test judgements were completed in a separately preserved workbook, and four missing conditional `evidence_strength` values were completed before consolidation. The v2 derived datasets contain 1,080 unique `candidate_id × membership_id` judgements: 360 development and 720 test. The frozen v2 checksums are stored in `data/annotation/annotation_v2_manifest.json`.
+The first 540-row annotation batch was completed on 2026-08-22. The remaining 540 test judgements were completed in a separately preserved workbook, and four missing conditional `evidence_strength` values were completed before consolidation. The derived datasets contain 1,080 unique `candidate_id × membership_id` judgements: 360 development and 720 test. Frozen checksums and collection provenance are stored in the historically named `data/annotation/annotation_v2_manifest.json`.

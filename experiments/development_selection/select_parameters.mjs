@@ -159,7 +159,7 @@ function pairedDifference(trial, leader) {
 }
 
 const manifest = await json(paths.manifest);
-if (manifest.status !== "frozen_for_v2_full_test_evaluation") throw new Error("DEVELOPMENT_SELECTION_BLOCKED: v2 annotation manifest is not frozen");
+if (manifest.status !== "frozen_for_full_test_evaluation") throw new Error("DEVELOPMENT_SELECTION_BLOCKED: annotation manifest is not frozen for full-test evaluation");
 const annotationHash = await hash(labelsPath);
 if (manifest.sha256?.[rootRelative(labelsPath)] !== annotationHash) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: frozen annotation checksum mismatch");
 
@@ -169,8 +169,8 @@ if (developmentIds.size !== 20) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: 
 const { labels, roleByMembership, ignoredNonDevelopmentRows } = labelsFromCsv(parseCsv(await readFile(labelsPath, "utf8")), developmentIds);
 const [structuredPayload, tfidfPayload, semanticPayload] = await Promise.all([json(paths.structured), json(paths.tfidf), json(paths.semantic)]);
 if (semanticPayload.split !== "dev" || semanticPayload.test_rankings_generated !== false) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic input is not development-only");
-if (semanticPayload.provenance?.candidate_data_hash !== await hash(paths.development)) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic candidate hash does not match v2 development data");
-if (semanticPayload.provenance?.membership_evidence_hash !== await hash(join(ROOT, "taxonomy", "role_occupation_memberships.json"))) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic membership hash does not match v2 taxonomy");
+if (semanticPayload.provenance?.candidate_data_hash !== await hash(paths.development)) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic candidate hash does not match development data");
+if (semanticPayload.provenance?.membership_evidence_hash !== await hash(join(ROOT, "taxonomy", "role_occupation_memberships.json"))) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic membership hash does not match taxonomy");
 
 const structured = flattenEntry(structuredPayload, developmentIds, "structured");
 const tfidf = flattenEntry(tfidfPayload, developmentIds, "tfidf");

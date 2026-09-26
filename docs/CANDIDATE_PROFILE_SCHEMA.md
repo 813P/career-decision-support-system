@@ -3,7 +3,7 @@
 **Schema name:** `CandidateProfile`  
 **Schema version:** 1.3  
 **Current research dataset:** `data/candidates`  
-**Status:** Candidate evidence frozen on 2026-08-16; metadata layout normalized in schema 1.2 on 2026-08-30; candidate field names clarified in schema 1.3 on 2026-09-06; v2 annotation is frozen for all 60 candidates
+**Status:** Candidate evidence frozen on 2026-08-16; metadata layout normalized in schema 1.2 on 2026-08-30; candidate field names clarified in schema 1.3 on 2026-09-06; annotation is frozen for all 60 candidates
 
 ## 1. Purpose
 
@@ -206,7 +206,7 @@ Role Profile definitions and boundaries frozen
     → Evaluation
 ```
 
-Candidate evidence and the Candidate Audit Template were fixed at version 1.1 for the Candidate Dataset. Schema 1.2 changes only metadata placement: repeated dataset-wide constants moved to `manifest.json`, while candidate evidence, `industry_context`, split membership and relevance labels remain unchanged. All sixty records completed content, privacy, leakage, duplication, and scenario review before the 20/40 development/test split was frozen on 2026-08-16. v2 annotation is complete and frozen for all 60 candidates: 60 × 18 memberships = 1,080 judgements. The 20 development candidates support selection; all 40 test candidates are evaluation-only.
+Candidate evidence and the Candidate Audit Template were fixed at version 1.1 for the Candidate Dataset. Schema 1.2 changes only metadata placement: repeated dataset-wide constants moved to `manifest.json`, while candidate evidence, `industry_context`, split membership and relevance labels remain unchanged. All sixty records completed content, privacy, leakage, duplication, and scenario review before the 20/40 development/test split was frozen on 2026-08-16. Annotation is complete and frozen for all 60 candidates: 60 × 18 memberships = 1,080 judgements. The 20 development candidates support selection; all 40 test candidates are evaluation-only.
 
 ## 11. Versioning Requirements
 

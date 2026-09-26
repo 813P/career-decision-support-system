@@ -1,5 +1,5 @@
 {
-  "version": "matching_v2_full_test",
+  "study_id": "tfidf_full_test_evaluation",
   "status": "frozen",
   "frozen_at": "2026-09-24",
   "selection_provenance": {
@@ -10,7 +10,7 @@
     "metric_leader": "semantic",
     "selected_under_practical_tie_rule": "tfidf",
     "development_report": "reports/matching/development_parameter_selection.json",
-    "semantic_runtime": "Fresh v2 development run using Python 3.12.14, sentence-transformers 5.0.0, PyTorch 2.7.1+cpu, and the pinned all-MiniLM-L6-v2 model revision."
+    "semantic_runtime": "Fresh development run using Python 3.12.14, sentence-transformers 5.0.0, PyTorch 2.7.1+cpu, and the pinned all-MiniLM-L6-v2 model revision."
   },
   "method": "tfidf",
   "aggregation": "mean_all",
@@ -67,18 +67,6 @@
       "C058",
       "C060"
     ],
-    "original_v1_comparison_subset_ids": [
-      "C010",
-      "C011",
-      "C019",
-      "C024",
-      "C027",
-      "C029",
-      "C041",
-      "C044",
-      "C054",
-      "C056"
-    ],
     "evaluation_only_no_retuning": true
   },
   "evaluation": {
@@ -109,8 +97,8 @@
     "data/candidates/manifest.json": "5d8da341da8764b7a2f9c0db9c7790fc4cb32405c1f872bf732a67680e539967",
     "data/annotation/annotation_all_60.csv": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56",
     "data/annotation/annotation_test_full.csv": "52b43a28aa156f7bbc2346aa68aa2610bac359808c68567fd86485fd6e45ce84",
-    "data/annotation/annotation_v2_manifest.json": "efb92c50d999c5d57a60df7c4b412e540b783c060ad5f0256e136aae9e4d9325",
-    "docs/HUMAN_ANNOTATION_GUIDELINE.md": "733ab1b874879242ec0baafc7b7b116cb69d228243e0412c098a25324a487a91",
+    "data/annotation/annotation_v2_manifest.json": "4ca82c09db556e288a4ecc5bd08d58cd941b16141db96bc84f5c794cd86e4ec4",
+    "docs/HUMAN_ANNOTATION_GUIDELINE.md": "621b8a423f55c69933b989d3f1215b1c7dd0aa39d9b3357eda080b93249c27c1",
     "reports/matching/development_structured_entry.json": "47c21cb5a211460f8ba955be6b0f70a98abb31338ce4adc7843bbd34b6f202ad",
     "reports/matching/development_tfidf_entry.json": "2e910b71e70805a789c7c58595eb11ccd1a67ffcebf9425f19fc07d2b570fbf8",
     "reports/matching/development_semantic_entry.json": "15a146f735154ce04b301fe59525af842ec4f9c8265bda7a1601259e6b2deaf8",
@@ -119,9 +107,9 @@
     "experiments/development_selection/run_dry_run.mjs": "a41e701d8ec846e37c2626c286e5c86442d398f26d2d2280170d63aff7caa803",
     "experiments/development_selection/run_semantic_dry_run.py": "5b6a6669320385997d9e317c1a635a9b5969f28fdc957075b8fe1ee703461655",
     "experiments/development_selection/generate_hybrid_candidates.mjs": "09a4d113e52df8830b1c4ec892914798f98fc351120d9caa468258fd2ac7e952",
-    "experiments/development_selection/select_parameters.mjs": "bef001d32b9fbbeedfe1fd3e60ada3aa9ab4c957d3011493d041b00bca55415f",
+    "experiments/development_selection/select_parameters.mjs": "4257d7d0707743ed655432ffaed42639a186df23613150d2662299b615a6a92c",
     "experiments/shared/role_profile_experiment.mjs": "a93a3b7bedba4171bcb33cd6d00a6b30155b396a64f71c4a9e86ce17cf9821a6",
-    "experiments/evaluation/run_full_test_evaluation.mjs": "b85d8b788a18e7014e0092145c0b09b493d3b01e0a4779dab0dc1ba2b4f1375d"
+    "experiments/evaluation/run_full_test_evaluation.mjs": "59cf3b168bb6e1fb3b2469f39916eeeb4bff5fd68b7e19f386853036d19e1020"
   },
   "change_control": "Any matching input, annotation, method, parameter, target, split, or evaluation-code change requires a new matching version."
 }

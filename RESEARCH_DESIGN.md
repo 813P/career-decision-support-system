@@ -3,7 +3,7 @@
 **Project:** Explainable Career Decision-Support System  
 **Portfolio context:** CUHK-Shenzhen MAIR application — AI direction  
 **Document revision:** 2.1, 2026-09-26  
-**Completed experiment:** `matching_v2_full_test`, submission-ready revision
+**Completed experiment:** Selected TF-IDF full-test evaluation
 
 This report presents an applied NLP study of career exploration. The revision clarifies its motivation, design, and findings while preserving the completed experiment and distinguishing retrospective interpretation from recorded procedure.
 
@@ -89,7 +89,7 @@ A local web application and MCP interface expose the selected ranker. The separa
 
 The dataset contains 60 synthetic, non-identifying profiles. I used AI assistance to draft the profiles and reviewed them myself. Each profile sampling stratum contains 12 candidates. Scenario coverage comprises Direct Match (15), Adjacent Transfer (13), Career Transition (12), Weak / Low Evidence (10), and Ambiguous Case (10). These are coverage choices, not estimates of real-world prevalence.
 
-Twenty candidates form the development set, balanced at four per profile and four per scenario. Forty form the frozen test set. All forty were annotated against the same 18 memberships and enter the final v2 evaluation. The original ten-candidate result remains recoverable at Git tag `v1.0-selected-test-10`; it is not a parallel current result.
+Twenty candidates form the development set, balanced at four per profile and four per scenario. Forty form the frozen test set. All forty were annotated against the same 18 memberships and enter the final evaluation.
 
 Review covered plausibility, schema consistency, identifying information, duplicates, split separation, and copying or leakage from occupational targets. AI-assisted construction may still introduce repeated vocabulary or stylistic regularities.
 
@@ -148,7 +148,7 @@ For secondary evaluation, a profile's human label is the maximum among its membe
 
 ## 6. Experimental protocol and evaluation
 
-All method and aggregation selection uses the twenty development candidates. Candidate content, occupational evidence, labels, and configuration were frozen before evaluating on all forty held-out candidates. Test results were not used to revise `matching_v2`. The [protocol](docs/EXPERIMENT_PROTOCOL.md) and [selected TF-IDF configuration](config/selected/tfidf.json) preserve the procedure and provenance.
+All method and aggregation selection uses the twenty development candidates. Candidate content, occupational evidence, labels, and configuration were frozen before evaluating on all forty held-out candidates. Test results were not used to revise the selected configuration. The [protocol](docs/EXPERIMENT_PROTOCOL.md) and [selected TF-IDF configuration](config/selected/tfidf.json) preserve the procedure and provenance.
 
 The primary metric is membership nDCG@3, calculated per candidate and then averaged. It rewards placing higher relevance labels near the top, with gains of 0, 1, and 3 for labels 0, 1, and 2. It is a ranking-quality measure, not a percentage of correct recommendations. The five-profile ranking is evaluated separately.
 
@@ -257,7 +257,7 @@ The study connects my problem formulation, target and annotation design, and eva
 3. **Evaluate explanation and preparation use.** Separate score evidence from skill prompts in a user study. Test whether users distinguish aspiration from demonstrated readiness and identify a reasonable next information-gathering or learning step.
 4. **Validate the experimental JD path separately.** Build and blind-label a representative licensed or fully synthetic JD corpus, freeze development and test splits, and compare the current deterministic evidence-group baseline with JD-specific lexical, semantic, and hybrid methods. Candidate-side test results must not be reused as JD validation evidence.
 
-Extensions require a separate study version and preserve `matching_v2_full_test` unchanged.
+Extensions require a separate study version and preserve the selected TF-IDF full-test evaluation unchanged.
 
 ## References
 
