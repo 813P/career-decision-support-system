@@ -2,8 +2,8 @@
 
 **Project:** Explainable Career Decision-Support System  
 **Portfolio context:** CUHK-Shenzhen MAIR application — AI direction  
-**Document revision:** 2.0, 2026-09-06  
-**Completed experiment:** `matching_selected`, selected on 2026-08-22
+**Document revision:** 2.1, 2026-09-26  
+**Completed experiment:** `matching_v2_full_test`, submission-ready revision
 
 This report presents an applied NLP study of career exploration. The revision clarifies its motivation, design, and findings while preserving the completed experiment and distinguishing retrospective interpretation from recorded procedure.
 
@@ -89,7 +89,7 @@ A local web application and MCP interface expose the selected ranker. The separa
 
 The dataset contains 60 synthetic, non-identifying profiles. I used AI assistance to draft the profiles and reviewed them myself. Each profile sampling stratum contains 12 candidates. Scenario coverage comprises Direct Match (15), Adjacent Transfer (13), Career Transition (12), Weak / Low Evidence (10), and Ambiguous Case (10). These are coverage choices, not estimates of real-world prevalence.
 
-Twenty candidates form the development set, balanced at four per profile and four per scenario. Forty form a frozen test pool. Before model-output inspection, ten test candidates were selected through a documented stratified procedure, with two per profile and two per scenario. Only these ten enter the reported test metrics; thirty remain an unlabelled reserve.
+Twenty candidates form the development set, balanced at four per profile and four per scenario. Forty form the frozen test set. All forty were annotated against the same 18 memberships and enter the final v2 evaluation. The original ten-candidate result remains recoverable at Git tag `v1.0-selected-test-10`; it is not a parallel current result.
 
 Review covered plausibility, schema consistency, identifying information, duplicates, split separation, and copying or leakage from occupational targets. AI-assisted construction may still introduce repeated vocabulary or stylistic regularities.
 
@@ -97,7 +97,7 @@ The [data-source policy](docs/DATA_SOURCE_POLICY.md) records five de-identified 
 
 ### 4.2 Relevance labels and researcher roles
 
-I designed the 0/1/2 relevance scheme and, as sole researcher and annotator, assigned 540 judgements: 20 development candidates × 18 memberships and 10 test candidates × 18 memberships. No independent second annotator participated, so inter-annotator reliability cannot be estimated.
+I designed the 0/1/2 relevance scheme and, as sole researcher and annotator, assigned 1,080 judgements: 20 development candidates × 18 memberships and 40 test candidates × 18 memberships. No independent second annotator participated, so inter-annotator reliability cannot be estimated.
 
 | Label | Meaning |
 |---:|---|
@@ -109,7 +109,7 @@ Aspiration alone is insufficient for label 2. Annotation considers the combined 
 
 The annotation view hid model outputs and construction metadata, although my prior knowledge of candidate construction and taxonomy remained. The labels are researcher judgements made with a restricted view, rather than independent external validation.
 
-The distribution is 282 zeros, 168 ones, and 90 twos. Quality checks found complete membership blocks, no duplicate pairs, and no invalid or missing relevance labels. These establish completeness, not judgement reliability. See the [data card](docs/DATA_CARD.md) and [annotation guideline](docs/HUMAN_ANNOTATION_GUIDELINE.md).
+The distribution is 614 zeros, 279 ones, and 187 twos. Quality checks found complete membership blocks, no duplicate pairs, and no invalid or missing relevance labels. These establish completeness, not judgement reliability. See the [data card](docs/DATA_CARD.md) and [annotation guideline](docs/HUMAN_ANNOTATION_GUIDELINE.md).
 
 ## 5. Methods and design rationale
 
@@ -148,7 +148,7 @@ For secondary evaluation, a profile's human label is the maximum among its membe
 
 ## 6. Experimental protocol and evaluation
 
-All selection uses the twenty development candidates. Candidate content, occupational evidence, and labels are fixed before evaluating the selected configuration on the ten held-out candidates. Test results cannot be used to revise matching_selected. The [protocol](docs/EXPERIMENT_PROTOCOL.md) and [configuration](config/selected/matching_selected.json) preserve the procedure and provenance.
+All method and aggregation selection uses the twenty development candidates. Candidate content, occupational evidence, labels, and configuration were frozen before evaluating on all forty held-out candidates. Test results were not used to revise `matching_v2`. The [protocol](docs/EXPERIMENT_PROTOCOL.md) and [configuration](config/selected/matching_v2.json) preserve the procedure and provenance.
 
 The primary metric is membership nDCG@3, calculated per candidate and then averaged. It rewards placing higher relevance labels near the top, with gains of 0, 1, and 3 for labels 0, 1, and 2. It is a ranking-quality measure, not a percentage of correct recommendations. The five-profile ranking is evaluated separately.
 
@@ -191,18 +191,18 @@ Mean_all led these point estimates and was selected. The table does not establis
 
 ### 7.3 Held-out evaluation
 
-The configuration was evaluated on ten preselected candidates with 180 membership labels. Eight candidates had at least one label-2 membership; none had all-zero labels.
+The configuration was evaluated on all forty held-out candidates with 720 membership labels. Thirty-four candidates had at least one label-2 membership; none had all-zero labels.
 
 | Metric | Membership result (95% interval) | Role Profile result (95% interval) |
 |---|---|---|
-| nDCG@3 | 0.6243 [0.4198, 0.8128] | 0.8944 [0.8141, 0.9593] |
-| nDCG@5 | 0.6490 [0.4596, 0.8208] | 0.9442 [0.8959, 0.9816] |
-| Top-1 agreement | 0.6000 [0.3000, 0.9000] | 0.8000 [0.5000, 1.0000] |
-| MRR, label-2 eligible | 0.7073 [0.4146, 1.0000] | 0.8750 [0.7139, 1.0000] |
-| Pairwise ordering agreement | 0.7501 [0.6689, 0.8330] | 0.8250 [0.7417, 0.9083] |
-| Coverage@3 | 0.7778 | 1.0000 |
+| nDCG@3 | 0.6606 [0.5655, 0.7533] | 0.8981 [0.8480, 0.9408] |
+| nDCG@5 | 0.6782 [0.5930, 0.7610] | 0.9507 [0.9214, 0.9742] |
+| Top-1 agreement | 0.7250 [0.5750, 0.8500] | 0.9000 [0.8000, 0.9750] |
+| MRR, label-2 eligible | 0.8110 [0.7000, 0.9108] | 0.9510 [0.8922, 1.0000] |
+| Pairwise ordering agreement | 0.7814 [0.7317, 0.8269] | 0.8534 [0.7994, 0.9018] |
+| Coverage@3 | 0.9444 | 1.0000 |
 
-Membership Coverage@5 was 0.9444. The [test report](reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md) contains the complete results and candidate identifiers.
+Membership Coverage@5 was 1.0000. The [test report](reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) contains the complete results and candidate identifiers.
 
 Profile ordering aligned more closely with reference labels on these measures, but target counts and label construction differ between levels. The nDCG difference therefore does not isolate a causal benefit of aggregation.
 
@@ -242,7 +242,7 @@ The two-layer design makes the researcher-defined mapping part of model behaviou
 
 - **Construct validity:** the score measures a chosen balance of background and aspiration, not readiness, transition feasibility, or career benefit.
 - **Researcher dependence:** I reviewed AI-generated candidates, defined the targets, and produced the labels. Construction knowledge and shared assumptions can influence evaluation despite hidden annotation fields. Model–label disagreement may reflect model error, my judgement, or ambiguous boundaries.
-- **Statistical scope:** twenty development and ten labelled test candidates support exploratory comparison. Bootstrap intervals neither overcome the small sample nor quantify annotator uncertainty or establish population performance.
+- **Statistical scope:** twenty development and forty labelled test candidates support exploratory comparison. Bootstrap intervals neither overcome the limited synthetic sample nor quantify annotator uncertainty or establish population performance.
 - **Reproducibility versus robustness:** deterministic sorting and fixed versions support repeated computation; systematic paraphrase, noise, and cross-language robustness were not evaluated. The selected matcher uses English evidence.
 - **External and user validity:** the five directions and fifteen occupations are narrow, with judgement-dependent boundaries requiring independent review. No study of real job seekers, explanation comprehension, Chinese labour-market validity, demographic fairness, user agency, or learning outcomes was conducted.
 
@@ -256,7 +256,7 @@ The study connects my problem formulation, target and annotation design, and eva
 2. **Strengthen independent evaluation.** Obtain independently produced labels and review the profile boundaries. Evaluate paraphrases and negation with controlled cases, keeping these distinct from real-user effectiveness.
 3. **Evaluate explanation and preparation use.** Separate score evidence from skill prompts in a user study. Test whether users distinguish aspiration from demonstrated readiness and identify a reasonable next information-gathering or learning step.
 
-Extensions require a separate study version and preserve matching_selected unchanged.
+Extensions require a separate study version and preserve `matching_v2_full_test` unchanged.
 
 ## References
 
@@ -270,5 +270,5 @@ Extensions require a separate study version and preserve matching_selected uncha
 
 - [Technical appendix: equations, runtime, and evaluation definitions](docs/RESEARCH_TECHNICAL_APPENDIX.md)
 - [Candidate freeze](reports/freezes/CANDIDATE_DATASET_FREEZE.md), [membership evidence freeze](reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md), and [annotation freeze](reports/freezes/HUMAN_ANNOTATION_FREEZE.md)
-- [Selected configuration freeze](reports/freezes/MATCHING_SELECTED_FREEZE.md) and [machine-readable evaluation](reports/evaluation/matching_selected_test_evaluation.json)
-- [Repository structure](docs/personal%20materials/PROJECT_STRUCTURE.md)
+- [Selected configuration freeze](reports/freezes/MATCHING_V2_FREEZE.md) and [machine-readable evaluation](reports/evaluation/matching_v2_full_test_evaluation.json)
+- [Documentation guide](docs/README.md)

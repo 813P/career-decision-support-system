@@ -1,0 +1,29 @@
+/.gitattributes text eol=lf
+*.csv text eol=lf
+data/annotation/*.csv text eol=crlf
+*.json text eol=lf
+*.md text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+*.txt text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Frozen v2 inputs are byte-hashed; preserve their recorded bytes exactly.
+config/experiments/semantic_runtime.json -text
+config/selected/matching_v2.json -text
+config/shared/*.json -text
+data/annotation/*.csv -text
+data/annotation/*.json -text
+data/candidates/*.json -text
+docs/HUMAN_ANNOTATION_GUIDELINE.md -text
+experiments/development_selection/*.mjs -text
+experiments/development_selection/*.py -text
+experiments/evaluation/run_full_test_evaluation.mjs -text
+experiments/shared/role_profile_experiment.mjs -text
+reports/matching/*.json -text
+reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md -text
+reports/evaluation/matching_v2_full_test_evaluation.json -text
+results/matching_v2_full_test_scores.csv -text
+taxonomy/*.json -text

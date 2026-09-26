@@ -11,14 +11,14 @@ There is currently no authoritative or labelled JD dataset. `config/shared/jd_ev
 | Candidate records | 60 fully synthetic, non-identifying profiles |
 | Development split | 20 candidates |
 | Frozen test pool | 40 candidates |
-| Primary annotation coverage | All 20 development candidates plus 10 preselected test candidates |
+| Primary annotation coverage | All 20 development and all 40 test candidates |
 | Annotation unit | Candidate × occupation–Role-Profile membership |
 | Memberships per annotated candidate | 18 |
-| Frozen primary judgements | 540: 360 development and 180 held-out test |
+| Frozen primary judgements | 1,080: 360 development and 720 held-out test |
 | Annotators | One researcher-annotator |
-| Unlabelled reserve | 30 frozen test candidates |
+| Unlabelled reserve | None in v2 |
 | Candidate freeze date | 2026-08-16 |
-| Annotation freeze date | 2026-08-22 |
+| v2 annotation freeze date | 2026-09-24 |
 
 The Candidate Dataset has no public iteration suffix. Its integrity is defined by the hashes in `data/candidates/manifest.json`, not by a version number embedded in its name.
 
@@ -60,15 +60,16 @@ The two layers deliberately have different units. Governance describes one candi
 |---|---|---|
 | Full reviewed profiles | `data/candidates/profiles.json` | Dataset audit and traceability |
 | Development model input | `data/candidates/development.json` | Method and aggregation selection only |
-| Test model input | `data/candidates/test.json` | Frozen evaluation subset and untouched reserve |
+| Test model input | `data/candidates/test.json` | Complete frozen held-out evaluation set |
 | Construction metadata | `data/candidates/governance.json` | Governance audit and post-hoc descriptive slicing only |
 | Candidate freeze | `data/candidates/manifest.json`, `reports/freezes/CANDIDATE_DATASET_FREEZE.md` | Integrity and change control |
-| Primary labels | `data/annotation/annotation_primary.csv` | Frozen evaluation ground truth |
-| Annotation freeze | `data/annotation/annotation_primary_freeze_manifest.json` | Scope, quality control, and hashes |
+| Complete labels | `data/annotation/annotation_all_60.csv` | Frozen development and test ground truth |
+| Test labels | `data/annotation/annotation_test_full.csv` | Frozen 40-candidate test ground truth |
+| Annotation freeze | `data/annotation/annotation_v2_manifest.json` | Scope, quality control, and hashes |
 
 ## 4. Construction, review, and privacy
 
-**Researcher-role clarification (2026-09-06):** The sole researcher used AI assistance to draft the 60 synthetic candidates, reviewed them, and supplied all 540 relevance labels. The annotation view hid model outputs and construction metadata, but prior involvement in design and construction limits independence. No independent second annotator participated. This clarification changes no candidate values or labels. The data-source policy separately records five de-identified real-person seed profiles as controlled synthesis references, excluded from released ranking inputs.
+**Researcher-role clarification:** The sole researcher used AI assistance to draft the 60 synthetic candidates, reviewed them, and supplied all 1,080 relevance labels. The annotation view hid model outputs and construction metadata, but prior involvement in design and construction limits independence. No independent second annotator participated. The data-source policy separately records five de-identified real-person seed profiles as controlled synthesis references, excluded from released ranking inputs.
 
 Profiles were constructed to express plausible work evidence and career direction without copying Analytical Role Profile definitions, ESCO descriptions, task lists, or expected-answer labels. Automated and human review covered:
 
@@ -98,12 +99,12 @@ Only reviewed core and supporting evidence may enter current matching. ESCO-opti
 
 ## 6. Human relevance annotation
 
-One researcher-annotator judged 30 candidates against all 18 memberships:
+One researcher-annotator judged all 60 candidates against all 18 memberships:
 
 - 20 development candidates × 18 memberships = 360 judgements; and
-- 10 preselected test candidates × 18 memberships = 180 judgements.
+- 40 test candidates × 18 memberships = 720 judgements.
 
-The resulting 540 unique judgements use a three-point scale:
+The resulting 1,080 unique judgements use a three-point scale:
 
 - `0`: weak or no credible fit;
 - `1`: partial, adjacent, or plausible transitional fit; and
@@ -113,13 +114,11 @@ The annotation view hid model names, scores, rankings, construction scenarios, i
 
 The earlier A/B/C annotation views are superseded workflow artefacts. They are not evaluation labels. Because the planned reliability annotation was not completed, the study makes no inter-annotator agreement, consensus, adjudication, or label-reliability claim.
 
-## 7. Development, test, and reserve policy
+## 7. Development and test policy
 
 Only the 20-candidate development split may influence method choice, Hybrid weight, aggregation selection, or other documented parameters.
 
-Before model-output inspection, 10 candidates were selected from the frozen 40-candidate test pool through a documented stratified procedure. Their 180 labels were completed and frozen before the selected configuration was evaluated once.
-
-The remaining 30 test candidates are an untouched, unlabelled reserve. They cannot be selectively added to current metrics after inspecting observed errors. Any use of the reserve requires a separately frozen annotation and analysis protocol established before new rankings are evaluated.
+The complete 40-candidate test split was annotated and frozen for v2. The v2 workflow reran method and aggregation selection using only the unchanged 20-candidate development split, froze `matching_v2`, and then evaluated all 40 test candidates without retuning. The earlier ten-candidate v1 result remains available only through Git tag `v1.0-selected-test-10`.
 
 ## 8. Intended and prohibited uses
 
@@ -149,12 +148,12 @@ The remaining 30 test candidates are an untouched, unlabelled reserve. They cann
 - The taxonomy covers only five adjacent analytical Role Profiles and 15 English ESCO occupations.
 - ESCO may not represent Chinese job titles, employer language, or fast-changing internet-industry boundaries.
 - Primary labels come from one annotator, so human-label reliability is unknown.
-- Only 10 test candidates are labelled; uncertainty intervals are wide and scenario findings are descriptive.
+- The development sample contains 20 candidates and the test sample 40; uncertainty intervals and scenario findings remain exploratory.
 - The dataset contains no protected-group attributes and cannot support a protected-group fairness estimate.
 
 ## 10. Change control and reproducibility
 
-The hashes in the candidate, matching, and annotation manifests bind the data used in the completed study. Any change to candidate text, split, membership evidence, labels, or the selected test subset requires a new governed study record and a fresh assessment of whether earlier results remain valid.
+The hashes in the candidate, matching, and annotation manifests bind the data used in the completed study. Any change to candidate text, split, membership evidence, labels, or test scope requires a new governed study record and a fresh assessment of whether earlier results remain valid.
 
 Authoritative references:
 
@@ -162,4 +161,4 @@ Authoritative references:
 - [`reports/freezes/CANDIDATE_DATASET_FREEZE.md`](../reports/freezes/CANDIDATE_DATASET_FREEZE.md);
 - [`docs/HUMAN_ANNOTATION_GUIDELINE.md`](HUMAN_ANNOTATION_GUIDELINE.md);
 - [`reports/freezes/HUMAN_ANNOTATION_FREEZE.md`](../reports/freezes/HUMAN_ANNOTATION_FREEZE.md); and
-- [`reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md`](../reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md).
+- [`reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md`](../reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md).

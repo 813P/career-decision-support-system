@@ -4,9 +4,18 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
-const outputPath = join(ROOT, "snapshot_manifest.json");
-const excluded = new Set(["snapshot_manifest.json"]);
-const excludedDirectories = new Set([".cache", ".venv-v2"]);
+const outputPath = join(ROOT, "submission_manifest.json");
+const excluded = new Set(["snapshot_manifest.json", "submission_manifest.json"]);
+const excludedDirectories = new Set([
+  ".cache",
+  ".git",
+  ".pytest_cache",
+  ".venv",
+  ".venv-v2",
+  "__pycache__",
+  "outputs",
+  "work",
+]);
 
 async function filesUnder(directory) {
   const output = [];
@@ -25,6 +34,6 @@ for (const path of paths) {
   const bytes = await readFile(path);
   files.push({ path: relative(ROOT, path).replaceAll("\\", "/"), bytes: (await stat(path)).size, sha256: createHash("sha256").update(bytes).digest("hex") });
 }
-const manifest = { manifest_name: "Study v2 snapshot", status: "complete", created_at: "2026-09-24", file_count: files.length, files };
+const manifest = { manifest_name: "Submission-ready v2 repository", status: "complete", created_at: "2026-09-26", file_count: files.length, files };
 await writeFile(outputPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
-process.stdout.write(`V2_SNAPSHOT_CREATED files=${files.length}\n`);
+process.stdout.write(`SUBMISSION_MANIFEST_CREATED files=${files.length}\n`);

@@ -1,6 +1,6 @@
 # Technical Appendix: Career-Direction Ranking
 
-This appendix preserves the mathematical and runtime details of the completed matching_selected study. See [Research Design and Evaluation](../RESEARCH_DESIGN.md) for motivation, design rationale, findings, and limitations. Editorial revision: 2026-09-06. No experimental inputs, scores, or parameters are changed.
+This appendix preserves the mathematical and runtime details of the completed `matching_v2_full_test` study. See [Research Design and Evaluation](../RESEARCH_DESIGN.md) for motivation, design rationale, findings, and limitations. Submission-ready revision: 2026-09-26. No experimental inputs, scores, or parameters are changed.
 
 Notation: c is a candidate, m is an occupation–Role Profile membership, and r is a Role Profile. Dollar signs delimit LaTeX mathematics; they are not executable code.
 
@@ -128,7 +128,7 @@ $$
 nDCG@k=\frac{DCG@k}{IDCG@k}
 $$
 
-nDCG@3 prioritises the top directions exposed to a user while respecting graded relevance. nDCG@5 is a supporting membership metric and also evaluates the complete five-profile ordering at the secondary level. Candidates with all-zero labels are excluded from eligible nDCG and reported separately; no such candidate appears in the final 10-candidate test subset.
+nDCG@3 prioritises the top directions exposed to a user while respecting graded relevance. nDCG@5 is a supporting membership metric and also evaluates the complete five-profile ordering at the secondary level. Candidates with all-zero labels are excluded from eligible nDCG and reported separately; no such candidate appears in the 40-candidate test split.
 
 ### C.2 Supporting metrics
 
@@ -153,18 +153,18 @@ The primary evaluation ranks 18 memberships per candidate. The secondary evaluat
 
 The source audit records 552 ESCO membership-level decisions: 181 core, 138 supporting, and 233 excluded. It also records 60 reviewed Role Profile-specific project-custom assignments. After membership construction and custom-evidence expansion, the derived evidence contains 313 core and 213 supporting occurrences across 18 memberships. Occurrences are not unique skills.
 
-The frozen configuration and manifests retain exact versions, hashes, bootstrap provenance, and test scope. Final test candidates: C010, C011, C019, C024, C027, C029, C041, C044, C054, and C056.
+The frozen configuration and manifests retain exact versions, hashes, bootstrap provenance, and the complete 40-candidate test scope.
 
 | Purpose | Record |
 |---|---|
-| Selected configuration and hashes | [matching_selected.json](../config/selected/matching_selected.json) |
+| Selected configuration and hashes | [matching_v2.json](../config/selected/matching_v2.json) |
 | Development comparison | [Selection report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) |
-| Final evaluation | [Test report](../reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md) |
+| Final evaluation | [Full-test report](../reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
 | Membership evidence | [Evidence freeze](../reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md) |
 | Application ranker | [role_profiles.py](../src/career_matcher/role_profiles.py) |
 | Experimental ranking | [role_profile_experiment.mjs](../experiments/shared/role_profile_experiment.mjs) |
 | Existing regression checks | [Ranking tests](../tests/role_profile_experiment.test.mjs) |
-| Repository map | [Project structure](personal%20materials/PROJECT_STRUCTURE.md) |
+| Repository map | [Documentation guide](README.md) |
 
 The Structured method deliberately uses less background evidence than the text methods. Public 0–1 ranges do not calibrate distributions across methods. Exact-input determinism is not paraphrase robustness. Human profile labels use maximum membership relevance, while the selected model uses the mean score; see the main report for interpretation.
 

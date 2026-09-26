@@ -7,10 +7,9 @@ Start with the [project overview](../README.md). This index separates the resear
 | Reader or question | Suggested path |
 |---|---|
 | Admissions reviewer: what was studied and learned? | [Overview](../README.md) → [Research Design and Evaluation](../RESEARCH_DESIGN.md) → [Error analysis](ERROR_ANALYSIS.md) |
-| Research reviewer: how were the claims evaluated? | [Protocol](EXPERIMENT_PROTOCOL.md) → [Data card](DATA_CARD.md) → [Annotation guideline](HUMAN_ANNOTATION_GUIDELINE.md) → [Selection report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) → [Test report](../reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md) |
-| Technical reader: how is it computed? | [Technical appendix](RESEARCH_TECHNICAL_APPENDIX.md) → [Repository map](personal%20materials/PROJECT_STRUCTURE.md) → source and tests |
+| Research reviewer: how were the claims evaluated? | [Protocol](EXPERIMENT_PROTOCOL.md) → [Data card](DATA_CARD.md) → [Annotation guideline](HUMAN_ANNOTATION_GUIDELINE.md) → [Selection report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) → [Test report](../reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
+| Technical reader: how is it computed? | [Technical appendix](RESEARCH_TECHNICAL_APPENDIX.md) → source and tests |
 | Application user: what can I rely on? | [Model card](MODEL_CARD.md) → [JD analyzer boundaries](JD_PROFILE_ANALYSIS.md) → [MCP setup](MCP_INTEGRATION.md) |
-| Applicant: how should I present this work? | [Application materials](personal%20materials/APPLICATION_MATERIALS.md) → [Interview script](personal%20materials/PROJECT_INTRODUCTION_SCRIPT.md) → [Editorial review](personal%20materials/DOCUMENTATION_REVIEW.md) |
 
 ## Document responsibilities
 
@@ -21,7 +20,6 @@ Start with the [project overview](../README.md). This index separates the resear
 - **Protocol and annotation guideline:** the procedure used to construct the evaluation.
 - **Model card:** system behaviour, output interpretation, and scope.
 - **Error analysis:** case-level interpretation of the frozen results.
-- **Personal materials:** application summaries, spoken explanations, and preparation notes.
 
 The [reports directory](../reports/README.md) holds run-specific observations, decisions, metrics, and freeze records. Documents explain the design; reports provide evidence for what was done. Preserve completed records when changing presentation.
 
@@ -32,5 +30,3 @@ The [reports directory](../reports/README.md) holds run-specific observations, d
 - [Short annotation guide](ANNOTATION_GUIDE.md)
 - [Taxonomy guide](../taxonomy/README.md)
 - [Candidate data guide](../data/candidates/README.md) and [annotation data guide](../data/annotation/README.md)
-- [Remaining research gaps](personal%20materials/PROJECT_GAP_CHECKLIST.md) and [preparation plan](personal%20materials/PROJECT_PREPARATION_PLAN.md)
-

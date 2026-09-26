@@ -8,9 +8,9 @@
 - Candidate IDs: C001–C060
 - Content review: completed
 - Privacy review: approved
-- Relevance annotation: primary annotation frozen for 20 development candidates and 10 preselected test candidates; 30 test candidates remain unlabelled
+- Relevance annotation: v2 annotation frozen for all 20 development and 40 test candidates
 
-The 40-candidate test pool must not be used for method selection or parameter tuning. The current final evaluation used only the 10-candidate subset fixed before model-output inspection and covered by frozen primary labels. The other 30 candidates remain an untouched reserve for a separately versioned future study. Construction metadata remains separate from model-facing fields and is not a relevance label.
+The 40-candidate test split must not be used for method selection or parameter tuning. The current v2 evaluation uses the complete test split only after the development-selected configuration was frozen. Construction metadata remains separate from model-facing fields and is not a relevance label.
 
 File integrity hashes are recorded in `data/candidates/manifest.json`.
 

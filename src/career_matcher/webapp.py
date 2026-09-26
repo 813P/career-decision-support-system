@@ -27,7 +27,7 @@ DEFAULT_WEB_DIR = ROOT / "webapp"
 DEFAULT_ROLE_PROFILES = ROOT / "taxonomy" / "role_profiles.json"
 DEFAULT_MEMBERSHIPS = ROOT / "taxonomy" / "role_occupation_memberships.json"
 DEFAULT_ALIASES = ROOT / "config" / "shared" / "matching_aliases.json"
-DEFAULT_MATCHING_CONFIG = ROOT / "config" / "selected" / "matching_selected.json"
+DEFAULT_MATCHING_CONFIG = ROOT / "config" / "selected" / "matching_v2.json"
 DEFAULT_JD_EVIDENCE_CONFIG = ROOT / "config" / "shared" / "jd_evidence_phrases.json"
 
 
