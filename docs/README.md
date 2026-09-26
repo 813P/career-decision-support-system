@@ -1,6 +1,6 @@
 # Documentation guide
 
-Start with the [project overview](../README.md). This index separates the research explanation, supporting evidence, and personal application materials.
+Start with the [project overview](../README.md). This index separates research design, supporting evidence, and implementation guidance.
 
 ## Choose a reading path
 
@@ -27,6 +27,6 @@ The [reports directory](../reports/README.md) holds run-specific observations, d
 
 - [Candidate schema](CANDIDATE_PROFILE_SCHEMA.md) and [Role Profile schema](ANALYTICAL_ROLE_PROFILE_SCHEMA.md)
 - [Data-source policy](DATA_SOURCE_POLICY.md)
-- [Short annotation guide](ANNOTATION_GUIDE.md)
+- [Full annotation guideline](HUMAN_ANNOTATION_GUIDELINE.md)
 - [Taxonomy guide](../taxonomy/README.md)
 - [Candidate data guide](../data/candidates/README.md) and [annotation data guide](../data/annotation/README.md)

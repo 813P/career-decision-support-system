@@ -2,7 +2,7 @@
   "manifest_name": "Submission-ready repository",
   "status": "complete",
   "created_at": "2026-09-26",
-  "file_count": 105,
+  "file_count": 104,
   "files": [
     {
       "path": ".gitattributes",
@@ -105,11 +105,6 @@
       "sha256": "ce9723b819c1a72f97880c27bc3d7550707f1b987d9a6d7e3b79ba6b458c507d"
     },
     {
-      "path": "docs/ANNOTATION_GUIDE.md",
-      "bytes": 739,
-      "sha256": "e12bf250cd76fc92232304a34cc78585494ffa5c7d4034a43669d950dba60d90"
-    },
-    {
       "path": "docs/CANDIDATE_PROFILE_SCHEMA.md",
       "bytes": 13131,
       "sha256": "deb50fa18cf63b7a651bde845390db14106d105be462cf86c2268bf664524451"
@@ -141,8 +136,8 @@
     },
     {
       "path": "docs/MCP_INTEGRATION.md",
-      "bytes": 1905,
-      "sha256": "9cb51196a1a6588725dc069dc9b92cd7bd58ad61d2337e5785fac3bd7880911b"
+      "bytes": 1917,
+      "sha256": "67c93765bb1abcd63f605a51c7f4a6355aeae6de0d26f952e92b40273b8b384f"
     },
     {
       "path": "docs/MODEL_CARD.md",
@@ -151,8 +146,8 @@
     },
     {
       "path": "docs/README.md",
-      "bytes": 2328,
-      "sha256": "101f865c2abde503d933f4f5c84baa6b3a7857b9c1bc6e1f1241b8ed3343fac3"
+      "bytes": 2325,
+      "sha256": "70b68888b59c9357ca7005046d5542656d78e1643c6af7041bf46bdf2e8240cb"
     },
     {
       "path": "docs/RESEARCH_TECHNICAL_APPENDIX.md",
