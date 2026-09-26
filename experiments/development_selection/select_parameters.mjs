@@ -7,9 +7,9 @@ import { HYBRID_WEIGHTS, evaluateRankings, pairedCandidateBootstrapDifference } 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const args = Object.fromEntries(process.argv.slice(2).map((item) => item.split("=", 2)));
 const outputPath = args["--output"] ?? join(ROOT, "reports", "matching", "development_parameter_selection.json");
-const labelsPath = args["--labels"] ?? join(ROOT, "data", "annotation", "annotation_primary.csv");
+const labelsPath = args["--labels"] ?? join(ROOT, "data", "annotation", "annotation_all_60.csv");
 const paths = {
-  manifest: join(ROOT, "data", "annotation", "annotation_primary_freeze_manifest.json"),
+  manifest: join(ROOT, "data", "annotation", "annotation_v2_manifest.json"),
   development: join(ROOT, "data", "candidates", "development.json"),
   structured: join(ROOT, "reports", "matching", "development_structured_entry.json"),
   tfidf: join(ROOT, "reports", "matching", "development_tfidf_entry.json"),
@@ -159,9 +159,9 @@ function pairedDifference(trial, leader) {
 }
 
 const manifest = await json(paths.manifest);
-if (manifest.status !== "frozen") throw new Error("DEVELOPMENT_SELECTION_BLOCKED: annotation manifest is not frozen");
+if (manifest.status !== "frozen_for_v2_full_test_evaluation") throw new Error("DEVELOPMENT_SELECTION_BLOCKED: v2 annotation manifest is not frozen");
 const annotationHash = await hash(labelsPath);
-if (rootRelative(labelsPath) === "data/annotation/annotation_primary.csv" && manifest.sha256?.[rootRelative(labelsPath)] !== annotationHash) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: frozen annotation checksum mismatch");
+if (manifest.sha256?.[rootRelative(labelsPath)] !== annotationHash) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: frozen annotation checksum mismatch");
 
 const development = await json(paths.development);
 const developmentIds = new Set(development.map((row) => row.candidate_id));
@@ -169,6 +169,8 @@ if (developmentIds.size !== 20) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: 
 const { labels, roleByMembership, ignoredNonDevelopmentRows } = labelsFromCsv(parseCsv(await readFile(labelsPath, "utf8")), developmentIds);
 const [structuredPayload, tfidfPayload, semanticPayload] = await Promise.all([json(paths.structured), json(paths.tfidf), json(paths.semantic)]);
 if (semanticPayload.split !== "dev" || semanticPayload.test_rankings_generated !== false) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic input is not development-only");
+if (semanticPayload.provenance?.candidate_data_hash !== await hash(paths.development)) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic candidate hash does not match v2 development data");
+if (semanticPayload.provenance?.membership_evidence_hash !== await hash(join(ROOT, "taxonomy", "role_occupation_memberships.json"))) throw new Error("DEVELOPMENT_SELECTION_BLOCKED: Semantic membership hash does not match v2 taxonomy");
 
 const structured = flattenEntry(structuredPayload, developmentIds, "structured");
 const tfidf = flattenEntry(tfidfPayload, developmentIds, "tfidf");

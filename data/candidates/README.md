@@ -23,8 +23,9 @@ records how an adjacent, transitional or ambiguous case was sampled. Every
 governance metadata is therefore declared not to be a relevance label once at
 dataset level in `manifest.json`.
 
-The authoritative relevance answers are the blinded human judgements in
-`data/annotation/annotation_primary.csv`. Their unit is finer-grained:
+The authoritative v2 relevance answers are the blinded human judgements in
+`data/annotation/annotation_all_60.csv`; the held-out subset is also stored in
+`data/annotation/annotation_test_full.csv`. Their unit is finer-grained:
 `candidate_id × membership_id`, where a membership is one ESCO occupation in
 one Role Profile context. Role Profile-level human relevance may be derived
 from those frozen membership labels for secondary evaluation; it must not be

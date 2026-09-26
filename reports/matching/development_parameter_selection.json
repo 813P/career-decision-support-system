@@ -5,7 +5,7 @@
   "annotation_unit": "candidate_x_membership",
   "development_candidates": 20,
   "development_judgements": 360,
-  "ignored_non_development_annotation_rows": 180,
+  "ignored_non_development_annotation_rows": 720,
   "test_labels_used": false,
   "test_rankings_generated": false,
   "primary_metric": "candidate-level membership nDCG@3",
@@ -2827,12 +2827,12 @@
     "method": "percentile bootstrap"
   },
   "input_hashes": {
-    "data/annotation/annotation_primary.csv": "bc954e793d322cefa7090c588a2789865f7ae7ea2f439b36b8b5304125bcd00c",
-    "data/annotation/annotation_primary_freeze_manifest.json": "7f4383dd97a7f5da0ceeee015459ec8ef74892354a3cb85897a42d7bfd885fac",
-    "data/candidates/development.json": "0320ac3cb50820f09de043aff169129a854ed4bc5dc7b67c7c829119c7c83908",
+    "data/annotation/annotation_all_60.csv": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56",
+    "data/annotation/annotation_v2_manifest.json": "efb92c50d999c5d57a60df7c4b412e540b783c060ad5f0256e136aae9e4d9325",
+    "data/candidates/development.json": "a7a7ae15b4754a471d62e07eedaf37b65fd62000b127a4133cfe60924f55cd73",
     "reports/matching/development_structured_entry.json": "47c21cb5a211460f8ba955be6b0f70a98abb31338ce4adc7843bbd34b6f202ad",
     "reports/matching/development_tfidf_entry.json": "2e910b71e70805a789c7c58595eb11ccd1a67ffcebf9425f19fc07d2b570fbf8",
-    "reports/matching/development_semantic_entry.json": "dd6cc7de45fbab650983c9c8c8470bb0e7a466981a6e89f366ea4103ca3955eb"
+    "reports/matching/development_semantic_entry.json": "15a146f735154ce04b301fe59525af842ec4f9c8265bda7a1601259e6b2deaf8"
   },
   "guardrails": {
     "background_direction_weights_changed": false,

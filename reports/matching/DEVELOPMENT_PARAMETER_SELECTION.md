@@ -1,6 +1,6 @@
 # Development Parameter Selection
 
-**Status:** Researcher approved and frozen as `matching_selected`  
+**Status:** Researcher approved and frozen as `matching_v2`  
 **Scope:** 20 development candidates × 18 memberships = 360 frozen human judgements  
 **Test evaluation at the time of selection:** Not run; subsequently completed once under `reports/evaluation/`
 
@@ -12,7 +12,7 @@
 
 Semantic has the highest point estimate for membership nDCG@3 (`0.753349`), while TF-IDF v0 scores `0.746448`. The difference is `0.006901`; the paired candidate-level 95% bootstrap interval for TF-IDF minus Semantic is `[-0.068648, 0.049863]`. Under the documented practical-tie rule (nDCG@3 gap no more than `0.01`, interval includes zero), TF-IDF v0 is recommended because it is simpler, more interpretable, and already represents the preserved v0 score pipeline.
 
-This recommendation was approved and frozen on 2026-08-22. The freeze record is `reports/freezes/MATCHING_SELECTED_FREEZE.md`; the one-time test result must not be used for retuning.
+This recommendation was reproduced and frozen for v2 on 2026-09-24. The freeze record is `reports/freezes/MATCHING_V2_FREEZE.md`; the full-test result must not be used for retuning.
 
 ## Membership-ranking comparison
 
@@ -42,7 +42,7 @@ Aggregation is evaluated for the recommended TF-IDF v0 method. For this secondar
 ## Guardrails and limitations
 
 - Only candidate IDs in `data/candidates/development.json` entered the evaluation.
-- The 180 non-development rows present in the frozen annotation file were ignored.
+- All 720 test rows present in the frozen v2 annotation were ignored during development selection.
 - No test scores or rankings were generated, inspected or evaluated during development selection. The separately frozen one-time test evaluation was run only after approval.
 - Candidate data, Role Profiles, memberships, scoring formulas, and background/direction weights were not changed.
 - Human labels are single-annotator judgements, so results are exploratory offline evidence rather than a reliability study.

@@ -6,7 +6,7 @@ This project connects a **working local application** with a completed ranking s
 
 **Current study at a glance:** four ranking approaches; 60 synthetic candidate profiles; 1,080 researcher relevance judgements; development-only method selection on 20 candidates; full evaluation on 40 held-out candidates. **Selected configuration:** TF-IDF, equal background/direction weights, and `mean_all` profile aggregation.
 
-Versioned studies are kept separate: [`studies/v1`](studies/v1) preserves the original 10-candidate evaluation, while [`studies/v2`](studies/v2) contains the complete from-scratch development selection and 40-candidate test evaluation.
+The repository root is the submission-ready v2 study. Historical snapshots remain recoverable through Git tags: `v1.0-selected-test-10` preserves the original 10-candidate evaluation, and `v2.0-full-test-40` preserves the pre-submission v2 snapshot.
 
 ## The problem and research question
 
@@ -112,7 +112,7 @@ Four approaches were compared using development data only:
 
 **Semantic had the highest point estimate**, ahead by 0.0069. The recorded, study-specific **practical-tie rule** favours simplicity when the gap is at most 0.01 and the paired interval includes zero. Paired candidate-level bootstrap (2,000 resamples) gave **TF-IDF − Semantic: `[-0.0686, 0.0499]`** (95% interval). Both conditions held, selecting TF-IDF for simpler runtime and inspectable lexical computation—not demonstrating equivalence or TF-IDF superiority.
 
-After method selection, `mean_all` led `max` and `mean_top_2` on development data and was frozen with TF-IDF as **`matching_selected`**. **TF-IDF v0** denotes the preserved initial implementation; the 0.5 / 0.5 weights were fixed, not tuned on test data.
+After method selection, `mean_all` led `max` and `mean_top_2` on development data and was frozen with TF-IDF as **`matching_v2_full_test`**. The 0.5 / 0.5 weights were fixed, not tuned on test data.
 
 Protocol, comparisons, and bootstrap details: [Research Design](RESEARCH_DESIGN.md#6-experimental-protocol-and-evaluation), [development selection report](reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md), and [technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md#c3-uncertainty).
 
@@ -181,10 +181,10 @@ Optional Semantic and MCP dependencies: `python -m pip install -e ".[semantic,mc
 | Quick project overview | This README |
 | Research design and methodology | [Research Design](RESEARCH_DESIGN.md) |
 | Formulas, runtime, and metric details | [Technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) |
-| Full 40-candidate held-out results | [v2 evaluation report](studies/v2/reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
-| Original 10-candidate held-out results | [v1 evaluation report](studies/v1/reports/evaluation/MATCHING_SELECTED_TEST_EVALUATION.md) |
+| Full 40-candidate held-out results | [Evaluation report](reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
+| Historical 10-candidate result | Git tag `v1.0-selected-test-10` |
 | Failure cases | [Error analysis](docs/ERROR_ANALYSIS.md) |
 
 The [documentation index](docs/README.md) links to the data card, annotation protocol, repository map, and application materials.
 
-**Both study versions are frozen.** `matching_selected` belongs to the immutable v1 archive; `matching_v2_full_test` belongs to the complete v2 run. Test errors must not be used to retune either completed study.
+**`matching_v2_full_test` is frozen.** The historical v1 study remains available through `v1.0-selected-test-10`; test errors must not be used to retune either completed study.

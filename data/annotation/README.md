@@ -2,22 +2,22 @@
 
 ## Current authority
 
-- The project uses one annotation unit throughout the active study: `candidate_id × membership_id`.
-- `annotation_primary.csv` is the authoritative frozen relevance-label dataset.
-- `annotation_primary_freeze_manifest.json` records its scope, quality controls and hashes.
-- It contains 540 completed candidate–membership judgements: all 20 development candidates and the 10 test candidates selected before model-output inspection, each judged against 18 memberships.
-- `portfolio_annotation_selection_manifest.json` records the pre-model selection of the 10-candidate test subset. Its original output hashes describe the files at creation time; current annotation integrity is governed by the later primary freeze manifest.
-- The blank membership-level template is stored at `docs/templates/annotation_template.csv`, outside the data directory.
-- The unlabelled CSV prepared for the planned second-annotator study is not retained as project data. Its selection provenance remains in `portfolio_annotation_selection_manifest.json`, and it can be regenerated explicitly with `scripts/create_portfolio_annotation_sample.py` if a separately approved reliability study is started.
+- The annotation unit is `candidate_id × membership_id`.
+- `annotation_all_60.csv` is the authoritative v2 dataset: 60 candidates × 18 memberships = 1,080 judgements.
+- `annotation_test_full.csv` is the derived 40-candidate held-out subset: 720 judgements.
+- `annotation_v2_manifest.json` records scope, quality checks, provenance, and hashes.
+- `source_extended_annotation_manifest.json` preserves the two-phase consolidation provenance.
 
-This directory contains only completed primary annotation results and their governing manifests.
+The complete distribution is 614 label-0, 279 label-1, and 187 label-2 judgements. Every candidate has one row for each membership; validation found no duplicate pairs, invalid relevance values, missing conditional `evidence_strength`, invalid evidence-strength values, exposed model fields, or invalid timestamps.
 
-Superseded blank `candidate × Role Profile` pilot views and their unexecuted three-annotator workflow are not part of the active repository.
+## Split policy
 
-## Test coverage
+The 20 development candidates and their 360 judgements are used for method and aggregation selection. The 40 test candidates and their 720 judgements are evaluation-only. v2 evaluates the complete test split after freezing the configuration; test labels must not be used for retuning.
 
-The full candidate dataset contains 40 frozen test candidates. Only the preselected 10-candidate subset has primary relevance labels and can enter the current evaluation metrics. The other 30 candidates remain an untouched, unlabelled reserve pool for a separately versioned extended evaluation or reliability study.
+The original first-phase dataset and ten-candidate evaluation remain recoverable through Git tag `v1.0-selected-test-10`. They are historical records, not parallel current inputs.
 
 ## Reliability limitation
 
-The current primary labels were produced by one annotator. The primary annotation is complete and frozen for the defined exploratory evaluation scope. The planned second-annotator reliability study was outside that completed scope and was not executed, so no inter-annotator reliability result is claimed. A future reliability study must use a separately approved protocol and must not alter the frozen primary labels.
+All labels were produced by one researcher-annotator using a view that hid model outputs and construction metadata. No independent second-annotator study was completed, so the project makes no inter-annotator agreement, consensus, or adjudication claim.
+
+Do not edit frozen annotation files in place. Any label, rationale, evidence-strength, candidate, membership, or split change requires a new governed study version and freeze.
