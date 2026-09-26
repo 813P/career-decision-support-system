@@ -7,7 +7,6 @@ const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const paths = {
   all: join(ROOT, "data", "annotation", "annotation_all_60.csv"),
   test: join(ROOT, "data", "annotation", "annotation_test_full.csv"),
-  source: join(ROOT, "data", "annotation", "source_extended_annotation_manifest.json"),
   development: join(ROOT, "data", "candidates", "development.json"),
   testCandidates: join(ROOT, "data", "candidates", "test.json"),
   guideline: join(ROOT, "docs", "HUMAN_ANNOTATION_GUIDELINE.md"),
@@ -76,8 +75,8 @@ function validateRows(rows, expectedIds, expectedCount, label) {
   return { candidate_count: expectedCount, membership_count: memberships.size, judgement_count: rows.length, unique_pairs: pairs.size, label_distribution: distribution, missing_label_1_evidence_strength: 0, invalid_evidence_strength: 0, model_fields_exposed: 0, invalid_timestamps: 0 };
 }
 
-const [development, testCandidates, allRows, testRows, sourceManifest] = await Promise.all([
-  json(paths.development), json(paths.testCandidates), parseCsv(await readFile(paths.all, "utf8")), parseCsv(await readFile(paths.test, "utf8")), json(paths.source),
+const [development, testCandidates, allRows, testRows] = await Promise.all([
+  json(paths.development), json(paths.testCandidates), parseCsv(await readFile(paths.all, "utf8")), parseCsv(await readFile(paths.test, "utf8")),
 ]);
 const developmentIds = new Set(development.map((row) => row.candidate_id));
 const testIds = new Set(testCandidates.map((row) => row.candidate_id));
@@ -92,7 +91,7 @@ for (const row of testRows) {
     if (!other || other[field] !== row[field]) throw new Error(`ANNOTATION_V2_INVALID: test/all mismatch ${row.candidate_id}/${row.membership_id}/${field}`);
   }
 }
-const hashPaths = [paths.all, paths.test, paths.source, paths.development, paths.testCandidates, paths.guideline];
+const hashPaths = [paths.all, paths.test, paths.development, paths.testCandidates, paths.guideline];
 const manifest = {
   manifest_name: "Human Annotation Full Evaluation Freeze",
   status: "frozen_for_full_test_evaluation",
@@ -100,18 +99,15 @@ const manifest = {
   annotation_unit: "candidate × membership",
   split_policy: "20 development candidates for selection; 40 test candidates for evaluation only; no test-label retuning",
   provenance: {
-    source_manifest: rel(paths.source),
-    source_manifest_status: sourceManifest.status,
-    first_collection_batch: "20 development + 10 test candidates",
-    second_collection_batch: "30 test candidates",
+    collection_history: "Completed annotation batches were consolidated before the full-dataset freeze.",
     collection_batches_are_not_analytical_subgroups: true,
-    original_sources_preserved_outside_current_snapshot: true,
+    original_source_workbooks_preserved_outside_current_snapshot: true,
   },
   development: { candidate_count: 20, judgement_count: 360 },
   test: testQc,
   complete: allQc,
   sha256: Object.fromEntries(await Promise.all(hashPaths.map(async (path) => [rel(path), await sha256(path)]))),
-  change_control: "Any candidate evidence, label, rationale, evidence strength, membership, matching target, method, parameter, or split change requires a new study version and freeze.",
+  change_control: "Any candidate evidence, label, rationale, evidence strength, membership, matching target, method, parameter, or split change requires a new study freeze.",
 };
 await writeFile(paths.output, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 process.stdout.write(`ANNOTATION_V2_PREPARED candidates=60 test_candidates=40 judgements=1080 test_judgements=720\n`);

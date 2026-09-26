@@ -6,7 +6,7 @@
 - `annotation_all_60.csv` is the authoritative dataset: 60 candidates × 18 memberships = 1,080 judgements.
 - `annotation_test_full.csv` is the derived 40-candidate held-out subset: 720 judgements.
 - `annotation_manifest.json` records scope, quality checks, provenance, and hashes.
-- `source_extended_annotation_manifest.json` preserves the two-phase consolidation provenance.
+- `annotation_manifest.json` records that completed annotation batches were consolidated before the final freeze; process-level correction details remain in Git history rather than the active dataset description.
 
 The complete distribution is 614 label-0, 279 label-1, and 187 label-2 judgements. Every candidate has one row for each membership; validation found no duplicate pairs, invalid relevance values, missing conditional `evidence_strength`, invalid evidence-strength values, exposed model fields, or invalid timestamps.
 
