@@ -51,6 +51,7 @@ const frozenPaths = [
 ];
 const config = {
   study_id: "tfidf_full_test_evaluation",
+  study_name: "Selected TF-IDF full-test evaluation",
   status: "frozen",
   frozen_at: "2026-09-24",
   selection_provenance: {
