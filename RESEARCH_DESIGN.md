@@ -250,11 +250,12 @@ The prototype is for career exploration and must not be used for hiring, screeni
 
 ## 10. Contribution and next research steps
 
-The study connects my problem formulation, target and annotation design, and evaluation decisions to an implemented prototype. Its outcomes are a reproducible comparison, analysis of membership- and profile-level failures, and a distinction between score explanation, aggregation provenance, and supplementary evidence prompts. Candidate drafting used AI assistance; I reviewed the profiles and supplied the labels. This account does not claim unaided authorship of every implementation component. Three extensions follow:
+The study connects my problem formulation, target and annotation design, and evaluation decisions to an implemented prototype. Its outcomes are a reproducible comparison, analysis of membership- and profile-level failures, and a distinction between score explanation, aggregation provenance, and supplementary evidence prompts. Candidate drafting used AI assistance; I reviewed the profiles and supplied the labels. This account does not claim unaided authorship of every implementation component. Four extensions follow:
 
 1. **Test the task formulation.** In a new development study, compare direct-profile scoring with membership aggregation and examine background-only, direction-only, and combined scores. Predefine how evidence sufficiency and aspiration should interact before evaluating new held-out data.
 2. **Strengthen independent evaluation.** Obtain independently produced labels and review the profile boundaries. Evaluate paraphrases and negation with controlled cases, keeping these distinct from real-user effectiveness.
 3. **Evaluate explanation and preparation use.** Separate score evidence from skill prompts in a user study. Test whether users distinguish aspiration from demonstrated readiness and identify a reasonable next information-gathering or learning step.
+4. **Validate the experimental JD path separately.** Build and blind-label a representative licensed or fully synthetic JD corpus, freeze development and test splits, and compare the current deterministic evidence-group baseline with JD-specific lexical, semantic, and hybrid methods. Candidate-side test results must not be reused as JD validation evidence.
 
 Extensions require a separate study version and preserve `matching_v2_full_test` unchanged.
 

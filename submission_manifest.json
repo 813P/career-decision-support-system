@@ -2,7 +2,7 @@
   "manifest_name": "Submission-ready v2 repository",
   "status": "complete",
   "created_at": "2026-09-26",
-  "file_count": 108,
+  "file_count": 107,
   "files": [
     {
       "path": ".gitattributes",
@@ -21,18 +21,13 @@
     },
     {
       "path": "RESEARCH_DESIGN.md",
-      "bytes": 27471,
-      "sha256": "0cdac055f9ac8ff765efd2cd5e7a5108b05592ef89c5e60b206fcbcaabb35f5a"
+      "bytes": 27829,
+      "sha256": "8f2fe0de5a44ec8b3e4bfad3701f5b9e880c47d0114f94da34dfa04bb8b8efe4"
     },
     {
       "path": "RUN_ISSUES.md",
       "bytes": 2645,
       "sha256": "2dd63e1af81b2524a7d0b48244d7f949023f01a69a0f54f60577dca336950215"
-    },
-    {
-      "path": "TODO.md",
-      "bytes": 1059,
-      "sha256": "6b1b01507a1a70dfec84ce1f743cba9d423989516fb79f6e61139935679d3cf3"
     },
     {
       "path": "config/experiments/semantic_runtime.json",
