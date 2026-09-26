@@ -149,7 +149,7 @@ career-web
 
 The browser interface runs on a lightweight Python HTTP service. It supports Chinese and English UI text; English candidate input is recommended. Changing the UI language does not change scores.
 
-The **experimental job-description analyzer** identifies work components in Chinese or English JDs using a separate rule-based method. It has **no labelled evaluation**, and the candidate-ranking evaluation does not validate it. See the [JD method note](docs/JD_PROFILE_ANALYSIS.md).
+The **experimental job-description analyzer** is a parallel application extension, physically separated under [`experimental/jd_analysis/`](experimental/jd_analysis/). It identifies work components in Chinese or English JDs using a rule-based method. It has **no labelled evaluation**, and the candidate-ranking evaluation does not validate it.
 
 To check the frozen data and implementation:
 

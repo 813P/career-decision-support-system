@@ -4,7 +4,7 @@
 
 This project uses one authoritative Candidate Dataset for a controlled, offline evaluation of explainable career-direction ranking. The dataset is designed for career exploration research; it is not a hiring, screening, employability, or job-performance dataset.
 
-There is currently no authoritative or labelled JD dataset. `config/shared/jd_evidence_phrases.json` is an experimental application configuration, not training data or evaluation ground truth. Consequently, the Candidate Dataset and its reported metrics cannot be used to claim validity for JD classification.
+There is currently no authoritative or labelled JD dataset. `experimental/jd_analysis/jd_evidence_phrases.json` is an experimental application configuration, not training data or evaluation ground truth. Consequently, the Candidate Dataset and its reported metrics cannot be used to claim validity for JD classification.
 
 | Item | Current record |
 |---|---|

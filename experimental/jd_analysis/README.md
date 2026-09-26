@@ -1,5 +1,7 @@
 # Experimental JD Role-Profile Analysis
 
+This directory intentionally separates the experimental JD-analysis chain from the evaluated candidate-ranking study. It contains the JD-specific method note and bilingual evidence configuration; reusable application code remains under `src/`, and regression tests remain under `tests/`.
+
 ## Status and boundary
 
 The JD path is an experimental, deterministic, multi-label evidence analysis. It is not
@@ -27,7 +29,7 @@ Implementation and configuration:
 
 - `src/career_matcher/jd_profiles.py`: normalization, ordered phrase matching, evidence
   aggregation, anchor rules, multi-label classification, and abstention.
-- `config/shared/jd_evidence_phrases.json`: versioned bilingual evidence groups, weights,
+- `experimental/jd_analysis/jd_evidence_phrases.json`: versioned bilingual evidence groups, weights,
   anchors, counter-evidence, and thresholds.
 - `src/career_matcher/webapp.py`: loads both runtimes and routes `/api/parse-jd` to the JD
   analyzer.
