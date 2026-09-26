@@ -8,9 +8,9 @@
 
 ## Configuration checksum
 
-- `config/selected/tfidf.json`: `6d25ebd7715178cd38544b58d7189bf6f30671e43875383c435cc137c7cd32e1`
+- `config/selected/tfidf.json`: `50e29bb37bc619f5293c6b8f2e891010e2af013b51df1a0de02b50c997d0231f`
 
-**Submission-path amendment, 2026-09-26:** The selected configuration now uses the conclusion-oriented filename `tfidf.json`; runtime references and the evaluation-code checksum were updated accordingly. The selected method, aggregation, weights, inputs, rankings, metrics, and test outputs did not change.
+**Presentation amendment, 2026-09-26:** The selected configuration uses the conclusion-oriented filename `tfidf.json`; runtime references and the evaluation-code checksum were updated accordingly. The selected method, aggregation, weights, inputs, rankings, metrics, and test outputs did not change.
 
 ## Guardrails
 

@@ -6,7 +6,7 @@ import { RoleProfileExperimentMatcher, buildMembershipEvidence, evaluateRankings
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const configPath = join(ROOT, "config", "selected", "tfidf.json");
-const freezePath = join(ROOT, "reports", "freezes", "MATCHING_V2_FREEZE.md");
+const freezePath = join(ROOT, "reports", "freezes", "SELECTED_TFIDF_CONFIGURATION_FREEZE.md");
 const outputPaths = {
   scores: join(ROOT, "results", "matching_v2_full_test_scores.csv"),
   rankings: join(ROOT, "reports", "matching", "matching_v2_full_test_rankings.json"),

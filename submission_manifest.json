@@ -21,8 +21,8 @@
     },
     {
       "path": "RESEARCH_DESIGN.md",
-      "bytes": 27732,
-      "sha256": "02f88b4675f57a8fa943be2db9008fbc5dc1f83badf3ceff9e7a37506be03121"
+      "bytes": 27749,
+      "sha256": "40a8b1850df2aa196be77b4378bef485a93348a9b0852d8956f0f9dc60e752a2"
     },
     {
       "path": "config/experiments/semantic_runtime.json",
@@ -32,7 +32,7 @@
     {
       "path": "config/selected/tfidf.json",
       "bytes": 5417,
-      "sha256": "6d25ebd7715178cd38544b58d7189bf6f30671e43875383c435cc137c7cd32e1"
+      "sha256": "50e29bb37bc619f5293c6b8f2e891010e2af013b51df1a0de02b50c997d0231f"
     },
     {
       "path": "config/shared/matching_aliases.json",
@@ -201,8 +201,8 @@
     },
     {
       "path": "experiments/evaluation/run_full_test_evaluation.mjs",
-      "bytes": 13420,
-      "sha256": "59cf3b168bb6e1fb3b2469f39916eeeb4bff5fd68b7e19f386853036d19e1020"
+      "bytes": 13437,
+      "sha256": "25307ce7d183da643ca7e02a3b6ae61ea1722d5646c65865948c71f96db1a2ce"
     },
     {
       "path": "experiments/shared/build_inputs.mjs",
@@ -225,14 +225,14 @@
       "sha256": "15a8db42a35b0af1cb5b78411a1fdb57fee1fc4d95070f4f93bcf4816b9484c8"
     },
     {
-      "path": "experiments/validation/freeze_matching_v2.mjs",
-      "bytes": 5900,
-      "sha256": "1e57cc70595860565a7fe80d5a93562666a626b86fb04fec1a2eca54c039d230"
+      "path": "experiments/validation/freeze_selected_config.mjs",
+      "bytes": 5937,
+      "sha256": "262970cb607499c37fd695b63960609b7132a78f4ba1ccfade644153d678eb28"
     },
     {
-      "path": "experiments/validation/prepare_annotation_v2.mjs",
-      "bytes": 7269,
-      "sha256": "b72a89d16777b522d6d0ed0ba9394d8d8dfa2dd9efeab0617bf3c2dbb70c94eb"
+      "path": "experiments/validation/prepare_annotation_manifest.mjs",
+      "bytes": 7260,
+      "sha256": "2b525aabe6137e50541a1aee8e25bc3b234dc9e73c79a8b0ff164cdeee25dc7e"
     },
     {
       "path": "experiments/validation/validate_candidate_data.mjs",
@@ -240,9 +240,9 @@
       "sha256": "4ddac69fc2c8bab48c72dc7f9fdfbfe3684aaac4b539117b370cf9c79468e85e"
     },
     {
-      "path": "experiments/validation/validate_v2.mjs",
-      "bytes": 3224,
-      "sha256": "e140621b87e626f41a133101176f37c47552510c1fd07ba690ceae62403fda91"
+      "path": "experiments/validation/validate_experiment.mjs",
+      "bytes": 3329,
+      "sha256": "cb3e66ed82d30ab164a28262d43ae7dd517fab676a63841193c41bf9d929677f"
     },
     {
       "path": "pyproject.toml",
@@ -251,8 +251,8 @@
     },
     {
       "path": "reports/README.md",
-      "bytes": 1159,
-      "sha256": "d4f04a89826bb3b7c41b0a3515a640e70c2884517e89daebf4ecd75714e10193"
+      "bytes": 1176,
+      "sha256": "e4362ba475b4f798daf4464a50d737a123061ce6df67d90ad289dec387229212"
     },
     {
       "path": "reports/audits/CANDIDATE_AUDIT_STATUS.md",
@@ -292,7 +292,7 @@
     {
       "path": "reports/evaluation/matching_v2_full_test_run_manifest.json",
       "bytes": 1424,
-      "sha256": "8b812c7a9bf575edb4a4f96005db77d7a24ce45fe52dca0c336183de3a00c918"
+      "sha256": "28bf086af02d5c3960e974f988ba6448afa3df49dcb6f3599d0f74272dc78e8c"
     },
     {
       "path": "reports/freezes/CANDIDATE_DATASET_FREEZE.md",
@@ -305,19 +305,19 @@
       "sha256": "898b60f0ff6c89afdf620525eb8f3b94b07fbaeb57f80df988df49e8110800d5"
     },
     {
-      "path": "reports/freezes/MATCHING_V2_FREEZE.md",
-      "bytes": 1003,
-      "sha256": "bc6e62edbf588a59623248aa889c45a01fe3dea897dd1db50a19232bffe49834"
-    },
-    {
       "path": "reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md",
       "bytes": 2778,
       "sha256": "d2a1c7ec53de645cb74a5da8715d34a980744ea61498b5ecd038e4faded6a65b"
     },
     {
+      "path": "reports/freezes/SELECTED_TFIDF_CONFIGURATION_FREEZE.md",
+      "bytes": 996,
+      "sha256": "8bf2fce757c00e6330dbf9b46f8fc2ddf2d180299053002a21cf1c065f997f8c"
+    },
+    {
       "path": "reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md",
-      "bytes": 3251,
-      "sha256": "58ec6d2c12013d8ecd277f246556531eda08bebe8382d743a9b1d39369be84f6"
+      "bytes": 3268,
+      "sha256": "81287cffc286c306c20577a3be6dc18ddf125984d163b4e30041c3ff254e2f29"
     },
     {
       "path": "reports/matching/development_hybrid_candidate_grid.json",

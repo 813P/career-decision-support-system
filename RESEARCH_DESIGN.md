@@ -271,5 +271,5 @@ Extensions require a separate study version and preserve the selected TF-IDF ful
 
 - [Technical appendix: equations, runtime, and evaluation definitions](docs/RESEARCH_TECHNICAL_APPENDIX.md)
 - [Candidate freeze](reports/freezes/CANDIDATE_DATASET_FREEZE.md), [membership evidence freeze](reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md), and [annotation freeze](reports/freezes/HUMAN_ANNOTATION_FREEZE.md)
-- [Selected configuration freeze](reports/freezes/MATCHING_V2_FREEZE.md) and [machine-readable evaluation](reports/evaluation/matching_v2_full_test_evaluation.json)
+- [Selected configuration freeze](reports/freezes/SELECTED_TFIDF_CONFIGURATION_FREEZE.md) and [machine-readable evaluation](reports/evaluation/matching_v2_full_test_evaluation.json)
 - [Documentation guide](docs/README.md)

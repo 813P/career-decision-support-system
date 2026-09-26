@@ -34,15 +34,15 @@ function parseCsv(text) {
       record = []; field = "";
     } else field += character;
   }
-  if (quoted) throw new Error("ANNOTATION_V2_INVALID: unterminated quoted field");
+  if (quoted) throw new Error("ANNOTATION_INVALID: unterminated quoted field");
   if (field || record.length) {
     record.push(field.replace(/\r$/, ""));
     if (record.some((value) => value !== "")) records.push(record);
   }
   const headers = records[0] ?? [];
-  if (new Set(headers).size !== headers.length) throw new Error("ANNOTATION_V2_INVALID: duplicate headers");
+  if (new Set(headers).size !== headers.length) throw new Error("ANNOTATION_INVALID: duplicate headers");
   return records.slice(1).map((values, index) => {
-    if (values.length !== headers.length) throw new Error(`ANNOTATION_V2_INVALID: row ${index + 2} has ${values.length} fields; expected ${headers.length}`);
+    if (values.length !== headers.length) throw new Error(`ANNOTATION_INVALID: row ${index + 2} has ${values.length} fields; expected ${headers.length}`);
     return Object.fromEntries(headers.map((header, column) => [header, values[column]]));
   });
 }
@@ -80,7 +80,7 @@ const [development, testCandidates, allRows, testRows] = await Promise.all([
 ]);
 const developmentIds = new Set(development.map((row) => row.candidate_id));
 const testIds = new Set(testCandidates.map((row) => row.candidate_id));
-if (developmentIds.size !== 20 || testIds.size !== 40 || [...developmentIds].some((id) => testIds.has(id))) throw new Error("ANNOTATION_V2_INVALID: development/test split mismatch");
+if (developmentIds.size !== 20 || testIds.size !== 40 || [...developmentIds].some((id) => testIds.has(id))) throw new Error("ANNOTATION_INVALID: development/test split mismatch");
 const allIds = new Set([...developmentIds, ...testIds]);
 const allQc = validateRows(allRows, allIds, 60, "all_60");
 const testQc = validateRows(testRows, testIds, 40, "test_full");
@@ -88,7 +88,7 @@ const testFromAll = new Map(allRows.filter((row) => testIds.has(row.candidate_id
 for (const row of testRows) {
   const other = testFromAll.get(`${row.candidate_id}\u0000${row.membership_id}`);
   for (const field of ["human_relevance", "annotation_reason", "evidence_strength", "annotator_id", "annotation_timestamp"]) {
-    if (!other || other[field] !== row[field]) throw new Error(`ANNOTATION_V2_INVALID: test/all mismatch ${row.candidate_id}/${row.membership_id}/${field}`);
+    if (!other || other[field] !== row[field]) throw new Error(`ANNOTATION_INVALID: test/all mismatch ${row.candidate_id}/${row.membership_id}/${field}`);
   }
 }
 const hashPaths = [paths.all, paths.test, paths.development, paths.testCandidates, paths.guideline];
@@ -110,4 +110,4 @@ const manifest = {
   change_control: "Any candidate evidence, label, rationale, evidence strength, membership, matching target, method, parameter, or split change requires a new study freeze.",
 };
 await writeFile(paths.output, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
-process.stdout.write(`ANNOTATION_V2_PREPARED candidates=60 test_candidates=40 judgements=1080 test_judgements=720\n`);
+process.stdout.write(`ANNOTATION_MANIFEST_PREPARED candidates=60 test_candidates=40 judgements=1080 test_judgements=720\n`);

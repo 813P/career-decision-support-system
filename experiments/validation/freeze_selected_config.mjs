@@ -5,22 +5,22 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const configPath = join(ROOT, "config", "selected", "tfidf.json");
-const freezePath = join(ROOT, "reports", "freezes", "MATCHING_V2_FREEZE.md");
+const freezePath = join(ROOT, "reports", "freezes", "SELECTED_TFIDF_CONFIGURATION_FREEZE.md");
 const selectionPath = join(ROOT, "reports", "matching", "development_parameter_selection.json");
 const rel = (path) => relative(ROOT, path).replaceAll("\\", "/");
 const json = async (path) => JSON.parse(await readFile(path, "utf8"));
 const sha256 = async (path) => createHash("sha256").update(await readFile(path)).digest("hex");
 
 for (const path of [configPath, freezePath]) {
-  try { await access(path); throw new Error(`V2_FREEZE_EXISTS: refusing to overwrite ${rel(path)}`); }
+  try { await access(path); throw new Error(`CONFIG_FREEZE_EXISTS: refusing to overwrite ${rel(path)}`); }
   catch (error) { if (error?.code !== "ENOENT") throw error; }
 }
 const selection = await json(selectionPath);
-if (selection.split !== "development" || selection.test_labels_used !== false || selection.test_rankings_generated !== false) throw new Error("V2_FREEZE_BLOCKED: development selection guardrails failed");
-if (selection.recommended_method_requires_signoff !== "tfidf" || selection.recommended_aggregation_requires_signoff !== "mean_all") throw new Error("V2_FREEZE_BLOCKED: selected method is not supported by the approved full-test runner");
+if (selection.split !== "development" || selection.test_labels_used !== false || selection.test_rankings_generated !== false) throw new Error("CONFIG_FREEZE_BLOCKED: development selection guardrails failed");
+if (selection.recommended_method_requires_signoff !== "tfidf" || selection.recommended_aggregation_requires_signoff !== "mean_all") throw new Error("CONFIG_FREEZE_BLOCKED: selected method is not supported by the approved full-test runner");
 const testCandidates = await json(join(ROOT, "data", "candidates", "test.json"));
 const testIds = testCandidates.map((row) => row.candidate_id).sort();
-if (testIds.length !== 40 || new Set(testIds).size !== 40) throw new Error("V2_FREEZE_BLOCKED: expected 40 unique test candidates");
+if (testIds.length !== 40 || new Set(testIds).size !== 40) throw new Error("CONFIG_FREEZE_BLOCKED: expected 40 unique test candidates");
 const frozenPaths = [
   "taxonomy/role_profiles.json",
   "taxonomy/role_skill_evidence.json",
@@ -93,4 +93,4 @@ const configHash = await sha256(configPath);
 const freeze = `# Selected TF-IDF Configuration Freeze\n\n**Status:** Frozen  \n**Date:** 2026-09-24  \n**Configuration:** \`tfidf + mean_all\` with 0.5 background / 0.5 direction weights  \n**Development scope:** 20 candidates × 18 memberships = 360 judgements  \n**Test scope:** 40 candidates × 18 memberships = 720 judgements  \n\n## Configuration checksum\n\n- \`config/selected/tfidf.json\`: \`${configHash}\`\n\n## Guardrails\n\n- Development labels determine the method and aggregation.\n- All 40 test labels are evaluation-only.\n- No method, target, weight, aggregation, or candidate evidence is changed after the freeze.\n- Historical files and results remain unchanged.\n`;
 await mkdir(dirname(freezePath), { recursive: true });
 await writeFile(freezePath, freeze, "utf8");
-process.stdout.write(`MATCHING_V2_FROZEN config_sha256=${configHash} method=tfidf aggregation=mean_all test_candidates=40\n`);
+process.stdout.write(`SELECTED_CONFIG_FROZEN config_sha256=${configHash} method=tfidf aggregation=mean_all test_candidates=40\n`);
