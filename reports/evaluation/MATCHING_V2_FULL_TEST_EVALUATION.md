@@ -1,4 +1,4 @@
-# Matching v2 — Full 40-Candidate Test Evaluation
+# Selected TF-IDF — Full 40-Candidate Test Evaluation
 
 **Status:** Full frozen test completed; no retuning permitted  
 **Configuration:** `tfidf + mean_all`  
@@ -23,12 +23,4 @@
 | Top-1 agreement | 0.900000 |
 | Coverage@3 | 1.000000 |
 
-## Descriptive subgroup comparison
-
-| Test subset | Candidates | Membership nDCG@3 | Top-1 agreement |
-|---|---:|---:|---:|
-| Original v1 selected subset | 10 | 0.624306 | 0.600000 |
-| Newly annotated reserve | 30 | 0.672733 | 0.766667 |
-| Complete v2 test split | 40 | 0.660627 | 0.725000 |
-
-Subgroup results are descriptive only. No method or parameter is changed after test evaluation.
+The evaluation covers the complete 40-candidate test split. No method or parameter is changed after test evaluation.

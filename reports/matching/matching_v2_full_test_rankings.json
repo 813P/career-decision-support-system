@@ -3,7 +3,7 @@
     "candidate_id": "C005",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -776,7 +776,7 @@
     "candidate_id": "C006",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -1646,7 +1646,7 @@
     "candidate_id": "C007",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -2576,7 +2576,7 @@
     "candidate_id": "C008",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -3368,7 +3368,7 @@
     "candidate_id": "C009",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -4204,7 +4204,7 @@
     "candidate_id": "C010",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -5047,7 +5047,7 @@
     "candidate_id": "C011",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_strategy_focused_analysis",
@@ -5848,7 +5848,7 @@
     "candidate_id": "C012",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -6579,7 +6579,7 @@
     "candidate_id": "C016",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -7379,7 +7379,7 @@
     "candidate_id": "C017",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -8224,7 +8224,7 @@
     "candidate_id": "C018",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -9000,7 +9000,7 @@
     "candidate_id": "C019",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -9837,7 +9837,7 @@
     "candidate_id": "C020",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -10629,7 +10629,7 @@
     "candidate_id": "C021",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -11439,7 +11439,7 @@
     "candidate_id": "C022",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -12234,7 +12234,7 @@
     "candidate_id": "C024",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -13057,7 +13057,7 @@
     "candidate_id": "C027",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_strategy_focused_analysis",
@@ -13933,7 +13933,7 @@
     "candidate_id": "C029",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_strategy_focused_analysis",
@@ -14803,7 +14803,7 @@
     "candidate_id": "C030",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -15536,7 +15536,7 @@
     "candidate_id": "C031",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -16302,7 +16302,7 @@
     "candidate_id": "C032",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -17093,7 +17093,7 @@
     "candidate_id": "C033",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -17822,7 +17822,7 @@
     "candidate_id": "C034",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -18740,7 +18740,7 @@
     "candidate_id": "C036",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "strategic_analysis",
@@ -19617,7 +19617,7 @@
     "candidate_id": "C038",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -20543,7 +20543,7 @@
     "candidate_id": "C041",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -21322,7 +21322,7 @@
     "candidate_id": "C042",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -22295,7 +22295,7 @@
     "candidate_id": "C043",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -23139,7 +23139,7 @@
     "candidate_id": "C044",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -23877,7 +23877,7 @@
     "candidate_id": "C045",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -24679,7 +24679,7 @@
     "candidate_id": "C046",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_analytics",
@@ -25623,7 +25623,7 @@
     "candidate_id": "C048",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",
@@ -26560,7 +26560,7 @@
     "candidate_id": "C049",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",
@@ -27411,7 +27411,7 @@
     "candidate_id": "C053",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",
@@ -28257,7 +28257,7 @@
     "candidate_id": "C054",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",
@@ -29083,7 +29083,7 @@
     "candidate_id": "C055",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",
@@ -30033,7 +30033,7 @@
     "candidate_id": "C056",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",
@@ -30817,7 +30817,7 @@
     "candidate_id": "C057",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "business_performance_goal_management",
@@ -31598,7 +31598,7 @@
     "candidate_id": "C058",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",
@@ -32386,7 +32386,7 @@
     "candidate_id": "C060",
     "method": "tfidf",
     "aggregation": "mean_all",
-    "specification": "matching_v2_full_test",
+    "specification": "tfidf_full_test_evaluation",
     "rankings": [
       {
         "role_profile_id": "data_science",

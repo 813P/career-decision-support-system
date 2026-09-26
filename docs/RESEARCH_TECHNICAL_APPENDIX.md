@@ -1,6 +1,6 @@
 # Technical Appendix: Career-Direction Ranking
 
-This appendix preserves the mathematical and runtime details of the completed `matching_v2_full_test` study. See [Research Design and Evaluation](../RESEARCH_DESIGN.md) for motivation, design rationale, findings, and limitations. Submission-ready revision: 2026-09-26. No experimental inputs, scores, or parameters are changed.
+This appendix preserves the mathematical and runtime details of the selected TF-IDF full-test evaluation. See [Research Design and Evaluation](../RESEARCH_DESIGN.md) for motivation, design rationale, findings, and limitations. Submission-ready revision: 2026-09-26. No experimental inputs, scores, or parameters are changed.
 
 Notation: c is a candidate, m is an occupation–Role Profile membership, and r is a Role Profile. Dollar signs delimit LaTeX mathematics; they are not executable code.
 

@@ -94,17 +94,18 @@ for (const row of testRows) {
 }
 const hashPaths = [paths.all, paths.test, paths.source, paths.development, paths.testCandidates, paths.guideline];
 const manifest = {
-  manifest_name: "Human Annotation v2 Full Evaluation Freeze",
-  status: "frozen_for_v2_full_test_evaluation",
+  manifest_name: "Human Annotation Full Evaluation Freeze",
+  status: "frozen_for_full_test_evaluation",
   frozen_at: "2026-09-24",
   annotation_unit: "candidate × membership",
   split_policy: "20 development candidates for selection; 40 test candidates for evaluation only; no test-label retuning",
   provenance: {
     source_manifest: rel(paths.source),
     source_manifest_status: sourceManifest.status,
-    first_phase: "20 development + 10 preselected test candidates",
-    second_phase: "remaining 30 test candidates",
-    original_sources_preserved_outside_v2_snapshot: true,
+    first_collection_batch: "20 development + 10 test candidates",
+    second_collection_batch: "30 test candidates",
+    collection_batches_are_not_analytical_subgroups: true,
+    original_sources_preserved_outside_current_snapshot: true,
   },
   development: { candidate_count: 20, judgement_count: 360 },
   test: testQc,

@@ -16,9 +16,9 @@ There is currently no authoritative or labelled JD dataset. `experimental/jd_ana
 | Memberships per annotated candidate | 18 |
 | Frozen primary judgements | 1,080: 360 development and 720 held-out test |
 | Annotators | One researcher-annotator |
-| Unlabelled reserve | None in v2 |
+| Test annotation coverage | All 40 test candidates |
 | Candidate freeze date | 2026-08-16 |
-| v2 annotation freeze date | 2026-09-24 |
+| Full annotation freeze date | 2026-09-24 |
 
 The Candidate Dataset has no public iteration suffix. Its integrity is defined by the hashes in `data/candidates/manifest.json`, not by a version number embedded in its name.
 
@@ -118,7 +118,7 @@ The earlier A/B/C annotation views are superseded workflow artefacts. They are n
 
 Only the 20-candidate development split may influence method choice, Hybrid weight, aggregation selection, or other documented parameters.
 
-The complete 40-candidate test split was annotated and frozen for v2. The v2 workflow reran method and aggregation selection using only the unchanged 20-candidate development split, froze `matching_v2`, and then evaluated all 40 test candidates without retuning. The earlier ten-candidate v1 result remains available only through Git tag `v1.0-selected-test-10`.
+The complete 40-candidate test split was annotated and frozen before final evaluation. Method and aggregation selection used only the 20-candidate development split; the selected TF-IDF configuration was then evaluated on all 40 test candidates without retuning.
 
 ## 8. Intended and prohibited uses
 

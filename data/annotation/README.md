@@ -3,7 +3,7 @@
 ## Current authority
 
 - The annotation unit is `candidate_id × membership_id`.
-- `annotation_all_60.csv` is the authoritative v2 dataset: 60 candidates × 18 memberships = 1,080 judgements.
+- `annotation_all_60.csv` is the authoritative dataset: 60 candidates × 18 memberships = 1,080 judgements.
 - `annotation_test_full.csv` is the derived 40-candidate held-out subset: 720 judgements.
 - `annotation_v2_manifest.json` records scope, quality checks, provenance, and hashes.
 - `source_extended_annotation_manifest.json` preserves the two-phase consolidation provenance.
@@ -12,9 +12,9 @@ The complete distribution is 614 label-0, 279 label-1, and 187 label-2 judgement
 
 ## Split policy
 
-The 20 development candidates and their 360 judgements are used for method and aggregation selection. The 40 test candidates and their 720 judgements are evaluation-only. v2 evaluates the complete test split after freezing the configuration; test labels must not be used for retuning.
+The 20 development candidates and their 360 judgements are used for method and aggregation selection. The 40 test candidates and their 720 judgements are evaluation-only. The complete test split is evaluated only after freezing the configuration; test labels must not be used for retuning.
 
-The original first-phase dataset and ten-candidate evaluation remain recoverable through Git tag `v1.0-selected-test-10`. They are historical records, not parallel current inputs.
+Earlier study states remain recoverable through Git tags. They are historical records, not parallel current inputs.
 
 ## Reliability limitation
 

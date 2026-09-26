@@ -17,7 +17,7 @@ Do not use the output to screen, shortlist, reject, hire, compensate, or rank re
 
 Scores are comparable within a ranker execution but are not calibrated probabilities. The 15 occupations create 18 occupation–Role Profile memberships as the primary scoring and evaluation units. Development-only comparison selected TF-IDF with `mean_all` aggregation and equal background/direction weights. Five Role Profile rankings are derived as the user-facing secondary level.
 
-The submission-ready v2 evaluation uses 20 development candidates for selection and all 40 held-out test candidates for final evaluation. Membership nDCG@3 is 0.660627 (95% candidate-bootstrap interval [0.565457, 0.753311]); secondary Role Profile nDCG@3 is 0.898108 ([0.847969, 0.940831]). These synthetic, single-annotator results are exploratory and do not establish real-world effectiveness.
+The submission-ready evaluation uses 20 development candidates for selection and all 40 held-out test candidates for final evaluation. Membership nDCG@3 is 0.660627 (95% candidate-bootstrap interval [0.565457, 0.753311]); secondary Role Profile nDCG@3 is 0.898108 ([0.847969, 0.940831]). These synthetic, single-annotator results are exploratory and do not establish real-world effectiveness.
 
 ## Experimental JD analyzer
 

@@ -59,9 +59,9 @@ def load_runtime(
         raise ValueError("selected matching configuration must define component_weights")
     method = matching_config.get("runtime_method", matching_config.get("method"))
     aggregation = matching_config.get("aggregation")
-    version = matching_config.get("version")
-    if not all(isinstance(value, str) and value for value in (method, aggregation, version)):
-        raise ValueError("selected matching configuration must define version, method, and aggregation")
+    study_id = matching_config.get("study_id")
+    if not all(isinstance(value, str) and value for value in (method, aggregation, study_id)):
+        raise ValueError("selected matching configuration must define study_id, method, and aggregation")
     return AppRuntime(
         role_profiles=role_profiles,
         matching_config=matching_config,
@@ -110,7 +110,7 @@ def rank_candidate(runtime: AppRuntime, payload: dict[str, Any]) -> dict[str, An
     return {
         "candidate_id": candidate.candidate_id,
         "model": model,
-        "configuration": runtime.matching_config["version"],
+        "configuration": runtime.matching_config["study_id"],
         "aggregation": runtime.matcher.aggregation,
         "component_weights": {
             "background": runtime.matcher.background_weight,
@@ -283,7 +283,7 @@ class MairRequestHandler(BaseHTTPRequestHandler):
         return {
             "status": "ok",
             "role_profiles": len(self.runtime.role_profiles),
-            "configuration": self.runtime.matching_config["version"],
+            "configuration": self.runtime.matching_config["study_id"],
             "jd_configuration": self.runtime.jd_analyzer.version,
             "jd_evaluation_status": "not_formally_evaluated",
         }
