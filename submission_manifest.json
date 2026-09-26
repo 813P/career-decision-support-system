@@ -31,8 +31,8 @@
     },
     {
       "path": "config/selected/tfidf.json",
-      "bytes": 5364,
-      "sha256": "64af4c62f3d8fbcc0febb4a74c9c874ca522cf50adf3cef4e5e2134d385237f0"
+      "bytes": 5420,
+      "sha256": "cd4fb5c73488f4fe1d26f3c72ee08136b177ae255cd865e14b4b4a53dcde9e28"
     },
     {
       "path": "config/shared/matching_aliases.json",
@@ -241,8 +241,8 @@
     },
     {
       "path": "experiments/validation/freeze_matching_v2.mjs",
-      "bytes": 5849,
-      "sha256": "af790aa352a519945edd299f07cd35b2d056588589298407dd905fb1627b8395"
+      "bytes": 5903,
+      "sha256": "0b70405516461723ceff9234f86dd91a7894a634f86050b917b1a91a01138f03"
     },
     {
       "path": "experiments/validation/prepare_annotation_v2.mjs",
@@ -307,7 +307,7 @@
     {
       "path": "reports/evaluation/matching_v2_full_test_run_manifest.json",
       "bytes": 1424,
-      "sha256": "39fb86fde76ecfef5538be851bc27e8b165223e6ad85f0210bdb9fafc8da0d5c"
+      "sha256": "8e68c3a222fccb33539b0ce7287de1d0686d32b06c73397fdcbfebc9ca57d419"
     },
     {
       "path": "reports/freezes/CANDIDATE_DATASET_FREEZE.md",
@@ -322,7 +322,7 @@
     {
       "path": "reports/freezes/MATCHING_V2_FREEZE.md",
       "bytes": 1003,
-      "sha256": "2b1902b67dd1ccc010b1bbf5bd5b29da7537fdafa42cbdc81d62191eb9d435f9"
+      "sha256": "2a8ed0fd480c8f755f517c23b6666aa42d18c7e83755991a8ce7177b1db51030"
     },
     {
       "path": "reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md",
@@ -511,8 +511,8 @@
     },
     {
       "path": "tests/test_webapp.py",
-      "bytes": 7251,
-      "sha256": "b14ee840f9808cb12dea10656a27779bb3ae605ac4ce020a13b19e82540c0c6e"
+      "bytes": 7360,
+      "sha256": "7b856f8964ec0218b45b3dd7207e373d8b220c3f8060f6a255a8c3ee75f18853"
     },
     {
       "path": "tests/webapp_i18n.test.mjs",

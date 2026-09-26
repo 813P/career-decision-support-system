@@ -29,6 +29,7 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(len(self.runtime.role_profiles), 5)
         self.assertEqual(len(self.runtime.matcher.memberships), 18)
         self.assertEqual(self.runtime.matching_config["study_id"], "tfidf_full_test_evaluation")
+        self.assertEqual(self.runtime.matching_config["study_name"], "Selected TF-IDF full-test evaluation")
         self.assertEqual(self.runtime.matcher.method, self.runtime.matching_config["method"])
         self.assertEqual(self.runtime.matcher.aggregation, self.runtime.matching_config["aggregation"])
 
