@@ -5,12 +5,9 @@
   "annotation_unit": "candidate × membership",
   "split_policy": "20 development candidates for selection; 40 test candidates for evaluation only; no test-label retuning",
   "provenance": {
-    "source_manifest": "data/annotation/source_extended_annotation_manifest.json",
-    "source_manifest_status": "derived_ready_for_evaluation",
-    "first_collection_batch": "20 development + 10 test candidates",
-    "second_collection_batch": "30 test candidates",
+    "collection_history": "Completed annotation batches were consolidated before the full-dataset freeze.",
     "collection_batches_are_not_analytical_subgroups": true,
-    "original_sources_preserved_outside_current_snapshot": true
+    "original_source_workbooks_preserved_outside_current_snapshot": true
   },
   "development": {
     "candidate_count": 20,
@@ -49,7 +46,6 @@
   "sha256": {
     "data/annotation/annotation_all_60.csv": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56",
     "data/annotation/annotation_test_full.csv": "52b43a28aa156f7bbc2346aa68aa2610bac359808c68567fd86485fd6e45ce84",
-    "data/annotation/source_extended_annotation_manifest.json": "f0cbab758a8c556f29d1c86bd807a1d6a63db4d483c16d45472d8f03cfa6ba3b",
     "data/candidates/development.json": "a7a7ae15b4754a471d62e07eedaf37b65fd62000b127a4133cfe60924f55cd73",
     "data/candidates/test.json": "a8e117cb661d09f6b9377105774039658f14389f06d8348f073f4df084200a54",
     "docs/HUMAN_ANNOTATION_GUIDELINE.md": "8a637df08d7a615a9da39c48efd1cb8f1d682298e67dfd4455b3ce0674ad01f4"
