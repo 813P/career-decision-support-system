@@ -28,7 +28,7 @@ DEFAULT_ROLE_PROFILES = ROOT / "taxonomy" / "role_profiles.json"
 DEFAULT_MEMBERSHIPS = ROOT / "taxonomy" / "role_occupation_memberships.json"
 DEFAULT_ALIASES = ROOT / "config" / "shared" / "matching_aliases.json"
 DEFAULT_MATCHING_CONFIG = ROOT / "config" / "selected" / "tfidf.json"
-DEFAULT_JD_EVIDENCE_CONFIG = ROOT / "config" / "shared" / "jd_evidence_phrases.json"
+DEFAULT_JD_EVIDENCE_CONFIG = ROOT / "experimental" / "jd_analysis" / "jd_evidence_phrases.json"
 
 
 @dataclass

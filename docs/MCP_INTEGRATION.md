@@ -30,4 +30,4 @@ The current executable taxonomy uses 15 official ESCO occupations and 18 many-to
 - Protected personal attributes are not accepted by the ranking tool.
 - Interest signals remain in the presentation layer and do not alter model scores.
 - Years of experience and IC/manager/POC positioning do not alter Role Profile relevance scores.
-- JD interpretation is a separate experimental deterministic evidence-group analysis. It is not covered by the frozen candidate-model evaluation; see `JD_PROFILE_ANALYSIS.md`.
+- JD interpretation is a separate experimental deterministic evidence-group analysis. It is not covered by the frozen candidate-model evaluation; see [`experimental/jd_analysis/`](../experimental/jd_analysis/README.md).

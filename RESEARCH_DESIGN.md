@@ -81,7 +81,7 @@ flowchart LR
     R --> O[Scores, contributors, and evidence prompts]
 ```
 
-A local web application and MCP interface expose the selected ranker. The separate experimental job-description analyser is outside this candidate-ranking study; see [its own scope and method](docs/JD_PROFILE_ANALYSIS.md).
+A local web application and MCP interface expose the selected ranker. The separate experimental job-description analyser is outside this candidate-ranking study; see [its own scope and method](experimental/jd_analysis/README.md).
 
 ## 4. Data and researcher annotation
 

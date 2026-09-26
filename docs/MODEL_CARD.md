@@ -23,7 +23,7 @@ The submission-ready v2 evaluation uses 20 development candidates for selection 
 
 The application contains a separate deterministic multi-label JD analyzer. It matches ordered, contiguous bilingual responsibility phrases into weighted evidence groups, applies substantive-purpose anchors and counter-evidence, and returns `primary`, `supporting`, or `insufficient` components. It can abstain when no direction has sufficient evidence.
 
-This analyzer is not one of the four candidate rankers, does not score the 18 occupation memberships, and does not use the selected candidate-side TF-IDF parameters. Its coverage scores are transparent rule diagnostics, not probabilities or candidate–job fit scores. No labelled JD dataset currently supports a performance claim; see `JD_PROFILE_ANALYSIS.md`.
+This analyzer is not one of the four candidate rankers, does not score the 18 occupation memberships, and does not use the selected candidate-side TF-IDF parameters. Its coverage scores are transparent rule diagnostics, not probabilities or candidate–job fit scores. No labelled JD dataset currently supports a performance claim; see [`experimental/jd_analysis/`](../experimental/jd_analysis/README.md).
 
 ## Explanations
 

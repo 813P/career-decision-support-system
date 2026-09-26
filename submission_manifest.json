@@ -16,13 +16,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 12512,
-      "sha256": "4854d281abaaf61fb51c4c33e7caa41a1b2c368720d012ebcc607f2553c8387e"
+      "bytes": 12573,
+      "sha256": "b720e5c0fbc2f25d207a3ca1d6f7d9ed44d225e8c04457d279f68a9af89eaba8"
     },
     {
       "path": "RESEARCH_DESIGN.md",
-      "bytes": 27839,
-      "sha256": "298aa8948c895c36c0bb945606cf1108870a8c664147ce22759a42f74d123978"
+      "bytes": 27846,
+      "sha256": "a1ee673b902069ea9a4db82910a02f66d71115dec36c3f9e1183a59c1f6e3332"
     },
     {
       "path": "RUN_ISSUES.md",
@@ -38,11 +38,6 @@
       "path": "config/selected/tfidf.json",
       "bytes": 5550,
       "sha256": "2eb1cd051ee9fff2a7ffd20b872d8fc82e644f7007e73357a38402a8ceb95fb1"
-    },
-    {
-      "path": "config/shared/jd_evidence_phrases.json",
-      "bytes": 13665,
-      "sha256": "974a3e5a55b5a36931a2810f18258d8ab9f2e0c1628ee8747d0a5816b759029f"
     },
     {
       "path": "config/shared/matching_aliases.json",
@@ -131,8 +126,8 @@
     },
     {
       "path": "docs/DATA_CARD.md",
-      "bytes": 11529,
-      "sha256": "0688d270b5583e9b94283ba1b2b91f5cdca3b79cdb0b1d173e71e0853698f5a1"
+      "bytes": 11540,
+      "sha256": "afe7af3d0a2df9980aede36cd6c4f691255cf4237408e16e816fe4db8d08cd74"
     },
     {
       "path": "docs/DATA_SOURCE_POLICY.md",
@@ -155,24 +150,19 @@
       "sha256": "733ab1b874879242ec0baafc7b7b116cb69d228243e0412c098a25324a487a91"
     },
     {
-      "path": "docs/JD_PROFILE_ANALYSIS.md",
-      "bytes": 3143,
-      "sha256": "4fc2d0e506d8c40d53b5e0fe9b75a090f416c3b63f5210e825699aa2c87ab331"
-    },
-    {
       "path": "docs/MCP_INTEGRATION.md",
-      "bytes": 1861,
-      "sha256": "3edffc802718142623759eb16407ea9d917c88bb3ffc9dae3a3641a55479ca11"
+      "bytes": 1905,
+      "sha256": "9cb51196a1a6588725dc069dc9b92cd7bd58ad61d2337e5785fac3bd7880911b"
     },
     {
       "path": "docs/MODEL_CARD.md",
-      "bytes": 5446,
-      "sha256": "437858af7c56356d5f4c10f7239b7cb2bedb03e8307c558130f3426d891862dd"
+      "bytes": 5490,
+      "sha256": "cd21efff9913d2f4f3525aa190b71a98042ef67de820cf25583607fa69399353"
     },
     {
       "path": "docs/README.md",
-      "bytes": 2311,
-      "sha256": "b8fd1f6ce9247be8d05444d34e0396ca86b984d4012f06b04eb8bb9682839e87"
+      "bytes": 2328,
+      "sha256": "101f865c2abde503d933f4f5c84baa6b3a7857b9c1bc6e1f1241b8ed3343fac3"
     },
     {
       "path": "docs/RESEARCH_TECHNICAL_APPENDIX.md",
@@ -183,6 +173,16 @@
       "path": "docs/templates/annotation_template.csv",
       "bytes": 166,
       "sha256": "d1a58bfa588ccb49d3191749536114a224f3cb5248dd22ae0d421a6d948a934a"
+    },
+    {
+      "path": "experimental/jd_analysis/README.md",
+      "bytes": 3443,
+      "sha256": "3c14883d74b1e2b8551738759c5b1f61ebb93deca0379f192e54a4ecab14ac1d"
+    },
+    {
+      "path": "experimental/jd_analysis/jd_evidence_phrases.json",
+      "bytes": 13665,
+      "sha256": "974a3e5a55b5a36931a2810f18258d8ab9f2e0c1628ee8747d0a5816b759029f"
     },
     {
       "path": "experiments/__init__.py",
@@ -446,8 +446,8 @@
     },
     {
       "path": "src/career_matcher/webapp.py",
-      "bytes": 15308,
-      "sha256": "efd513e93dd35fcd217c2b89c1fce79444971d807b66d1dce306047d28872c40"
+      "bytes": 15319,
+      "sha256": "f9d9f2bd2eed1d4fdfe960247a9260c824567a93b49d091c9f87c41438fb913b"
     },
     {
       "path": "taxonomy/README.md",
