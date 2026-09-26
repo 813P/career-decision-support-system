@@ -2,7 +2,7 @@
   "manifest_name": "Submission-ready repository",
   "status": "complete",
   "created_at": "2026-09-26",
-  "file_count": 106,
+  "file_count": 105,
   "files": [
     {
       "path": ".gitattributes",
@@ -158,11 +158,6 @@
       "path": "docs/RESEARCH_TECHNICAL_APPENDIX.md",
       "bytes": 9222,
       "sha256": "1d8368f8027ddcb23af5da91eb2a998f57ca59e6a68ef7d46236768687f45248"
-    },
-    {
-      "path": "docs/templates/annotation_template.csv",
-      "bytes": 166,
-      "sha256": "d1a58bfa588ccb49d3191749536114a224f3cb5248dd22ae0d421a6d948a934a"
     },
     {
       "path": "experimental/jd_analysis/README.md",
