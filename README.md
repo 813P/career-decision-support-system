@@ -155,7 +155,7 @@ To check the frozen data and implementation:
 
 ```powershell
 node experiments/validation/validate_candidate_data.mjs
-node experiments/validation/validate_experiment.mjs
+node experiments/validation/validate_full_study.mjs
 python -m pytest
 node --test tests/role_profile_experiment.test.mjs
 node --test tests/webapp_i18n.test.mjs
@@ -181,7 +181,7 @@ Optional Semantic and MCP dependencies: `python -m pip install -e ".[semantic,mc
 | Quick project overview | This README |
 | Research design and methodology | [Research Design](RESEARCH_DESIGN.md) |
 | Formulas, runtime, and metric details | [Technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) |
-| Full 40-candidate held-out results | [Evaluation report](reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
+| Full 40-candidate held-out results | [Evaluation report](reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) |
 | Historical study snapshots | Repository Git tags |
 | Failure cases | [Error analysis](docs/ERROR_ANALYSIS.md) |
 

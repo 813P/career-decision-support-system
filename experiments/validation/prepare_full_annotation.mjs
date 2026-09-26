@@ -110,4 +110,4 @@ const manifest = {
   change_control: "Any candidate evidence, label, rationale, evidence strength, membership, matching target, method, parameter, or split change requires a new study freeze.",
 };
 await writeFile(paths.output, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
-process.stdout.write(`ANNOTATION_MANIFEST_PREPARED candidates=60 test_candidates=40 judgements=1080 test_judgements=720\n`);
+process.stdout.write(`ANNOTATION_PREPARED candidates=60 test_candidates=40 judgements=1080 test_judgements=720\n`);

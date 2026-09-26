@@ -8,7 +8,7 @@
 
 ## Configuration checksum
 
-- `config/selected/tfidf.json`: `bfd11edb5208b8c3bfa80028af9fd9cf6f1c7f3d23f34a6e513219a81347df4f`
+- `config/selected/tfidf.json`: `35d3b89dbe4724a88d2b3f89ee83faee293f7e69a96f59843afa2f32126c3d33`
 
 **Presentation amendment, 2026-09-26:** The selected configuration uses the conclusion-oriented filename `tfidf.json`; runtime references and the evaluation-code checksum were updated accordingly. The selected method, aggregation, weights, inputs, rankings, metrics, and test outputs did not change.
 

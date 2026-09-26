@@ -12,7 +12,7 @@
 
 Semantic has the highest point estimate for membership nDCG@3 (`0.753349`), while TF-IDF scores `0.746448`. The difference is `0.006901`; the paired candidate-level 95% bootstrap interval for TF-IDF minus Semantic is `[-0.068648, 0.049863]`. Under the documented practical-tie rule (nDCG@3 gap no more than `0.01`, interval includes zero), TF-IDF is recommended because it is simpler and more interpretable.
 
-This recommendation was reproduced and frozen on 2026-09-24. The freeze record is `reports/freezes/SELECTED_TFIDF_CONFIGURATION_FREEZE.md`; the full-test result must not be used for retuning.
+This recommendation was reproduced and frozen on 2026-09-24. The freeze record is `reports/freezes/TFIDF_CONFIGURATION_FREEZE.md`; the full-test result must not be used for retuning.
 
 ## Membership-ranking comparison
 

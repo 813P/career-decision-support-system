@@ -159,7 +159,7 @@ The frozen configuration and manifests retain exact versions, hashes, bootstrap 
 |---|---|
 | Selected configuration and hashes | [tfidf.json](../config/selected/tfidf.json) |
 | Development comparison | [Selection report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) |
-| Final evaluation | [Full-test report](../reports/evaluation/MATCHING_V2_FULL_TEST_EVALUATION.md) |
+| Final evaluation | [Full-test report](../reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) |
 | Membership evidence | [Evidence freeze](../reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md) |
 | Application ranker | [role_profiles.py](../src/career_matcher/role_profiles.py) |
 | Experimental ranking | [role_profile_experiment.mjs](../experiments/shared/role_profile_experiment.mjs) |
