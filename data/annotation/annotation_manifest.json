@@ -52,7 +52,7 @@
     "data/annotation/source_extended_annotation_manifest.json": "f0cbab758a8c556f29d1c86bd807a1d6a63db4d483c16d45472d8f03cfa6ba3b",
     "data/candidates/development.json": "a7a7ae15b4754a471d62e07eedaf37b65fd62000b127a4133cfe60924f55cd73",
     "data/candidates/test.json": "a8e117cb661d09f6b9377105774039658f14389f06d8348f073f4df084200a54",
-    "docs/HUMAN_ANNOTATION_GUIDELINE.md": "621b8a423f55c69933b989d3f1215b1c7dd0aa39d9b3357eda080b93249c27c1"
+    "docs/HUMAN_ANNOTATION_GUIDELINE.md": "8a637df08d7a615a9da39c48efd1cb8f1d682298e67dfd4455b3ce0674ad01f4"
   },
-  "change_control": "Any candidate evidence, label, rationale, evidence strength, membership, matching target, method, parameter, or split change requires a new study version and freeze."
+  "change_control": "Any candidate evidence, label, rationale, evidence strength, membership, matching target, method, parameter, or split change requires a new study freeze."
 }

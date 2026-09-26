@@ -31,8 +31,8 @@
     },
     {
       "path": "config/selected/tfidf.json",
-      "bytes": 5420,
-      "sha256": "cd4fb5c73488f4fe1d26f3c72ee08136b177ae255cd865e14b4b4a53dcde9e28"
+      "bytes": 5417,
+      "sha256": "1a2e037543eebb2e658f8b33735a53bdf63d42869892d840b2b6c8aca9fbfbf6"
     },
     {
       "path": "config/shared/matching_aliases.json",
@@ -46,8 +46,8 @@
     },
     {
       "path": "data/annotation/README.md",
-      "bytes": 1679,
-      "sha256": "6a195be79ea1f01a168a85bbbedf7dd9ec009ae32e5bce84a37423c8ec599e95"
+      "bytes": 1676,
+      "sha256": "1beefae820f795b61d2575a2cbce0e1ec235f82d2524dc9300b280ad196b5b41"
     },
     {
       "path": "data/annotation/annotation_all_60.csv",
@@ -55,14 +55,14 @@
       "sha256": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56"
     },
     {
+      "path": "data/annotation/annotation_manifest.json",
+      "bytes": 2380,
+      "sha256": "df7f3246b80bae7c73e70ef5d80a97504f3a9c84704b26c64de813b296382245"
+    },
+    {
       "path": "data/annotation/annotation_test_full.csv",
       "bytes": 460770,
       "sha256": "52b43a28aa156f7bbc2346aa68aa2610bac359808c68567fd86485fd6e45ce84"
-    },
-    {
-      "path": "data/annotation/annotation_v2_manifest.json",
-      "bytes": 2392,
-      "sha256": "4ca82c09db556e288a4ecc5bd08d58cd941b16141db96bc84f5c794cd86e4ec4"
     },
     {
       "path": "data/annotation/source_extended_annotation_manifest.json",
@@ -121,8 +121,8 @@
     },
     {
       "path": "docs/DATA_CARD.md",
-      "bytes": 11460,
-      "sha256": "f5ec967d3fa1a46cf9558a816e58544eb78aa36783a46d40d54a973dcf34027f"
+      "bytes": 11457,
+      "sha256": "d2a23d14b398fbcbe9f73ef8b6ae7123a8783fb21429a1c3cbf717b5020638a0"
     },
     {
       "path": "docs/DATA_SOURCE_POLICY.md",
@@ -141,8 +141,8 @@
     },
     {
       "path": "docs/HUMAN_ANNOTATION_GUIDELINE.md",
-      "bytes": 9706,
-      "sha256": "621b8a423f55c69933b989d3f1215b1c7dd0aa39d9b3357eda080b93249c27c1"
+      "bytes": 9675,
+      "sha256": "8a637df08d7a615a9da39c48efd1cb8f1d682298e67dfd4455b3ce0674ad01f4"
     },
     {
       "path": "docs/MCP_INTEGRATION.md",
@@ -211,8 +211,8 @@
     },
     {
       "path": "experiments/development_selection/select_parameters.mjs",
-      "bytes": 16178,
-      "sha256": "4257d7d0707743ed655432ffaed42639a186df23613150d2662299b615a6a92c"
+      "bytes": 16175,
+      "sha256": "37522e5d3f608ded441b52214e7cce33a567849568985d274ef00649e3df9afd"
     },
     {
       "path": "experiments/evaluation/run_full_test_evaluation.mjs",
@@ -241,13 +241,13 @@
     },
     {
       "path": "experiments/validation/freeze_matching_v2.mjs",
-      "bytes": 5903,
-      "sha256": "0b70405516461723ceff9234f86dd91a7894a634f86050b917b1a91a01138f03"
+      "bytes": 5900,
+      "sha256": "1e57cc70595860565a7fe80d5a93562666a626b86fb04fec1a2eca54c039d230"
     },
     {
       "path": "experiments/validation/prepare_annotation_v2.mjs",
-      "bytes": 7516,
-      "sha256": "ca79c5a9d19faa6d23700faf15cdbd21310fe4f614a343c1f0fa30beb3da52be"
+      "bytes": 7513,
+      "sha256": "71f442786f5710e45929916bc73f558a90c693aae16545c052aca7df4779309f"
     },
     {
       "path": "experiments/validation/validate_candidate_data.mjs",
@@ -256,8 +256,8 @@
     },
     {
       "path": "experiments/validation/validate_v2.mjs",
-      "bytes": 3227,
-      "sha256": "163fbfb5c163c3795bf0f821a1d2eca6a8e6080eccaba6c659403c176c889936"
+      "bytes": 3224,
+      "sha256": "e140621b87e626f41a133101176f37c47552510c1fd07ba690ceae62403fda91"
     },
     {
       "path": "pyproject.toml",
@@ -307,7 +307,7 @@
     {
       "path": "reports/evaluation/matching_v2_full_test_run_manifest.json",
       "bytes": 1424,
-      "sha256": "8e68c3a222fccb33539b0ce7287de1d0686d32b06c73397fdcbfebc9ca57d419"
+      "sha256": "d9167305201f8fc4c092065d01f5b23eada4261eec8b487da80a47e8e3b14f3d"
     },
     {
       "path": "reports/freezes/CANDIDATE_DATASET_FREEZE.md",
@@ -316,13 +316,13 @@
     },
     {
       "path": "reports/freezes/HUMAN_ANNOTATION_FREEZE.md",
-      "bytes": 2004,
-      "sha256": "1cf8389c953d0c24c97eb4e67db194bb9046126b77b34719b3b314e22e5d5237"
+      "bytes": 2001,
+      "sha256": "898b60f0ff6c89afdf620525eb8f3b94b07fbaeb57f80df988df49e8110800d5"
     },
     {
       "path": "reports/freezes/MATCHING_V2_FREEZE.md",
       "bytes": 1003,
-      "sha256": "2a8ed0fd480c8f755f517c23b6666aa42d18c7e83755991a8ce7177b1db51030"
+      "sha256": "87bbec1b96c87ca7034267b50dd69d818df2c31d28c2ed8be64f2824f01fe294"
     },
     {
       "path": "reports/freezes/MEMBERSHIP_SKILL_EVIDENCE_FREEZE.md",
@@ -341,8 +341,8 @@
     },
     {
       "path": "reports/matching/development_parameter_selection.json",
-      "bytes": 91131,
-      "sha256": "68f279df072ab77aa16deb77957cc3d77f76e5a071e6a4719c7e32d7130ea0aa"
+      "bytes": 91128,
+      "sha256": "e9ad593faf1dc8ec672e8deb751500f01032ebe7a51cbfc25a94e7d6ba61e500"
     },
     {
       "path": "reports/matching/development_semantic_entry.json",

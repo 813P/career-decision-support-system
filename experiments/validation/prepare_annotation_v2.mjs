@@ -11,7 +11,7 @@ const paths = {
   development: join(ROOT, "data", "candidates", "development.json"),
   testCandidates: join(ROOT, "data", "candidates", "test.json"),
   guideline: join(ROOT, "docs", "HUMAN_ANNOTATION_GUIDELINE.md"),
-  output: join(ROOT, "data", "annotation", "annotation_v2_manifest.json"),
+  output: join(ROOT, "data", "annotation", "annotation_manifest.json"),
 };
 const rel = (path) => relative(ROOT, path).replaceAll("\\", "/");
 const json = async (path) => JSON.parse(await readFile(path, "utf8"));

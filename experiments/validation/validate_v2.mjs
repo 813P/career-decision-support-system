@@ -7,7 +7,7 @@ const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const json = async (path) => JSON.parse(await readFile(path, "utf8"));
 const sha256 = async (path) => createHash("sha256").update(await readFile(path)).digest("hex");
 
-const annotationManifest = await json(join(ROOT, "data", "annotation", "annotation_v2_manifest.json"));
+const annotationManifest = await json(join(ROOT, "data", "annotation", "annotation_manifest.json"));
 if (annotationManifest.status !== "frozen_for_full_test_evaluation" || annotationManifest.complete?.judgement_count !== 1080 || annotationManifest.test?.judgement_count !== 720) throw new Error("V2_VALIDATION_FAILED: annotation manifest scope");
 for (const [path, expected] of Object.entries(annotationManifest.sha256)) if (await sha256(join(ROOT, path)) !== expected) throw new Error(`V2_VALIDATION_FAILED: annotation input hash ${path}`);
 const configPath = join(ROOT, "config", "selected", "tfidf.json");
