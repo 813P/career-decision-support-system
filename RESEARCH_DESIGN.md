@@ -5,7 +5,7 @@
 **Document revision:** 2.1, 2026-09-26  
 **Completed experiment:** Selected TF-IDF full-test evaluation
 
-This report is the authoritative methodological narrative for the applied NLP study: it develops the motivating problem into research questions, design choices, findings, and limitations while preserving the completed experiment and distinguishing retrospective interpretation from recorded procedure. The root README is the concise project entry point; personal history, growth, and programme fit belong in the applicant's personal statement, not in this report.
+This report is the authoritative methodological narrative for the applied NLP study: it develops the motivating problem into research questions, design choices, findings, and limitations while preserving the completed experiment and distinguishing retrospective interpretation from recorded procedure.
 
 ## 1. Problem and motivation
 
