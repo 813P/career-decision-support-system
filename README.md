@@ -53,14 +53,14 @@ The skill prompts are not TF-IDF feature attribution. A missing prompt means tha
 
 ## 3. Method and experimental design
 
-The 60 fully synthetic, non-identifying profiles were drafted with AI assistance under controlled coverage of the five Role Profiles and predefined candidate scenarios, then validated, manually reviewed, and frozen. AI assistance was limited to drafting the candidate text; construction metadata such as intended Role Profile and scenario was excluded from both ranking inputs and the model-output-blinded annotation view.
+The 60 fully synthetic, non-identifying profiles were drafted with AI assistance under controlled coverage of the five Role Profiles and predefined candidate scenarios, then validated, manually reviewed, and frozen. AI assistance was limited to drafting the candidate text; construction metadata such as intended Role Profile and scenario was excluded from ranking inputs.
 
 The data were split with no overlap:
 
 - **20 development candidates** supported method and configuration selection;
 - **40 held-out test candidates** were reserved for final evaluation.
 
-Both sets cover all five Role Profiles and multiple candidate scenarios. A single researcher assigned all **1,080 candidate–membership relevance annotations** on a 0–2 scale. Ranking outputs and scores were hidden during annotation—**model-output-blinded researcher annotation**—but this was not independent, multi-rater, or double-blind validation.
+Both sets cover all five Role Profiles and multiple candidate scenarios. A single researcher assigned all **1,080 candidate–membership relevance annotations** on a 0–2 scale. Ranking outputs, scores, and construction metadata were hidden during annotation—**model-output-blinded researcher annotation**—but this was not independent, multi-rater, or double-blind validation.
 
 Four method families were compared on development data: **Structured**, **TF-IDF**, **Semantic**, and **Hybrid**. Semantic had the highest development membership nDCG@3 point estimate (0.7533), followed by TF-IDF (0.7464). The paired 95% bootstrap interval for TF-IDF minus Semantic was `[-0.0686, 0.0499]`.
 
