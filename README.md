@@ -22,21 +22,57 @@ The prototype supports exploration. It does not determine a person's “best” 
 
 ## 2. What I designed
 
-I designed a two-level ranking system with two evidence sides. Candidate evidence separates **background** from **aspiration**; career-space evidence connects reviewed ESCO content with researcher-defined Role Profile purposes. The system compares the corresponding evidence channels, then aggregates detailed occupation–profile matches into five broader analytical directions.
+I designed a two-level ranking system with two evidence sides. Candidate evidence separates **background** from **stated direction (aspiration)**; career-space evidence connects reviewed ESCO content with researcher-defined Role Profile purposes. The system compares the corresponding evidence channels, then aggregates occupation–Role Profile membership scores into five broader analytical directions.
+
+### System and Method Pipeline
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "linear", "nodeSpacing": 18, "rankSpacing": 28}}}%%
 flowchart TB
-    subgraph I["Two evidence sides"]
-        direction LR
-        C["Candidate evidence<br/>Background: title · skills · experience<br/>Aspiration: desired work"]
-        T["Career-space evidence<br/>Background targets: ESCO + Role Profiles<br/>Direction targets: ESCO + Role Profiles"]
+    subgraph I["Input & Representation"]
+        direction TB
+        subgraph H[" "]
+            direction LR
+            C0["Candidate evidence"]
+            T0["Career-space evidence:<br/>ESCO occupations + Role Profiles"]
+        end
+        subgraph F[" "]
+            direction LR
+            C1["Background: title · skills · experience<br/>Direction: desired work"]
+            T1["Background target: occupation description · profile tasks · skills<br/>Direction target: occupation titles · profile purpose · work directions"]
+        end
+        C0 --> C1
+        T0 --> T1
     end
 
-    C --> X["Aligned comparison<br/>Background similarity<br/>Direction similarity"]
-    T --> X
-    X --> M["Membership score<br/>0.5 background + 0.5 direction"]
-    M --> A["Profile aggregation<br/>mean_all"]
-    A --> R["5 ranked Role Profiles"]
+    subgraph D["Method Selection — Development Set"]
+        direction TB
+        E["Development-set membership-ranking comparison:<br/>Structured · TF-IDF · Semantic · Hybrid<br/>Fixed background/direction weights: 0.5/0.5"]
+        M["Selected membership method:<br/>TF-IDF"]
+        A["Development-set aggregation comparison:<br/>max · mean_top_2 · mean_all"]
+        G["Selected aggregation configuration:<br/>mean_all"]
+        E --> M --> A --> G
+    end
+
+    subgraph V["Held-out Test Evaluation"]
+        Q["Final configuration: TF-IDF + mean_all<br/>Metrics: Membership nDCG@3 · Role Profile nDCG@3"]
+    end
+
+    subgraph S["System Output"]
+        O["5 Role Profile rankings<br/>background/direction scores · occupation evidence<br/>matched skills · missing evidence"]
+    end
+
+    C1 --> E
+    T1 --> E
+    G --> Q --> O
+    style I fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
+    style D fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
+    style V fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
+    style S fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
+    style H fill:transparent,stroke:transparent
+    style F fill:transparent,stroke:transparent
+    classDef selected fill:#ffffff,stroke:#555555,stroke-width:1.5px
+    class M,G selected
 ```
 
 The five **Analytical Role Profiles** are project-defined groupings based on the purpose of the work:
@@ -114,7 +150,7 @@ These held-out cases informed error analysis only; the frozen configuration was 
 ### Contributions
 
 - A two-level formulation connecting inspectable occupational evidence to accessible career directions.
-- Separate representation of demonstrated background and stated aspiration.
+- Separate representation of demonstrated background and stated direction (aspiration).
 - A controlled comparison of structured, lexical, semantic, and hybrid ranking approaches.
 - Development-only configuration selection followed by frozen held-out evaluation.
 - Explanation design that separates ranking-linked evidence from supplementary skill checks.
