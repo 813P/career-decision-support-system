@@ -1,6 +1,6 @@
 # Career Decision Support System
 
-The **Career Decision Support System** is a research-oriented, explainable AI prototype for human-centred career exploration. It helps candidates explore analytical career directions by ranking project-defined Role Profiles from evidence about both their **background** and **intended direction**.
+The Career Decision Support System is a research-oriented, explainable AI prototype for human-centred career exploration. It helps candidates explore analytical career directions by ranking project-defined Role Profiles from evidence about both their background and intended direction.
 
 Rather than returning a single opaque recommendation, the system separates background fit from directional intent and surfaces the evidence behind its rankings, including occupation-level evidence, matched skills, missing evidence, and ranking provenance.
 
