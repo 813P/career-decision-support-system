@@ -9,9 +9,12 @@ The **Career Decision Support System** is a research-oriented AI project for hum
 
 ## 1. Problem and motivation
 
-The project began with an observation from my work in ByteDance's central data recruitment function: different titles could describe similar analytical work, while similar titles could describe substantially different work. Titles alone were therefore an unreliable guide to a person's experience or intended next step.
+The project began with an observation from my work in ByteDance's central data recruitment function. It addresses two connected ambiguities:
 
-The design problem is especially visible during career transitions. A ranker driven only by past experience can repeatedly return a person's current field; one driven only by aspiration can overstate an unsupported transition. The study therefore asks:
+- **Career-space ambiguity:** job titles do not map consistently to the work people actually do. Different titles can describe similar analytical work, while similar titles can represent substantially different responsibilities, making the career landscape difficult to interpret from titles alone.
+- **Candidate-side ambiguity:** people entering the workforce or changing careers may struggle to connect their background, transferable experience, and aspirations with concrete types of work. For career changers in particular, demonstrated experience and intended direction may diverge.
+
+The study therefore asks:
 
 > How closely do evidence-based career-direction rankings agree with researcher relevance judgements in a controlled synthetic-candidate study, and where do they disagree?
 
@@ -19,16 +22,30 @@ The prototype supports exploration. It does not determine a person's “best” 
 
 ## 2. What I designed
 
-I designed a two-level ranking system that keeps **candidate background** and **aspiration** separate, compares both with concrete occupational evidence, and then aggregates detailed matches into five broader analytical directions.
+I designed a two-level ranking system with two evidence sides. Candidate evidence separates **background** from **aspiration**; career-space evidence connects reviewed ESCO content with researcher-defined Role Profile purposes. The system compares the corresponding evidence channels, then aggregates detailed occupation–profile matches into five broader analytical directions.
 
 ```mermaid
 flowchart LR
-    B[Background<br/>title, skills, experience] --> M[Score 18 occupation–profile memberships]
-    D[Aspiration<br/>desired work] --> M
-    E[Reviewed occupational<br/>and profile evidence] --> M
-    M --> A[Aggregate membership evidence]
-    A --> R[Rank 5 Role Profiles]
-    R --> O[Scores, contributors,<br/>and evidence prompts]
+    subgraph C["Candidate evidence<br/>background may differ from aspiration"]
+        B["Background<br/>title + skills + experience"]
+        D["Aspiration<br/>desired work"]
+    end
+    subgraph T["Career-space evidence<br/>titles may differ from work content"]
+        E["15 ESCO occupations<br/>descriptions + reviewed skills"]
+        P["5 Role Profiles<br/>work purpose + boundaries"]
+        E --> BT["18 membership<br/>background targets"]
+        P --> BT
+        E --> DT["18 membership<br/>direction targets"]
+        P --> DT
+    end
+    B --> BS["Background similarity"]
+    BT --> BS
+    D --> DS["Direction similarity"]
+    DT --> DS
+    BS --> M["0.5 + 0.5<br/>membership score"]
+    DS --> M
+    M --> A["mean_all<br/>profile aggregation"]
+    A --> R["Rank 5 Role Profiles"]
 ```
 
 The five **Analytical Role Profiles** are project-defined groupings based on the purpose of the work:
