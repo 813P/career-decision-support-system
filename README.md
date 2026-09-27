@@ -29,8 +29,9 @@ I designed a two-level ranking system with two evidence sides. Candidate evidenc
 ```mermaid
 %%{init: {"themeVariables": {"fontSize": "18px"}, "flowchart": {"curve": "linear", "nodeSpacing": 18, "rankSpacing": 28}}}%%
 flowchart TB
-    subgraph I["Input & Representation"]
+    subgraph I[" "]
         direction TB
+        IH["Input & Representation"]
         subgraph H[" "]
             direction LR
             C0["Candidate evidence"]
@@ -41,37 +42,46 @@ flowchart TB
             C1["Background: title · skills · experience<br/>Direction: desired work"]
             T1["Background target: occupation description · tasks · skills<br/>Direction target: occupation titles · profile purpose · work directions"]
         end
+        IH ~~~ H
         C0 --> C1
         T0 --> T1
     end
 
-    subgraph D["Method Selection — Development Set"]
+    subgraph D[" "]
         direction TB
+        DH["Method Selection: Development Set"]
         E["Development-set membership-ranking comparison:<br/>Structured · TF-IDF · Semantic · Hybrid<br/>Fixed background/direction weights: 0.5/0.5"]
         M["Selected membership method:<br/>TF-IDF"]
         A["Development-set aggregation comparison:<br/>max · mean_top_2 · mean_all"]
         G["Selected aggregation configuration:<br/>mean_all"]
+        DH ~~~ E
         E --> M --> A --> G
     end
 
-    subgraph V["Held-out Test Evaluation"]
+    subgraph V[" "]
+        VH["Held-out Test Evaluation"]
         Q["Final configuration: TF-IDF + mean_all<br/>Metrics: Membership nDCG@3 · Role Profile nDCG@3"]
+        VH ~~~ Q
     end
 
-    subgraph S["System Output"]
+    subgraph S[" "]
+        SH["System Output"]
         O["Ranked Role Profiles<br/>background/direction score decomposition<br/>occupation evidence · aggregation provenance<br/>matched skills · missing evidence"]
+        SH ~~~ O
     end
 
     C1 --> E
     T1 --> E
     G --> Q --> O
-    style I fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
-    style D fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
-    style V fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
-    style S fill:#f7f7f7,stroke:#c5cbd3,stroke-width:1px
+    style I fill:transparent,stroke-width:1px
+    style D fill:transparent,stroke-width:1px
+    style V fill:transparent,stroke-width:1px
+    style S fill:transparent,stroke-width:1px
     style H fill:transparent,stroke:transparent
     style F fill:transparent,stroke:transparent
-    classDef selected fill:#ffffff,stroke:#555555,stroke-width:1.5px
+    classDef section fill:transparent,stroke:transparent,font-weight:bold
+    classDef selected stroke-width:2px
+    class IH,DH,VH,SH section
     class M,G selected
 ```
 
