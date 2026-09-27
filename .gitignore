@@ -16,7 +16,7 @@ outputs/
 work/
 docs/personal materials/
 
-# Extended annotation and v2 inputs are intentionally excluded from the v1 baseline.
+# Historical annotation workbooks and intermediate snapshots remain outside the current study.
 remaining_30_test_candidates_annotation.xlsx
 data/annotation/annotation_remaining_30_test_v1.xlsx
 data/annotation/annotation_test_full_v1.csv

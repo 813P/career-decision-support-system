@@ -6,13 +6,13 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 947,
-      "sha256": "71a827432ee77ab98ea54165598dca3a7aafdd2cc968369c8de4efe86dd68e93"
+      "bytes": 971,
+      "sha256": "3bbee14e1612bfd7d4ea03ade7469c17816d6d32fb04a7becf0f5a3fabe99bce"
     },
     {
       "path": ".gitignore",
-      "bytes": 594,
-      "sha256": "836d1c475451d5b0f4bbaf6bb9d60055d6edd470ecd52bbfd79ede8bf47858b5"
+      "bytes": 579,
+      "sha256": "75901dbe33bc44d50b628449c08c9ad3a403993638b7917ff4379697638fb2cf"
     },
     {
       "path": "README.md",
