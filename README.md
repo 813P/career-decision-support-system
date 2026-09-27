@@ -27,7 +27,7 @@ I designed a two-level ranking system with two evidence sides. Candidate evidenc
 ### System and Method Pipeline
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "18px"}, "flowchart": {"curve": "linear", "nodeSpacing": 18, "rankSpacing": 28, "subGraphTitleMargin": {"top": 8, "bottom": 16}}}}%%
+%%{init: {"themeVariables": {"fontSize": "16px"}, "flowchart": {"curve": "linear", "nodeSpacing": 24, "rankSpacing": 36, "wrappingWidth": 220, "subGraphTitleMargin": {"top": 8, "bottom": 18}}}}%%
 flowchart TB
     subgraph I["Input and Representation"]
         direction TB
@@ -65,10 +65,6 @@ flowchart TB
     C1 --> E
     T1 --> E
     G --> Q --> O
-    style I fill:transparent,stroke-width:1px
-    style D fill:transparent,stroke-width:1px
-    style V fill:transparent,stroke-width:1px
-    style S fill:transparent,stroke-width:1px
     style H fill:transparent,stroke:transparent
     style F fill:transparent,stroke:transparent
     classDef selected stroke-width:2px
