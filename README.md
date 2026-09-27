@@ -25,27 +25,18 @@ The prototype supports exploration. It does not determine a person's “best” 
 I designed a two-level ranking system with two evidence sides. Candidate evidence separates **background** from **aspiration**; career-space evidence connects reviewed ESCO content with researcher-defined Role Profile purposes. The system compares the corresponding evidence channels, then aggregates detailed occupation–profile matches into five broader analytical directions.
 
 ```mermaid
-flowchart LR
-    subgraph C["Candidate evidence<br/>background may differ from aspiration"]
-        B["Background<br/>title + skills + experience"]
-        D["Aspiration<br/>desired work"]
+flowchart TB
+    subgraph I["Two evidence sides"]
+        direction LR
+        C["Candidate evidence<br/>Background: title · skills · experience<br/>Aspiration: desired work"]
+        T["Career-space evidence<br/>Background targets: ESCO + Role Profiles<br/>Direction targets: ESCO + Role Profiles"]
     end
-    subgraph T["Career-space evidence<br/>titles may differ from work content"]
-        E["15 ESCO occupations<br/>descriptions + reviewed skills"]
-        P["5 Role Profiles<br/>work purpose + boundaries"]
-        E --> BT["18 membership<br/>background targets"]
-        P --> BT
-        E --> DT["18 membership<br/>direction targets"]
-        P --> DT
-    end
-    B --> BS["Background similarity"]
-    BT --> BS
-    D --> DS["Direction similarity"]
-    DT --> DS
-    BS --> M["0.5 + 0.5<br/>membership score"]
-    DS --> M
-    M --> A["mean_all<br/>profile aggregation"]
-    A --> R["Rank 5 Role Profiles"]
+
+    C --> X["Aligned comparison<br/>Background similarity<br/>Direction similarity"]
+    T --> X
+    X --> M["Membership score<br/>0.5 background + 0.5 direction"]
+    M --> A["Profile aggregation<br/>mean_all"]
+    A --> R["5 ranked Role Profiles"]
 ```
 
 The five **Analytical Role Profiles** are project-defined groupings based on the purpose of the work:
