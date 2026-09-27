@@ -13,13 +13,15 @@ Start with the [project overview](../README.md). This index separates research d
 
 ## Document responsibilities
 
-- **Root README:** purpose, main design, selected results, and entry points.
-- **Research Design:** motivation, questions, methodological choices, findings, interpretation, and limitations.
+- **Root README:** one-page application entry covering the problem origin, artifact, study design, core results, representative failures, and routes to evidence.
+- **Research Design:** authoritative methodological narrative connecting the motivating problem to research questions, design choices, findings, interpretation, and limitations.
 - **Technical appendix:** detailed formulas, exact score definitions, and runtime settings.
 - **Data card and schemas:** contents, provenance, field meanings, and permitted uses.
 - **Protocol and annotation guideline:** the procedure used to construct the evaluation.
 - **Model card:** system behaviour, output interpretation, and scope.
 - **Error analysis:** case-level interpretation of the frozen results.
+
+Personal history, development, and programme fit belong in the applicant's personal statement outside the repository. Repository documents may identify the work experience that motivated the problem, but they do not duplicate the personal narrative or serve as application essays.
 
 The [reports directory](../reports/README.md) holds run-specific observations, decisions, metrics, and freeze records. Documents explain the design; reports provide evidence for what was done. Preserve completed records when changing presentation.
 

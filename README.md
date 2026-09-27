@@ -1,144 +1,151 @@
 # Career Decision Support System
 
-The **Career Decision Support System** is a research-oriented AI project for human-centred career decision support. It serves as the implemented research prototype for comparing analytical career directions using a person's experience, skills, and aspirations.
+The **Career Decision Support System** is a research-oriented AI project for human-centred career decision support. It is the implemented research prototype; *Exploring Analytical Career Directions* is the empirical study used to design and evaluate its ranking approach.
 
-This project connects a **working local application** with the empirical study *Exploring Analytical Career Directions*, which was used to design and evaluate the prototype's ranking approach. Its inspectable workflow compares a candidate's background and aspirations with occupational evidence, then ranks five analytical career directions with scores, contributors, and evidence prompts.
+**Study at a glance:** 5 project-defined Role Profiles, 15 reviewed ESCO occupations, 18 occupation–Role Profile memberships, 60 synthetic candidates, and 1,080 single-researcher relevance annotations. Four ranking approaches were compared on 20 development candidates; the selected configuration was frozen and evaluated on 40 held-out test candidates.
 
-**Current study at a glance:** four ranking approaches; 60 synthetic candidate profiles; 1,080 researcher relevance judgements; development-only method selection on 20 candidates; full evaluation on 40 held-out candidates. **Selected configuration:** TF-IDF, equal background/direction weights, and `mean_all` profile aggregation.
+> **Selected configuration:** TF-IDF + `mean_all` aggregation + equal background/direction weighting.<br>
+> **Held-out result:** membership nDCG@3 **0.6606**; Role Profile nDCG@3 **0.8981**. These are ranking metrics, not accuracy percentages.
 
-The repository root is the submission-ready study. Earlier snapshots remain recoverable through Git tags and are not parallel current results.
+## 1. Problem and motivation
 
-## The problem and research question
+The project began with an observation from my work in ByteDance's central data recruitment function: different titles could describe similar analytical work, while similar titles could describe substantially different work. Titles alone were therefore an unreliable guide to a person's experience or intended next step.
 
-Similar job titles can describe different analytical work. Someone who builds dashboards, investigates business performance, and wants to move into strategy may plausibly align with several directions. Career exploration should compare evidence across those directions rather than simply reproduce a person's previous title or experience.
-
-The completed study asks:
+The design problem is especially visible during career transitions. A ranker driven only by past experience can repeatedly return a person's current field; one driven only by aspiration can overstate an unsupported transition. The study therefore asks:
 
 > How closely do evidence-based career-direction rankings agree with researcher relevance judgements in a controlled synthetic-candidate study, and where do they disagree?
 
-## What the system compares
+This section establishes the real problem behind the artifact. The [Research Design](RESEARCH_DESIGN.md) develops it into research questions and methodological choices; personal history, growth, and programme fit belong in the applicant's personal statement rather than this repository.
 
-The system presents five **Analytical Role Profiles**: project-defined groupings based on the purpose of the work.
+The prototype supports exploration. It does not determine a person's “best” career, predict hiring suitability, or make employment decisions.
+
+## 2. What I designed
+
+I designed a two-level ranking system that keeps **candidate background** and **aspiration** separate, compares both with concrete occupational evidence, and then aggregates detailed matches into five broader analytical directions.
+
+```mermaid
+flowchart LR
+    B[Background<br/>title, skills, experience] --> M[Score 18 occupation–profile memberships]
+    D[Aspiration<br/>desired work] --> M
+    E[Reviewed occupational<br/>and profile evidence] --> M
+    M --> A[Aggregate membership evidence]
+    A --> R[Rank 5 Role Profiles]
+    R --> O[Scores, contributors,<br/>and evidence prompts]
+```
+
+The five **Analytical Role Profiles** are project-defined groupings based on the purpose of the work:
 
 | Career direction | Main focus |
 |---|---|
 | Strategic Analysis | External change, competition, and longer-term choices |
 | Business Performance & Goal Management | Targets, KPIs, performance reviews, and management action |
-| Business Strategy & Focused Analysis | Investigating a defined business question and recommending options |
-| Data Analytics | Preparing, querying, visualising, and interpreting data |
+| Business Strategy & Focused Analysis | A defined business question, option assessment, and recommendations |
+| Data Analytics | Data preparation, querying, visualisation, and interpretation |
 | Data Science | Statistical modelling, machine learning, and experimentation |
 
-The five profiles connect to **15 reviewed ESCO occupations → 18 occupation–profile memberships**, because an occupation can contribute to several profiles. ESCO is the European classification of Skills, Competences, Qualifications and Occupations; this study uses English v1.2.1. Each membership has reviewed skill evidence and matching targets for its work context and is the fine-grained scoring and annotation unit.
+The profiles connect **15 reviewed ESCO occupations** through **18 occupation–Role Profile memberships**; an occupation can contribute to more than one profile. The study uses English ESCO v1.2.1, but the five profiles and their mappings are not an official ESCO taxonomy.
 
-The profiles and mappings are project-defined, not an official ESCO analytical taxonomy. Memberships make each direction's occupational contributors inspectable.
+The interface distinguishes three kinds of evidence:
 
-## How a recommendation is produced
+- **score decomposition** shows the background and direction components;
+- **aggregation provenance** shows which memberships contribute to a Role Profile;
+- **rule-based skill prompts** provide supplementary evidence checks.
 
-The frozen ranker is exposed through a **local bilingual web application**; see [Run the application](#run-the-application).
+The skill prompts are not TF-IDF feature attribution. A missing prompt means that evidence was not found in the supplied text, not that the person lacks the ability.
 
-**Background** combines current role, explicit skills, and experience narrative; **direction** describes desired work. TF-IDF compares these with membership targets: `0.5 × background similarity + 0.5 × direction similarity`. Profile scores average all assigned memberships (`mean_all`).
+## 3. Method and experimental design
 
-**Figure 1 — How is one recommendation produced?**
+The 60 fully synthetic, non-identifying profiles were produced through a controlled, AI-assisted process based on Role Profiles, predefined scenarios, and candidate blueprints, followed by validation and manual audit. The frozen records do not support a stronger claim that real resumes materially informed the final profiles.
 
-```mermaid
-flowchart LR
-    B[Candidate background] --> BS[Background similarity]
-    BT[18 membership background targets] --> BS
-    D[Candidate direction / aspiration] --> DS[Direction similarity]
-    DT[18 membership direction targets] --> DS
-    BS --> M[Combined membership score]
-    DS --> M
-    M --> R[Rank 18 memberships]
-    R --> A[Aggregate memberships within each profile]
-    A --> O[Compare and rank 5 Analytical Role Profiles]
-```
+The data were split with no overlap:
 
-Outputs distinguish **score decomposition**, **membership / aggregation provenance**, and **supplementary skill-evidence prompts**. Rule-based occupational-skill checks support inspection but are **not TF-IDF feature attribution**. Each Top 3 profile shows at most three core-evidence prompts: evidence not found in the input, not an established lack of ability.
+- **20 development candidates** supported method and configuration selection;
+- **40 held-out test candidates** were reserved for final evaluation.
 
-## How the study was conducted
+Both sets cover all five Role Profiles and multiple candidate scenarios. A single researcher assigned all **1,080 candidate–membership relevance annotations** on a 0–2 scale. Ranking outputs and scores were hidden during annotation—**model-output-blinded researcher annotation**—but this was not independent, multi-rater, or double-blind validation.
 
-The 60 fully synthetic, non-identifying profiles were produced through a controlled, AI-assisted process using the project-defined Role Profiles and candidate scenarios, then manually audited for realism, consistency, privacy risk, and taxonomy leakage. They comprise **20 development candidates** for method and aggregation selection and **40 frozen test candidates** for final evaluation. All 60 candidates were annotated against the same 18 memberships, producing 1,080 judgements.
+Four method families were compared on development data: **Structured**, **TF-IDF**, **Semantic**, and **Hybrid**. Semantic had the highest development membership nDCG@3 point estimate (0.7533), followed by TF-IDF (0.7464). The paired 95% bootstrap interval for TF-IDF minus Semantic was `[-0.0686, 0.0499]`.
 
-One annotator assessed all 60 candidates against all 18 memberships, producing **1,080 relevance judgements** on a 0–2 scale: **360 development + 720 held-out test labels**. Model outputs and construction metadata were hidden; construction labels never serve as ranking inputs or relevance answers. The same researcher reviewed candidates, defined targets, and supplied labels, so this is not independent external validation.
+A 0.01 development nDCG@3 difference was used as a **study-specific near-tie heuristic**, alongside uncertainty, reproducibility, interpretability, and implementation simplicity. It is not a universal threshold or a statistical equivalence criterion. TF-IDF was selected as the simpler, inspectable lexical method—not because the study demonstrated equivalence or superiority.
 
-**Figure 2 — How was the ranking system developed and evaluated?**
+The final ranker computes:
 
-```mermaid
-flowchart TB
-    subgraph TARGET[Target side]
-        RP[5 Analytical Role Profiles] --> M[18 occupation-profile memberships]
-        ES[15 reviewed ESCO occupations] --> M
-        M --> FT["Frozen membership targets<br/>(background + direction)"]
-    end
-    subgraph CANDIDATE[Candidate side]
-        S[60 reviewed synthetic candidate profiles] --> D[20 development candidates]
-        S --> T[40-candidate frozen test pool]
-        T --> H[40 labelled test candidates]
-    end
-    FT --> Q[Candidate x membership ranking / relevance task]
-    D --> Q
-    H --> Q
-    Q --> L[Researcher annotation: 1,080 judgements]
-    L --> DL[360 frozen development labels]
-    L --> TL[720 frozen held-out test labels]
-    Q -->|development only| DR[Model rankings: four approaches]
-    DR --> MS[Development method selection]
-    DL --> MS
-    MS --> AS[Development aggregation selection]
-    DL --> AS
-    AS --> F[Freeze selected configuration]
-    F --> P[Held-out ranking: 40 candidates]
-    H --> P
-    FT --> P
-    P --> V[Evaluate membership and profile rankings]
-    TL --> V
-    V --> R[Error analysis and reporting]
-```
+> **membership score = 0.5 × background similarity + 0.5 × direction similarity**
 
-### Why TF-IDF was selected
+It then averages all memberships assigned to each profile (`mean_all`). This configuration was frozen before held-out evaluation; test results were not used to retune it.
 
-Four approaches were compared using development data only:
+## 4. Core held-out results
 
-| Approach | What it measures | Development membership nDCG@3 |
-|---|---|---:|
-| Structured | Weighted explicit-skill coverage and direction phrase/token overlap | 0.5872 |
-| TF-IDF | Cosine similarity in separate background and direction text spaces | 0.7464 |
-| Semantic | Cosine similarity from pinned all-MiniLM-L6-v2 embeddings, without fine-tuning | 0.7533 |
-| Hybrid | Weighted combination of Structured and Semantic scores | 0.7181* |
-
-\*Best interior Hybrid setting, with Structured weight 0.25.
-
-**nDCG@3** measures graded relevance agreement across the first three results: higher is better (maximum 1), not an accuracy percentage.
-
-**Semantic had the highest point estimate**, ahead by 0.0069. Paired candidate-level bootstrap (2,000 resamples) gave **TF-IDF − Semantic: `[-0.0686, 0.0499]`** (95% interval). The documented study-specific near-tie heuristic supported selecting TF-IDF for simpler runtime and inspectable lexical computation—not demonstrating equivalence or TF-IDF superiority. The exact heuristic and its limitations are documented in the Research Design and Experiment Protocol.
-
-After method selection, `mean_all` led `max` and `mean_top_2` on development data and was frozen with TF-IDF as the selected configuration. The 0.5 / 0.5 weights were fixed, not tuned on test data.
-
-Protocol, comparisons, and bootstrap details: [Research Design](RESEARCH_DESIGN.md#6-experimental-protocol-and-evaluation), [development selection report](reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md), and [technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md#c3-uncertainty).
-
-## Results and what they mean
-
-The selected configuration was chosen using development data only, frozen, and then evaluated on all 40 held-out test candidates.
+The selected configuration was evaluated once on all 40 held-out test candidates.
 
 | Evaluation level | nDCG@3 | 95% candidate-bootstrap interval | Top-1 agreement |
 |---|---:|---|---:|
-| 18 occupation–profile memberships — primary | 0.6606 | [0.5655, 0.7533] | 0.725 |
-| 5 Role Profiles — secondary | 0.8981 | [0.8480, 0.9408] | 0.900 |
+| 18 occupation–Role Profile memberships — primary | **0.6606** | [0.5655, 0.7533] | 0.725 |
+| 5 Role Profiles — secondary | **0.8981** | [0.8480, 0.9408] | 0.900 |
 
-Top-1 agreement counts a result as correct when its human label equals the highest label for that candidate, including ties.
+nDCG@3 measures graded relevance agreement near the top of a ranking; it is not classification accuracy. Top-1 agreement allows ties and means that rank 1 received the candidate's highest available human label.
 
-**Profile rankings aligned more closely with reference labels in this sample; membership-level discrimination remained weaker.** These are different tasks, with 5 versus 18 targets and different reference-label construction: profile labels use maximum membership relevance, while model scores use the mean. The higher profile result is not causal evidence that aggregation improves ranking.
+Role Profile ordering aligned more closely with the reference labels in this controlled sample, while fine-grained membership ranking remained harder. The two levels are not directly comparable measures of difficulty: they contain 5 versus 18 targets, and their human labels and model aggregation use different constructions.
 
-Two cases from the [error analysis](docs/ERROR_ANALYSIS.md) illustrate the limits:
+## 5. Two representative failure cases
 
-- **C019:** a broadly acceptable top profile contained a leading occupation membership labelled irrelevant. Broad profile agreement can hide poor occupational contributors.
-- **C056:** aspiration and modelling vocabulary favoured Data Science despite explicitly weak modelling evidence, illustrating lexical matching's difficulty with low-evidence aspirations and negation.
+### C019 — a plausible direction with an implausible contributor
 
-The small synthetic sample and single annotator limit generalisation; label reliability, real-user benefit, demographic fairness, and labour-market validity remain unestablished. Scores indicate comparative relevance, not employment or career-success probabilities. The system is for exploration and must not be used for hiring or candidate screening. Full limitations are in [Research Design](RESEARCH_DESIGN.md#9-discussion-and-limitations).
+The leading Role Profile was acceptable, but its top occupation membership—budget analyst—had human relevance 0, while a strong data-analyst membership appeared later. KPI and monitoring language supported the broad performance direction, yet supplied the wrong fine-grained lexical route.
 
-## Run the application
+**Why it matters:** a correct broad direction can hide a poor occupational contributor. The interface should present membership provenance and must not describe the strongest occupation as the person's recommended career.
 
-Use **Python 3.10+**; **Node.js** is also required for experiment validation below. From the project root in PowerShell:
+### C056 — aspiration language outweighed weak evidence
+
+Data Science ranked first even though its leading statistician membership had relevance 0 and no membership received label 2. Desired-role and model-operations vocabulary overlapped with modelling targets despite explicit statements that evidence for feature choices, inference, and evaluation design was limited.
+
+**Why it matters:** bag-of-words TF-IDF does not reliably understand negation or evidence absence. A transition aspiration can therefore appear more strongly supported than the supplied background justifies.
+
+These cases informed interpretation only. They were not used to change the frozen model.
+
+## 6. Contributions and limitations
+
+### Contributions
+
+- A two-level formulation connecting inspectable occupational evidence to accessible career directions.
+- Separate representation of demonstrated background and stated aspiration.
+- A controlled comparison of structured, lexical, semantic, and hybrid ranking approaches.
+- Development-only configuration selection followed by frozen held-out evaluation.
+- Explanation design that separates ranking-linked evidence from supplementary skill checks.
+- Case-level analysis showing where broad profile agreement can conceal fine-grained errors.
+
+### Limitations
+
+- The study uses a small synthetic dataset and one researcher who also contributed to candidate review and target design.
+- It provides no inter-rater reliability, external validation, demographic fairness assessment, or real-user outcome evidence.
+- ESCO mappings and the five Role Profiles are project design choices, not a validated labour-market taxonomy.
+- TF-IDF is sensitive to wording and weak at negation, low-evidence transitions, and mixed directions.
+- Results support feasibility under controlled study conditions, not real-world predictive validity or production readiness.
+
+The system is intended for exploratory, human-centred career decision support. It is not designed or validated for automated hiring, recruitment screening, candidate rejection, or autonomous high-stakes employment decisions.
+
+## 7. Read the evidence
+
+| Question | Authoritative source |
+|---|---|
+| Why was the study designed this way, and what can it claim? | [Research Design and Evaluation](RESEARCH_DESIGN.md) |
+| What exactly happened in the held-out evaluation? | [Final Evaluation Report](reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) |
+| How were development methods and parameters compared? | [Development Selection Report](reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) |
+| How were the data generated, governed, and split? | [Data Card](docs/DATA_CARD.md) |
+| How were labels assigned and kept separate from model output? | [Experiment Protocol](docs/EXPERIMENT_PROTOCOL.md) and [Annotation Guideline](docs/HUMAN_ANNOTATION_GUIDELINE.md) |
+| What are the main risks and intended uses? | [Model Card](docs/MODEL_CARD.md) |
+| Which cases failed, and why? | [Error Analysis](docs/ERROR_ANALYSIS.md) |
+| What are the formulas and exact runtime details? | [Technical Appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) |
+
+**Document boundaries:** this README is the one-page project entry; Research Design is the methodological narrative; the Final Evaluation Report is the frozen-results authority; the Data Card, Model Card, and Experiment Protocol govern their named evidence. Application essays remain outside the repository and carry the personal narrative rather than the technical proof.
+
+The [documentation index](docs/README.md) provides additional schemas, data-source policies, and repository guides. Machine-readable results are retained under [`results/`](results/) and run-specific records under [`reports/`](reports/).
+
+## 8. Run the prototype and secondary extensions
+
+### Core local application
+
+Use Python 3.10 or later. From the project root in PowerShell:
 
 ```powershell
 python -m venv .venv
@@ -147,11 +154,9 @@ python -m pip install -e ".[dev]"
 career-web
 ```
 
-The browser interface runs on a lightweight Python HTTP service. It supports Chinese and English UI text; English candidate input is recommended. Changing the UI language does not change scores.
+The bilingual browser interface runs on a lightweight local Python service. English candidate input is recommended; changing the interface language does not change ranking scores.
 
-The **experimental job-description analyzer** is a parallel application extension, physically separated under [`experimental/jd_analysis/`](experimental/jd_analysis/). It identifies work components in Chinese or English JDs using a rule-based method. It has **no labelled evaluation**, and the candidate-ranking evaluation does not validate it.
-
-To check the frozen data and implementation:
+To validate the frozen study records:
 
 ```powershell
 node experiments/validation/validate_candidate_data.mjs
@@ -161,30 +166,11 @@ node --test tests/role_profile_experiment.test.mjs
 node --test tests/webapp_i18n.test.mjs
 ```
 
-Optional Semantic and MCP dependencies: `python -m pip install -e ".[semantic,mcp,dev]"`. The [MCP guide](docs/MCP_INTEGRATION.md) describes `career-mcp`. The separate `career-match` command provides generic job-level matching utilities; it is not the frozen five-profile evaluation entry point.
+### Secondary and experimental material
 
-## Repository and reading guide
+- **MCP interface:** an optional way to expose the same career-ranking capability to compatible clients. Install with `python -m pip install -e ".[mcp]"`, run `career-mcp`, and see the [MCP integration guide](docs/MCP_INTEGRATION.md). MCP is an interface, not part of the ranking experiment.
+- **JD Analyzer:** a physically separate, experimental extension under [`experimental/jd_analysis/`](experimental/jd_analysis/). It uses rules to identify work components in Chinese or English job descriptions. It has no labelled evaluation and is outside the core empirical ranking study.
+- **Semantic reproduction:** install the pinned optional dependencies with `python -m pip install -e ".[semantic,dev]"`. The frozen semantic comparison used `sentence-transformers` 5.0.0 and `all-MiniLM-L6-v2` without fine-tuning.
+- **Generic job matching:** the separate `career-match` command provides job-level matching utilities; it is not the frozen five-profile evaluation entry point.
 
-| Location | Purpose |
-|---|---|
-| `taxonomy/`, `config/` | Reviewed occupational evidence and versioned method settings |
-| `data/` | Synthetic candidates, split records, and human labels |
-| `experiments/` | Development comparison, held-out evaluation, and integrity checks |
-| `src/`, `webapp/`, `tests/` | Application implementation, interface, and regression tests |
-| `reports/`, `results/` | Recorded decisions, audits, frozen results, and score exports |
-| `docs/` | Explanations of methods, data, interfaces, and limitations |
-
-**`docs/` explains how and why; `reports/` records what happened in a particular study run.**
-
-| Reading goal | Start here |
-|---|---|
-| Quick project overview | This README |
-| Research design and methodology | [Research Design](RESEARCH_DESIGN.md) |
-| Formulas, runtime, and metric details | [Technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) |
-| Full 40-candidate held-out results | [Evaluation report](reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) |
-| Historical study snapshots | Repository Git tags |
-| Failure cases | [Error analysis](docs/ERROR_ANALYSIS.md) |
-
-The [documentation index](docs/README.md) links to the data card, experiment protocol, annotation guideline, model card, and technical appendix.
-
-**The selected TF-IDF full-test evaluation is frozen.** Historical studies remain available through Git tags; test errors must not be used for retuning.
+The selected TF-IDF held-out evaluation is frozen. Historical snapshots remain available through Git tags; held-out errors must not be used for retuning.
