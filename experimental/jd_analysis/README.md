@@ -40,10 +40,10 @@ Implementation and configuration:
 ## Candidate path
 
 ```text
-current role + skills + experience narrative
+current_job_title + skills + experience_narrative
   -> background evidence
 
-desired roles
+desired_work_directions
   -> direction evidence
 
 both channels

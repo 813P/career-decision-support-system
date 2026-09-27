@@ -1,7 +1,7 @@
 {
   "manifest_name": "Submission-ready repository",
   "status": "complete",
-  "created_at": "2026-09-26",
+  "created_at": "2026-09-27",
   "file_count": 103,
   "files": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "docs/EXPERIMENT_PROTOCOL.md",
-      "bytes": 1896,
-      "sha256": "3d9489117cb3be08b44bdd69180edec40d4b9169b63477f3be377da8b4cca702"
+      "bytes": 1897,
+      "sha256": "f0be0a23d0fb59ed30f18ead612f84173afdb678daad709cc6ce22b1314a16e9"
     },
     {
       "path": "docs/HUMAN_ANNOTATION_GUIDELINE.md",
@@ -141,8 +141,8 @@
     },
     {
       "path": "docs/MODEL_CARD.md",
-      "bytes": 5487,
-      "sha256": "1e39653a8888ad6bf1400e8f1e5d027022ad7831e96e68b656a6805f03ab6ed2"
+      "bytes": 5648,
+      "sha256": "1ccdcb41cbc9b4d36a3009beb6c313b7923d1a29d9b63731775c8accc27c486d"
     },
     {
       "path": "docs/README.md",
@@ -156,8 +156,8 @@
     },
     {
       "path": "experimental/jd_analysis/README.md",
-      "bytes": 3443,
-      "sha256": "3c14883d74b1e2b8551738759c5b1f61ebb93deca0379f192e54a4ecab14ac1d"
+      "bytes": 3458,
+      "sha256": "bd5755910f07dfe1fff5615131a17a8918231412f61c2b6fef68cd0509bc8195"
     },
     {
       "path": "experimental/jd_analysis/jd_evidence_phrases.json",
@@ -216,8 +216,8 @@
     },
     {
       "path": "experiments/validation/create_snapshot_manifest.mjs",
-      "bytes": 1640,
-      "sha256": "15a8db42a35b0af1cb5b78411a1fdb57fee1fc4d95070f4f93bcf4816b9484c8"
+      "bytes": 1665,
+      "sha256": "ea95040cf468d8d3ccd0ee4f6b9232b1e66a0f8f9cc13e96f674fd6c641f8575"
     },
     {
       "path": "experiments/validation/freeze_tfidf_configuration.mjs",

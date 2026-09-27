@@ -15,4 +15,4 @@ This frozen protocol applies only to candidate-to-membership ranking. The experi
 
 The primary ranking metric is candidate-level nDCG at 3. Report Top-1 agreement, nDCG at 5, mean reciprocal rank, coverage and candidate-level bootstrap confidence intervals as supporting measures.
 
-The protocol above is complete for the selected TF-IDF full-test evaluation. The superseded three-annotator A/B/C draft files remain only as historical workflow artefacts and are not the current annotation design.
+The protocol above is complete for the selected TF-IDF full-test evaluation. Earlier three-annotator A/B/C drafts belong to historical snapshots, not the current repository's annotation design or evaluation labels.
