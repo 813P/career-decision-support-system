@@ -27,7 +27,7 @@ I designed a two-level ranking system with two evidence sides. Candidate evidenc
 ### System and Method Pipeline
 
 ```mermaid
-%%{init: {"flowchart": {"curve": "linear", "nodeSpacing": 18, "rankSpacing": 28}}}%%
+%%{init: {"themeVariables": {"fontSize": "18px"}, "flowchart": {"curve": "linear", "nodeSpacing": 18, "rankSpacing": 28}}}%%
 flowchart TB
     subgraph I["Input & Representation"]
         direction TB
@@ -39,7 +39,7 @@ flowchart TB
         subgraph F[" "]
             direction LR
             C1["Background: title · skills · experience<br/>Direction: desired work"]
-            T1["Background target: occupation description · profile tasks · skills<br/>Direction target: occupation titles · profile purpose · work directions"]
+            T1["Background target: occupation description · tasks · skills<br/>Direction target: occupation titles · profile purpose · work directions"]
         end
         C0 --> C1
         T0 --> T1
@@ -59,7 +59,7 @@ flowchart TB
     end
 
     subgraph S["System Output"]
-        O["5 Role Profile rankings<br/>background/direction scores · occupation evidence<br/>matched skills · missing evidence"]
+        O["Ranked Role Profiles<br/>background/direction score decomposition<br/>occupation evidence · aggregation provenance<br/>matched skills · missing evidence"]
     end
 
     C1 --> E
