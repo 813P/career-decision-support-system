@@ -1,6 +1,6 @@
 # Career Decision Support System
 
-The **Career Decision Support System** is a research-oriented AI project for human-centred career decision support. It is the implemented research prototype; *Exploring Analytical Career Directions* is the empirical study used to design and evaluate its ranking approach.
+The **Career Decision Support System** is a research-oriented AI project for human-centred career decision support. It was developed and evaluated through a controlled empirical study, [*Exploring Analytical Career Directions*](RESEARCH_DESIGN.md), which compares alternative ways of representing and ranking candidate evidence against those directions.
 
 **Study at a glance:** 5 project-defined Role Profiles, 15 reviewed ESCO occupations, 18 occupation–Role Profile memberships, 60 synthetic candidates, and 1,080 single-researcher relevance annotations. Four ranking approaches were compared on 20 development candidates; the selected configuration was frozen and evaluated on 40 held-out test candidates.
 
