@@ -41,7 +41,7 @@ The five **Analytical Role Profiles** are project-defined groupings based on the
 | Data Analytics | Data preparation, querying, visualisation, and interpretation |
 | Data Science | Statistical modelling, machine learning, and experimentation |
 
-The profiles connect **15 reviewed ESCO occupations** through **18 occupation–Role Profile memberships**; an occupation can contribute to more than one profile. The study uses English ESCO v1.2.1, but the five profiles and their mappings are not an official ESCO taxonomy.
+The profiles connect **15 reviewed ESCO occupations** through **18 occupation–Role Profile memberships**; an occupation can contribute to more than one profile. The study uses English ESCO v1.2.1. I defined the five Role Profiles and reviewed their occupation mappings for this study; ESCO supplies the referenced occupations and skills but does not define or validate this grouping.
 
 The interface distinguishes three kinds of evidence:
 
