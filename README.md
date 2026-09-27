@@ -99,7 +99,7 @@ Data Science ranked first even though its leading statistician membership had re
 
 **Why it matters:** bag-of-words TF-IDF does not reliably understand negation or evidence absence. A transition aspiration can therefore appear more strongly supported than the supplied background justifies.
 
-These cases informed interpretation only. They were not used to change the frozen model.
+These held-out cases informed error analysis only; the frozen configuration was not retuned after test inspection.
 
 ## 6. Contributions and limitations
 
