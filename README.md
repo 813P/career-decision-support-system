@@ -53,7 +53,7 @@ The skill prompts are not TF-IDF feature attribution. A missing prompt means tha
 
 ## 3. Method and experimental design
 
-The 60 fully synthetic, non-identifying profiles were produced through a controlled, AI-assisted process based on Role Profiles, predefined scenarios, and candidate blueprints, followed by validation and manual audit. The frozen records do not support a stronger claim that real resumes materially informed the final profiles.
+The 60 fully synthetic, non-identifying profiles were drafted with AI assistance under controlled coverage of the five Role Profiles and predefined candidate scenarios, then validated, manually reviewed, and frozen. The repository does not retain the full generation chain, so it does not support a stronger claim that real resumes materially informed the final profiles.
 
 The data were split with no overlap:
 
