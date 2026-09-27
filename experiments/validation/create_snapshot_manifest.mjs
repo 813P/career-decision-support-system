@@ -1,34 +1,16 @@
 import { createHash } from "node:crypto";
-import { readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { execFile } from "node:child_process";
+import { readFile, stat, writeFile } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
+import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const outputPath = join(ROOT, "submission_manifest.json");
 const excluded = new Set(["snapshot_manifest.json", "submission_manifest.json"]);
-const excludedDirectories = new Set([
-  ".cache",
-  ".git",
-  ".pytest_cache",
-  ".venv",
-  ".venv-v2",
-  "__pycache__",
-  "outputs",
-  "work",
-]);
-
-async function filesUnder(directory) {
-  const output = [];
-  for (const entry of await readdir(directory, { withFileTypes: true })) {
-    if (entry.isDirectory() && excludedDirectories.has(entry.name)) continue;
-    const path = join(directory, entry.name);
-    if (entry.isDirectory()) output.push(...await filesUnder(path));
-    else if (entry.isFile()) output.push(path);
-  }
-  return output;
-}
-
-const paths = (await filesUnder(ROOT)).filter((path) => !excluded.has(relative(ROOT, path).replaceAll("\\", "/"))).sort();
+const run = promisify(execFile);
+const { stdout } = await run("git", ["ls-files", "-z"], { cwd: ROOT, encoding: "buffer", maxBuffer: 10 * 1024 * 1024 });
+const paths = stdout.toString("utf8").split("\0").filter(Boolean).filter((path) => !excluded.has(path)).sort().map((path) => join(ROOT, path));
 const files = [];
 for (const path of paths) {
   const bytes = await readFile(path);

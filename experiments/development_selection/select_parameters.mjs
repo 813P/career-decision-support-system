@@ -16,7 +16,7 @@ const paths = {
   semantic: join(ROOT, "reports", "matching", "development_semantic_entry.json"),
 };
 const BOOTSTRAP = { iterations: 2000, confidence: 0.95, seed: "career-development-membership-selection" };
-const PRACTICAL_TIE_NDCG3 = 0.01;
+const STUDY_SPECIFIC_NEAR_TIE_NDCG3 = 0.01;
 const AGGREGATIONS = ["max", "mean_top_2", "mean_all"];
 const json = async (path) => JSON.parse(await readFile(path, "utf8"));
 const hash = async (path) => createHash("sha256").update(await readFile(path)).digest("hex");
@@ -184,8 +184,8 @@ const membershipTrials = [...methodScoreSets].map(([method, scoreSet]) => ({ met
 membershipTrials.sort((left, right) => right.metrics["ndcg@3"] - left.metrics["ndcg@3"] || right.metrics["ndcg@5"] - left.metrics["ndcg@5"] || right.metrics.top1_agreement - left.metrics.top1_agreement || simplicityPriority.get(left.method) - simplicityPriority.get(right.method));
 const metricLeader = membershipTrials[0];
 for (const trial of membershipTrials) trial.paired_ndcg3_difference_vs_metric_leader = pairedDifference(trial, metricLeader);
-const practicalTies = membershipTrials.filter((trial) => metricLeader.metrics["ndcg@3"] - trial.metrics["ndcg@3"] <= PRACTICAL_TIE_NDCG3 && trial.paired_ndcg3_difference_vs_metric_leader.lower <= 0 && trial.paired_ndcg3_difference_vs_metric_leader.upper >= 0);
-const recommendedMethod = [...practicalTies].sort((left, right) => simplicityPriority.get(left.method) - simplicityPriority.get(right.method))[0];
+const nearTieMethods = membershipTrials.filter((trial) => metricLeader.metrics["ndcg@3"] - trial.metrics["ndcg@3"] <= STUDY_SPECIFIC_NEAR_TIE_NDCG3 && trial.paired_ndcg3_difference_vs_metric_leader.lower <= 0 && trial.paired_ndcg3_difference_vs_metric_leader.upper >= 0);
+const recommendedMethod = [...nearTieMethods].sort((left, right) => simplicityPriority.get(left.method) - simplicityPriority.get(right.method))[0];
 
 const roleLabels = roleLabelsFromMembershipLabels(labels, roleByMembership);
 const aggregationPriority = new Map([["mean_top_2", 0], ["max", 1], ["mean_all", 2]]);
@@ -197,7 +197,7 @@ for (const trial of aggregationTrials) trial.paired_ndcg3_difference_vs_metric_l
 const inputPaths = [labelsPath, paths.manifest, paths.development, paths.structured, paths.tfidf, paths.semantic];
 const report = {
   report_name: "Development-only matching parameter selection",
-  status: "development_selected_requires_researcher_signoff",
+  status: "development_selection_complete",
   split: "development",
   annotation_unit: "candidate_x_membership",
   development_candidates: 20,
@@ -206,20 +206,20 @@ const report = {
   test_labels_used: false,
   test_rankings_generated: false,
   primary_metric: "candidate-level membership nDCG@3",
-  selection_rule: "Point leader by membership nDCG@3; when the gap is <= 0.01 and the paired candidate-bootstrap interval includes zero, recommend the simpler predeclared configuration for researcher sign-off",
-  practical_tie_threshold_ndcg3: PRACTICAL_TIE_NDCG3,
+  selection_rule: "Point leader by membership nDCG@3; when the gap is <= 0.01 and the paired candidate-bootstrap interval includes zero, use the study-specific near-tie heuristic to recommend the simpler configuration",
+  study_specific_near_tie_heuristic_ndcg3: STUDY_SPECIFIC_NEAR_TIE_NDCG3,
   method_search_space: ["structured", "tfidf", "semantic", "hybrid(structured, semantic)"],
   hybrid_alpha_definition: "score = alpha * structured_score + (1 - alpha) * semantic_score",
   hybrid_alphas: HYBRID_WEIGHTS,
   hybrid_endpoint_equivalence: { alpha_0: "semantic", alpha_1: "structured" },
   metric_leader: metricLeader.method,
-  practical_tie_methods: practicalTies.map((trial) => trial.method),
-  recommended_method_requires_signoff: recommendedMethod.method,
+  near_tie_methods: nearTieMethods.map((trial) => trial.method),
+  recommended_method: recommendedMethod.method,
   membership_trials: membershipTrials,
   role_profile_label_derivation: "maximum human_relevance among memberships assigned to each Role Profile",
   aggregation_search_space: AGGREGATIONS,
   aggregation_evaluated_for_method: recommendedMethod.method,
-  recommended_aggregation_requires_signoff: recommendedAggregation.aggregation,
+  recommended_aggregation: recommendedAggregation.aggregation,
   aggregation_trials: aggregationTrials,
   bootstrap: { ...BOOTSTRAP, unit: "candidate", method: "percentile bootstrap" },
   input_hashes: Object.fromEntries(await Promise.all(inputPaths.map(async (path) => [rootRelative(path), await hash(path)]))),
@@ -227,4 +227,4 @@ const report = {
 };
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
-process.stdout.write(`DEVELOPMENT_PARAMETERS_SELECTED metric_leader=${metricLeader.method} recommended_method=${recommendedMethod.method} aggregation=${recommendedAggregation.aggregation} signoff_required=true test_rankings=false\n`);
+process.stdout.write(`DEVELOPMENT_PARAMETERS_SELECTED metric_leader=${metricLeader.method} recommended_method=${recommendedMethod.method} aggregation=${recommendedAggregation.aggregation} test_rankings=false\n`);

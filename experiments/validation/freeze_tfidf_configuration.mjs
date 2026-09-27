@@ -17,7 +17,7 @@ for (const path of [configPath, freezePath]) {
 }
 const selection = await json(selectionPath);
 if (selection.split !== "development" || selection.test_labels_used !== false || selection.test_rankings_generated !== false) throw new Error("TFIDF_FREEZE_BLOCKED: development selection guardrails failed");
-if (selection.recommended_method_requires_signoff !== "tfidf" || selection.recommended_aggregation_requires_signoff !== "mean_all") throw new Error("TFIDF_FREEZE_BLOCKED: selected method is not supported by the approved full-test runner");
+if (selection.recommended_method !== "tfidf" || selection.recommended_aggregation !== "mean_all") throw new Error("TFIDF_FREEZE_BLOCKED: selected method is not supported by the approved full-test runner");
 const testCandidates = await json(join(ROOT, "data", "candidates", "test.json"));
 const testIds = testCandidates.map((row) => row.candidate_id).sort();
 if (testIds.length !== 40 || new Set(testIds).size !== 40) throw new Error("TFIDF_FREEZE_BLOCKED: expected 40 unique test candidates");
@@ -60,7 +60,7 @@ const config = {
     membership_judgement_count: 360,
     primary_metric: selection.primary_metric,
     metric_leader: selection.metric_leader,
-    selected_under_practical_tie_rule: selection.recommended_method_requires_signoff,
+    selected_under_study_specific_near_tie_heuristic: selection.recommended_method,
     development_report: rel(selectionPath),
     semantic_runtime: "Fresh development run using Python 3.12.14, sentence-transformers 5.0.0, PyTorch 2.7.1+cpu, and the pinned all-MiniLM-L6-v2 model revision."
   },

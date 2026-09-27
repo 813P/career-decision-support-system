@@ -1,8 +1,8 @@
-# Career Decision-Support System
+# Career Decision Support System
 
-An explainable prototype for comparing analytical career directions using a person's experience, skills, and aspirations.
+The **Career Decision Support System** is a research-oriented AI project for human-centred career decision support. It serves as the implemented research prototype for comparing analytical career directions using a person's experience, skills, and aspirations.
 
-This project connects a **working local application** with a completed ranking study. Its inspectable workflow compares a candidate's background and aspirations with occupational evidence, then ranks five analytical career directions with scores, contributors, and evidence prompts.
+This project connects a **working local application** with the empirical study *Exploring Analytical Career Directions*, which was used to design and evaluate the prototype's ranking approach. Its inspectable workflow compares a candidate's background and aspirations with occupational evidence, then ranks five analytical career directions with scores, contributors, and evidence prompts.
 
 **Current study at a glance:** four ranking approaches; 60 synthetic candidate profiles; 1,080 researcher relevance judgements; development-only method selection on 20 candidates; full evaluation on 40 held-out candidates. **Selected configuration:** TF-IDF, equal background/direction weights, and `mean_all` profile aggregation.
 
@@ -57,7 +57,7 @@ Outputs distinguish **score decomposition**, **membership / aggregation provenan
 
 ## How the study was conducted
 
-The 60 synthetic profiles were AI-drafted and researcher-reviewed: **20 development candidates** for method and aggregation selection, and **40 frozen test candidates** for final evaluation. All 60 candidates were annotated against the same 18 memberships, producing 1,080 judgements.
+The 60 fully synthetic, non-identifying profiles were produced through a controlled, AI-assisted process using the project-defined Role Profiles and candidate scenarios, then manually audited for realism, consistency, privacy risk, and taxonomy leakage. They comprise **20 development candidates** for method and aggregation selection and **40 frozen test candidates** for final evaluation. All 60 candidates were annotated against the same 18 memberships, producing 1,080 judgements.
 
 One annotator assessed all 60 candidates against all 18 memberships, producing **1,080 relevance judgements** on a 0–2 scale: **360 development + 720 held-out test labels**. Model outputs and construction metadata were hidden; construction labels never serve as ranking inputs or relevance answers. The same researcher reviewed candidates, defined targets, and supplied labels, so this is not independent external validation.
 
@@ -110,7 +110,7 @@ Four approaches were compared using development data only:
 
 **nDCG@3** measures graded relevance agreement across the first three results: higher is better (maximum 1), not an accuracy percentage.
 
-**Semantic had the highest point estimate**, ahead by 0.0069. The recorded, study-specific **practical-tie rule** favours simplicity when the gap is at most 0.01 and the paired interval includes zero. Paired candidate-level bootstrap (2,000 resamples) gave **TF-IDF − Semantic: `[-0.0686, 0.0499]`** (95% interval). Both conditions held, selecting TF-IDF for simpler runtime and inspectable lexical computation—not demonstrating equivalence or TF-IDF superiority.
+**Semantic had the highest point estimate**, ahead by 0.0069. Paired candidate-level bootstrap (2,000 resamples) gave **TF-IDF − Semantic: `[-0.0686, 0.0499]`** (95% interval). The documented study-specific near-tie heuristic supported selecting TF-IDF for simpler runtime and inspectable lexical computation—not demonstrating equivalence or TF-IDF superiority. The exact heuristic and its limitations are documented in the Research Design and Experiment Protocol.
 
 After method selection, `mean_all` led `max` and `mean_top_2` on development data and was frozen with TF-IDF as the selected configuration. The 0.5 / 0.5 weights were fixed, not tuned on test data.
 
@@ -185,6 +185,6 @@ Optional Semantic and MCP dependencies: `python -m pip install -e ".[semantic,mc
 | Historical study snapshots | Repository Git tags |
 | Failure cases | [Error analysis](docs/ERROR_ANALYSIS.md) |
 
-The [documentation index](docs/README.md) links to the data card, annotation protocol, repository map, and application materials.
+The [documentation index](docs/README.md) links to the data card, experiment protocol, annotation guideline, model card, and technical appendix.
 
 **The selected TF-IDF full-test evaluation is frozen.** Historical studies remain available through Git tags; test errors must not be used for retuning.

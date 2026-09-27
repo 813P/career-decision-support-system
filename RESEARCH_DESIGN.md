@@ -1,6 +1,6 @@
 # Exploring Analytical Career Directions: Research Design and Evaluation
 
-**Project:** Explainable Career Decision-Support System  
+**Project:** Career Decision Support System<br>
 **Portfolio context:** CUHK-Shenzhen MAIR application — AI direction  
 **Document revision:** 2.1, 2026-09-26  
 **Completed experiment:** Selected TF-IDF full-test evaluation
@@ -93,7 +93,7 @@ Twenty candidates form the development set, balanced at four per profile and fou
 
 Review covered plausibility, schema consistency, identifying information, duplicates, split separation, and copying or leakage from occupational targets. AI-assisted construction may still introduce repeated vocabulary or stylistic regularities.
 
-The [data-source policy](docs/DATA_SOURCE_POLICY.md) records five de-identified real-person seed profiles as controlled synthesis references, excluded from the released synthetic ranking inputs.
+The frozen records establish that the released profiles are fully synthetic, non-identifying, do not map to individual people, and were not copied from ESCO or Role Profile text. The current repository does not retain sufficient generation-chain evidence to make a stronger claim that real resumes materially informed the final profiles.
 
 ### 4.2 Relevance labels and researcher roles
 
@@ -162,7 +162,7 @@ The primary metric is membership nDCG@3, calculated per candidate and then avera
 
 Uncertainty uses 2,000 candidate-level percentile bootstrap resamples, keeping each candidate's 18 dependent judgements together. Method comparisons evaluate both methods on the same paired resamples.
 
-The recorded practical-tie rule prefers the simpler method when the membership nDCG@3 gap is at most 0.01 and the paired difference interval contains zero. It combines ranking performance with runtime/dependency complexity and inspectability using a study-specific tolerance, not an equivalence test. The selection and freeze records document its use, without establishing when the threshold was first formulated.
+A 0.01 difference in development membership nDCG@3 was used as a study-specific near-tie heuristic when comparing closely performing configurations. The simpler method was preferred only when the paired candidate-level bootstrap interval also included zero, with uncertainty, reproducibility, interpretability, and implementation simplicity considered together. This is an operational heuristic for this study, not a universal nDCG threshold or statistical equivalence criterion. The selection and freeze records document its use, but the available Git history does not establish when the threshold was first formulated.
 
 ## 7. Results
 
@@ -177,7 +177,7 @@ The recorded practical-tie rule prefers the simpler method when the membership n
 | Hybrid α=0.75 | 0.6267 | 0.6297 | 0.500 | 0.6417 | 0.833 |
 | Structured | 0.5872 | 0.6198 | 0.500 | 0.6177 | 0.889 |
 
-Semantic led the primary point estimate. TF-IDF was lower by 0.006901; the paired 95% interval for TF-IDF minus Semantic was [−0.068648, 0.049863]. Both practical-tie conditions were met, so TF-IDF was selected for its lower runtime/dependency complexity and inspectable lexical computation. This supports a bounded engineering choice, not TF-IDF superiority.
+Semantic led the primary point estimate. TF-IDF was lower by 0.006901; the paired 95% interval for TF-IDF minus Semantic was [−0.068648, 0.049863]. The study-specific near-tie heuristic applied, so TF-IDF was selected for its lower runtime/dependency complexity and inspectable lexical computation. This supports a bounded engineering choice, not statistical equivalence or TF-IDF superiority.
 
 ### 7.2 Development aggregation selection
 
@@ -236,7 +236,7 @@ Core status and provenance support inspection; learning priorities, prerequisite
 
 ## 9. Discussion and limitations
 
-The findings connect representation choices to task definition: the practical-tie rule supported the simpler lexical method, while error analysis exposed its difficulty with negation and low-evidence aspirations. Broad profile agreement can also coexist with poor occupational contributors, making both evaluation levels necessary for interpreting this prototype.
+The findings connect representation choices to task definition: the study-specific near-tie heuristic supported the simpler lexical method, while error analysis exposed its difficulty with negation and low-evidence aspirations. Broad profile agreement can also coexist with poor occupational contributors, making both evaluation levels necessary for interpreting this prototype.
 
 The two-layer design makes the researcher-defined mapping part of model behaviour. Shared occupations reuse source material across targets; membership counts affect averaging and maximum-label opportunities. No direct-profile baseline was evaluated, and the aggregation comparison establishes only a point-estimate preference. The study therefore does not show that two layers outperform direct profile scoring.
 

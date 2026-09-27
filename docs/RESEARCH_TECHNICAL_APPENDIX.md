@@ -78,7 +78,7 @@ $$
 public(x)=clip\left(\frac{x+1}{2},0,1\right)
 $$
 
-The method was verified under normal-cache and forced-offline execution with identical embeddings and rankings.
+The recorded development run used the pinned model revision from a copied local Hugging Face cache in forced-offline mode. The frozen record does not claim a verified normal-cache versus forced-offline equivalence comparison.
 
 ### A.5 Hybrid method
 
@@ -141,7 +141,7 @@ nDCG@3 prioritises the top directions exposed to a user while respecting graded 
 
 Confidence intervals use 2,000 candidate-level percentile bootstrap resamples. Resampling candidates rather than candidate–membership rows preserves the dependence among the 18 judgements belonging to one candidate.
 
-Method comparisons use paired candidate-level bootstrap differences. The recorded development practical-tie rule states that when the nDCG@3 gap is no more than `0.01` and the paired interval includes zero, the simpler predeclared method is preferred.
+Method comparisons use paired candidate-level bootstrap differences. A development nDCG@3 difference of no more than `0.01` was used as a study-specific near-tie heuristic; when the paired interval also included zero, the simpler configuration was preferred. This is not a universal threshold or statistical equivalence criterion, and the available Git history does not establish when the threshold was first formulated.
 
 ### C.4 Evaluation levels
 

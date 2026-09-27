@@ -1,7 +1,7 @@
 {
   "manifest_name": "Selected TF-IDF complete test run",
   "status": "full_test_completed_no_retuning",
-  "specification_sha256": "35d3b89dbe4724a88d2b3f89ee83faee293f7e69a96f59843afa2f32126c3d33",
+  "specification_sha256": "629f772ba47017e17cbd6af1f92529e75059d5d54787da2f25927c00a07b0dea",
   "test_candidate_ids": [
     "C005",
     "C006",

@@ -5,7 +5,7 @@ This directory is the only active candidate dataset in the repository.
 - `profiles.json`: complete reviewed candidate records, including per-candidate `industry_context`.
 - `development.json`: development split for documented method selection.
 - `test.json`: frozen test split.
-- `governance.json`: per-candidate construction, coverage and split metadata; prohibited from matching and blinded annotation.
+- `governance.json`: per-candidate construction, coverage and split metadata; prohibited from matching and model-output-blinded researcher annotation.
 - `coverage.csv`: one-row-per-candidate coverage table for Role Profile, scenario and split counts.
 - `manifest.json`: dataset-wide provenance, review controls, status and integrity hashes.
 - `../../reports/freezes/CANDIDATE_DATASET_FREEZE.md`: freeze policy.
@@ -23,7 +23,7 @@ records how an adjacent, transitional or ambiguous case was sampled. Every
 governance metadata is therefore declared not to be a relevance label once at
 dataset level in `manifest.json`.
 
-The authoritative relevance answers are the blinded human judgements in
+The authoritative relevance answers are the model-output-blinded researcher judgements in
 `data/annotation/annotation_all_60.csv`; the held-out subset is also stored in
 `data/annotation/annotation_test_full.csv`. Their unit is finer-grained:
 `candidate_id × membership_id`, where a membership is one ESCO occupation in

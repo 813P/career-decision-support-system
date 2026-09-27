@@ -30,7 +30,7 @@ Only the following six fields belong to the public `CandidateProfile` contract.
 
 `desired_work_directions`, `skills`, and `experience_narrative` are conceptually required evidence even though the current parser accepts empty values. Empty values must therefore be flagged during candidate audit. For backward compatibility, the parser accepts legacy `profile_text` input, but the Candidate Dataset and all new outputs use `experience_narrative`. Supplying both names with conflicting values is invalid.
 
-The reviewed master file `profiles.json` also retains `industry_context`. It varies by candidate and supports coverage description, but it is not part of the public `CandidateProfile` contract and must not enter the current ranking score or blinded relevance annotation.
+The reviewed master file `profiles.json` also retains `industry_context`. It varies by candidate and supports coverage description, but it is not part of the public `CandidateProfile` contract and must not enter the current ranking score or model-output-blinded researcher annotation.
 
 ### 2.1 Terminology boundary
 
@@ -123,7 +123,7 @@ The following fields are stored separately and must never enter feature generati
 
 These fields may be shown to the candidate-content reviewer because that reviewer is auditing the synthesis process. They must be hidden from relevance annotators.
 
-`industry_context` remains in `profiles.json`, rather than being moved into governance, because it is part of the reviewed descriptive master record. It remains prohibited from matching and blinded annotation.
+`industry_context` remains in `profiles.json`, rather than being moved into governance, because it is part of the reviewed descriptive master record. It remains prohibited from matching and model-output-blinded researcher annotation.
 
 ## 6. Dataset-Level Metadata
 

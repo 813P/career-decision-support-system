@@ -211,7 +211,7 @@ def main() -> int:
         "--model-visibility",
         choices=("hidden", "visible"),
         default="hidden",
-        help="Keep model_rank/model_score blank for primary blind annotation (default), or expose them for later review.",
+        help="Keep model_rank/model_score blank for model-output-blinded researcher annotation (default), or expose them for later review.",
     )
     parser.add_argument(
         "--replace-unannotated",

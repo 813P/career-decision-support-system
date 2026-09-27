@@ -8,7 +8,7 @@ The final labels were supplied by the sole researcher, who also reviewed the AI-
 
 The objective is to record human relevance judgements for evaluating the frozen selected matching configuration. Annotation measures how well a candidate's stated background and intended direction support one specific occupation–Role Profile membership. It does not assess hiring eligibility, predict job performance, or change the matching formula or weights.
 
-Primary annotation should be blind: annotators must not see model scores, ranks, candidate construction metadata, split assignments, intended sampling profiles, scenario labels, audit decisions, or other annotators' labels. The workflow therefore keeps `model_rank` and `model_score` blank by default. Model output may be exposed only for a separately identified post-annotation error-analysis pass.
+Primary annotation is **model-output-blinded researcher annotation**: the researcher must not see model scores, ranks, candidate construction metadata, split assignments, intended sampling profiles, scenario labels, or audit decisions while assigning relevance labels. The workflow therefore keeps `model_rank` and `model_score` blank by default. Model output may be exposed only for a separately identified post-annotation error-analysis pass. This restriction reduces direct model-output influence but does not constitute independent, multi-rater, or double-blind validation.
 
 ## Annotation unit definition
 
@@ -67,7 +67,7 @@ The supplied profile contains insufficient relevant evidence, only generic wordi
 - A desired role without supporting experience normally receives `1`, not `2`; a strong background with a conflicting direction also normally receives `1`.
 - If the occupation fits but the Role Profile purpose does not, judge the full membership and reduce the label.
 - If information is too sparse to distinguish adjacent memberships, use `0` or `1` according to the concrete evidence available and set `evidence_strength=weak`.
-- Do not contact another annotator or inspect their file before independent annotation is complete. Flag unresolved interpretation issues for guide clarification, not case-by-case coordination.
+- Record unresolved interpretation issues for guide clarification rather than changing labels to follow a model result or expected ordering.
 
 ## Examples
 
@@ -97,7 +97,7 @@ A candidate has market research, KPI ownership, and financial modelling and want
 - Every row has `human_relevance`; conditional evidence/reason fields follow the reduced-work policy above.
 - `annotator_id` remains unchanged, and one completion timestamp is recorded per finished file.
 - Candidate and membership identifiers are unchanged.
-- Blank model fields remain blank during primary blind annotation.
+- Blank model fields remain blank during model-output-blinded researcher annotation.
 - No construction metadata, model inference, or other annotator judgement appears in the rationale.
 
 ## Frozen annotation status

@@ -69,7 +69,7 @@ The two layers deliberately have different units. Governance describes one candi
 
 ## 4. Construction, review, and privacy
 
-**Researcher-role clarification:** The sole researcher used AI assistance to draft the 60 synthetic candidates, reviewed them, and supplied all 1,080 relevance labels. The annotation view hid model outputs and construction metadata, but prior involvement in design and construction limits independence. No independent second annotator participated. The data-source policy separately records five de-identified real-person seed profiles as controlled synthesis references, excluded from released ranking inputs.
+**Researcher-role clarification:** The sole researcher used AI assistance to draft the 60 synthetic candidates, reviewed them, and supplied all 1,080 relevance labels. The model-output-blinded annotation view hid ranking outputs, scores, and construction metadata, but prior involvement in design and construction limits independence. No independent second annotator participated. The frozen records establish that the released profiles are fully synthetic and non-identifying; the current repository does not retain sufficient generation-chain evidence to claim that real resumes materially informed the final profiles.
 
 Profiles were constructed to express plausible work evidence and career direction without copying Analytical Role Profile definitions, ESCO descriptions, task lists, or expected-answer labels. Automated and human review covered:
 

@@ -1,6 +1,6 @@
 {
   "report_name": "Development-only matching parameter selection",
-  "status": "development_selected_requires_researcher_signoff",
+  "status": "development_selection_complete",
   "split": "development",
   "annotation_unit": "candidate_x_membership",
   "development_candidates": 20,
@@ -9,8 +9,8 @@
   "test_labels_used": false,
   "test_rankings_generated": false,
   "primary_metric": "candidate-level membership nDCG@3",
-  "selection_rule": "Point leader by membership nDCG@3; when the gap is <= 0.01 and the paired candidate-bootstrap interval includes zero, recommend the simpler predeclared configuration for researcher sign-off",
-  "practical_tie_threshold_ndcg3": 0.01,
+  "selection_rule": "Point leader by membership nDCG@3; when the gap is <= 0.01 and the paired candidate-bootstrap interval includes zero, use the study-specific near-tie heuristic to recommend the simpler configuration",
+  "study_specific_near_tie_heuristic_ndcg3": 0.01,
   "method_search_space": [
     "structured",
     "tfidf",
@@ -30,11 +30,11 @@
     "alpha_1": "structured"
   },
   "metric_leader": "semantic",
-  "practical_tie_methods": [
+  "near_tie_methods": [
     "semantic",
     "tfidf"
   ],
-  "recommended_method_requires_signoff": "tfidf",
+  "recommended_method": "tfidf",
   "membership_trials": [
     {
       "method": "semantic",
@@ -1892,7 +1892,7 @@
     "mean_all"
   ],
   "aggregation_evaluated_for_method": "tfidf",
-  "recommended_aggregation_requires_signoff": "mean_all",
+  "recommended_aggregation": "mean_all",
   "aggregation_trials": [
     {
       "aggregation": "mean_all",
@@ -2828,7 +2828,7 @@
   },
   "input_hashes": {
     "data/annotation/annotation_all_60.csv": "e67a0f7e167ac67baa4170397fbfcba0fcf308693fed4dc45b96f5a679ab9a56",
-    "data/annotation/annotation_manifest.json": "678427893f71237ffb98a4f77b98946f842f15a733002a5652251fd1dfc0954c",
+    "data/annotation/annotation_manifest.json": "170278523352e5745b0f53cca43ef12f17c59c2caade4b2a7edadbf2215ebfd0",
     "data/candidates/development.json": "a7a7ae15b4754a471d62e07eedaf37b65fd62000b127a4133cfe60924f55cd73",
     "reports/matching/development_structured_entry.json": "47c21cb5a211460f8ba955be6b0f70a98abb31338ce4adc7843bbd34b6f202ad",
     "reports/matching/development_tfidf_entry.json": "2e910b71e70805a789c7c58595eb11ccd1a67ffcebf9425f19fc07d2b570fbf8",
