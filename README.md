@@ -15,8 +15,6 @@ The design problem is especially visible during career transitions. A ranker dri
 
 > How closely do evidence-based career-direction rankings agree with researcher relevance judgements in a controlled synthetic-candidate study, and where do they disagree?
 
-This section establishes the real problem behind the artifact. The [Research Design](RESEARCH_DESIGN.md) develops it into research questions and methodological choices; personal history, growth, and programme fit belong in the applicant's personal statement rather than this repository.
-
 The prototype supports exploration. It does not determine a person's “best” career, predict hiring suitability, or make employment decisions.
 
 ## 2. What I designed
@@ -136,8 +134,6 @@ The system is intended for exploratory, human-centred career decision support. I
 | What are the main risks and intended uses? | [Model Card](docs/MODEL_CARD.md) |
 | Which cases failed, and why? | [Error Analysis](docs/ERROR_ANALYSIS.md) |
 | What are the formulas and exact runtime details? | [Technical Appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) |
-
-**Document boundaries:** this README is the one-page project entry; Research Design is the methodological narrative; the Final Evaluation Report is the frozen-results authority; the Data Card, Model Card, and Experiment Protocol govern their named evidence. Application essays remain outside the repository and carry the personal narrative rather than the technical proof.
 
 The [documentation index](docs/README.md) provides additional schemas, data-source policies, and repository guides. Machine-readable results are retained under [`results/`](results/) and run-specific records under [`reports/`](reports/).
 
