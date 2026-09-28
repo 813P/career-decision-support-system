@@ -4,7 +4,7 @@ The Career Decision Support System is a research-oriented, explainable AI protot
 
 Rather than returning a single opaque recommendation, the system separates background fit from directional intent and surfaces the evidence behind its rankings, including occupation-level evidence, matched skills, missing evidence, and ranking provenance.
 
-The system's key representation, ranking, and aggregation choices were developed and evaluated through a controlled empirical study, [*Exploring Analytical Career Directions*](https://github.com/813P/career-decision-support-system/blob/main/RESEARCH_DESIGN.md).
+The system's key representation, ranking, and aggregation choices were developed and evaluated in [*Exploring Analytical Career Directions*](https://github.com/813P/career-decision-support-system/blob/main/RESEARCH_DESIGN.md), a controlled methodological pilot.
 
 **Study at a glance:** 5 project-defined Role Profiles, 15 reviewed ESCO occupations, 18 occupation–Role Profile memberships, 60 synthetic candidates, and 1,080 single-researcher relevance annotations. Four ranking approaches were compared on 20 development candidates; the selected configuration was frozen and evaluated on 40 held-out test candidates.
 
@@ -127,7 +127,7 @@ The selected configuration was evaluated once on all 40 held-out test candidates
 
 nDCG@3 measures graded relevance agreement near the top of a ranking; it is not classification accuracy. Top-1 agreement allows ties and means that rank 1 received the candidate's highest available human label.
 
-Role Profile ordering aligned more closely with the reference labels in this controlled sample, while fine-grained membership ranking remained harder. The two levels are not directly comparable measures of difficulty: they contain 5 versus 18 targets, and their human labels and model aggregation use different constructions.
+Role Profile ordering showed higher agreement with the reference labels in this controlled sample, while membership-level agreement was lower. The two levels are not directly comparable measures of difficulty: they contain 5 versus 18 targets, and their human labels and model aggregation use different constructions.
 
 ## 5. Two representative failure cases
 

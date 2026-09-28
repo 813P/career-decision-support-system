@@ -151,6 +151,8 @@ The primary evaluation ranks 18 memberships per candidate. The secondary evaluat
 
 ## D. Evidence inventory and implementation records
 
+The frozen occupational evidence uses the English ESCO v1.2.1 snapshot recorded in the taxonomy files.
+
 The source audit records 552 ESCO membership-level decisions: 181 core, 138 supporting, and 233 excluded. It also records 60 reviewed Role Profile-specific project-custom assignments. After membership construction and custom-evidence expansion, the derived evidence contains 313 core and 213 supporting occurrences across 18 memberships. Occurrences are not unique skills.
 
 The frozen configuration and manifests retain exact versions, hashes, bootstrap provenance, and the complete 40-candidate test scope.
