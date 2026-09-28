@@ -6,10 +6,10 @@ Start with the [project overview](../README.md). This index separates research d
 
 | Reader or question | Suggested path |
 |---|---|
-| Admissions reviewer: what was studied and learned? | [Overview](../README.md) → [Research Design and Evaluation](../RESEARCH_DESIGN.md) → [Error analysis](ERROR_ANALYSIS.md) |
-| Research reviewer: how were the claims evaluated? | [Protocol](EXPERIMENT_PROTOCOL.md) → [Data card](DATA_CARD.md) → [Annotation guideline](HUMAN_ANNOTATION_GUIDELINE.md) → [Selection report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) → [Test report](../reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) |
-| Technical reader: how is it computed? | [Technical appendix](RESEARCH_TECHNICAL_APPENDIX.md) → source and tests |
-| Application user: what can I rely on? | [Model card](MODEL_CARD.md) → [Experimental JD analyzer](../experimental/jd_analysis/README.md) → [MCP setup](MCP_INTEGRATION.md) |
+| Admissions reviewer: what was built, studied, and learned? | [Project README](../README.md) → [Research Design](../RESEARCH_DESIGN.md) |
+| Research reviewer: how were the claims produced? | [Protocol](EXPERIMENT_PROTOCOL.md) → [Data Card](DATA_CARD.md) → [Annotation Guideline](HUMAN_ANNOTATION_GUIDELINE.md) → [Development Selection Report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) → [Final Evaluation Report](../reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) → [Error Analysis](ERROR_ANALYSIS.md) |
+| System user: what can the prototype support? | [Model Card](MODEL_CARD.md) → [Data Card](DATA_CARD.md) |
+| Technical reader: how is it computed and reproduced? | [Technical Appendix](RESEARCH_TECHNICAL_APPENDIX.md) → source and tests |
 
 ## Document responsibilities
 
@@ -24,6 +24,18 @@ Start with the [project overview](../README.md). This index separates research d
 Personal history, development, and programme fit belong in the applicant's personal statement outside the repository. Repository documents may identify the work experience that motivated the problem, but they do not duplicate the personal narrative or serve as application essays.
 
 The [reports directory](../reports/README.md) holds run-specific observations, decisions, metrics, and freeze records. Documents explain the design; reports provide evidence for what was done. Preserve completed records when changing presentation.
+
+## Secondary interfaces and experimental work
+
+- [MCP integration](MCP_INTEGRATION.md) is optional technical setup for compatible clients, not part of the ranking study.
+- [JD Analyzer](../experimental/jd_analysis/README.md) is a separate experimental extension without a labelled evaluation.
+
+<details>
+<summary>Audit and repository-maintenance records</summary>
+
+The audit layer retains full-run issue logs, schema-migration notes, environment-recovery details, freeze manifests, and the repository submission manifest. These records support reproducibility and change control but are not part of the applicant-facing reading path. Start from the [reports index](../reports/README.md) only when investigating implementation history or repository integrity.
+
+</details>
 
 ## Further reference
 

@@ -16,8 +16,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 15182,
-      "sha256": "31834153303a4f86fc949b1ca3b31f5266b4afaa1ee91aaac9aa5a9094ad7f32"
+      "bytes": 14901,
+      "sha256": "c7403e12e938ea8bceb7c49db5335a361eeef26bbd93fdfa69453f9c26bb4ba0"
     },
     {
       "path": "RESEARCH_DESIGN.md",
@@ -146,8 +146,8 @@
     },
     {
       "path": "docs/README.md",
-      "bytes": 2751,
-      "sha256": "f7e6ae87477054d51fa2be499c14c86dcc97c6c19f89b983856bc25bcdda22d4"
+      "bytes": 3491,
+      "sha256": "fc93a91b27069d29bca979a61dd9a346bb42ffbebf658509998b86226093c596"
     },
     {
       "path": "docs/RESEARCH_TECHNICAL_APPENDIX.md",
@@ -246,8 +246,8 @@
     },
     {
       "path": "reports/README.md",
-      "bytes": 1161,
-      "sha256": "df13615d9888c4d14fe8209cb24c76840ddebe7cc942202301720737d913ba79"
+      "bytes": 1402,
+      "sha256": "578971f21646a91628576b292f7a7573c9b889fda4b0f0fe19d39cb19a88f9bc"
     },
     {
       "path": "reports/audits/CANDIDATE_AUDIT_STATUS.md",

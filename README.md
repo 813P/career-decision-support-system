@@ -208,9 +208,9 @@ node --test tests/webapp_i18n.test.mjs
 
 ### Secondary and experimental material
 
-- **MCP interface:** an optional way to expose the same career-ranking capability to compatible clients. Install with `python -m pip install -e ".[mcp]"`, run `career-mcp`, and see the [MCP integration guide](docs/MCP_INTEGRATION.md). MCP is an interface, not part of the ranking experiment.
-- **JD Analyzer:** a physically separate, experimental extension under [`experimental/jd_analysis/`](experimental/jd_analysis/). It uses rules to identify work components in Chinese or English job descriptions. It has no labelled evaluation and is outside the core empirical ranking study.
-- **Semantic reproduction:** install the pinned optional dependencies with `python -m pip install -e ".[semantic,dev]"`. The frozen semantic comparison used `sentence-transformers` 5.0.0 and `all-MiniLM-L6-v2` without fine-tuning.
+- **MCP interface:** an optional technical interface to the same ranking capability; see the [MCP integration guide](docs/MCP_INTEGRATION.md). It is not part of the ranking experiment.
+- **JD Analyzer:** a separate experimental extension with no labelled evaluation; see its [scope and method](experimental/jd_analysis/README.md). It is outside the core empirical ranking study.
+- **Semantic reproduction:** exact model, dependency, and runtime details are retained in the [Technical Appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md).
 - **Generic job matching:** the separate `career-match` command provides job-level matching utilities; it is not the frozen five-profile evaluation entry point.
 
 The selected TF-IDF held-out evaluation is frozen. Historical snapshots remain available through Git tags; held-out errors must not be used for retuning.
