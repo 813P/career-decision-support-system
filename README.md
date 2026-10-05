@@ -196,15 +196,31 @@ career-web
 
 The bilingual browser interface runs on a lightweight local Python service. English candidate input is recommended; changing the interface language does not change ranking scores.
 
-To validate the frozen study records:
+Validation also requires Node.js 20 or later. To validate the frozen study records and run the core tests in the environment above:
 
 ```powershell
 node experiments/validation/validate_candidate_data.mjs
 node experiments/validation/validate_full_study.mjs
-python -m pytest
+python -m pytest --ignore=tests/test_mcp_server.py --ignore=tests/test_role_profile_semantic_pipeline.py
 node --test tests/role_profile_experiment.test.mjs
 node --test tests/webapp_i18n.test.mjs
 ```
+
+### Complete test suite: Semantic and MCP
+
+The two optional-extension test modules require dependencies beyond `.[dev]`. For the complete suite, create a separate environment with **Python 3.12.14**, matching the recorded Semantic runtime, and install the pinned Semantic dependencies plus MCP:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e ".[dev,mcp]" -r requirements-semantic.txt --extra-index-url https://download.pytorch.org/whl/cpu
+python -m pip check
+python -m pytest -q
+```
+
+Use a fresh directory/environment if `.venv` already belongs to another Python installation. The CPU package index supplies the recorded PyTorch `2.7.1+cpu` build. Run installation and tests with the same environment's Python; the MCP integration test launches that interpreter as a subprocess. Semantic dependencies include a large PyTorch download.
+
+The complete suite checks Semantic input filtering, score transformation and aggregation, and starts a real MCP subprocess to list and call tools. These tests do not rerun the embedding experiment or held-out evaluation. Exact Semantic model revision and runtime provenance are in [`config/experiments/semantic_runtime.json`](config/experiments/semantic_runtime.json); see the [Technical Appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) for the frozen method.
 
 ### Secondary and experimental material
 

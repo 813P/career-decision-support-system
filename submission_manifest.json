@@ -1,7 +1,7 @@
 {
   "manifest_name": "Submission-ready repository",
   "status": "complete",
-  "created_at": "2026-09-27",
+  "created_at": "2026-10-05",
   "file_count": 103,
   "files": [
     {
@@ -16,13 +16,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 14901,
-      "sha256": "c7403e12e938ea8bceb7c49db5335a361eeef26bbd93fdfa69453f9c26bb4ba0"
+      "bytes": 16421,
+      "sha256": "07f094e4b46de055e9dcbdb8d489a9688ad50ba0bb2c0ff0ba9f1c4fb6abab67"
     },
     {
       "path": "RESEARCH_DESIGN.md",
-      "bytes": 20476,
-      "sha256": "c5ba0bf22d41b2d268bb22a33ba13bb3622cbcbfd0247d833661ff6de1d08bb6"
+      "bytes": 20114,
+      "sha256": "9fee32a33892dc42ed61bb70797e1d6279ed1c7404ea94d36c98dbee60a5baee"
     },
     {
       "path": "config/experiments/semantic_runtime.json",

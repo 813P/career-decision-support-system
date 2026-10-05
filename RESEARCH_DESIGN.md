@@ -20,9 +20,9 @@ The completed study evaluates agreement with researcher relevance judgements on 
 
 ### 2.1 Positioning
 
-The task is a form of content-based recommendation: candidate and occupational descriptions are compared through their attributes rather than through other users' clicks or career histories [1]. TF-IDF provides a lexical information-retrieval baseline [2], while a pretrained sentence encoder tests whether semantic representation adds value beyond vocabulary overlap [3].
+The task is a form of content-based recommendation: candidate and occupational descriptions are compared through their attributes rather than through other users' clicks or career histories. TF-IDF provides a lexical information-retrieval baseline, while a pretrained sentence encoder tests whether semantic representation adds value beyond vocabulary overlap [1].
 
-ESCO supplies externally defined occupational descriptions and skills [4]. It does not define or validate the project's five Role Profiles or their occupation mappings. Explainable-recommendation research also motivates a distinction between tracing the evidence used by a system and attributing a numerical score to particular features [5].
+ESCO supplies externally defined occupational descriptions and skills [2]. It does not define or validate the project's five Role Profiles or their occupation mappings. Explainable-recommendation research also motivates a distinction between tracing the evidence used by a system and attributing a numerical score to particular features [3].
 
 The study is positioned as a controlled methodological pilot rather than a new ranking algorithm or a real-world effectiveness trial. Its contribution lies in how the career-exploration problem is represented, compared, evaluated, and explained; Section 7 consolidates the specific contributions.
 
@@ -194,11 +194,9 @@ Any extension should use a new study version and preserve the completed frozen e
 
 ## References
 
-1. Pazzani, M. J., and Billsus, D. (2007). Content-Based Recommendation Systems. In *The Adaptive Web*. [Publisher record](https://doi.org/10.1007/978-3-540-72079-9_10).
-2. Manning, C. D., Raghavan, P., and Schütze, H. (2008). *Introduction to Information Retrieval*. Cambridge University Press. [Author-hosted text](https://nlp.stanford.edu/IR-book/).
-3. Reimers, N., and Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. *EMNLP-IJCNLP*. [ACL Anthology](https://aclanthology.org/D19-1410/).
-4. European Commission. *European Skills, Competences, Qualifications and Occupations (ESCO)*. [Official portal](https://esco.ec.europa.eu/en).
-5. Zhang, Y., and Chen, X. (2020). Explainable Recommendation: A Survey and New Perspectives. *Foundations and Trends in Information Retrieval*, 14(1), 1–101. [Publisher record](https://doi.org/10.1561/1500000066).
+1. Reimers, N., and Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. *EMNLP-IJCNLP*. [ACL Anthology](https://aclanthology.org/D19-1410/).
+2. European Commission. *European Skills, Competences, Qualifications and Occupations (ESCO)*. [Official portal](https://esco.ec.europa.eu/en).
+3. Zhang, Y., and Chen, X. (2020). Explainable Recommendation: A Survey and New Perspectives. *Foundations and Trends in Information Retrieval*, 14(1), 1–101. [Publisher record](https://doi.org/10.1561/1500000066).
 
 ## Supporting records
 
