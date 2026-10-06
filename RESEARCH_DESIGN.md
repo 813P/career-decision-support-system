@@ -1,7 +1,9 @@
 # Exploring Analytical Career Directions: Research Design and Evaluation
 
 **Project:** Career Decision Support System
+
 **Study status:** Completed; final configuration frozen and evaluated on the held-out test set.
+
 **Document scope:** Research questions, design rationale, protocol interpretation, findings, and limitations. For the system overview and operating instructions, see the [project README](README.md).
 
 ## Abstract
