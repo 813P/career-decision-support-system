@@ -32,7 +32,7 @@ The system first ranks occupation–Role Profile memberships—each representing
 
 ![System and method pipeline from parallel evidence representation through development-set selection, held-out evaluation, and ranked output](docs/assets/system-method-pipeline.svg)
 
-The five **Analytical Role Profiles** are project-defined groupings based on the purpose of the work:
+The five **Role Profiles** are summarised below, alongside the main focus of each direction:
 
 | Career direction | Main focus |
 |---|---|
@@ -42,30 +42,30 @@ The five **Analytical Role Profiles** are project-defined groupings based on the
 | Data Analytics | Data preparation, querying, visualisation, and interpretation |
 | Data Science | Statistical modelling, machine learning, and experimentation |
 
-The profiles connect **15 reviewed ESCO occupations** through **18 occupation–Role Profile memberships**; an occupation can contribute to more than one profile. The study uses English ESCO v1.2.1. I defined the five Role Profiles from recurring types of analytical work encountered in recruitment, then manually reviewed the selected occupations and their mappings against those profile boundaries. ESCO supplies the referenced occupations and skills but does not define or validate this grouping.
+The profiles connect **15 reviewed ESCO occupations** through **18 occupation–Role Profile memberships**; an occupation can contribute to more than one profile. The study uses English ESCO v1.2.1. I defined the five Role Profiles from recurring types of analytical work encountered in recruitment, then manually reviewed the selected occupations and their mappings against those profile boundaries. 
 
-The interface distinguishes three kinds of evidence:
+Alongside the ranked Role Profiles, the system provides three forms of explanation to help users inspect the results:
 
-- **score decomposition** shows the background and direction components;
-- **aggregation provenance** shows which memberships contribute to a Role Profile;
-- **rule-based skill prompts** provide supplementary evidence checks.
+- **Score decomposition** shows the separate contributions of background fit and alignment with the candidate’s desired career direction.
+- **Aggregation provenance** identifies the occupation–Role Profile memberships contributing to each profile’s score.
+- **Rule-based skill prompts** highlight matched skills and potential gaps in the supplied evidence.
 
-The skill prompts are not TF-IDF feature attribution. A missing prompt means that evidence was not found in the supplied text, not that the person lacks the ability.
+The skill prompts are supplementary checks, not explanations of which features caused the TF-IDF score. A missing-evidence prompt means that the system did not find the relevant evidence in the supplied text; it does not mean that the candidate lacks the ability.
 
 ## 3. Method and experimental design
 
-The 60 fully synthetic, non-identifying profiles were drafted with AI assistance under controlled coverage of the five Role Profiles and predefined candidate scenarios, then validated, manually reviewed, and frozen. AI assistance was limited to drafting the candidate text; construction metadata such as intended Role Profile and scenario was excluded from ranking inputs.
+The dataset contains 60 fully synthetic, non-identifying candidate records. They were drafted with AI assistance to cover all five Role Profiles and predefined candidate scenarios. The records were then validated, manually reviewed, and frozen. AI assistance was limited to drafting the candidate text; construction metadata such as intended Role Profile and scenario was excluded from ranking inputs.
 
 The data were split with no overlap:
 
-- **20 development candidates** supported method and configuration selection;
-- **40 held-out test candidates** were reserved for final evaluation.
+- **20 development candidates** supported method and configuration selection
+- **40 held-out test candidates** were reserved for final evaluation
 
 Both sets cover all five Role Profiles and multiple candidate scenarios. A single researcher assigned all **1,080 candidate–membership relevance annotations** on a 0–2 scale. Ranking outputs, scores, and construction metadata were hidden during annotation—**model-output-blinded researcher annotation**—but this was not independent, multi-rater, or double-blind validation.
 
 Four method families were compared on development data: **Structured**, **TF-IDF**, **Semantic**, and **Hybrid**. Semantic had the highest development membership nDCG@3 point estimate (0.7533), followed by TF-IDF (0.7464). The paired 95% bootstrap interval for TF-IDF minus Semantic was `[-0.0686, 0.0499]`.
 
-A 0.01 development nDCG@3 difference was used as a **study-specific near-tie heuristic**, alongside uncertainty, reproducibility, interpretability, and implementation simplicity. It is not a universal threshold or a statistical equivalence criterion. TF-IDF was selected as the simpler, inspectable lexical method—not because the study demonstrated equivalence or superiority.
+A 0.01 development nDCG@3 difference was used as a "study-specific near-tie heuristic", alongside uncertainty, reproducibility, interpretability, and implementation simplicity. TF-IDF was selected as the simpler, inspectable lexical method—not because the study demonstrated equivalence or superiority.
 
 The final ranker computes:
 
@@ -82,7 +82,7 @@ The selected configuration was evaluated once on all 40 held-out test candidates
 | 18 occupation–Role Profile memberships — primary | **0.6606** | [0.5655, 0.7533] | 0.725 |
 | 5 Role Profiles — secondary | **0.8981** | [0.8480, 0.9408] | 0.900 |
 
-nDCG@3 measures graded relevance agreement near the top of a ranking; it is not classification accuracy. Top-1 agreement allows ties and means that rank 1 received the candidate's highest available human label.
+nDCG@3 evaluates how well the top three results reflect human relevance labels; it is not classification accuracy. Top-1 agreement indicates whether the first-ranked result received the highest human relevance label, including ties.
 
 Role Profile ordering showed higher agreement with the reference labels in this controlled sample, while membership-level agreement was lower. The two levels are not directly comparable measures of difficulty: they contain 5 versus 18 targets, and their human labels and model aggregation use different constructions.
 
@@ -107,7 +107,7 @@ These held-out cases informed error analysis only; the frozen configuration was 
 ### Contributions
 
 - A two-level formulation connecting inspectable occupational evidence to accessible career directions.
-- Separate representation of demonstrated background and stated direction (aspiration).
+- Separate representation of demonstrated background and stated desired career direction.
 - A controlled comparison of structured, lexical, semantic, and hybrid ranking approaches.
 - Development-only configuration selection followed by frozen held-out evaluation.
 - Explanation design that separates ranking-linked evidence from supplementary skill checks.
