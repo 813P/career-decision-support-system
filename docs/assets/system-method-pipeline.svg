@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1180" role="img" aria-labelledby="title description">
+  <title id="title">Career decision-support system and method pipeline</title>
+  <desc id="description">Candidate evidence and career-space evidence are represented in parallel. Development data is used to compare and select the membership-ranking and aggregation methods. The frozen TF-IDF and mean-all configuration is evaluated once on the held-out test set, then produces ranked Role Profiles with supporting evidence.</desc>
+  <style>
+    :root {
+      --panel: #f6f8fa;
+      --node: #ffffff;
+      --text: #1f2328;
+      --muted: #59636e;
+      --border: #8c959f;
+      --line: #57606a;
+      --candidate: #0969da;
+      --career: #8250df;
+      --development: #9a6700;
+      --evaluation: #087f8c;
+      --output: #1a7f37;
+      --selected-fill: #fff8c5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --panel: #161b22;
+        --node: #0d1117;
+        --text: #f0f6fc;
+        --muted: #b1bac4;
+        --border: #6e7681;
+        --line: #8b949e;
+        --candidate: #58a6ff;
+        --career: #bc8cff;
+        --development: #d29922;
+        --evaluation: #39c5cf;
+        --output: #3fb950;
+        --selected-fill: #332b00;
+      }
+    }
+    text {
+      fill: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+    }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .node { fill: var(--node); stroke: var(--border); stroke-width: 1.5; }
+    .phase-title { font-size: 18px; font-weight: 700; letter-spacing: 0.3px; }
+    .phase-number { fill: var(--node); stroke-width: 2; }
+    .phase-number-text { font-size: 15px; font-weight: 700; }
+    .node-title { font-size: 15px; font-weight: 700; }
+    .section-label { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+    .detail { fill: var(--muted); }
+    .selected { fill: var(--selected-fill); stroke-width: 2.5; }
+    .selected-label { font-size: 13px; font-weight: 700; letter-spacing: 0.6px; }
+    .connector { fill: none; stroke: var(--line); stroke-width: 2.25; }
+    .arrow { fill: none; stroke: var(--line); stroke-width: 2.25; marker-end: url(#arrowhead); }
+    .merge { fill: var(--node); stroke: var(--line); stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="var(--line)"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Input and representation -->
+  <rect class="panel" x="30" y="30" width="1140" height="335" rx="14"/>
+  <circle class="phase-number" cx="66" cy="70" r="19" stroke="var(--candidate)"/>
+  <text class="phase-number-text" x="66" y="76" text-anchor="middle">1</text>
+  <text class="phase-title" x="98" y="78">INPUT AND REPRESENTATION:</text>
+
+  <text class="section-label" x="310" y="116" text-anchor="middle" fill="var(--candidate)">CANDIDATE SIDE</text>
+  <rect class="node" x="65" y="135" width="490" height="76" rx="10" stroke="var(--candidate)"/>
+  <text x="310" y="168" text-anchor="middle">
+    <tspan class="node-title" x="310" dy="0">Candidate evidence:</tspan>
+    <tspan class="detail" x="310" dy="25">person-level input supplied to the ranking system</tspan>
+  </text>
+  <path class="arrow" d="M310 211 V235"/>
+  <rect class="node" x="65" y="235" width="490" height="93" rx="10"/>
+  <text x="90" y="265">
+    <tspan class="node-title" x="90" dy="0">Background:</tspan>
+    <tspan class="detail" dx="5">title · skills · experience</tspan>
+    <tspan class="node-title" x="90" dy="32">Direction:</tspan>
+    <tspan class="detail" dx="5">desired work</tspan>
+  </text>
+
+  <text class="section-label" x="890" y="116" text-anchor="middle" fill="var(--career)">CAREER-SPACE SIDE</text>
+  <rect class="node" x="645" y="135" width="490" height="76" rx="10" stroke="var(--career)"/>
+  <text x="890" y="168" text-anchor="middle">
+    <tspan class="node-title" x="890" dy="0">Career-space evidence:</tspan>
+    <tspan class="detail" x="890" dy="25">reviewed ESCO occupations + Role Profiles</tspan>
+  </text>
+  <path class="arrow" d="M890 211 V235"/>
+  <rect class="node" x="645" y="235" width="490" height="93" rx="10"/>
+  <text x="670" y="265">
+    <tspan class="node-title" x="670" dy="0">Background target:</tspan>
+    <tspan class="detail" dx="5">occupation description · tasks · skills</tspan>
+    <tspan class="node-title" x="670" dy="32">Direction target:</tspan>
+    <tspan class="detail" dx="5">titles · profile purpose · work directions</tspan>
+  </text>
+
+  <!-- Both evidence channels feed method selection -->
+  <path class="connector" d="M310 328 V380 H593"/>
+  <path class="connector" d="M890 328 V380 H607"/>
+  <circle class="merge" cx="600" cy="380" r="7"/>
+  <path class="arrow" d="M600 387 V405"/>
+
+  <!-- 2. Development-set method selection -->
+  <rect class="panel" x="30" y="405" width="1140" height="365" rx="14"/>
+  <circle class="phase-number" cx="66" cy="445" r="19" stroke="var(--development)"/>
+  <text class="phase-number-text" x="66" y="451" text-anchor="middle">2</text>
+  <text class="phase-title" x="98" y="453">METHOD SELECTION — DEVELOPMENT SET:</text>
+  <text class="detail" x="98" y="479">All alternatives are compared here; selected choices are frozen before the held-out test is opened.</text>
+
+  <rect class="node" x="65" y="515" width="285" height="183" rx="10"/>
+  <text x="207" y="549" text-anchor="middle">
+    <tspan class="node-title" x="207" dy="0">Compare membership methods:</tspan>
+    <tspan class="detail" x="207" dy="31">Structured</tspan>
+    <tspan class="detail" x="207" dy="25">TF-IDF</tspan>
+    <tspan class="detail" x="207" dy="25">Semantic</tspan>
+    <tspan class="detail" x="207" dy="25">Hybrid</tspan>
+    <tspan class="detail" x="207" dy="29">Fixed channel weights: 0.5 / 0.5</tspan>
+  </text>
+  <path class="arrow" d="M350 607 H398"/>
+
+  <rect class="selected" x="400" y="544" width="170" height="126" rx="10" stroke="var(--development)"/>
+  <text x="485" y="577" text-anchor="middle">
+    <tspan class="selected-label" x="485" dy="0" fill="var(--development)">SELECTED</tspan>
+    <tspan class="node-title" x="485" dy="36">TF-IDF</tspan>
+    <tspan class="detail" x="485" dy="26">membership method</tspan>
+  </text>
+  <path class="arrow" d="M570 607 H618"/>
+
+  <rect class="node" x="620" y="515" width="285" height="183" rx="10"/>
+  <text x="762" y="557" text-anchor="middle">
+    <tspan class="node-title" x="762" dy="0">Compare aggregations:</tspan>
+    <tspan class="detail" x="762" dy="36">max</tspan>
+    <tspan class="detail" x="762" dy="29">mean_top_2</tspan>
+    <tspan class="detail" x="762" dy="29">mean_all</tspan>
+  </text>
+  <path class="arrow" d="M905 607 H953"/>
+
+  <rect class="selected" x="955" y="544" width="180" height="126" rx="10" stroke="var(--development)"/>
+  <text x="1045" y="577" text-anchor="middle">
+    <tspan class="selected-label" x="1045" dy="0" fill="var(--development)">SELECTED</tspan>
+    <tspan class="node-title" x="1045" dy="36">mean_all</tspan>
+    <tspan class="detail" x="1045" dy="26">aggregation</tspan>
+  </text>
+
+  <path class="arrow" d="M1045 670 V795 H600 V820"/>
+
+  <!-- 3. Held-out evaluation -->
+  <rect class="panel" x="210" y="820" width="780" height="150" rx="14"/>
+  <circle class="phase-number" cx="246" cy="860" r="19" stroke="var(--evaluation)"/>
+  <text class="phase-number-text" x="246" y="866" text-anchor="middle">3</text>
+  <text class="phase-title" x="278" y="868">HELD-OUT TEST EVALUATION:</text>
+  <rect class="node" x="245" y="892" width="710" height="52" rx="9" stroke="var(--evaluation)"/>
+  <text x="600" y="914" text-anchor="middle">
+    <tspan class="node-title" x="600" dy="0">Frozen configuration: TF-IDF + mean_all</tspan>
+    <tspan class="detail" x="600" dy="23">Membership nDCG@3 · Role Profile nDCG@3</tspan>
+  </text>
+
+  <path class="arrow" d="M600 970 V1000"/>
+
+  <!-- 4. System output -->
+  <rect class="panel" x="110" y="1000" width="980" height="150" rx="14"/>
+  <circle class="phase-number" cx="146" cy="1040" r="19" stroke="var(--output)"/>
+  <text class="phase-number-text" x="146" y="1046" text-anchor="middle">4</text>
+  <text class="phase-title" x="178" y="1048">SYSTEM OUTPUT:</text>
+  <text x="600" y="1082" text-anchor="middle">
+    <tspan class="node-title" x="600" dy="0">Ranked Role Profiles</tspan>
+    <tspan class="detail" x="600" dy="27">background/direction decomposition · occupation evidence · aggregation provenance</tspan>
+    <tspan class="detail" x="600" dy="24">matched skills · missing evidence</tspan>
+  </text>
+</svg>

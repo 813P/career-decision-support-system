@@ -30,50 +30,7 @@ I designed a two-level ranking system with two evidence sides. Candidate evidenc
 
 ### System and Method Pipeline
 
-```mermaid
-%%{init: {"themeVariables": {"fontSize": "16px"}, "flowchart": {"curve": "linear", "nodeSpacing": 24, "rankSpacing": 36, "wrappingWidth": 220, "subGraphTitleMargin": {"top": 8, "bottom": 18}}}}%%
-flowchart TB
-    subgraph I["Input and Representation"]
-        direction TB
-        subgraph H[" "]
-            direction LR
-            C0["Candidate evidence"]
-            T0["Career-space evidence:<br/>ESCO occupations + Role Profiles"]
-        end
-        subgraph F[" "]
-            direction LR
-            C1["Background: title · skills · experience<br/>Direction: desired work"]
-            T1["Background target: occupation description · tasks · skills<br/>Direction target: occupation titles · profile purpose · work directions"]
-        end
-        C0 --> C1
-        T0 --> T1
-    end
-
-    subgraph D["Method Selection: Development Set"]
-        direction TB
-        E["Development-set membership-ranking comparison:<br/>Structured · TF-IDF · Semantic · Hybrid<br/>Fixed background/direction weights: 0.5/0.5"]
-        M["Selected membership method:<br/>TF-IDF"]
-        A["Development-set aggregation comparison:<br/>max · mean_top_2 · mean_all"]
-        G["Selected aggregation configuration:<br/>mean_all"]
-        E --> M --> A --> G
-    end
-
-    subgraph V["Held-out Test Evaluation"]
-        Q["Final configuration: TF-IDF + mean_all<br/>Metrics: Membership nDCG@3 · Role Profile nDCG@3"]
-    end
-
-    subgraph S["System Output"]
-        O["Ranked Role Profiles<br/>background/direction score decomposition<br/>occupation evidence · aggregation provenance<br/>matched skills · missing evidence"]
-    end
-
-    C1 --> E
-    T1 --> E
-    G --> Q --> O
-    style H fill:transparent,stroke:transparent
-    style F fill:transparent,stroke:transparent
-    classDef selected stroke-width:2px
-    class M,G selected
-```
+![System and method pipeline from parallel evidence representation through development-set selection, held-out evaluation, and ranked output](docs/assets/system-method-pipeline.svg)
 
 The five **Analytical Role Profiles** are project-defined groupings based on the purpose of the work:
 

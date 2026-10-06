@@ -29,21 +29,21 @@
     text {
       fill: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 15px;
+      font-size: 14px;
     }
     .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
     .node { fill: var(--node); stroke: var(--border); stroke-width: 1.5; }
-    .channel-title { font-size: 24px; font-weight: 700; letter-spacing: 0.4px; }
-    .section-title { font-size: 16px; font-weight: 700; }
+    .channel-title { font-size: 17px; font-weight: 700; letter-spacing: 0.4px; }
+    .section-title { font-size: 15px; font-weight: 700; }
     .field { fill: var(--muted); }
     .function { fill: var(--node); stroke-width: 2.5; }
-    .function-label { font-size: 17px; font-weight: 700; }
-    .output-label { font-size: 16px; font-weight: 700; }
+    .function-label { font-size: 15px; font-weight: 700; }
+    .output-label { font-size: 15px; font-weight: 700; }
     .arrow { fill: none; stroke: var(--line); stroke-width: 2; marker-end: url(#arrowhead); }
-    .weight { fill: var(--muted); font-size: 15px; font-weight: 700; }
+    .weight { fill: var(--muted); font-size: 14px; font-weight: 700; }
     .final-box { fill: var(--node); stroke: var(--final-accent); stroke-width: 3; }
-    .final-title { font-size: 22px; font-weight: 700; }
-    .formula { font-size: 18px; }
+    .final-title { font-size: 17px; font-weight: 700; }
+    .formula { font-size: 15px; }
   </style>
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">

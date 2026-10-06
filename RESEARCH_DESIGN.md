@@ -57,7 +57,9 @@ Candidate evidence is divided into two channels:
 
 The occupational targets are constructed in the corresponding two channels. Every method returns separate background and direction components, combined with equal weight in the completed study. This gives aspiration a formal role without treating it as demonstrated readiness. Alternative component weights were not evaluated.
 
-![Parallel background and direction evidence channels feeding an equally weighted final membership score](docs/assets/membership-score-construction.svg)
+<p align="center">
+  <img src="docs/assets/membership-score-construction.svg" alt="Parallel background and direction evidence channels feeding an equally weighted final membership score" width="760">
+</p>
 
 For readability, the figure prefixes the membership-side target names with `membership_`; the implementation stores them as `background_target` and `direction_target` on each membership record. The membership targets deliberately combine occupation evidence with the Role Profile context in which that occupation is used. Identifiers and provenance fields—such as membership ID, occupation URI, Role Profile ID, mapping type, skill URI, and source type—support grouping and traceability but do not enter the TF-IDF text similarity.
 
