@@ -26,7 +26,7 @@ The prototype supports exploration. It does not determine a person's “best” 
 
 ## 2. What I designed
 
-The system first ranks occupation–Role Profile memberships—each representing an occupation within a particular Role Profile—using two evidence channels: the candidate’s background and their self-reported desired career direction. It combines the two component scores for each membership, then aggregates the membership scores to rank the five Role Profiles.
+The system first ranks occupation–Role Profile memberships—each representing an occupation within a particular Role Profile—using two evidence channels: the candidate’s background and their desired career direction. It combines the two component scores for each membership, then aggregates the membership scores to rank the five Role Profiles.
 
 ### System and Method Pipeline
 
