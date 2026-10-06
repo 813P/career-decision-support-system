@@ -74,8 +74,8 @@
   <text x="90" y="265">
     <tspan class="node-title" x="90" dy="0">Background:</tspan>
     <tspan class="detail" dx="5">title · skills · experience</tspan>
-    <tspan class="node-title" x="90" dy="32">Direction:</tspan>
-    <tspan class="detail" dx="5">desired work</tspan>
+    <tspan class="node-title" x="90" dy="32">Desired work:</tspan>
+    <tspan class="detail" dx="5">candidate-stated interests and goals</tspan>
   </text>
 
   <text class="section-label" x="890" y="116" text-anchor="middle" fill="var(--career)">CAREER-SPACE SIDE</text>
@@ -89,7 +89,7 @@
   <text x="670" y="265">
     <tspan class="node-title" x="670" dy="0">Background target:</tspan>
     <tspan class="detail" dx="5">occupation description · tasks · skills</tspan>
-    <tspan class="node-title" x="670" dy="32">Direction target:</tspan>
+    <tspan class="node-title" x="670" dy="32">Desired work target:</tspan>
     <tspan class="detail" dx="5">titles · profile purpose · work directions</tspan>
   </text>
 
