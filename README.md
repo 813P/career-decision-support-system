@@ -88,17 +88,17 @@ Role Profile ordering showed higher agreement with the reference labels in this 
 
 ## 5. Two representative failure cases
 
-### C019 — a plausible direction with an implausible contributor
+### C019 — Strongly relevant occupations ranked below unsupported ones
 
-The leading Role Profile was acceptable, but its top occupation membership—budget analyst—had human relevance 0, while a strong data-analyst membership appeared later. KPI and monitoring language supported the broad performance direction, yet supplied the wrong fine-grained lexical route.
+C019 describes a BI Analyst with dashboard, SQL, and performance-monitoring experience who wanted responsibility for targets and operating cadence. Business Performance & Goal Management ranked first, consistent with the reference labels at the profile level. Within that profile, however, budget analyst and cost analyst memberships (both with human relevance 0) ranked above data analyst (human relevance 2).
 
-**Why it matters:** a correct broad direction can hide a poor occupational contributor. The interface should present membership provenance and must not describe the strongest occupation as the person's recommended career.
+**Why it matters:** strong supporting evidence was present, but the membership ranking did not prioritise it. A plausible broad direction can therefore conceal a membership-level ordering error; users need to inspect the occupations contributing to it.
 
-### C056 — aspiration language outweighed weak evidence
+### C056 — Keyword overlap despite explicitly limited evidence
 
-Data Science ranked first even though its leading statistician membership had relevance 0 and no membership received label 2. Desired-role and model-operations vocabulary overlapped with modelling targets despite explicit statements that evidence for feature choices, inference, and evaluation design was limited.
+C056 describes a Model Operations Specialist who monitored production alerts and coordinated retraining tickets, and wanted to join analytical modelling projects. The record explicitly states that little evidence is available on feature choices, inference, or evaluation design. Data Science ranked first, with statistician (human relevance 0) above data scientist (human relevance 1); no membership received label 2.
 
-**Why it matters:** bag-of-words TF-IDF does not reliably understand negation or evidence absence. A transition aspiration can therefore appear more strongly supported than the supplied background justifies.
+**Why it matters:** TF-IDF matches words but does not reliably interpret statements that evidence is limited. This case is consistent with keyword overlap obscuring that limitation; the ranking should not be read as evidence of modelling readiness.
 
 These held-out cases informed error analysis only; the frozen configuration was not retuned after test inspection.
 
