@@ -13,20 +13,20 @@ The system's key representation, ranking, and aggregation choices were developed
 
 ## 1. Problem and motivation
 
-The project began with an observation from my work in ByteDance's central data recruitment function. It addresses two connected ambiguities:
+The project began with an observation from my work in a central recruitment team at ByteDance, hiring for analytical roles across business units. It addresses two connected ambiguities:
 
 - **Career-space ambiguity:** job titles do not map consistently to the work people actually do. Different titles can describe similar analytical work, while similar titles can represent substantially different responsibilities, making the career landscape difficult to interpret from titles alone.
-- **Candidate-side ambiguity:** people entering the workforce or changing careers may struggle to connect their background, transferable experience, and aspirations with concrete types of work. For career changers in particular, demonstrated experience and intended direction may diverge.
+- **Candidate-side ambiguity:** people starting their careers or moving into a new field may find it difficult to identify roles that fit both what they have done and what they want to do next. Transferable experience may be overlooked when their previous job titles do not clearly relate to the roles they are considering.
 
-The study therefore asks:
+To address these ambiguities, the project organises analytical work into five career directions and ranks them using evidence from a candidate’s background and aspirations. As an initial evaluation of this approach, the study asks:
 
-> How closely do evidence-based career-direction rankings agree with researcher relevance judgements in a controlled synthetic-candidate study, and where do they disagree?
+How closely do the resulting rankings agree with researcher relevance judgements in a controlled study using synthetic candidate profiles, and where do they disagree?
 
 The prototype supports exploration. It does not determine a person's “best” career, predict hiring suitability, or make employment decisions.
 
 ## 2. What I designed
 
-I designed a two-level ranking system with two evidence sides. Candidate evidence separates **background** from **stated direction (aspiration)**; career-space evidence connects reviewed ESCO content with researcher-defined Role Profile purposes. The system compares the corresponding evidence channels, then aggregates occupation–Role Profile membership scores into five broader analytical directions.
+The system first ranks occupation–Role Profile memberships—each representing an occupation within a particular Role Profile—using two evidence channels: the candidate’s background and their self-reported desired career direction. It combines the two component scores for each membership, then aggregates the membership scores to rank the five Role Profiles.
 
 ### System and Method Pipeline
 
