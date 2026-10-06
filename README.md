@@ -184,6 +184,5 @@ The complete suite checks Semantic input filtering, score transformation and agg
 - **MCP interface:** an optional technical interface to the same ranking capability; see the [MCP integration guide](docs/MCP_INTEGRATION.md). It is not part of the ranking experiment.
 - **JD Analyzer:** a separate experimental extension with no labelled evaluation; see its [scope and method](experimental/jd_analysis/README.md). It is outside the core empirical ranking study.
 - **Semantic reproduction:** exact model, dependency, and runtime details are retained in the [Technical Appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md).
-- **Generic job matching:** the separate `career-match` command provides job-level matching utilities; it is not the frozen five-profile evaluation entry point.
 
 The selected TF-IDF held-out evaluation is frozen. Historical snapshots remain available through Git tags; held-out errors must not be used for retuning.

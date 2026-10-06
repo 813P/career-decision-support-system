@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from typing import Any, Mapping
 
 
@@ -71,59 +71,4 @@ class CandidateProfile:
         value = asdict(self)
         value["desired_work_directions"] = list(self.desired_work_directions)
         value["skills"] = list(self.skills)
-        return value
-
-
-@dataclass(frozen=True)
-class JobProfile:
-    job_id: str
-    title: str
-    alternative_titles: tuple[str, ...] = ()
-    description: str = ""
-    essential_skill_ids: tuple[str, ...] = ()
-    optional_skill_ids: tuple[str, ...] = ()
-    essential_skills: tuple[str, ...] = ()
-    optional_skills: tuple[str, ...] = ()
-    data_version: str = "demo-1.0"
-
-    def __post_init__(self) -> None:
-        object.__setattr__(self, "job_id", _text(self.job_id, "job_id"))
-        object.__setattr__(self, "title", _text(self.title, "title"))
-        for name in ("alternative_titles", "essential_skill_ids", "optional_skill_ids", "essential_skills", "optional_skills"):
-            object.__setattr__(self, name, _text_list(getattr(self, name), name))
-        if not isinstance(self.description, str):
-            raise ValidationError("description must be a string")
-
-    @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "JobProfile":
-        if "job_id" not in data or "title" not in data:
-            raise ValidationError("job requires job_id and title")
-        return cls(**{name: data[name] for name in cls.__dataclass_fields__ if name in data})
-
-    def to_dict(self) -> dict[str, Any]:
-        value = asdict(self)
-        for name in ("alternative_titles", "essential_skill_ids", "optional_skill_ids", "essential_skills", "optional_skills"):
-            value[name] = list(value[name])
-        return value
-
-
-@dataclass(frozen=True)
-class MatchResult:
-    job_id: str
-    title: str
-    rank: int
-    overall_score: float
-    structured_score: float
-    semantic_score: float
-    matched_essential_skills: tuple[str, ...] = field(default_factory=tuple)
-    missing_essential_skills: tuple[str, ...] = field(default_factory=tuple)
-    reason_codes: tuple[str, ...] = field(default_factory=tuple)
-    model_version: str = ""
-    data_version: str = ""
-    parameters: Mapping[str, Any] = field(default_factory=dict)
-
-    def to_dict(self) -> dict[str, Any]:
-        value = asdict(self)
-        for name in ("matched_essential_skills", "missing_essential_skills", "reason_codes"):
-            value[name] = list(value[name])
         return value

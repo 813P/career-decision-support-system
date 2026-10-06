@@ -16,7 +16,6 @@ mcp = ["mcp>=1.27,<2"]
 dev = ["pytest==8.4.1"]
 
 [project.scripts]
-career-match = "career_matcher.cli:main"
 career-web = "career_matcher.webapp:main"
 career-mcp = "career_matcher.mcp_server:main"
 

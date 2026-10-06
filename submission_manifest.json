@@ -2,7 +2,7 @@
   "manifest_name": "Submission-ready repository",
   "status": "complete",
   "created_at": "2026-10-05",
-  "file_count": 103,
+  "file_count": 99,
   "files": [
     {
       "path": ".gitattributes",
@@ -16,8 +16,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 15459,
-      "sha256": "8ef5490572f7464f9281e6a3f925ea01836e1d344fcb244040ec825b32efad8a"
+      "bytes": 15298,
+      "sha256": "b30c3f17c69f14314c06d9ff93742e11ad8be8e8063ffc499e05a6f31b0f2e19"
     },
     {
       "path": "RESEARCH_DESIGN.md",
@@ -155,6 +155,16 @@
       "sha256": "d549657caeb9c2b3ac7e49818150012d9468e6411cf79fc65f323aa702b476d1"
     },
     {
+      "path": "docs/assets/membership-score-construction.svg",
+      "bytes": 6402,
+      "sha256": "6ac17de39753518a38f78d84d67bd4899c278486deb2a7711f3bcd175d92ab0c"
+    },
+    {
+      "path": "docs/assets/system-method-pipeline.svg",
+      "bytes": 8874,
+      "sha256": "135f07fe16d8d4d3f73da8f7d4d27f872a9c59c70f0596b19455208a1860ae79"
+    },
+    {
       "path": "experimental/jd_analysis/README.md",
       "bytes": 3458,
       "sha256": "bd5755910f07dfe1fff5615131a17a8918231412f61c2b6fef68cd0509bc8195"
@@ -241,8 +251,8 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 722,
-      "sha256": "341841306d5c81f2b5bf0e7a445b6fdbe75f63f74c2dcc5e1f871e3d8d1ae210"
+      "bytes": 681,
+      "sha256": "68b439b91c29ed4289d07e391cf52d66751673b78c60d1f4189c65a09569478d"
     },
     {
       "path": "reports/README.md",
@@ -370,26 +380,6 @@
       "sha256": "c46105e11fd28292fcc246d07c7dffdfcc57143839be619be0771dcbf830efa5"
     },
     {
-      "path": "src/career_matcher/cli.py",
-      "bytes": 2746,
-      "sha256": "f8b29884b41f29e67200223889eae1ff90ad4748a69820d2580c6037dbb47dd3"
-    },
-    {
-      "path": "src/career_matcher/esco.py",
-      "bytes": 6371,
-      "sha256": "a3d2a6c8a86f6c4589765931da1023b12e58e0597e9b30785b1f759a78df15ce"
-    },
-    {
-      "path": "src/career_matcher/evaluation.py",
-      "bytes": 3006,
-      "sha256": "4a16442ec1a919c1f33137754eba1f1d4dd7d052ea979a3f02ba035844a72da1"
-    },
-    {
-      "path": "src/career_matcher/io.py",
-      "bytes": 2851,
-      "sha256": "373f208d79792b177a0795d5947c66d7b40f7ec244b6d846c0ad44c72446fa3e"
-    },
-    {
       "path": "src/career_matcher/jd_profiles.py",
       "bytes": 7781,
       "sha256": "3dd6255c6d15ff2a699ba5cbfda1b2f2ad19cfb0e6196be695cdeed34e4082a2"
@@ -400,19 +390,9 @@
       "sha256": "635ae400a7da27973b5395f921ddfadc58d9e4201ac171b2a40c1aa3a8b15d77"
     },
     {
-      "path": "src/career_matcher/normalization.py",
-      "bytes": 1347,
-      "sha256": "7ded3cebb6966a6a0e7f97b7c213a59dd2359dca689d40f8d2e83ee5c2758a68"
-    },
-    {
       "path": "src/career_matcher/presentation_i18n.py",
       "bytes": 12858,
       "sha256": "bffbbcc7d76d40fad6982eae9dd5e5c9e5d7b091d408290a0e4af61b1f608ef4"
-    },
-    {
-      "path": "src/career_matcher/rankers.py",
-      "bytes": 10395,
-      "sha256": "bc793e19a4f21060246705703ac72e554dd4026cf72442cdc78a12fb9b077547"
     },
     {
       "path": "src/career_matcher/role_profiles.py",
@@ -421,8 +401,8 @@
     },
     {
       "path": "src/career_matcher/schemas.py",
-      "bytes": 5649,
-      "sha256": "3e41214b5e36ffde4b7ce99fe977bc812d2d930207868eac0c0584ae918029f2"
+      "bytes": 3477,
+      "sha256": "82df7350b5b58e16396ba93dc85c5094b5cba5420151321fd8b550e69e1ed9b8"
     },
     {
       "path": "src/career_matcher/webapp.py",
