@@ -27,9 +27,9 @@ The study is positioned as a controlled methodological pilot rather than a new r
 
 ### 2.2 Research questions
 
-**RQ1 — Ranking configuration and held-out performance.** Which ranking configuration is selected on the development set, and how does the frozen configuration perform against held-out researcher relevance labels?
+**RQ1 — Ranking configuration and held-out performance.** Which ranking configuration is selected on the development set, and how closely do its frozen rankings agree with researcher relevance judgements on the held-out set?
 
-**RQ2 — Error patterns.** Where do rankings disagree with researcher judgements, particularly for mixed directions, transferable experience, or little direct evidence?
+**RQ2 — Error patterns.** What patterns of disagreement with researcher judgements emerge at the membership and Role Profile levels, particularly in cases involving mixed directions, transferable experience, or limited direct evidence?
 
 **RQ3 — Output traceability.** Which displayed outputs can be traced directly to score computation or aggregation, and what are the limits of supplementary skill-evidence prompts?
 
@@ -41,11 +41,11 @@ RQ1 is addressed by the ranking experiment, RQ2 by descriptive analysis of froze
 
 The pilot is bounded to five researcher-defined Analytical Role Profiles: Strategic Analysis, Business Performance & Goal Management, Business Strategy & Focused Analysis, Data Analytics, and Data Science. They reflect recurring types of analytical work encountered in recruitment; they are neither ByteDance's official job architecture nor an official ESCO taxonomy.
 
-The grouping criterion is work purpose rather than title, tool, or seniority. For example, a multi-year assessment of technological change belongs closer to Strategic Analysis, while a product-profitability investigation belongs closer to Business Strategy & Focused Analysis even when both use market data. The full definitions and boundary decisions are retained in the [taxonomy records](taxonomy/README.md).
+The grouping is based on the purpose and content of the work, rather than job titles, individual tools, or seniority. For example, a multi-year assessment of technological change belongs closer to Strategic Analysis, while a product-profitability investigation belongs closer to Business Strategy & Focused Analysis even when both use market data. The full definitions and boundary decisions are retained in the [taxonomy records](taxonomy/README.md).
 
-Role Profiles and occupations answer different questions. A Role Profile describes a broad kind of analytical work a person might explore; an ESCO occupation supplies concrete tasks, descriptions, and skills for evidence comparison. Fifteen reviewed occupations are linked to the five profiles through 18 occupation–Role Profile memberships. A membership is one occupation viewed within one profile's work purpose. The matcher ranks memberships first and then aggregates them into the five Role Profiles.
+Role Profiles and occupations answer different questions. A Role Profile describes a broad kind of analytical work a person might explore; an ESCO occupation supplies concrete tasks, descriptions, and skills for evidence comparison. Fifteen reviewed occupations are linked to the five profiles through 18 occupation–Role Profile memberships.A membership represents an occupation in the context of a particular Role Profile. The matcher ranks memberships first and then aggregates them into the five Role Profiles.
 
-This structure retains source detail while reducing reliance on inconsistent job titles. It also makes it possible to detect a plausible broad direction supported by an implausible leading occupation. The exact ESCO snapshot, membership records, and evidence decisions are retained in the taxonomy records and [technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md).
+This structure retains source detail while reducing reliance on inconsistent job titles. It also allows the Role Profile rankings to be examined alongside the occupations contributing to their scores. The exact ESCO snapshot, membership records, and evidence decisions are retained in the taxonomy records and [technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md).
 
 ### 3.2 Background and desired career direction
 
@@ -60,9 +60,8 @@ The occupational targets are constructed in the corresponding two channels. Ever
   <img src="docs/assets/membership-score-construction.svg" alt="Parallel background and direction evidence channels feeding an equally weighted final membership score" width="760">
 </p>
 
-For readability, the figure prefixes the membership-side target names with `membership_`; the implementation stores them as `background_target` and `direction_target` on each membership record. The membership targets deliberately combine occupation evidence with the Role Profile context in which that occupation is used. Identifiers and provenance fields—such as membership ID, occupation URI, Role Profile ID, mapping type, skill URI, and source type—support grouping and traceability but do not enter the TF-IDF text similarity.
-
-Years of experience is descriptive context and does not affect ranking. Construction metadata—including intended sampling profile, scenario, split, and audit results—is excluded from both ranking and annotation.
+The membership targets combine occupation evidence with the context of the associated Role Profile.
+Identifiers and provenance fields support grouping and traceability but are not included in the TF-IDF input text. The number of years of experience is recorded for context and does not affect ranking. Candidate construction metadata—including intended sampling profile, scenario, split, and audit results—is excluded from both ranking and annotation.
 
 ### 3.3 Synthetic candidates and annotation
 
