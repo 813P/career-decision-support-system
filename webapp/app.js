@@ -3,7 +3,7 @@ const state = {
   interests: {},
   results: [],
   selected: new Set(),
-  language: localStorage.getItem("mair-language") === "en" ? "en" : "zh",
+  language: localStorage.getItem("career-language") === "en" ? "en" : "zh",
   lastRankRequest: null,
   lastJdText: "",
 };
@@ -12,8 +12,8 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 function t(key, variables = {}) {
-  const table = window.MAIR_I18N?.[state.language] || {};
-  const fallback = window.MAIR_I18N?.zh || {};
+  const table = window.CAREER_I18N?.[state.language] || {};
+  const fallback = window.CAREER_I18N?.zh || {};
   let value = table[key] ?? fallback[key] ?? key;
   Object.entries(variables).forEach(([name, replacement]) => {
     value = value.replaceAll(`{${name}}`, String(replacement));
@@ -281,9 +281,9 @@ function renderJdResults(payload) {
 }
 
 async function setLanguage(language) {
-  if (!window.MAIR_I18N?.[language]) return;
+  if (!window.CAREER_I18N?.[language]) return;
   state.language = language;
-  localStorage.setItem("mair-language", language);
+  localStorage.setItem("career-language", language);
   applyStaticTranslations();
   if (state.taxonomy) {
     renderRoleProfiles();

@@ -6,9 +6,9 @@
 
 ## Scope
 
-The five Analytical Role Profiles are the highest-level taxonomy used for ranking, annotation, and evaluation. They were defined by the researcher from practical analytics recruitment work in an analytics recruiting platform function at ByteDance. ESCO supplies external occupational evidence and calibration; it does not determine the five constructs.
+The five Analytical Role Profiles are the highest-level taxonomy used for ranking, annotation, and evaluation. They were defined by the researcher from practical analytics recruitment work in a central recruitment team at ByteDance, hiring for analytical roles across business units. ESCO supplies external occupational evidence and calibration; it does not determine the five constructs.
 
-Here, **Analytical** is a scope qualifier: these profiles describe families of work whose central contribution is turning business or data evidence into diagnosis, judgement, recommendations, measurement, experiments, or models for decisions. It does not mean that every profile is the occupation “data analyst”, that every task must be quantitative, or that `Analytical Role Profile` is an ESCO term. **Role Profile** means the project's purpose-based grouping of work; **Occupation** means an ESCO occupational concept identified by an ESCO URI.
+Here, **Analytical** is a scope qualifier: these profiles describe families of work whose central contribution is turning business or data evidence into diagnosis, judgement, recommendations, measurement, experiments, or models for decisions. It does not mean that every profile is the occupation “data analyst”, that every task must be quantitative, or that `Analytical Role Profile` is an ESCO term. **Role Profile** means a project-defined grouping of recurring analytical work, with boundaries described through its purpose, tasks, outputs, and evidence requirements; **Occupation** means an ESCO occupational concept identified by an ESCO URI.
 
 The source boundary is therefore:
 

@@ -19,9 +19,9 @@ Dataset-wide constants are recorded once in `manifest.json`, rather than repeate
 `intended_role_profile` is the primary Role Profile used to stratify synthetic
 candidate construction. Despite the word `intended`, it is not a judgement that
 the candidate matches that Role Profile. `secondary_sampling_profile` similarly
-records how an adjacent, transitional or ambiguous case was sampled. Every
-governance metadata is therefore declared not to be a relevance label once at
-dataset level in `manifest.json`.
+records how an adjacent, transitional or ambiguous case was sampled. The dataset-level
+`manifest.json` explicitly declares that governance metadata is not a relevance
+label.
 
 The authoritative relevance answers are the model-output-blinded researcher judgements in
 `data/annotation/annotation_all_60.csv`; the held-out subset is also stored in

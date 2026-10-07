@@ -213,7 +213,7 @@ def readiness_plan(
     }
 
 
-class MairRequestHandler(BaseHTTPRequestHandler):
+class CareerRequestHandler(BaseHTTPRequestHandler):
     runtime: AppRuntime
     web_dir: Path
 
@@ -333,12 +333,12 @@ class MairRequestHandler(BaseHTTPRequestHandler):
 def serve(host: str = "127.0.0.1", port: int = 8765, web_dir: str | Path = DEFAULT_WEB_DIR) -> None:
     runtime = load_runtime()
     handler = type(
-        "ConfiguredMairRequestHandler",
-        (MairRequestHandler,),
+        "ConfiguredCareerRequestHandler",
+        (CareerRequestHandler,),
         {"runtime": runtime, "web_dir": Path(web_dir)},
     )
     server = ThreadingHTTPServer((host, port), handler)
-    print(f"MAIR web app available at http://{host}:{port}")
+    print(f"Career Decision Support System available at http://{host}:{port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
@@ -348,7 +348,7 @@ def serve(host: str = "127.0.0.1", port: int = 8765, web_dir: str | Path = DEFAU
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Run the MAIR interactive career exploration app")
+    parser = argparse.ArgumentParser(description="Run the Career Decision Support System career exploration app")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args(argv)

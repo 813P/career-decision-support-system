@@ -63,7 +63,7 @@ path.
 The paths answer different questions:
 
 - Candidate path: "Which analytical directions are supported by my current evidence and
-  stated direction?"
+  desired career direction?"
 - JD path: "Which kinds of analytical work are substantively present in this job?"
 
 They share Role Profile IDs so a later decision-support layer can compare candidate-side

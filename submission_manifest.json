@@ -46,8 +46,8 @@
     },
     {
       "path": "data/annotation/README.md",
-      "bytes": 1794,
-      "sha256": "b8815edfef4a261bc8d26f309b81b8c80178e31e6ba935ab68f5a5cbb4579abb"
+      "bytes": 1712,
+      "sha256": "37aba0f6401deed314bf307642099641ffb2ae2e97baad69d89c975951de2353"
     },
     {
       "path": "data/annotation/annotation_all_60.csv",
@@ -66,8 +66,8 @@
     },
     {
       "path": "data/candidates/README.md",
-      "bytes": 2038,
-      "sha256": "86ddf447e03afbdbf8a655e74dbd9fffcad05b91bf11c12ba78ba2981f898e94"
+      "bytes": 2025,
+      "sha256": "76ece7d3ff0cd769012d595bd052209705c7b84cba56aec46fcd793dba42e5c0"
     },
     {
       "path": "data/candidates/coverage.csv",
@@ -101,8 +101,8 @@
     },
     {
       "path": "docs/ANALYTICAL_ROLE_PROFILE_SCHEMA.md",
-      "bytes": 8609,
-      "sha256": "ce9723b819c1a72f97880c27bc3d7550707f1b987d9a6d7e3b79ba6b458c507d"
+      "bytes": 8746,
+      "sha256": "9a4bd4a1c8c1194ee10b4cf8ee1655221eb4e59c480c2f224f948ff7010f1a2a"
     },
     {
       "path": "docs/CANDIDATE_PROFILE_SCHEMA.md",
@@ -166,8 +166,8 @@
     },
     {
       "path": "experimental/jd_analysis/README.md",
-      "bytes": 3458,
-      "sha256": "bd5755910f07dfe1fff5615131a17a8918231412f61c2b6fef68cd0509bc8195"
+      "bytes": 3466,
+      "sha256": "2f29f4ecdb9d88f3685d8bc8cac9201dbfd3da20808f6fc20d9edc5c7802ef6b"
     },
     {
       "path": "experimental/jd_analysis/jd_evidence_phrases.json",
@@ -371,8 +371,8 @@
     },
     {
       "path": "src/career_matcher/__init__.py",
-      "bytes": 149,
-      "sha256": "c46105e11fd28292fcc246d07c7dffdfcc57143839be619be0771dcbf830efa5"
+      "bytes": 138,
+      "sha256": "a82479db6be078a34d2a2d83c35b4c612d17325c9ff2b625b3105dbd119d3f52"
     },
     {
       "path": "src/career_matcher/jd_profiles.py",
@@ -401,8 +401,8 @@
     },
     {
       "path": "src/career_matcher/webapp.py",
-      "bytes": 15325,
-      "sha256": "407495f43ba5a56ed4a7495b6b4c889eb51cdbd96aa8f23f790b5102e01d3046"
+      "bytes": 15363,
+      "sha256": "f9a8a1525714d95197fc53fe8fb8b446bcd811b1032a662dc1436b18d6e23292"
     },
     {
       "path": "taxonomy/README.md",
@@ -471,28 +471,28 @@
     },
     {
       "path": "tests/webapp_i18n.test.mjs",
-      "bytes": 1316,
-      "sha256": "427fe8cb30a8b83a87b1385c8f6e460e7a98e3249eccef77caae895baf27ef24"
+      "bytes": 1322,
+      "sha256": "86827c5a33d91fd7e3fa2cd5ca9c6ce30bd826ff00c9ff2788553c9e7a29f69e"
     },
     {
       "path": "webapp/app.css",
-      "bytes": 12279,
-      "sha256": "d12b81681e0dfbdd302d71ae7007e7a08f8bf02d6d21d16e3fcf46f8bf328b96"
+      "bytes": 12847,
+      "sha256": "67630983500e33d2d3b59d59b3fa2b6578efd51675508723d5dd4c51f276cb42"
     },
     {
       "path": "webapp/app.js",
-      "bytes": 16110,
-      "sha256": "047941aab5af3c2e5a0fa95d259e8732ea0b9b503449cbbbc482bbee2186d960"
+      "bytes": 16120,
+      "sha256": "2fd61fa286fb6e20f0710f739f277d47c441eaaa4867fc9c4e34609527d92918"
     },
     {
       "path": "webapp/i18n.js",
-      "bytes": 14047,
-      "sha256": "386fd27727dc18cbda4d947087b2fd2501cd3159b5a66599b24e6d06aa943be5"
+      "bytes": 14181,
+      "sha256": "ec645f18b3992f210c591551fab2bf62ea6385441d9f84112ff5da6001f26123"
     },
     {
       "path": "webapp/index.html",
-      "bytes": 11732,
-      "sha256": "a2f38f8c145d47e558002f1ecea8b95a75593e3a72d4ea9d40cb0df19a859c39"
+      "bytes": 11833,
+      "sha256": "8d7d551ae154c6e888a531387c1763ab512e82dd97f625f7e22b55f973950c27"
     }
   ]
 }

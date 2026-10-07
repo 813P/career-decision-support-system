@@ -1,4 +1,4 @@
-"""Public API for the MAIR Role Profile decision-support system."""
+"""Public API for the Career Decision Support System."""
 
 from .role_profiles import RoleProfileMatcher
 
