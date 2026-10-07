@@ -1,7 +1,7 @@
 {
   "manifest_name": "Submission-ready repository",
   "status": "complete",
-  "created_at": "2026-10-05",
+  "created_at": "2026-10-07",
   "file_count": 99,
   "files": [
     {
@@ -21,8 +21,8 @@
     },
     {
       "path": "RESEARCH_DESIGN.md",
-      "bytes": 20895,
-      "sha256": "af79d1c0add00568cf077e9c0ed727e421575b58f1a4ae96ae0a20b57706bcf7"
+      "bytes": 20800,
+      "sha256": "7572f0f133f984e221c296f976b4ae86d258ff2ba00b29c6c3421505aa6ea9b1"
     },
     {
       "path": "config/experiments/semantic_runtime.json",
@@ -156,13 +156,13 @@
     },
     {
       "path": "docs/assets/membership-score-construction.svg",
-      "bytes": 6402,
-      "sha256": "6ac17de39753518a38f78d84d67bd4899c278486deb2a7711f3bcd175d92ab0c"
+      "bytes": 6273,
+      "sha256": "9ce3cb175e0169fe72d22e04438d5c0fc8797928d79603238db3b3dd4b34ff17"
     },
     {
       "path": "docs/assets/system-method-pipeline.svg",
-      "bytes": 8874,
-      "sha256": "135f07fe16d8d4d3f73da8f7d4d27f872a9c59c70f0596b19455208a1860ae79"
+      "bytes": 8705,
+      "sha256": "a3dd6c147afda9be1b6737563b9ac717d71e51b741893cb176ab2ac29df23b0a"
     },
     {
       "path": "experimental/jd_analysis/README.md",
