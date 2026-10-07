@@ -111,15 +111,14 @@ The study followed this sequence:
 
 This was a sequential method-then-aggregation procedure, not a joint search across every combination. The selected configuration was **TF-IDF + `mean_all` aggregation + equal background/direction weighting**.
 
-A 0.01 difference in development membership nDCG@3 was used as a **study-specific near-tie heuristic** when configurations performed closely. It was considered alongside paired uncertainty, reproducibility, interpretability, implementation simplicity, and dependency burden. It is not a universal nDCG threshold or a statistical equivalence criterion.
+A 0.01 difference in development membership nDCG@3 was used as a study-specific near-tie heuristic (not a universal nDCG threshold or a statistical equivalence criterion).It was considered alongside paired uncertainty, reproducibility, interpretability, implementation simplicity, and dependency burden. 
 
 ### 4.3 Evaluation strategy
 
-The primary evaluation unit is candidate × occupation–Role Profile membership, with candidate-level membership nDCG@3 as the primary metric. The secondary evaluation ranks the five Role Profiles after aggregation. A profile's reference relevance is the maximum human label among its memberships, whereas the selected model averages membership scores. The two levels therefore answer different questions and their metric values are not directly comparable measures of task difficulty.
+The primary evaluation unit is candidate × occupation–Role Profile membership, with candidate-level membership nDCG@3 as the primary metric. The secondary evaluation ranks the five Role Profiles after aggregation. A profile's reference relevance is the maximum human label among its memberships, whereas the selected model averages membership scores. TThe two levels use different ranking targets and reference labels, so their nDCG@3 values should be interpreted separately.
 
-Candidate-level bootstrap resampling was used to retain dependence among the 18 judgements belonging to each candidate. Full metric definitions, uncertainty intervals, supporting measures, candidate-level results, and machine-readable outputs belong to the [Final Evaluation Report](reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md), not this design narrative.
-
-The [Experiment Protocol](docs/EXPERIMENT_PROTOCOL.md) is authoritative for annotation, development/test separation, configuration selection, and the near-tie heuristic.
+Confidence intervals were estimated using candidate-level bootstrap resampling. Each candidate’s 18 relevance judgements were kept together as a single unit.
+The [Final Evaluation Report](reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) provides detailed evaluation results, and the [Experiment Protocol](docs/EXPERIMENT_PROTOCOL.md) documents the annotation and experimental procedures.
 
 ## 5. Findings
 
@@ -154,7 +153,7 @@ The cases motivate further study of evidence sufficiency, mixed directions, and 
 
 ### 5.4 Explanation findings
 
-The implementation provides three distinct forms of decision support:
+The system provides three types of output to help users inspect the rankings and candidate evidence:
 
 | Output | Relationship to ranking | Boundary |
 |---|---|---|
