@@ -188,10 +188,10 @@ The study contributes:
 
 The next research priorities are:
 
-1. compare two-level aggregation with direct Role Profile scoring and test background-only, direction-only, and combined variants;
-2. obtain independent annotations and evaluate the Role Profile boundaries with real, de-identified profiles under appropriate governance;
-3. test paraphrase, negation, evidence sufficiency, and cross-language robustness systematically; and
-4. evaluate whether users understand the explanations, distinguish aspiration from demonstrated readiness, and retain meaningful decision control.
+1. Compare two-level ranking with direct Role Profile scoring. Test background-only, direction-only, and combined variants to assess each evidence channel’s contribution.
+2. Obtain independent relevance annotations and assess the Role Profile boundaries using real, de-identified candidate records under appropriate data governance.
+3. Systematically test how rankings handle paraphrasing, negation, different levels of supporting evidence, and different languages.
+4. Evaluate whether users understand the explanations and distinguish career aspirations from evidence of readiness. Assess whether they can question the rankings and make their own decisions.
 
 Any extension should use a new study version and preserve the completed frozen evaluation unchanged.
 
