@@ -140,44 +140,97 @@ The [documentation index](docs/README.md) provides additional schemas, data-sour
 
 ## 8. Run the prototype and secondary extensions
 
-### Core local application
+### Start the local web application (Windows PowerShell)
 
-Use Python 3.10 or later. From the project root in PowerShell:
+Python **3.10 or later** is required; the commands below use **Python 3.12**. Internet access is needed for the first dependency installation. Node.js, Semantic dependencies, and MCP are optional and are not needed to open the web interface.
+
+Run each step in order. Resolve any error before continuing to the next step.
+
+**1. Download the project and enter its root folder.**
+
+On this GitHub page, choose **Code → Download ZIP**, then extract the archive to a local folder. In File Explorer, find the folder containing both `README.md` and `pyproject.toml`; the extracted archive may contain an extra outer folder. Copy this folder's full path from the address bar.
+
+Open PowerShell and run:
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -e ".[dev]"
-career-web
+Set-Location -LiteralPath (Read-Host "Paste the full project folder path")
+Test-Path .\pyproject.toml
 ```
 
-The bilingual browser interface runs on a lightweight local Python service. English candidate input is recommended; changing the interface language does not change ranking scores.
+Paste the copied path when prompted. The second command must return `True`. If it returns `False`, enter the folder containing `pyproject.toml` before proceeding. Running the installation from `C:\Users\your-name` or an unextracted ZIP will not work.
 
-Validation also requires Node.js 20 or later. To validate the frozen study records and run the core tests in the environment above:
+**2. Check the Python interpreter.**
 
 ```powershell
+py -3.12 --version
+```
+
+The output should be `Python 3.12.x`. If `py` or Python 3.12 is unavailable, install Python 3.12 with the Windows launcher from [python.org](https://www.python.org/downloads/windows/), reopen PowerShell, and repeat the check. An existing Python 3.10 or 3.11 installation can also run the core application: use its version flag in both this check and the environment-creation command below.
+
+**3. Create the environment and install the project once.**
+
+From the project folder selected in step 1:
+
+```powershell
+$careerVenv = Join-Path (Split-Path -Parent (Get-Location).Path) "career-decision-support-venv"
+py -3.12 -m venv $careerVenv
+& "$careerVenv\Scripts\python.exe" -m pip install -e .
+```
+
+This places the environment beside the project folder. The commands call its Python directly, so `Activate.ps1` and changes to PowerShell's execution policy are unnecessary. Keep the project folder in place: the editable installation reads its source and data from that location. If an existing environment uses a different Python version, choose a new environment folder name.
+
+**4. Start the service and open the website.**
+
+In the same PowerShell window:
+
+```powershell
+& "$careerVenv\Scripts\career-web.exe"
+```
+
+Wait for `Career Decision Support System available at http://127.0.0.1:8765`, then open **[http://127.0.0.1:8765/](http://127.0.0.1:8765/)** in a browser. Keep PowerShell running while using the website; press **Ctrl+C** to stop the service.
+
+To check the interface, choose **Start with my experience → Load demo profile → Generate explainable results**, or the equivalent Chinese buttons. English candidate input is recommended; changing the interface language does not change ranking scores.
+
+For later sessions, return to the project folder, set `$careerVenv` using the first command in step 3, and run the command in step 4. Environment creation and installation are only needed for initial setup or a changed environment.
+
+If port 8765 is already in use, run `& "$careerVenv\Scripts\career-web.exe" --port 8766` and open `http://127.0.0.1:8766/`. If a dependency download fails, retry the installation command with `--no-cache-dir`.
+
+<details>
+<summary>Optional validation and complete Semantic/MCP tests</summary>
+
+### Validate the frozen records and run core tests
+
+These checks are separate from opening the website. They additionally require **Node.js 20 or later**. From the project root, with `$careerVenv` set as above:
+
+```powershell
+& "$careerVenv\Scripts\python.exe" -m pip install -e ".[dev]"
+node --version
 node experiments/validation/validate_candidate_data.mjs
 node experiments/validation/validate_full_study.mjs
-python -m pytest --ignore=tests/test_mcp_server.py --ignore=tests/test_role_profile_semantic_pipeline.py
+& "$careerVenv\Scripts\python.exe" -m pytest --ignore=tests/test_mcp_server.py --ignore=tests/test_role_profile_semantic_pipeline.py
 node --test tests/role_profile_experiment.test.mjs
 node --test tests/webapp_i18n.test.mjs
 ```
 
 ### Complete test suite: Semantic and MCP
 
-The two optional-extension test modules require dependencies beyond `.[dev]`. For the complete suite, create a separate environment with **Python 3.12.14**, matching the recorded Semantic runtime, and install the pinned Semantic dependencies plus MCP:
+The two optional-extension test modules need additional dependencies. To match the recorded Semantic runtime, use **Python 3.12.14** and a separate environment. From the project root, enter the full path to that interpreter when prompted and confirm its version before installing:
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -e ".[dev,mcp]" -r requirements-semantic.txt --extra-index-url https://download.pytorch.org/whl/cpu
-python -m pip check
-python -m pytest -q
+$semanticPython = Read-Host "Paste the path to the Python 3.12.14 executable"
+& $semanticPython --version
+$careerTestVenv = Join-Path (Split-Path -Parent (Get-Location).Path) "career-decision-support-full-test-venv"
+& $semanticPython -m venv $careerTestVenv
+& "$careerTestVenv\Scripts\python.exe" -m pip install -e ".[dev,mcp]" -r requirements-semantic.txt --extra-index-url https://download.pytorch.org/whl/cpu
+& "$careerTestVenv\Scripts\python.exe" -m pip check
+& "$careerTestVenv\Scripts\python.exe" -m pytest -q
 ```
 
-Use a fresh directory/environment if `.venv` already belongs to another Python installation. The CPU package index supplies the recorded PyTorch `2.7.1+cpu` build. Run installation and tests with the same environment's Python; the MCP integration test launches that interpreter as a subprocess. Semantic dependencies include a large PyTorch download.
+The CPU package index supplies the recorded PyTorch `2.7.1+cpu` build, which is a large download. Run installation and tests with the same environment's Python; the MCP integration test launches that interpreter as a subprocess.
 
-The complete suite checks Semantic input filtering, score transformation and aggregation, and starts a real MCP subprocess to list and call tools. These tests do not rerun the embedding experiment or held-out evaluation. Exact Semantic model revision and runtime provenance are in [`config/experiments/semantic_runtime.json`](config/experiments/semantic_runtime.json); see the [Technical Appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) for the frozen method.
+The complete suite checks Semantic input filtering, score transformation and aggregation, and starts a real MCP subprocess to list and call tools. These tests do not rerun the embedding experiment or held-out evaluation. Exact model revision and runtime provenance are in [`config/experiments/semantic_runtime.json`](config/experiments/semantic_runtime.json); see the [Technical Appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md) for the frozen method.
+
+</details>
 
 ### Secondary and experimental material
 

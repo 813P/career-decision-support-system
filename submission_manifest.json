@@ -16,8 +16,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 15168,
-      "sha256": "a23894c3e5685033b90e2fdf7b12f2963d521f2639554f841a0600a85801d7c4"
+      "bytes": 18620,
+      "sha256": "13dccc88a0de49f1999051fb824397ee0503df8b2f53f8af8b689c792e465add"
     },
     {
       "path": "RESEARCH_DESIGN.md",
@@ -136,8 +136,8 @@
     },
     {
       "path": "docs/MCP_INTEGRATION.md",
-      "bytes": 1892,
-      "sha256": "54e257be4623e2fe0f492a49b1720d2e3bfa6a49a7d20dadd325dc043bea8c7e"
+      "bytes": 2556,
+      "sha256": "28df1fac59d57434cd47ca7a5ebeda90e716faa0deb6f3c40da9cf421359084b"
     },
     {
       "path": "docs/MODEL_CARD.md",

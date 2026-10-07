@@ -4,12 +4,22 @@ The project exposes the same tested taxonomy and matching logic through a Model 
 
 ## Install and run
 
+This optional interface is for MCP-compatible clients. To open the browser application, follow the [README quickstart](../README.md#8-run-the-prototype-and-secondary-extensions).
+
+After completing that Windows setup, run the following from the project root, using the same environment:
+
 ```powershell
-python -m pip install -e ".[mcp]"
-career-mcp
+$careerVenv = Join-Path (Split-Path -Parent (Get-Location).Path) "career-decision-support-venv"
+& "$careerVenv\Scripts\python.exe" -m pip install -e ".[mcp]"
 ```
 
-The server uses the standard `stdio` transport. Configure an MCP host to launch the `career-mcp` command from this project environment.
+Configure the MCP client to launch the full path to `career-mcp.exe` in that environment's `Scripts` folder. The server uses the standard `stdio` transport: the client starts it as a subprocess and communicates through its input/output streams. It does not provide a browser URL.
+
+The equivalent command for starting the process directly is:
+
+```powershell
+& "$careerVenv\Scripts\career-mcp.exe"
+```
 
 ## Tools
 
