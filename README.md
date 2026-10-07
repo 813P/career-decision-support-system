@@ -144,13 +144,13 @@ The [documentation index](docs/README.md) provides additional schemas, data-sour
 
 Python **3.10 or later** is required; this guide uses **Python 3.12**. Internet access is needed for the first dependency installation. Node.js, Semantic dependencies, and MCP are optional and are not needed to open the web interface.
 
-Follow the steps in the **same PowerShell window**, copying **one code block at a time**. Let long commands wrap automatically on screen; do not insert a line break inside a quoted path or folder name. If a command reports an error, resolve it before continuing.
+Follow the steps in the **same PowerShell window**, copying **one code block at a time**.
 
 **1. Download, extract, and enter the project folder.**
 
 On this GitHub page, choose **Code → Download ZIP**, then right-click the downloaded ZIP and choose **Extract All**. Open the extracted folders until you find `README.md` and `pyproject.toml` together. This is the project root; there may be an extra outer folder, and subfolders also contain their own README files.
 
-Copy the **folder path** from File Explorer's address bar. Use the folder containing those two files, not the path to the ZIP or either individual file.
+Copy the **folder path** from File Explorer's address bar while viewing the folder containing those two files.
 
 Open PowerShell, copy this command, and press **Enter**:
 
@@ -164,7 +164,7 @@ When `Paste the full project folder path:` appears, paste the folder path **with
 Test-Path .\pyproject.toml
 ```
 
-The result must be **`True`**. If it is `False`, repeat the folder-selection command with the folder containing `pyproject.toml`. Installing from your user folder or from an unextracted ZIP will not work.
+The result should be **`True`**, confirming that PowerShell is in the project folder.
 
 **2. Check Python.**
 
@@ -172,7 +172,7 @@ The result must be **`True`**. If it is `False`, repeat the folder-selection com
 py -3.12 --version
 ```
 
-The result should be `Python 3.12.x`. If `py` or Python 3.12 is unavailable, install Python 3.12 with the Windows launcher from [python.org](https://www.python.org/downloads/windows/), reopen PowerShell, and repeat steps 1–2. An existing Python 3.10 or 3.11 installation can also run the core application: substitute its version flag in this command and in step 4.
+The result should be `Python 3.12.x`. Python 3.12 can be installed from [python.org](https://www.python.org/downloads/windows/) with the Windows launcher included. An existing Python 3.10 or 3.11 installation can also run the core application: substitute its version flag in this command and in step 4.
 
 **3. Set the environment path.**
 
@@ -188,7 +188,7 @@ Then set the environment folder name:
 $careerVenv = Join-Path $careerParent 'career-decision-support-venv'
 ```
 
-These two commands normally return to the PowerShell prompt without printing a result. Together they select a separate environment beside the project folder. Keep the folder name on one input line.
+These two commands normally return to the PowerShell prompt without printing a result. Together they select a separate environment beside the project folder.
 
 **4. Create the environment once.**
 
@@ -196,7 +196,7 @@ These two commands normally return to the PowerShell prompt without printing a r
 py -3.12 -m venv $careerVenv
 ```
 
-Wait for the PowerShell prompt to return. Successful environment creation normally prints no message. If an existing environment uses a different Python version, choose a new folder name in step 3 before running this command.
+Wait for the PowerShell prompt to return. Successful environment creation normally prints no message.
 
 **5. Install the project once.**
 
@@ -204,9 +204,9 @@ Wait for the PowerShell prompt to return. Successful environment creation normal
 & "$careerVenv\Scripts\python.exe" -m pip install -e .
 ```
 
-Wait for installation to finish and the PowerShell prompt to return. A fresh installation normally ends with `Successfully installed ...`; resolve any `ERROR` before starting the website.
+Wait for installation to finish and the PowerShell prompt to return. A fresh installation normally ends with `Successfully installed ...`.
 
-This command uses the environment's Python directly, so there is no activation step or need to change PowerShell's execution policy. Keep the extracted project folder in place: the editable installation reads the source and data from that location.
+This command runs the environment's Python directly. Keep the extracted project folder in place: the editable installation reads the source and data from that location.
 
 **6. Start the website.**
 
@@ -227,19 +227,6 @@ To try the interface, choose **Start with my experience → Load demo profile �
 **Open the website again later.**
 
 In a new PowerShell window, repeat **step 1** to enter the same project folder, **step 3** to set the environment path, and **step 6** to start the service. You do not need to download, create the environment, or install again unless you replace the project or change the environment.
-
-**If startup or installation fails.**
-
-- If the path is rejected with `WinError 123`, repeat both commands in step 3, keeping the quoted folder name on one input line, then retry step 4.
-- If installation reports that `pyproject.toml` is missing, repeat step 1 and confirm `True` before retrying step 5.
-- If a dependency download fails, retry step 5 with `--no-cache-dir` appended to the command.
-- If port 8765 is already in use, start on another port:
-
-  ```powershell
-  & "$careerVenv\Scripts\career-web.exe" --port 8766
-  ```
-
-  Then open **[http://127.0.0.1:8766/](http://127.0.0.1:8766/)**.
 
 <details>
 <summary>Optional validation and complete Semantic/MCP tests</summary>
