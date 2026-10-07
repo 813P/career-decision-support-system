@@ -16,13 +16,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 15175,
-      "sha256": "f9647bfe605d2846aafcd8389621ad19779b8b10f06b203ebcf0d0262939f446"
+      "bytes": 15168,
+      "sha256": "a23894c3e5685033b90e2fdf7b12f2963d521f2639554f841a0600a85801d7c4"
     },
     {
       "path": "RESEARCH_DESIGN.md",
-      "bytes": 20114,
-      "sha256": "9fee32a33892dc42ed61bb70797e1d6279ed1c7404ea94d36c98dbee60a5baee"
+      "bytes": 20901,
+      "sha256": "0a492d1a3ddfd93a6bc2d6aa591cbba4b52eda5a6eba47b3f3e72beb6bcb19e1"
     },
     {
       "path": "config/experiments/semantic_runtime.json",

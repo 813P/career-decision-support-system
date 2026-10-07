@@ -107,7 +107,7 @@ These held-out cases informed error analysis only; the frozen configuration was 
 ### Contributions
 
 - A two-level formulation connecting inspectable occupational evidence to accessible career directions.
-- Separate representation of demonstrated background and stated desired career direction.
+- Separate representation of demonstrated background and desired career direction.
 - A controlled comparison of structured, lexical, semantic, and hybrid ranking approaches.
 - Development-only configuration selection followed by frozen held-out evaluation.
 - Explanation design that separates ranking-linked evidence from supplementary skill checks.

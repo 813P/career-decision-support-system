@@ -5,13 +5,13 @@
 
 ## Abstract
 
-This study examines how candidate background and stated career direction can be represented separately and compared with a two-level career space consisting of ESCO occupations and five project-defined Role Profiles. Using 60 synthetic, non-identifying candidate profiles and 1,080 candidate–membership relevance annotations assigned by a single researcher, it compares Structured, TF-IDF, Semantic, and Hybrid ranking approaches on 20 development candidates. The selected TF-IDF configuration was frozen before evaluation on 40 held-out test candidates. Membership nDCG@3 was 0.6606 and Role Profile nDCG@3 was 0.8981; these values describe distinct ranking levels and are not directly comparable. Error analysis identified aspiration-heavy, mixed-direction, and low-evidence cases as important failure patterns. The findings support the feasibility of the two-level framework as a controlled methodological pilot, not real-world predictive validity.
+This study examines how candidate background and desired career direction can be represented separately and compared with a two-level career space consisting of ESCO occupations and five project-defined Role Profiles. Using 60 synthetic, non-identifying candidate profiles and 1,080 candidate–membership relevance annotations assigned by a single researcher, it compares Structured, TF-IDF, Semantic, and Hybrid ranking approaches on 20 development candidates. The selected TF-IDF configuration was frozen before evaluation on 40 held-out test candidates. Membership nDCG@3 was 0.6606 and Role Profile nDCG@3 was 0.8981; these values describe distinct ranking levels and are not directly comparable. Error analysis identified aspiration-heavy, mixed-direction, and low-evidence cases as important failure patterns. The findings support the feasibility of the two-level framework as a controlled methodological pilot, not real-world predictive validity.
 
 ## 1. Problem formulation
 
 Analytical career exploration presents two linked representation problems. On the career-space side, job titles do not consistently reflect the work people actually do. Different titles can describe similar responsibilities, while similar titles can describe substantially different work. On the candidate side, demonstrated background and intended direction may diverge, particularly for people entering work or changing careers. A ranking based mainly on past experience can therefore reproduce a person's existing field rather than support exploration.
 
-The study operationalises these problems by comparing candidate evidence with concrete occupational evidence and then organising the membership-level results into broader analytical directions. Background and stated direction remain separate evidence channels so that aspiration can affect exploration without being presented as demonstrated readiness.
+The study operationalises these problems by comparing candidate evidence with concrete occupational evidence and then organising the membership-level results into broader analytical directions. Background and desired career direction remain separate evidence channels so that aspiration can affect exploration without being presented as demonstrated readiness.
 
 The completed study evaluates agreement with researcher relevance judgements on synthetic candidate profiles, analyses disagreement at two ranking levels, and examines how the displayed explanations relate to the computation. Real-user decision usefulness, career outcomes, and hiring suitability are outside its scope.
 
@@ -47,12 +47,12 @@ Role Profiles and occupations answer different questions. A Role Profile describ
 
 This structure retains source detail while reducing reliance on inconsistent job titles. It also makes it possible to detect a plausible broad direction supported by an implausible leading occupation. The exact ESCO snapshot, membership records, and evidence decisions are retained in the taxonomy records and [technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md).
 
-### 3.2 Background and stated direction
+### 3.2 Background and desired career direction
 
 Candidate evidence is divided into two channels:
 
 - **Background:** current job title, explicit skills, and experience narrative.
-- **Stated direction (aspiration):** desired work directions.
+- **Desired career direction:** the type of work the candidate says they want to pursue, recorded in `desired_work_directions`.
 
 The occupational targets are constructed in the corresponding two channels. Every method returns separate background and direction components, combined with equal weight in the completed study. This gives aspiration a formal role without treating it as demonstrated readiness. Alternative component weights were not evaluated.
 
@@ -76,7 +76,7 @@ A single researcher assigned all 1,080 candidate–membership relevance annotati
 |---:|---|
 | 0 | Insufficient relevant evidence or a substantive mismatch |
 | 1 | Partial, adjacent, or transferable evidence; alignment is incomplete |
-| 2 | Clear supporting experience or skills with a compatible stated direction |
+| 2 | Clear supporting experience or skills with a compatible desired career direction |
 
 Aspiration alone is insufficient for label 2. Annotation considers the combined occupation–Role Profile target rather than mechanically averaging the two evidence channels.
 
@@ -169,7 +169,7 @@ The skill prompts use reviewed occupational evidence but are computed separately
 
 Taken together, the experiment supports the feasibility of the proposed framework while showing that its conclusions depend on researcher-defined constructs, synthetic evidence, and evaluation choices. These conclusions are bounded by the following limitations:
 
-- **Construct validity:** the score represents a chosen balance of demonstrated background and stated direction. It does not measure readiness, transition feasibility, career benefit, or an objectively correct career.
+- **Construct validity:** the score represents a chosen balance of demonstrated background and desired career direction. It does not measure readiness, transition feasibility, career benefit, or an objectively correct career.
 - **Researcher and data dependence:** one researcher defined the Role Profiles and mappings, reviewed the AI-assisted synthetic profiles, and assigned all relevance labels. Output blinding reduces direct model influence but does not supply independent judgement or annotator reliability.
 - **Architectural dependence:** the 15 occupations, 18 memberships, unequal membership counts, and aggregation rule influence the result. No direct-to-Role-Profile baseline was evaluated, so the study does not show that two layers outperform direct profile scoring.
 - **Statistical scope:** 20 development and 40 test candidates support exploratory comparison, not population estimates. Bootstrap intervals do not overcome synthetic sampling or quantify annotator uncertainty.
@@ -183,7 +183,7 @@ The prototype is intended for exploratory, human-centred career decision support
 The study contributes:
 
 1. a two-level formulation linking concrete occupations to broader analytical directions;
-2. a representation that separates background evidence from stated aspiration;
+2. a representation that separates background evidence from desired career direction;
 3. a frozen comparison of structured, lexical, semantic, and hybrid approaches;
 4. evaluation at membership and Role Profile levels; and
 5. a clear boundary between ranking-linked explanation and supplementary skill checks.
