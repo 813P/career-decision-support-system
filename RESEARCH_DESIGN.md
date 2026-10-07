@@ -43,7 +43,7 @@ The pilot is bounded to five researcher-defined Analytical Role Profiles: Strate
 
 The grouping is based on the purpose and content of the work, rather than job titles, individual tools, or seniority. For example, a multi-year assessment of technological change belongs closer to Strategic Analysis, while a product-profitability investigation belongs closer to Business Strategy & Focused Analysis even when both use market data. The full definitions and boundary decisions are retained in the [taxonomy records](taxonomy/README.md).
 
-Role Profiles and occupations answer different questions. A Role Profile describes a broad kind of analytical work a person might explore; an ESCO occupation supplies concrete tasks, descriptions, and skills for evidence comparison. Fifteen reviewed occupations are linked to the five profiles through 18 occupation–Role Profile memberships.A membership represents an occupation in the context of a particular Role Profile. The matcher ranks memberships first and then aggregates them into the five Role Profiles.
+Role Profiles and occupations answer different questions. A Role Profile describes a broad kind of analytical work a person might explore; an ESCO occupation supplies concrete tasks, descriptions, and skills for evidence comparison. Fifteen reviewed occupations are linked to the five profiles through 18 occupation–Role Profile memberships. A membership represents an occupation in the context of a particular Role Profile. The matcher ranks memberships first and then aggregates them into the five Role Profiles.
 
 This structure retains source detail while reducing reliance on inconsistent job titles. It also allows the Role Profile rankings to be examined alongside the occupations contributing to their scores. The exact ESCO snapshot, membership records, and evidence decisions are retained in the taxonomy records and [technical appendix](docs/RESEARCH_TECHNICAL_APPENDIX.md).
 
@@ -54,7 +54,7 @@ Candidate evidence is divided into two channels:
 - **Background:** current job title, explicit skills, and experience narrative.
 - **Desired career direction:** the type of work the candidate says they want to pursue, recorded in `desired_work_directions`.
 
-The occupational targets are constructed in the corresponding two channels. Every method returns separate background and direction components, combined with equal weight in the completed study. This gives aspiration a formal role without treating it as demonstrated readiness. Alternative component weights were not evaluated.
+The membership targets are constructed in the corresponding two channels. Every method returns separate background and direction components, combined with equal weight in the completed study. This gives aspiration a formal role without treating it as demonstrated readiness. Alternative component weights were not evaluated.
 
 <p align="center">
   <img src="docs/assets/membership-score-construction.svg" alt="Parallel background and direction evidence channels feeding an equally weighted final membership score" width="760">
@@ -111,11 +111,11 @@ The study followed this sequence:
 
 This was a sequential method-then-aggregation procedure, not a joint search across every combination. The selected configuration was **TF-IDF + `mean_all` aggregation + equal background/direction weighting**.
 
-A 0.01 difference in development membership nDCG@3 was used as a study-specific near-tie heuristic (not a universal nDCG threshold or a statistical equivalence criterion).It was considered alongside paired uncertainty, reproducibility, interpretability, implementation simplicity, and dependency burden. 
+A 0.01 difference in development membership nDCG@3 was used as a study-specific near-tie heuristic (not a universal nDCG threshold or a statistical equivalence criterion). It was considered alongside paired uncertainty, reproducibility, interpretability, implementation simplicity, and dependency burden. 
 
 ### 4.3 Evaluation strategy
 
-The primary evaluation unit is candidate × occupation–Role Profile membership, with candidate-level membership nDCG@3 as the primary metric. The secondary evaluation ranks the five Role Profiles after aggregation. A profile's reference relevance is the maximum human label among its memberships, whereas the selected model averages membership scores. TThe two levels use different ranking targets and reference labels, so their nDCG@3 values should be interpreted separately.
+The primary evaluation unit is candidate × occupation–Role Profile membership, with candidate-level membership nDCG@3 as the primary metric. The secondary evaluation ranks the five Role Profiles after aggregation. A profile's reference relevance is the maximum human label among its memberships, whereas the selected model averages membership scores. The two levels use different ranking targets and reference labels, so their nDCG@3 values should be interpreted separately.
 
 Confidence intervals were estimated using candidate-level bootstrap resampling. Each candidate’s 18 relevance judgements were kept together as a single unit.
 The [Final Evaluation Report](reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) provides detailed evaluation results, and the [Experiment Protocol](docs/EXPERIMENT_PROTOCOL.md) documents the annotation and experimental procedures.
@@ -132,8 +132,8 @@ For TF-IDF, `mean_all` produced the strongest development Role Profile point est
 
 On the 40 held-out test candidates:
 
-- membership nDCG@3 was **0.6606**;
-- Role Profile nDCG@3 was **0.8981**.
+- membership nDCG@3 was 0.6606 (95% candidate-bootstrap interval: [0.5655, 0.7533]);
+- Role Profile nDCG@3 was 0.8981 (95% candidate-bootstrap interval: [0.8480, 0.9408]).
 
 Broad Role Profile ordering showed higher agreement with the reference labels, while membership-level agreement was lower. Because the two levels contain different target counts and use different label construction and aggregation, the numerical gap does not isolate a causal benefit of aggregation.
 
