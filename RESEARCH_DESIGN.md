@@ -1,16 +1,15 @@
 # Exploring Analytical Career Directions: Research Design and Evaluation
 
-**Project:** Career Decision Support System
-**Study status:** Completed; final configuration frozen and evaluated on the held-out test set.
+**Project:** Career Decision Support System<br>
 **Document scope:** Research questions, design rationale, protocol interpretation, findings, and limitations. For the system overview and operating instructions, see the [project README](README.md).
 
 ## Abstract
 
-This study examines how candidate background and stated career direction can be represented separately and compared with a two-level career space consisting of ESCO occupations and five project-defined Role Profiles. Using 60 fully synthetic, non-identifying candidate profiles and 1,080 candidate–membership relevance annotations assigned by a single researcher, it compares Structured, TF-IDF, Semantic, and Hybrid ranking approaches on 20 development candidates. The selected TF-IDF configuration was frozen before evaluation on 40 held-out test candidates. Membership nDCG@3 was 0.6606 and Role Profile nDCG@3 was 0.8981; these values describe distinct ranking levels and are not directly comparable. Error analysis identified aspiration-heavy, mixed-direction, and low-evidence cases as important failure patterns. The findings support the feasibility of the two-level framework as a controlled methodological pilot, not real-world predictive validity.
+This study examines how candidate background and stated career direction can be represented separately and compared with a two-level career space consisting of ESCO occupations and five project-defined Role Profiles. Using 60 synthetic, non-identifying candidate profiles and 1,080 candidate–membership relevance annotations assigned by a single researcher, it compares Structured, TF-IDF, Semantic, and Hybrid ranking approaches on 20 development candidates. The selected TF-IDF configuration was frozen before evaluation on 40 held-out test candidates. Membership nDCG@3 was 0.6606 and Role Profile nDCG@3 was 0.8981; these values describe distinct ranking levels and are not directly comparable. Error analysis identified aspiration-heavy, mixed-direction, and low-evidence cases as important failure patterns. The findings support the feasibility of the two-level framework as a controlled methodological pilot, not real-world predictive validity.
 
 ## 1. Problem formulation
 
-Analytical career exploration presents two linked representation problems. On the career-space side, job titles are inconsistent proxies for work: different titles can describe similar responsibilities, while similar titles can describe different work. On the candidate side, demonstrated background and intended direction may diverge, particularly for people entering work or changing careers. A ranking based mainly on past experience can therefore reproduce a person's existing field rather than support exploration.
+Analytical career exploration presents two linked representation problems. On the career-space side, job titles do not consistently reflect the work people actually do. Different titles can describe similar responsibilities, while similar titles can describe substantially different work. On the candidate side, demonstrated background and intended direction may diverge, particularly for people entering work or changing careers. A ranking based mainly on past experience can therefore reproduce a person's existing field rather than support exploration.
 
 The study operationalises these problems by comparing candidate evidence with concrete occupational evidence and then organising the membership-level results into broader analytical directions. Background and stated direction remain separate evidence channels so that aspiration can affect exploration without being presented as demonstrated readiness.
 
