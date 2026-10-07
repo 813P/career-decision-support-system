@@ -8,6 +8,12 @@
 
 The reviewed workbook, `candidate_profile_audit.xlsx`, was created for the candidate-content version formerly identified as v5. Candidate schema 1.2 only normalised metadata placement, and schema 1.3 only renamed `current_role` to `current_job_title` and `desired_roles` to `desired_work_directions`. Candidate values, IDs, development/test membership, and relevance labels were not changed. The retained workbook therefore remains the applicable human-audit evidence for the current dataset.
 
+## Audit-record clarification — 2026-10-07
+
+All 60 candidate records were manually reviewed by the project researcher. The workbook's `reviewer_id` values were corrected to `project_researcher` to reflect that review. The recorded review date remains 2026-08-16; this clarification date is the metadata-correction date. The `privacy_reason` column was removed. Candidate evidence, split membership, audit decisions, qualitative review tags, and relevance labels were not changed.
+
+The retained `evidence_strength` tags (`strong`, `medium`, `developing`, `weak`, and `mixed`) correspond to the construction scenarios. They describe the content-review record and are not independent relevance labels or annotation-confidence measures.
+
 ## Distribution checks
 
 | Check | Result |

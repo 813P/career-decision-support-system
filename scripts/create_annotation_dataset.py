@@ -1,4 +1,8 @@
-"""Build a human-annotation CSV by joining candidates, memberships and v0 scores."""
+"""Build the complete candidate–membership annotation frame.
+
+Model outputs are hidden by default. Scores are joined only in explicit visible
+mode, for separately identified post-annotation inspection.
+"""
 
 from __future__ import annotations
 

@@ -37,8 +37,6 @@ If the license is absent, ambiguous, or conflicts with platform terms, the datas
 - Use protected attributes only in a separately controlled audit dataset when legally justified; never feed them to the ranker.
 - Publish only aggregate metrics and carefully reviewed examples.
 
-## Practical recommendation for this portfolio
+## Current study and future extensions
 
 Use the single human-reviewed and frozen 60-profile Candidate Dataset under `data/candidates`. Annotation is frozen for all 20 development and 40 test candidates; only development labels may influence selection, while all test labels are evaluation-only. Superseded candidate datasets and former hand-authored fixtures are not active research inputs. The released profiles are fully synthetic, non-identifying, do not map to individual people, and were not copied from ESCO or Role Profile text. The current repository does not retain sufficient generation-chain evidence to claim that real resumes materially informed the final profiles. Add JobHop later only as a clearly separated career-transition signal and use the synthetic fairness dataset only for counterfactual tests.
-
-This produces a stronger application narrative than unauthorised scraping: it demonstrates data governance, task–dataset alignment, reproducibility, and responsible AI judgment.

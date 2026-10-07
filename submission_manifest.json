@@ -2,7 +2,7 @@
   "manifest_name": "Submission-ready repository",
   "status": "complete",
   "created_at": "2026-10-07",
-  "file_count": 99,
+  "file_count": 98,
   "files": [
     {
       "path": ".gitattributes",
@@ -106,8 +106,8 @@
     },
     {
       "path": "docs/CANDIDATE_PROFILE_SCHEMA.md",
-      "bytes": 13169,
-      "sha256": "4a3db259f7e411827e4dcbe1936ede68324ab3bbd6245f9ef904715b58fd50f0"
+      "bytes": 14411,
+      "sha256": "8694026849d3fc6c1a5129012bacc663c489364b02cf5ffbe8b8fc353da9ba38"
     },
     {
       "path": "docs/DATA_CARD.md",
@@ -116,8 +116,8 @@
     },
     {
       "path": "docs/DATA_SOURCE_POLICY.md",
-      "bytes": 4477,
-      "sha256": "2c2d2a93fdb17f46aa59f313f50d4e1bf068cfe0d69f289ec28616281311041a"
+      "bytes": 4288,
+      "sha256": "71fca4cfab94e78e0fdc900d3e63742a3c3afaec7a8bd764ebefe820c0b9485b"
     },
     {
       "path": "docs/ERROR_ANALYSIS.md",
@@ -136,18 +136,18 @@
     },
     {
       "path": "docs/MCP_INTEGRATION.md",
-      "bytes": 1917,
-      "sha256": "67c93765bb1abcd63f605a51c7f4a6355aeae6de0d26f952e92b40273b8b384f"
+      "bytes": 1892,
+      "sha256": "54e257be4623e2fe0f492a49b1720d2e3bfa6a49a7d20dadd325dc043bea8c7e"
     },
     {
       "path": "docs/MODEL_CARD.md",
-      "bytes": 5648,
-      "sha256": "1ccdcb41cbc9b4d36a3009beb6c313b7923d1a29d9b63731775c8accc27c486d"
+      "bytes": 5876,
+      "sha256": "a3547f917a62042b0bc44375a476a8e8743f490a2f3b3fea3519f7e136d18ae6"
     },
     {
       "path": "docs/README.md",
-      "bytes": 3521,
-      "sha256": "a9a8ca0335697cf7d8275d18efd17aaef0337e965ee603fad716b5fafc4bff42"
+      "bytes": 3475,
+      "sha256": "0f90f6a5aa002de6c742c787148ad59107b30d7def54c94495cb3b334f6def78"
     },
     {
       "path": "docs/RESEARCH_TECHNICAL_APPENDIX.md",
@@ -226,8 +226,8 @@
     },
     {
       "path": "experiments/validation/create_snapshot_manifest.mjs",
-      "bytes": 1368,
-      "sha256": "33d5f129f45b4e35ae9665925a2ef1d39db0e6ab5d8b63d298d60fdd84f474ec"
+      "bytes": 1920,
+      "sha256": "1f49c2c65dc01b4bbb82f0c719fb9cf9745f009dbbc655dd0a4a4edbc5c33cb1"
     },
     {
       "path": "experiments/validation/freeze_tfidf_configuration.mjs",
@@ -256,28 +256,23 @@
     },
     {
       "path": "reports/README.md",
-      "bytes": 1402,
-      "sha256": "578971f21646a91628576b292f7a7573c9b889fda4b0f0fe19d39cb19a88f9bc"
+      "bytes": 2551,
+      "sha256": "dd53f08180d9ed63a0f36edba1e3d42693ad15b47b64dc06d6e9e67f0e1d1726"
     },
     {
       "path": "reports/audits/CANDIDATE_AUDIT_STATUS.md",
-      "bytes": 1133,
-      "sha256": "0132f4a9072bb1fea445fd0c4f122e76e65c03d0df5f776b65a288c72593177b"
+      "bytes": 2083,
+      "sha256": "9385cba6be757dfb5af657bba0c4518e49170d5e20b2b6a0cb03d9d78d80d7fd"
     },
     {
       "path": "reports/audits/CANDIDATE_DATASET_SYSTEM_REVIEW.md",
-      "bytes": 1938,
-      "sha256": "200c5aeb7198ad360adf0d317519163614d25f6aa69f899f30261aed23a6d641"
-    },
-    {
-      "path": "reports/audits/FULL_RUN_ISSUES.md",
-      "bytes": 2642,
-      "sha256": "541ce48048f339cb1cdaf3108f3c2311c0dfc489c59d0c676fd6ac2f3510aa82"
+      "bytes": 2674,
+      "sha256": "1c65596b7463aadbdfe9a6419e9bf7fbd5de61ffdd486e6ce85796acc51ca83a"
     },
     {
       "path": "reports/audits/candidate_profile_audit.xlsx",
-      "bytes": 22268,
-      "sha256": "d1fd88e8fb6bd6c3ce061c69a1ef49b15a4f02e96bf7967de1e6f979ea1aae6d"
+      "bytes": 22385,
+      "sha256": "b7b1d1832cad4a887b40ecd63fb9bc7b150d1694874139aa7406a2297d2465c1"
     },
     {
       "path": "reports/audits/role_skill_audit.json",
@@ -371,8 +366,8 @@
     },
     {
       "path": "scripts/create_annotation_dataset.py",
-      "bytes": 9701,
-      "sha256": "1b144f8485dea55e841feed7cba24ac62f006c6651ae376ed4ecf33ffb75e5c2"
+      "bytes": 9824,
+      "sha256": "aa04436f296ce3d045906903dc8240349b3ceae6d4ad204a5539db06414feb23"
     },
     {
       "path": "src/career_matcher/__init__.py",
@@ -386,8 +381,8 @@
     },
     {
       "path": "src/career_matcher/mcp_server.py",
-      "bytes": 2754,
-      "sha256": "635ae400a7da27973b5395f921ddfadc58d9e4201ac171b2a40c1aa3a8b15d77"
+      "bytes": 2758,
+      "sha256": "47132e2cf5729a8737f8e2cc63f565620096c251efd7dba88e10de2c3eebff61"
     },
     {
       "path": "src/career_matcher/presentation_i18n.py",
@@ -411,8 +406,8 @@
     },
     {
       "path": "taxonomy/README.md",
-      "bytes": 1841,
-      "sha256": "e3690ee872dc299c97bf00551f13222f6c97dac1f8f57a4a077740f6b3626d2e"
+      "bytes": 2698,
+      "sha256": "a2c9d646d447bfcc71f32ef51287ccadf9f73bf954435df40f7fafd4d0b22198"
     },
     {
       "path": "taxonomy/esco_occupations.json",

@@ -15,10 +15,10 @@ The server uses the standard `stdio` transport. Configure an MCP host to launch 
 
 | Tool | Purpose |
 |---|---|
-| `get_job_taxonomy` | Return the five canonical Analytical Role Profiles; family/direction fields are legacy compatibility metadata |
+| `get_job_taxonomy` | Return `role_profiles` and `role_profile_count` for the five canonical Analytical Role Profiles |
 | `rank_candidate_profile` | Produce explainable Role Profile rankings and ESCO occupation evidence |
 | `analyze_job_description` | Extract experimental multi-label Role Profile evidence from a JD, with abstention |
-| `compare_job_prototypes` | Compare two or three Analytical Role Profiles; the tool name is retained for API compatibility |
+| `compare_role_profile_options` | Compare two or three Analytical Role Profiles by definition and typical tasks |
 | `build_readiness_plan` | Turn evidence gaps into a three-stage preparation plan |
 
 The current executable taxonomy uses 15 official ESCO occupations and 18 many-to-many Role Profile memberships. User-facing and research outputs use **Analytical Role Profile** consistently.

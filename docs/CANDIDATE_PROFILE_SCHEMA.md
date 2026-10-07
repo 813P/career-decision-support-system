@@ -22,9 +22,9 @@ Only the following six fields belong to the public `CandidateProfile` contract.
 | Field | Type | Required | Current code constraint | Research meaning | Current ranking use |
 |---|---|---:|---|---|---|
 | `candidate_id` | string | Yes | Non-empty; unique within an input file | Stable pseudonymous record identifier | Join and traceability only |
-| `current_job_title` | string | Yes | Non-empty | Current or most recent substantive job title, recorded as candidate-side natural language rather than an ESCO concept | Rules title evidence; lexical and semantic text |
-| `desired_work_directions` | array of strings | Yes | Array; currently may be empty | Naturally worded desired work or development direction, not a Role Profile assignment or ESCO occupation mapping | Rules direction evidence; lexical and semantic text |
-| `skills` | array of strings | Yes | Array; currently may be empty | Skills claimed by the candidate record and supported where possible by the experience narrative | Essential/optional skill matching; lexical and semantic text |
+| `current_job_title` | string | Yes | Non-empty | Current or most recent substantive job title, recorded as candidate-side natural language rather than an ESCO concept | TF-IDF and Semantic background text; not used by the Structured background score |
+| `desired_work_directions` | array of strings | Yes | Array; currently may be empty | Naturally worded desired work or development direction, not a Role Profile assignment or ESCO occupation mapping | Structured direction alignment; TF-IDF and Semantic direction text |
+| `skills` | array of strings | Yes | Array; currently may be empty | Skills claimed by the candidate record and supported where possible by the experience narrative | Structured coverage of reviewed core/supporting skills; TF-IDF and Semantic background text |
 | `experience_narrative` | string | Yes | String; current code permits an empty string | Evidence-based work experience narrative describing context, analytical contribution, methods, ownership, and decision or action | Lexical and semantic text |
 | `years_experience` | number | Yes | Numeric and non-negative | Descriptive career context only | Excluded from the current Role Profile relevance score |
 
@@ -35,7 +35,7 @@ The reviewed master file `profiles.json` also retains `industry_context`. It var
 ### 2.1 Terminology boundary
 
 - `current_job_title` and `desired_work_directions` are candidate-side natural-language evidence. They do not contain or imply an ESCO occupation identifier.
-- A **Role Profile** is a project-defined analytical-work construct used to group work by substantive purpose.
+- A **Role Profile** is a project-defined grouping of recurring analytical work, with boundaries described through its purpose, tasks, outputs, and evidence requirements.
 - An **Occupation** is an externally sourced ESCO concept identified by an ESCO URI.
 - Candidate evidence is scored against reviewed occupation–Role-Profile memberships. The three concepts are related by matching, but they are not interchangeable entities.
 
@@ -112,7 +112,7 @@ The candidate CSV contains model-facing fields only. Governance, audit, annotati
 
 ## 5. Governance-Only Metadata
 
-The following fields are stored separately and must never enter feature generation, ranking, model selection, or independent relevance annotation.
+The following fields are stored separately and must never enter feature generation, ranking, model selection, or relevance annotation.
 
 | Field | Purpose |
 |---|---|
@@ -140,25 +140,24 @@ If a future dataset contains mixed provenance or candidate-specific review outco
 
 ## 7. Human Audit Record
 
-Candidate audit results must be stored as a separate file joined by `candidate_id`. The audit record must not overwrite candidate evidence. Its contract is defined in `docs/CANDIDATE_PROFILE_AUDIT_TEMPLATE.md`.
+Candidate audit results are stored separately and joined by `candidate_id`; they do not overwrite candidate evidence. The retained record is [`candidate_profile_audit.xlsx`](../reports/audits/candidate_profile_audit.xlsx), with its version history and current checksums in the [audit status](../reports/audits/CANDIDATE_AUDIT_STATUS.md). All 60 candidates were manually reviewed by the project researcher. The worksheet retains its construction-stage field names and version identifiers; these do not designate a separate active candidate dataset.
 
-Minimum reviewer outputs are:
+The retained reviewer fields are:
 
-- `evidence_strength`: audit-only judgement of `strong`, `medium`, or `weak` based on the combined skills, experience tasks, and outputs; it is never inferred automatically from `scenario_category`;
+- `evidence_strength`: qualitative content-review tags (`strong`, `medium`, `developing`, `weak`, or `mixed`); these correspond to the construction scenarios in this workbook and are not an independent evidence-strength scale, a relevance label, or the annotation-confidence field of the same name;
 
-- `content_decision`: `approve` or `revise`;
+- `content_decision`: `Approve` for the 60 retained, approved records;
 - `content_issue_codes`;
 - `content_reason`;
-- `privacy_decision`: `approve` or `revise`;
-- `privacy_reason`;
-- `reviewer_id`; and
+- `privacy_decision`: `PASS` for the 60 retained records;
+- `reviewer_id`: `project_researcher`; and
 - `reviewed_at`.
 
 Candidate content review is not relevance annotation. No 0/1/2 relevance label may be entered at this stage.
 
 ## 8. Relevance-Annotation View
 
-After candidate content review, revision, validation, and freeze, independent annotators should receive only:
+After candidate content review, revision, validation, and freeze, the sole researcher assigned relevance labels using a model-output-blinded view containing only:
 
 - a blinded candidate identifier;
 - `current_job_title`;
@@ -166,18 +165,19 @@ After candidate content review, revision, validation, and freeze, independent an
 - `skills`; and
 - `experience_narrative`.
 
-They must not receive `years_experience`, construction metadata, audit decisions, model names, model rankings, model scores, or other expected-answer signals.
+The view excluded `years_experience`, construction metadata, audit decisions, model names, model rankings, model scores, and other expected-answer signals. The researcher also constructed the candidates and defined the targets; output blinding does not establish independent annotation.
 
 Annotation outputs are stored separately at the candidate–occupation–Role-Profile-membership level:
 
 - `candidate_id`;
 - `membership_id`;
-- `occupation_uri` and `role_profile_id`;
-- `relevance_label` (`0`, `1`, or `2`);
-- `background_evidence`;
-- `direction_evidence`;
+- `occupation_id` (the ESCO occupation URI) and `role_profile_id`;
+- `human_relevance` (`0`, `1`, or `2`);
+- `annotation_reason` and `evidence_strength` (optional according to the annotation guideline);
 - `annotator_id`; and
-- `annotation_version`.
+- `annotation_timestamp`.
+
+The retained CSV also includes the displayed candidate fields, `occupation_title`, `role_profile_name`, and `mapping_type`. Its `model_rank` and `model_score` columns remain blank. See the [annotation data guide](../data/annotation/README.md) and [annotation guideline](HUMAN_ANNOTATION_GUIDELINE.md) for the complete format and conditional-field rules.
 
 ## 9. Privacy and Excluded Data
 
@@ -197,12 +197,12 @@ The current parser intentionally ignores extra fields rather than forwarding the
 ```text
 Role Profile definitions and boundaries frozen
     → Candidate Profile Schema frozen
-    → Candidate Audit Template frozen
+    → Candidate-content review checklist fixed
     → 60-candidate content and privacy review
     → Candidate revisions and automated revalidation
     → Candidate dataset and split frozen
     → Matching experiment specification frozen
-    → Independent human relevance annotation
+    → Model-output-blinded researcher relevance annotation
     → Evaluation
 ```
 

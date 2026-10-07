@@ -33,7 +33,7 @@ The [reports directory](../reports/README.md) holds run-specific observations, d
 <details>
 <summary>Audit and repository-maintenance records</summary>
 
-The audit layer retains full-run issue logs, schema-migration notes, environment-recovery details, freeze manifests, and the repository submission manifest. These records support reproducibility and change control but are not part of the applicant-facing reading path. Start from the [reports index](../reports/README.md) only when investigating implementation history or repository integrity.
+The audit layer retains candidate and skill reviews, schema-migration notes, freeze manifests, and the repository submission manifest. These records support reproducibility and change control. The [reports index](../reports/README.md) explains how historical stage fields relate to the completed study. Git tags retain earlier repository versions.
 
 </details>
 

@@ -21,7 +21,7 @@ from .webapp import (
 
 
 mcp = FastMCP(
-    name="MAIR Career Exploration",
+    name="Career Decision Support System",
     instructions=(
         "Use these tools for low-risk career exploration. Scores are relative evidence, "
         "not hiring probabilities, and must not be used to screen or reject applicants."
@@ -36,7 +36,7 @@ def runtime() -> AppRuntime:
 
 @mcp.tool()
 def get_job_taxonomy() -> dict[str, Any]:
-    """Return MAIR's five canonical Analytical Role Profiles."""
+    """Return the five canonical Analytical Role Profiles."""
     value = runtime()
     return {
         "role_profiles": value.role_profiles,
