@@ -9,7 +9,8 @@ This optional interface is for MCP-compatible clients. To open the browser appli
 After completing that Windows setup, run the following from the project root, using the same environment:
 
 ```powershell
-$careerVenv = Join-Path (Split-Path -Parent (Get-Location).Path) "career-decision-support-venv"
+$careerParent = Split-Path -Parent (Get-Location).Path
+$careerVenv = Join-Path $careerParent 'career-decision-support-venv'
 & "$careerVenv\Scripts\python.exe" -m pip install -e ".[mcp]"
 ```
 

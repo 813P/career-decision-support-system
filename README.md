@@ -142,58 +142,104 @@ The [documentation index](docs/README.md) provides additional schemas, data-sour
 
 ### Start the local web application (Windows PowerShell)
 
-Python **3.10 or later** is required; the commands below use **Python 3.12**. Internet access is needed for the first dependency installation. Node.js, Semantic dependencies, and MCP are optional and are not needed to open the web interface.
+Python **3.10 or later** is required; this guide uses **Python 3.12**. Internet access is needed for the first dependency installation. Node.js, Semantic dependencies, and MCP are optional and are not needed to open the web interface.
 
-Run each step in order. Resolve any error before continuing to the next step.
+Follow the steps in the **same PowerShell window**, copying **one code block at a time**. Let long commands wrap automatically on screen; do not insert a line break inside a quoted path or folder name. If a command reports an error, resolve it before continuing.
 
-**1. Download the project and enter its root folder.**
+**1. Download, extract, and enter the project folder.**
 
-On this GitHub page, choose **Code → Download ZIP**, then extract the archive to a local folder. In File Explorer, find the folder containing both `README.md` and `pyproject.toml`; the extracted archive may contain an extra outer folder. Copy this folder's full path from the address bar.
+On this GitHub page, choose **Code → Download ZIP**, then right-click the downloaded ZIP and choose **Extract All**. Open the extracted folders until you find `README.md` and `pyproject.toml` together. This is the project root; there may be an extra outer folder, and subfolders also contain their own README files.
 
-Open PowerShell and run:
+Copy the **folder path** from File Explorer's address bar. Use the folder containing those two files, not the path to the ZIP or either individual file.
+
+Open PowerShell, copy this command, and press **Enter**:
 
 ```powershell
 Set-Location -LiteralPath (Read-Host "Paste the full project folder path")
+```
+
+When `Paste the full project folder path:` appears, paste the folder path **without surrounding quotes** and press **Enter** again. Wait until the `PS ...>` prompt returns before running the next command:
+
+```powershell
 Test-Path .\pyproject.toml
 ```
 
-Paste the copied path when prompted. The second command must return `True`. If it returns `False`, enter the folder containing `pyproject.toml` before proceeding. Running the installation from `C:\Users\your-name` or an unextracted ZIP will not work.
+The result must be **`True`**. If it is `False`, repeat the folder-selection command with the folder containing `pyproject.toml`. Installing from your user folder or from an unextracted ZIP will not work.
 
-**2. Check the Python interpreter.**
+**2. Check Python.**
 
 ```powershell
 py -3.12 --version
 ```
 
-The output should be `Python 3.12.x`. If `py` or Python 3.12 is unavailable, install Python 3.12 with the Windows launcher from [python.org](https://www.python.org/downloads/windows/), reopen PowerShell, and repeat the check. An existing Python 3.10 or 3.11 installation can also run the core application: use its version flag in both this check and the environment-creation command below.
+The result should be `Python 3.12.x`. If `py` or Python 3.12 is unavailable, install Python 3.12 with the Windows launcher from [python.org](https://www.python.org/downloads/windows/), reopen PowerShell, and repeat steps 1–2. An existing Python 3.10 or 3.11 installation can also run the core application: substitute its version flag in this command and in step 4.
 
-**3. Create the environment and install the project once.**
+**3. Set the environment path.**
 
-From the project folder selected in step 1:
+First, get the parent of the project folder:
 
 ```powershell
-$careerVenv = Join-Path (Split-Path -Parent (Get-Location).Path) "career-decision-support-venv"
+$careerParent = Split-Path -Parent (Get-Location).Path
+```
+
+Then set the environment folder name:
+
+```powershell
+$careerVenv = Join-Path $careerParent 'career-decision-support-venv'
+```
+
+These two commands normally return to the PowerShell prompt without printing a result. Together they select a separate environment beside the project folder. Keep the folder name on one input line.
+
+**4. Create the environment once.**
+
+```powershell
 py -3.12 -m venv $careerVenv
+```
+
+Wait for the PowerShell prompt to return. Successful environment creation normally prints no message. If an existing environment uses a different Python version, choose a new folder name in step 3 before running this command.
+
+**5. Install the project once.**
+
+```powershell
 & "$careerVenv\Scripts\python.exe" -m pip install -e .
 ```
 
-This places the environment beside the project folder. The commands call its Python directly, so `Activate.ps1` and changes to PowerShell's execution policy are unnecessary. Keep the project folder in place: the editable installation reads its source and data from that location. If an existing environment uses a different Python version, choose a new environment folder name.
+Wait for installation to finish and the PowerShell prompt to return. A fresh installation normally ends with `Successfully installed ...`; resolve any `ERROR` before starting the website.
 
-**4. Start the service and open the website.**
+This command uses the environment's Python directly, so there is no activation step or need to change PowerShell's execution policy. Keep the extracted project folder in place: the editable installation reads the source and data from that location.
 
-In the same PowerShell window:
+**6. Start the website.**
 
 ```powershell
 & "$careerVenv\Scripts\career-web.exe"
 ```
 
-Wait for `Career Decision Support System available at http://127.0.0.1:8765`, then open **[http://127.0.0.1:8765/](http://127.0.0.1:8765/)** in a browser. Keep PowerShell running while using the website; press **Ctrl+C** to stop the service.
+Wait for:
 
-To check the interface, choose **Start with my experience → Load demo profile → Generate explainable results**, or the equivalent Chinese buttons. English candidate input is recommended; changing the interface language does not change ranking scores.
+```text
+Career Decision Support System available at http://127.0.0.1:8765
+```
 
-For later sessions, return to the project folder, set `$careerVenv` using the first command in step 3, and run the command in step 4. Environment creation and installation are only needed for initial setup or a changed environment.
+Then open **[http://127.0.0.1:8765/](http://127.0.0.1:8765/)** in a browser. Keep this PowerShell window running while using the website. The prompt does not return while the service is running; press **Ctrl+C** when you want to stop it.
 
-If port 8765 is already in use, run `& "$careerVenv\Scripts\career-web.exe" --port 8766` and open `http://127.0.0.1:8766/`. If a dependency download fails, retry the installation command with `--no-cache-dir`.
+To try the interface, choose **Start with my experience → Load demo profile → Generate explainable results**, or the equivalent Chinese buttons. English candidate input is recommended; changing the interface language does not change ranking scores.
+
+**Open the website again later.**
+
+In a new PowerShell window, repeat **step 1** to enter the same project folder, **step 3** to set the environment path, and **step 6** to start the service. You do not need to download, create the environment, or install again unless you replace the project or change the environment.
+
+**If startup or installation fails.**
+
+- If the path is rejected with `WinError 123`, repeat both commands in step 3, keeping the quoted folder name on one input line, then retry step 4.
+- If installation reports that `pyproject.toml` is missing, repeat step 1 and confirm `True` before retrying step 5.
+- If a dependency download fails, retry step 5 with `--no-cache-dir` appended to the command.
+- If port 8765 is already in use, start on another port:
+
+  ```powershell
+  & "$careerVenv\Scripts\career-web.exe" --port 8766
+  ```
+
+  Then open **[http://127.0.0.1:8766/](http://127.0.0.1:8766/)**.
 
 <details>
 <summary>Optional validation and complete Semantic/MCP tests</summary>
@@ -218,8 +264,19 @@ The two optional-extension test modules need additional dependencies. To match t
 
 ```powershell
 $semanticPython = Read-Host "Paste the path to the Python 3.12.14 executable"
+```
+
+Paste the executable path without surrounding quotes and press Enter. Once the PowerShell prompt returns, run:
+
+```powershell
 & $semanticPython --version
-$careerTestVenv = Join-Path (Split-Path -Parent (Get-Location).Path) "career-decision-support-full-test-venv"
+```
+
+Confirm `Python 3.12.14`, then run the remaining commands:
+
+```powershell
+$careerTestParent = Split-Path -Parent (Get-Location).Path
+$careerTestVenv = Join-Path $careerTestParent 'career-decision-support-full-test-venv'
 & $semanticPython -m venv $careerTestVenv
 & "$careerTestVenv\Scripts\python.exe" -m pip install -e ".[dev,mcp]" -r requirements-semantic.txt --extra-index-url https://download.pytorch.org/whl/cpu
 & "$careerTestVenv\Scripts\python.exe" -m pip check
