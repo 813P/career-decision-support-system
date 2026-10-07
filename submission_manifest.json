@@ -21,8 +21,8 @@
     },
     {
       "path": "RESEARCH_DESIGN.md",
-      "bytes": 20901,
-      "sha256": "0a492d1a3ddfd93a6bc2d6aa591cbba4b52eda5a6eba47b3f3e72beb6bcb19e1"
+      "bytes": 20895,
+      "sha256": "af79d1c0add00568cf077e9c0ed727e421575b58f1a4ae96ae0a20b57706bcf7"
     },
     {
       "path": "config/experiments/semantic_runtime.json",

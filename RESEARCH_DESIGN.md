@@ -11,7 +11,7 @@ This study examines how candidate background and desired career direction can be
 
 Analytical career exploration presents two linked representation problems. On the career-space side, job titles do not consistently reflect the work people actually do. Different titles can describe similar responsibilities, while similar titles can describe substantially different work. On the candidate side, demonstrated background and intended direction may diverge, particularly for people entering work or changing careers. A ranking based mainly on past experience can therefore reproduce a person's existing field rather than support exploration.
 
-The study operationalises these problems by comparing candidate evidence with concrete occupational evidence and then organising the membership-level results into broader analytical directions. Background and desired career direction remain separate evidence channels so that aspiration can affect exploration without being presented as demonstrated readiness.
+The study addresses these problems by comparing candidate evidence with concrete occupational evidence and then organising the membership-level results into broader analytical directions. Background and desired career direction remain separate evidence channels so that aspiration can affect exploration without being presented as demonstrated readiness.
 
 The completed study evaluates agreement with researcher relevance judgements on synthetic candidate profiles, analyses disagreement at two ranking levels, and examines how the displayed explanations relate to the computation. Real-user decision usefulness, career outcomes, and hiring suitability are outside its scope.
 
