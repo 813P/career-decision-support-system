@@ -6,7 +6,7 @@ Start with the [project overview](../README.md). This index separates research d
 
 | Reader or question | Suggested path |
 |---|---|
-| Admissions reviewer: what was built, studied, and learned? | [Project README](../README.md) → [Research Design](../RESEARCH_DESIGN.md) |
+| Admissions reviewer: what was built, studied, and learned? | [Project README](../README.md) → [Research Design and Evaluation](../RESEARCH_DESIGN.md) |
 | Research reviewer: how were the claims produced? | [Protocol](EXPERIMENT_PROTOCOL.md) → [Data Card](DATA_CARD.md) → [Annotation Guideline](HUMAN_ANNOTATION_GUIDELINE.md) → [Development Selection Report](../reports/matching/DEVELOPMENT_PARAMETER_SELECTION.md) → [Final Evaluation Report](../reports/evaluation/TFIDF_FULL_TEST_EVALUATION.md) → [Error Analysis](ERROR_ANALYSIS.md) |
 | System user: what can the prototype support? | [Model Card](MODEL_CARD.md) → [Data Card](DATA_CARD.md) |
 | Technical reader: how is it computed and reproduced? | [Technical Appendix](RESEARCH_TECHNICAL_APPENDIX.md) → source and tests |
@@ -14,7 +14,7 @@ Start with the [project overview](../README.md). This index separates research d
 ## Document responsibilities
 
 - **Root README:** one-page application entry covering the problem origin, artifact, study design, core results, representative failures, and routes to evidence.
-- **Research Design:** authoritative methodological narrative connecting the motivating problem to research questions, design choices, findings, interpretation, and limitations.
+- **Research Design and Evaluation:** authoritative methodological narrative connecting the motivating problem to research questions, design choices, findings, interpretation, and limitations.
 - **Technical appendix:** detailed formulas, exact score definitions, and runtime settings.
 - **Data card and schemas:** contents, provenance, field meanings, and permitted uses.
 - **Protocol and annotation guideline:** the procedure used to construct the evaluation.

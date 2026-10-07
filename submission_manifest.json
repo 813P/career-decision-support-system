@@ -16,8 +16,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 15298,
-      "sha256": "b30c3f17c69f14314c06d9ff93742e11ad8be8e8063ffc499e05a6f31b0f2e19"
+      "bytes": 15175,
+      "sha256": "f9647bfe605d2846aafcd8389621ad19779b8b10f06b203ebcf0d0262939f446"
     },
     {
       "path": "RESEARCH_DESIGN.md",
@@ -146,8 +146,8 @@
     },
     {
       "path": "docs/README.md",
-      "bytes": 3491,
-      "sha256": "fc93a91b27069d29bca979a61dd9a346bb42ffbebf658509998b86226093c596"
+      "bytes": 3521,
+      "sha256": "a9a8ca0335697cf7d8275d18efd17aaef0337e965ee603fad716b5fafc4bff42"
     },
     {
       "path": "docs/RESEARCH_TECHNICAL_APPENDIX.md",

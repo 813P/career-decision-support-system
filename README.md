@@ -4,7 +4,7 @@ The Career Decision Support System is a research-oriented, explainable AI protot
 
 Rather than returning a single opaque recommendation, the system separates background fit from directional intent and surfaces the evidence behind its rankings, including occupation-level evidence, matched skills, missing evidence, and ranking provenance.
 
-The system's key representation, ranking, and aggregation choices were developed and evaluated in [*Exploring Analytical Career Directions*](https://github.com/813P/career-decision-support-system/blob/main/RESEARCH_DESIGN.md), a controlled methodological pilot.
+The system's key representation, ranking, and aggregation choices were developed and evaluated in [*Exploring Analytical Career Directions: Research Design and Evaluation*](https://github.com/813P/career-decision-support-system/blob/main/RESEARCH_DESIGN.md), a controlled methodological pilot.
 
 **Study at a glance:** 5 project-defined Role Profiles, 15 reviewed ESCO occupations, 18 occupation–Role Profile memberships, 60 synthetic candidates, and 1,080 single-researcher relevance annotations. Four ranking approaches were compared on 20 development candidates; the selected configuration was frozen and evaluated on 40 held-out test candidates.
 
