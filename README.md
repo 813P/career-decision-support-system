@@ -148,7 +148,7 @@ Follow the steps in the **same PowerShell window**, copying **one code block at 
 
 **1. Download, extract, and enter the project folder.**
 
-On this GitHub page, choose **Code → Download ZIP**, then right-click the downloaded ZIP and choose **Extract All**. Open the extracted folders until you find `README.md` and `pyproject.toml` together. This is the project root; there may be an extra outer folder, and subfolders also contain their own README files.
+On this GitHub page, choose **Code → Download ZIP**, then right-click the downloaded ZIP and choose **Extract All**. Open the extracted folders until you find `README.md` and `pyproject.toml` together. This is the project root.
 
 Copy the **folder path** from File Explorer's address bar while viewing the folder containing those two files.
 
